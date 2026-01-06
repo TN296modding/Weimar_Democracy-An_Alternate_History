@@ -139,7 +139,7 @@ go-to: decrwest
 @intereast
 
 - @increast: Increase East Relations (Not Working)
-- @decreast Decrease East Relations (Not Working)
+- @decreast: Decrease East Relations (Not Working)
 - @returnsandbox: Return to the Sandbox
 
 - @increast
@@ -180,7 +180,7 @@ go-to: decrwest
 - @incrprucon: Increase progress for the Prussian Concordat (Not Working)
 - @decrprucon: Decrease progress for the Prussian Concordat (Not Working)
 - @formprucon: Form the Prussian Concordat (Not Working)
-- @returnsandbox Return to Sandobx
+- @returnsandbox: Return to Sandobx
 
 @interaust
 
