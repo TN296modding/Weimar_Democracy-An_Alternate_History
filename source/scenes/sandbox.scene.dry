@@ -126,7 +126,7 @@ go-to: decrwest
 
 @medsmallwestdecr
 on-arrival: west_relation -= 10
-go-to decrwest
+go-to: decrwest
 
 @smallwestdecr
 on-arrival: west_relation -= 5
