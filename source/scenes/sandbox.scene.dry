@@ -57,10 +57,45 @@ The end date has been enabled.
 - @interwest: Improve Relations with the West
 - @intereast: Improve Relations with the East
 - @intersov: Improve Relations with the Soviet Union
+- @interlow: Improve Relations with te Netherlands, Belgium, or Luxembourg
 - @interrepar: Deal with Reparations
 - @intereu: Deal with the EU
 - @interconcor: Deal with the Concordat
 - @interaust: Deal with the Austrian Civil War
+
+@interlow
+
+- @incrnet: Increase Dutch Relations
+- @incrbel: Increase Belgian Relations
+- @incrlux: Increase Luxembourgish Relations
+- @decrnet: Decrease Dutch Relations
+- @decrbel: Decrease Belgian Relations
+- @decrlux: Decrease Luxembourgish Relations
+- @returnsandbox: Return to Sandbox
+
+@incrnet
+
+Wip
+
+@incrbel
+
+Wip
+
+@incrlux
+
+wip
+
+@decrnet
+
+wip
+
+@decrbel
+
+wip
+
+@decrlux
+
+wip
 
 @interwest
 
