@@ -48,25 +48,25 @@ on-arrival: west_relation += 2; reparations_negotiation += 1
 The key to peace in Europe is a rapprochement between <span style="color: #002654;">France</span> and Germany. We are taking steps towards that rapprochement. [? if young_plan_seen == 0 : This is difficult to do when <span style="color: #002654;">France</span> is occupying a major portion of Germany's territory, but we are working on that part. ?]
 
 @improve_low
-title: Improve our relations with the <span style="color: #003DA5;">Low</span> <span style="color: #FFCD00;">Coun</span> <span style="color #51ADDA;">tries</span>
+title: Improve our relations with the <span style="color: #003DA5;">Low</span> <span style="color: #FFCD00;">Coun</span><span style="color: #51ADDA;">tries</span>
 on-arrival: net_relation += 1; bel_relation += 1; lux_relation += 1; lux_ger_love += 0.1; eup_ger_love += 0.1; fla_net_uni += 0.05;
 
 wip
 
 @improve_net
-title: Improve our relations with the <span style="color: #C8102E;">Neth</span><span style="color: #FFFFFF;">erl</span><span style="color #003DA5;">ands</span> [? if fla_net_uni >= 0.1 : ,and perhaps help increase the unity between <span style"color: #FEEA28;">Fla</span><span style="color: #000000;">nd</span><span style="color: #FF0000;">ers</span> and the <span style="color: #C8102E;">Neth</span><span style="color: #FFFFFF;">erl</span><span style="color #003DA5;">ands</span> ?]
+title: Improve our relations with the <span style="color: #C8102E;">Neth</span><span style="color: #FFFFFF;">erl</span><span style="color: #003DA5;">ands</span> [? if fla_net_uni >= 0.1 : ,and perhaps help increase the unity between <span style"color: #FEEA28;">Fla</span><span style="color: #000000;">nd</span><span style="color: #FF0000;">ers</span> and the <span style="color: #C8102E;">Neth</span><span style="color: #FFFFFF;">erl</span><span style="color #003DA5;">ands</span> ?]
 
 - @improve_net2
 - @improve_netfla
 
 @improve_net2
-title: Just improve relations with the <span style="color: #C8102E;">Neth</span><span style="color: #FFFFFF;">erl</span><span style="color #003DA5;">ands</span>
+title: Just improve relations with the <span style="color: #C8102E;">Neth</span><span style="color: #FFFFFF;">erl</span><span style="color: #003DA5;">ands</span>
 on-arrival: net_relation += 2; net_ger_love += 0.5; fla_net_uni += 0.05;
 
 wip
 
 @improve_netfla
-title: Help connect important Flemish Nationalists with Dutch officials, as well as increase our relations with the <span style="color: #C8102E;">Neth</span><span style="color: #FFFFFF;">erl</span><span style="color #003DA5;">ands</span>
+title: Help connect important Flemish Nationalists with Dutch officials, as well as increase our relations with the <span style="color: #C8102E;">Neth</span><span style="color: #FFFFFF;">erl</span><span style="color: #003DA5;">ands</span>
 subtitle: -0.5 Budget
 on-arrival: net_relation += 2; net_ger_love += 0.5; fla_net_uni += 0.2; fla_unrest += 0.05; budget -= 0.5;
 choose-if: fla_net_uni >= 0.1 and budget >= 0.5
