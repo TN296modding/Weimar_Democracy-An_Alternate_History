@@ -1,6 +1,6 @@
 title: Unrest in Belgium
 subtitle: Belgium dissolved
-on-arrival: belgium_dissolved = 1; fla_timer += 4; wal_timer += 6; eup_timer += 3;
+on-arrival: belgium_dissolved = 1; fla_timer += 0; wal_timer += 6; eup_timer += 3;
 tags: event
 view-if: bel_unrest_1_seen = 1 and bel_unrest_2_seen = 1 and fla_unrest >= 0.4 and wal_unrest >= 0.4 and eup_unrest >= 0.4 and belgium_dissolved = 0
 priority: 1
