@@ -252,28 +252,6 @@ Economic growth: [+ economic_growth_2 +]%
 
 {!<span class="tooltip-text" title="Left Nationalists are in favour of Social Democratic policies, in a similar vein to the reformists, however they also have views which are much more socially right-wing. They split from the SPD in 1926 to form the ASPD [? if leftnat_joined = 1 : but have since rejoined the SPD. ?]">Left Nationals</span>!} strength: [+ left_nat_strength +], dissent [+ left_nat_strength +]
 
-// = Other
-
-// Social Fascist Thoery Credibility: [+ socfas_tc : sf_theory +]
-
-// Influence in the Trade Unions: [+ trun_infl : influence +]
-
-// ADGB Unionised Industrial Workers: [+ trun_ind_perc : trun_amnt +]
-
-// ADGB Unionised New Middle Class: [+ trun_nmc_perc : trun_amnt +]
-
-// ADGB Unionised Farmworkers: [+ trun_rur_perc : trun_amnt +]
-
-// [? if iww_germany = 1 : IWW Unionised Industrial Workers: [+ iww_ind_perc : trun_amnt +] ?]
-
-// [? if iww_germany = 1 : IWW Unionised New Middle Class: [+ iww_nmc_perc : trun_amnt +] ?]
-
-//[? if iww_germany = 1 : IWW Unionised Farmworkers: [+ iww_rur_perc : trun_amnt +] ?]
-
-//[? if iww_germany = 1 : IWW Unionised Unemployed [+ iww_unm_perc : trun_amnt +] ?]
-
-//[? if chrun_know = 1 : Christian Unionised WIP ?]
-
 @paramilitaries
 on-arrival: {!
 Q.rb_strength_2 = Q.rb_strength.toFixed(1);
