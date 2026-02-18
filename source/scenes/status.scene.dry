@@ -95,7 +95,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if debug = 1 : Average Income Per Capita: [+ income_pc +] [+ currency +] ?]
 
-emergency
+@emergency
 on-arrival: {!
 if (Q.unemployed) {
     Q.unemployed_2 = Q.unemployed.toFixed(1);
@@ -151,6 +151,7 @@ Inflation: [+ inflation_2 +]%<br>
 Economic growth: [+ economic_growth_2 +]%
 
 @politics
+on-arrival: trun_ind_perc_dis = trun_ind_perc * 100; trun_rur_perc_dis = trun_rur_perc * 100; trun_nmc_perc_dis = trun_nmc_perc * 100; iww_ind_perc_dis = iww_ind_perc * 100; iww_nmc_perc_dis = iww_nmc_perc * 100; iww_rur_perc_dis = iww_rur_perc * 100; iww_unm_perc_dis = iww_unm_perc * 100; chrun_tot_perc_dis = chrun_tot_perc * 100;
 
 = Inter-party Relations
 
@@ -256,21 +257,21 @@ Social Fascist Thoery Credibility: [+ socfas_tc : sf_theory +]
 
 Influence in the Trade Unions: [+ trun_infl : other_influence +]
 
-ADGB Unionised Industrial Workers: [+ trun_ind_perc : trun_amnt +] ( ([+ trun_ind_perc +]*100) % )
+ADGB Unionised Industrial Workers: [+ trun_ind_perc : trun_amnt +] ( [+ trun_ind_perc_dis +] % )
 
-AfA-Bund Unionised New Middle Class: [+ trun_nmc_perc : trun_amnt +] ( ([+ trun_nmc_perc +]*100) % )
+AfA-Bund Unionised New Middle Class: [+ trun_nmc_perc : trun_amnt +] ( [+ trun_nmc_perc_dis +] % )
 
-ADGB Unionised Farmworkers: [+ trun_rur_perc : trun_amnt +] ( ([+ trun_rur_perc +]*100) % )
+ADGB Unionised Farmworkers: [+ trun_rur_perc : trun_amnt +] ( [+ trun_rur_perc_dis +]* % )
 
-IWW Unionised Industrial Workers: [+ iww_ind_perc : trun_amnt +] ( ([+ iww_ind_perc +]*100) % )
+IWW Unionised Industrial Workers: [+ iww_ind_perc : trun_amnt +] ( [+ iww_ind_perc_dis +] % )
 
-IWW Unionised New Middle Class: [+ iww_nmc_perc : trun_amnt +] ( ([+ iww_nmc_perc +]*100) % ) 
+IWW Unionised New Middle Class: [+ iww_nmc_perc : trun_amnt +] ( [+ iww_nmc_perc_dis +] % ) 
 
-IWW Unionised Farmworkers: [+ iww_rur_perc : trun_amnt +] ( ([+ iww_rur_perc +]*100) % ) 
+IWW Unionised Farmworkers: [+ iww_rur_perc : trun_amnt +] ( [+ iww_rur_perc_dis +] % ) 
 
-IWW Unionised Unemployed [+ iww_unm_perc : trun_amnt +] ( ([+ iww_unm_perc +]*100) % ) 
+IWW Unionised Unemployed [+ iww_unm_perc : trun_amnt +] ( [+ iww_unm_perc_dis +] % ) 
 
-Christian Unionised Workers [+ chrun_tot_perc : trun_amnt +] ( ([+ chrun_tot_perc +]*100) % )
+Christian Unionised Workers [+ chrun_tot_perc : trun_amnt +] ( [+ chrun_tot_perc_dis +] % )
 
 @paramilitaries
 on-arrival: {!
