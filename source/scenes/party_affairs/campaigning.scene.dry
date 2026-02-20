@@ -30,7 +30,7 @@ on-arrival: workers_spd += 6*(1-dissent); workers_spd -= 1 if unemployed >= 20; 
 We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract workers. ?]
 
 - @unionise_wkr: Make unions a part of this campaign run
-- no_union: Don't push unions in this campign run
+- @no_union: Don't push unions in this campign run
 
 @unionise_wkr
 subtitle: -0.5 resource
