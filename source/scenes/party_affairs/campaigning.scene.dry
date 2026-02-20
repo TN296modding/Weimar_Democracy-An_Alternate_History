@@ -79,8 +79,8 @@ on-arrival: rural_spd += 5*(1-dissent); rural_spd -= 3*(1-dissent) if peoples_pa
 
 We have increased our campaigning among farmers. [? if peoples_party == 0: We have not historically campaigned much among the farmers, and they do not trust us. ?][? if peoples_party > 0: As a people's party, we have an easier time increasing support among farmers than before. ?][? if rural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
 
-- @unionise_rur
-- @no_union
+- @unionise_rur: Make unions a part of this campaign run
+- @no_union: don't make unions a part of this campaign run
 
 @unionise_rur
 subtitle: -0.5 resource
@@ -98,7 +98,7 @@ on-arrival: unemployed_spd += 6*(1-dissent); resources -= 1; unemployed_spd -= 3
 
 We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract support from the unemployed. ?]
 
-- @unionise_iww
+- @unionise_iww: Make unemployed unions a part of this campaign run
 
 @unionise_iww
 subtitle: -0.5 resource
