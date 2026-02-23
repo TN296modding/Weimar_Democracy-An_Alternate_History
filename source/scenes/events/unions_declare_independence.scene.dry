@@ -19,7 +19,8 @@ if (Q.labor_strength < 10) {
     Q.workers_nsdap += 4;
     Q.rb_strength -= 400;
 } else if (Q.labor_strength < 25) {
-    Q.workers_spd -= 20;
+    Q.workers_spd -= 16;
+    Q.workers_spd -= Q.workers_spd * (Q.trun_ind_perc / 3)
     Q.unemployed_spd -= 10;
     if (Q.sapd_formed) {
         Q.workers_sapd += 10;
@@ -32,6 +33,7 @@ if (Q.labor_strength < 10) {
     Q.rb_strength -= 500;
 } else if (Q.labor_strength < 40) {
     Q.workers_spd -= 22;
+    Q.workers_spd -= Q.workers_spd * Q.trun_ind_perc
     Q.unemployed_spd -= 12;
     if (Q.sapd_formed) {
         Q.workers_sapd += 12;
@@ -44,6 +46,11 @@ if (Q.labor_strength < 10) {
     Q.rb_strength -= 600;
 } else if (Q.labor_strength < 60) {
     Q.workers_spd -= 24;
+    if (Q.trun_ind_perc > 50) {
+        Q.workers_spd -= Q.workers_spd * Q.trun_ind_perc
+    } else {
+    Q.workers_spd -= Q.workers_spd * (Q.trun_ind_perc * 2)
+    }
     Q.unemployed_spd -= 14;
     if (Q.sapd_formed) {
         Q.workers_sapd += 15;
@@ -55,7 +62,7 @@ if (Q.labor_strength < 10) {
     Q.workers_nsdap += 7;
     Q.rb_strength -= 700;
 } else {
-    Q.workers_spd -= 26;
+    Q.workers_spd -= 36;
     Q.unemployed_spd -= 16;
     if (Q.sapd_formed) {
         Q.workers_sapd += 18;
