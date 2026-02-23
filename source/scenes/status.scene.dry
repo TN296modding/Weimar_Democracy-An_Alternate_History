@@ -412,22 +412,22 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 = Foreign Relations
 
-France: [+ west_relation : foreign_relations +]
+France: [+ west_relation : foreign_relations +] 
 
-Britain: [+ west_relation : foreign_relations +]
+Britain: [+ west_relation : foreign_relations +] 
 
-Netherlands: [+ net_relation : foreign_relations +]
+Netherlands: [+ net_relation : foreign_relations +] 
 
-Belgium: [+ bel_relation : foreign_relations +]
+Belgium: [+ bel_relation : foreign_relations +] 
 
-Luxembourg: [+ lux_relation : foreign_relations +]
+Luxembourg: [+ lux_relation : foreign_relations +] 
 
-Poland: [+ pol_relation : foreign_relations +]
+Poland: [+ pol_relation : foreign_relations +] 
 
-Czeschoslovakia: [+ cze_relation : foreign_relations +]
+Czeschoslovakia: [+ cze_relation : foreign_relations +] 
 
-Lithuania: [+ lit_relation : foreign_relations +]
+Lithuania: [+ lit_relation : foreign_relations +] 
 
-Soviet Union: [+ soviet_relation : foreign_relations +]
+Soviet Union: [+ soviet_relation : foreign_relations +] 
 
-Diplomatic Leverage [+ diplo_lev +]
+Diplomatic Leverage [+ diplo_lev +] 
