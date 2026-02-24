@@ -345,12 +345,18 @@ title: Add other advisors.
 tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor
 frequency: 1
 
-
-- @centrist: Add Centrists
+- @leftcom: Add Left Communists
+- @rightcom: Add Right Communists
 - @left: Add Leftists
+- @centrist: Add Centrists
 - @reformist: Add Reformists
 - @labor: Add Labor
+- @leftnat: Add Left-nationalists
 - @neorev: Add Neorevisionists
+- @rural: Add Rural
+- @liberal: Add Liberals
+- @leftchri: Add Left-Christians
+- @business: Add Business
 - @nonfactional: Add non-factional advisors
 - @rm_main: Remove advisors instead.
 - @remove_none: Stop changing advisors.
@@ -381,11 +387,50 @@ view-if: neorevisionism > 0 and n_advisors < 3
 
 - #neorev_advisor
 
+@leftcom
+view-if: spd_dom_sed > 0 and sed > 0 and n_advisors < 3
+
+- #leftcom_advisor
+
+@rightcom
+view-if: kpo_j_spd > 0 and n_advisors < 3
+
+- #rightcom_advisor
+
+@leftnat
+view-if: aspd_j_spd > 0 and n_advisors < 3
+
+- #aspd_advisor
+
+@rural
+view-if: farmers_j_spd > 0 and n_advisors < 3
+
+- #rural_advisor
+
+@liberal
+view-if: ddp_j_spd > 0 and n_advisors < 3
+
+- #lib_advisor
+
+@leftchris
+view-if: wirth_j_spd > 0 and n_advisors < 3
+
+- #chris_advisor
+
+@business
+view-if: business_j_spd > 0 and n_advisors < 3
+
+- #business_advisor
+
 @nonfactional
 subtitle: Generally disinterested in internal struggles. Reduces faction loyalty decay by 10% for each advisor appointed.
 view-if: n_advisors < 3
 
 - #nonfactional_advisor
+@add_wip
+title: wip_advisor
+subtitle: wip
+tags: leftcom_advisor; rightcom_advisor; aspd_advisor; rural_advisor; lib_advisor; business_advisor; chris_advisor;
 
 @add_hilferding
 title: Rudolf Hilferding
