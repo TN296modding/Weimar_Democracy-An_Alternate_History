@@ -55,7 +55,7 @@ on-arrival: budget -= 1.5; charity += 2; new_middle_spd += 4; old_middle_spd += 
 description
 
 @upper_class_welfare_deduction 
-title: [? if ucwddc = 0 : Provide a tax deduction for donating to the welfare fund ?] [if ucwddc = 1 : Increase the deduction for donating to welfare ?]
+title: [? if ucwddc = 0 : Provide a tax deduction for donating to the welfare fund ?] [? if ucwddc = 1 : Increase the deduction for donating to welfare ?]
 subtitle: -1 budget
 unavailable-subtitle: Not enough budget
 choose-if: budget >= 1
