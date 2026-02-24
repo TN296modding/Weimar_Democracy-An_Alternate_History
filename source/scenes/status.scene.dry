@@ -258,7 +258,7 @@ Q.chrun_tot_perc_dis = (Q.chrun_tot_perc * 100).toFixed(3);
 
 {!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">Reformist</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
 
-{!<span class="tooltip-text" title="Left Nationalists are in favour of Social Democratic policies, in a similar vein to the reformists, however they also have views which are much more socially right-wing. They split from the SPD in 1926 to form the ASPD">Left Nationals</span>!} [? if leftnat_joined = 1 : (Rejoined) ?] strength: [+ left_nat_strength +], dissent: [+ left_nat_dissent +]
+{!<span class="tooltip-text" title="Left Nationalists are in favour of Social Democratic policies, in a similar vein to the reformists, however they also have views which are much more socially right-wing. They split from the SPD in 1926 to form the ASPD">Left Nationals</span>!} [? view-if: aspd_j_spd : [? if leftnat_joined = 1 : (Rejoined) ?] strength: [+ left_nat_strength : strength +], dissent: [+ left_nat_dissent : dissent +] ?]
 
 = Other
 
