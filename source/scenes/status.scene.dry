@@ -266,7 +266,7 @@ Agrarian Socialist (Rural) [? if rural_j_spd = 0 : Status: Support Base ?] [? if
 
 Social Liberal (Liberal) [? if ddp_j_spd = 0 : Status: DDP faction ?] [? if ddp_j_spd = 0 : Status: SPD Faction ?] strength: [+ liberal_strength : strength +], dissent [+ liberal_dissent : dissent +]
 
-Rightcom WIP
+Right Communists [? if kpo_j_spd = 0 and (( year = 1929 and month <= 6) or ( year < 1929 ))  : Status: KPD Faction ?] [? if kpo_j_spd = 0 and (( year = 1929 and month >= 7) or (year >= 1930)) : Status: Kommunistische Partei Deutschlands (Opposition) ;; KPD(O) ?] strength: [+ rightcom_strength : strength +], dissent: [+ rightcom_dissent : dissent +]
 
 Leftcom WIP
 
