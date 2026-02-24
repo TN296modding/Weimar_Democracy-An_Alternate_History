@@ -270,7 +270,7 @@ Right Communists [? if kpo_j_spd = 0 and (( year = 1929 and month <= 6) or ( yea
 
 Leftcom [? if sed_formed = 0 : Status: KPD Faction; ?] [? if sed_formed = 1 : Status: SED Faction; ?] strength: [+ leftcom_strength : strength +], dissent: [+ leftcom_dissent : dissent +]
 
-Left Christian [? if left_chris_spd = 0 and sczp_formed = 0 : Status: Z Faction; ?] [? if sz_formed = 1 : Status: Sozialchristliches Zentrumspartei (SZ); ?] [? if left_chris_spd = 1 and sz_formed = 0 : Status: SPD Faction ?] strength: [+ leftchris_strength : strength +], dissent: [+ leftchris_strength +]
+Left Christian [? if left_chris_spd = 0 and sczp_formed = 0 : Status: Z Faction; ?] [? if sz_formed = 1 : Status: Sozialchristliches Zentrumspartei (SZ); ?] [? if left_chris_spd = 1 and sz_formed = 0 : Status: SPD Faction ?] strength: [+ leftchris_strength : strength +], dissent: [+ leftchris_dissent : dissent +]
 
 = Other
 
