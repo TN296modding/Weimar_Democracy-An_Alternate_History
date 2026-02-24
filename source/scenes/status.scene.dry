@@ -260,11 +260,11 @@ Q.chrun_tot_perc_dis = (Q.chrun_tot_perc * 100).toFixed(3);
 
 {!<span class="tooltip-text" title="Left Nationalists are in favour of Social Democratic policies, in a similar vein to the reformists, however they also have views which are much more socially right-wing. They split from the SPD in 1926 to form the ASPD">Left Nationals</span>!} [? if aspd_j_spd = 1 : Status: ASPD Rejoined ?] [? if aspd_j_spd = 0 : Status: ASPD Independent ?] strength: [+ left_nat_strength : strength +], dissent: [+ left_nat_dissent : dissent +]
 
-Seeheimer Kreis (Business) [? if ddp_j_spd = 0 : Status: Not Formed ?] [? if ddp_j_spd = 1 : Status: Forming ?] [? if ddp_j_spd = 2: Formed ?] strength: [+ business_strength : strength +], dissent: [+ business_dissent : dissent +] 
+Seeheimer Kreis (Business) [? if business_j_spd = 0 : Status: Not Formed ?] [? if business_j_spd = 1 : Status: Forming ?] [? if ddp_j_spd = 2: Formed ?] strength: [+ business_strength : strength +], dissent: [+ business_dissent : dissent +] 
 
-Agrarian Socialists (Rural) [? if rural_j_spd = 0 : Status: Support Base ?] [? if rural j_spd = 0 : Status: Faction ?] strength: [+ rural_strength : strength +], dissent: [+ rural_dissent : dissent +]
+Agrarian Socialist (Rural) [? if rural_j_spd = 0 : Status: Support Base ?] [? if rural j_spd = 0 : Status: Faction ?] strength: [+ rural_strength : strength +], dissent: [+ rural_dissent : dissent +]
 
-Liberal WIP
+Social Liberal (Liberal) [? if ddp_j_spd = 0 : Status: DDP faction ?] [? if ddp_j_spd = 0 : Status: SPD Faction ?] strength: [+ liberal_strength : strength +], dissent [+ liberal_dissent : dissent +]
 
 Rightcom WIP
 
