@@ -260,13 +260,13 @@ Q.chrun_tot_perc_dis = (Q.chrun_tot_perc * 100).toFixed(3);
 
 {!<span class="tooltip-text" title="Left Nationalists are in favour of Social Democratic policies, in a similar vein to the reformists, however they also have views which are much more socially right-wing. They split from the SPD in 1926 to form the ASPD">Left Nationals</span>!} [? if aspd_j_spd = 1 : Status: ASPD Rejoined ?] [? if aspd_j_spd = 0 : Status: ASPD Independent ?] strength: [+ left_nat_strength : strength +], dissent: [+ left_nat_dissent : dissent +]
 
-Seeheimer Kreis (Business) [? if business_j_spd = 0 : Status: Not Formed ?] [? if business_j_spd = 1 : Status: Forming ?] [? if ddp_j_spd = 2: Formed ?] strength: [+ business_strength : strength +], dissent: [+ business_dissent : dissent +] 
+Seeheimer Kreis (Business) [? if business_j_spd = 0 : Status: Not Formed; ?] [? if business_j_spd = 1 : Status: Forming; ?] [? if ddp_j_spd = 2: Formed; ?] strength: [+ business_strength : strength +], dissent: [+ business_dissent : dissent +] 
 
-Agrarian Socialist (Rural) [? if rural_j_spd = 0 : Status: Support Base ?] [? if rural_j_spd = 0 : Status: Faction ?] strength: [+ rural_strength : strength +], dissent: [+ rural_dissent : dissent +]
+Agrarian Socialist (Rural) [? if rural_j_spd = 0 : Status: Support Base; ?] [? if rural_j_spd = 0 : Status: Faction; ?] strength: [+ rural_strength : strength +], dissent: [+ rural_dissent : dissent +]
 
-Social Liberal (Liberal) [? if ddp_j_spd = 0 : Status: DDP faction ?] [? if ddp_j_spd = 0 : Status: SPD Faction ?] strength: [+ liberal_strength : strength +], dissent [+ liberal_dissent : dissent +]
+Social Liberal (Liberal) [? if ddp_j_spd = 0 : Status: DDP faction; ?] [? if ddp_j_spd = 0 : Status: SPD Faction; ?] strength: [+ liberal_strength : strength +], dissent [+ liberal_dissent : dissent +]
 
-Right Communists [? if kpo_j_spd = 0 and (( year = 1929 and month <= 6) or ( year < 1929 ))  : Status: KPD Faction ?] [? if kpo_j_spd = 0 and (( year = 1929 and month >= 7) or (year >= 1930)) : Status: Kommunistische Partei Deutschlands (Opposition) ;; KPD(O) ?] strength: [+ rightcom_strength : strength +], dissent: [+ rightcom_dissent : dissent +]
+Right Communists [? if kpo_j_spd = 0 and (( year = 1929 and month <= 6) or ( year < 1929 ))  : Status: KPD Faction; ?] [? if kpo_j_spd = 0 and (( year = 1929 and month >= 7) or (year >= 1930)) : Status: Kommunistische Partei Deutschlands (Opposition) ;; KPD(O); ?] [? if kpo_j_spd = 1 and spd_dom_sed = 1 : Status: SED Faction; ?] [? if kpo_j_spd = 1 and sed_formed = 0: SPD Faction; ?] strength: [+ rightcom_strength : strength +], dissent: [+ rightcom_dissent : dissent +]
 
 Leftcom WIP
 
