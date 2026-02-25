@@ -76,6 +76,8 @@ Mass rallies are a common feature of <span style="color: #c00000;">social democr
 - @democracy: Expanding our nascent democracy and defending it against <span style="color: #808080;">dictatorship</span> and <span style="color: #7A3C00;">fascism</span>.
 - @pacifism: Opposing war, nationalism, and militarism at all costs.
 - @wtb: Support the WTB plan!
+- @chris: Bring Catholic Workers over to the left.
+- @busilib: Start organizing among Government workers
 - @local: A mixture of various local and national concerns that resonate most with the audience.
 - @easy_discard
 
@@ -113,6 +115,13 @@ on-arrival: workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); rural
 
 The WTB plan has become a popular rallying cry for our party. The workers are eager to go back to work, and that is exactly what the plan promises. [? if not wtb_implemented: However, many still believe that the plan is merely an empty slogan and will remain skeptical until we actually implement it. ?]
 
+@chris
+
+wip
+
+@busilib
+
+wip
 
 @local
 on-arrival: workers_spd += 3*(1-dissent); old_middle_spd += 1*(1-dissent); new_middle_spd += 2*(1-dissent); unemployed_spd += 3*(1-dissent);
