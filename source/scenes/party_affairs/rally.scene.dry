@@ -117,11 +117,13 @@ The WTB plan has become a popular rallying cry for our party. The workers are ea
 
 @chris
 view-if: left_chris_spd = 1
+on-arrival: catholics_spd += 3; catholics_spd += 1 if prussian_concordat = 1; catholics_spd += 2 if reichskonkordat = 1; 
 
 wip
 
 @busilib
 view-if: ddp_j_spd = 1 or business_j_spd
+on-arrival: new_middle_spd += 3; new_middle_spd += 1 if trun_nmc_perc >= 0.01; new_middle_spd += 1 if trun_nmc_perc >= 0.025; new_middle_spd += 1 if trun_nmc_perc >= 0.05; trun_nmc_perc += 0.0075;
 
 wip
 
