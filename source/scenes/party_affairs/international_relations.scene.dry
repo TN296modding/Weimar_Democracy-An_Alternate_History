@@ -17,6 +17,9 @@ At the <span style="color: #D50032;">Labor and Socialist International</span>, w
 - @america: Contact the <span style="color: #940f0f;">Socialist Party of America</span>.
 - @wipsynd: Syndicalism wip
 - @wippol: Polish wip
+- @wipsud: Sudetenland wip
+- @wiplit: Lithuania wip
+- @wipdnz: Danzig wip
 - @return: We do not need international contacts at the moment.
 - @easy_discard
 - @cancel_advisor_action
@@ -72,6 +75,11 @@ view-if: wip = 1
 wip
 
 @wippol
+view-if: wip = 1
+
+wip
+
+@wipsud
 view-if: wip = 1
 
 wip
