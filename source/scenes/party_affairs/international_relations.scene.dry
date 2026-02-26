@@ -16,6 +16,7 @@ At the <span style="color: #D50032;">Labor and Socialist International</span>, w
 - @comintern: Forget the second international - embed a spy in the <span style="color: #D50000;">Comintern</span>'s conference.
 - @america: Contact the <span style="color: #940f0f;">Socialist Party of America</span>.
 - @wipsynd: Syndicalism wip
+- @wippol: Polish wip
 - @return: We do not need international contacts at the moment.
 - @easy_discard
 - @cancel_advisor_action
@@ -66,6 +67,11 @@ on-arrival: resources -= 1
 The <span style="color: #940f0f;">Socialist Party of America</span> is tiny and has limited support. There is not much we can do for them, and conversely, not much they can do for us. WIP syndicalism update in the future
 
 @wipsynd
+view-if: wip = 1
+
+wip
+
+@wippol
 view-if: wip = 1
 
 wip
