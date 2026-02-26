@@ -20,6 +20,8 @@ The <span style="color: #c00000;">**SPD**</span> is torn between many different 
 - @reform: Following Eduard Bernstein, we should work for ethical <span style="color: #c00000;">socialism</span>, strengthen democracy, and expand the party's electorate.
 - @socpat: Pursue the fusion of <span style='color: #c00000;'>socialism</span> and patriotism.
 - @wip1: Syndicalism wip
+- @wip2: Left-communist wip
+- @wip3: Right-communist wip
 - @easy_discard
 
 @class_struggle
@@ -84,6 +86,11 @@ on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; reformis
 We have changed ideologies. Many in the party feel unmoored.
 
 @wip1
-view-if: wip
+view-if: wip = 0
+
+wip
+
+@wip2
+view-if: wip = 0
 
 wip
