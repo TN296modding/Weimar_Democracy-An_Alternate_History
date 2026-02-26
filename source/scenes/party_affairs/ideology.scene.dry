@@ -24,6 +24,7 @@ The <span style="color: #c00000;">**SPD**</span> is torn between many different 
 - @wip3: Right-communist wip
 - @wip4: neorevisionist wip
 - @wip5: rural wip
+- @wip6: liberal wip
 - @easy_discard
 
 @class_struggle
@@ -108,6 +109,11 @@ view-if: wip = 1
 wip
 
 @wip5
+view-if: wip = 1
+
+wip
+
+@wip6
 view-if: wip = 1
 
 wip
