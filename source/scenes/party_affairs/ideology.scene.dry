@@ -82,3 +82,8 @@ The social patriot wing of the party, widely regarded as Schleicher's puppets, i
 on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; reformist_dissent += 5
 
 We have changed ideologies. Many in the party feel unmoored.
+
+@wip1
+view-if: wip
+
+wip
