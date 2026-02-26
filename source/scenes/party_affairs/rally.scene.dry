@@ -122,7 +122,7 @@ on-arrival: catholics_spd += 3; catholics_spd += 1 if prussian_concordat = 1; ca
 Our speakers appeal to the "<span style="color: #000000;">so</span><span style="color: #DD0000;">ci</span><span style="color: #FFCC00;">al</span> <span style="color: #32CD32;">chris</span><span style="color: #000000;">tian</span>" audience, that has since left the [+ z_party_name +], and been left party-less
 
 @busilib
-view-if: ddp_j_spd = 1 or business_j_spd =1
+view-if: ddp_j_spd = 1 or business_j_spd = 1 or wip = 0
 on-arrival: new_middle_spd += 3; new_middle_spd += 1 if trun_nmc_perc >= 0.01; new_middle_spd += 1 if trun_nmc_perc >= 0.025; new_middle_spd += 1 if trun_nmc_perc >= 0.05; trun_nmc_perc += 0.0075;
 
 wip
