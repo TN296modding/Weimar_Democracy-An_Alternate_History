@@ -19,6 +19,18 @@ In addition to being a political party, the <span style="color: #c00000;">**SPD*
 - @youth: We have the reputation of being a party for old men. Support the youth organizations.
 - @wip1: Fund our think tank, the Friedrich Ebert Foundation
 - @wip2: Fund the Iron Front
+- @wip3: Fund Local Branches
+- @wip4: Fund Union and Labour Lawyers
+- @wip5: Fund an SPD-centred union
+- @wip6: Fund the ASBD (Arbeiter-Samariter-Bund-Deutschland), a workers and medical aid organisation
+- @wip7: Fund Co-ops with Party resources
+- @wip8: Fund Food & Water relief
+- @wip9: Fund Childcare programs
+- @wip10: Fund apprenticeships with PArty resources
+- @wip11: Fund Libraries and other item-lenders
+- @wip12: Fund eldercare
+
+
 - @nothing: Do not increase funding for any program.
 - @easy_discard
 
@@ -82,6 +94,56 @@ wip
 wip
 
 @wip2
+view-if: wip = 1
+
+wip
+
+@wip3
+view-if: wip = 1
+
+wip
+
+@wip4
+view-if: wip = 1
+
+wip
+
+@wip5
+view-if: wip = 1
+
+wip
+
+@wip6
+view-if: wip = 1
+
+wip
+
+@wip7
+view-if: wip = 1
+
+wip
+
+@wip8
+view-if: wip = 1
+
+wip
+
+@wip9
+view-if: wip = 1
+
+wip
+
+@wip10
+view-if: wip = 1
+
+wip
+
+@wip11
+view-if: wip = 1
+
+wip
+
+@wip12
 view-if: wip = 1
 
 wip
