@@ -156,6 +156,30 @@ if (Q.reichswehr_strength < 0) {
 if (Q.pro_republic >= 100) {
     Q.pro_republic = 99;
 }
+// math.randoms
+if (Q.randomwest >= 1) {
+    Q.randomwest = 0
+    Q.west_relation += 1
+}
+if (Q.randomwest == 0 && Math.random() <0.1) {
+    Q.randomwest = 1
+}
+if (Q.randomeast >= 1) {
+    Q.randomeast = 0
+    Q.east_relation += 1
+}
+if (Q.randomeast == 0 && Math.random() <0.1) {
+    Q.randomeast = 1
+}
+if (Q.randomlow >= 1) {
+    Q.randomlow = 0
+    Q.bel_relation += 1
+    Q.lux_relation += 1
+    Q.net_relation += 1
+}
+if (Q.randomlow == 0 && Math.random() <0.1) {
+    Q.randomlow = 1
+}
 // re-calculate party support
 // calculate normalized class voting for the achievements
 for (var c of Q.classes) {
