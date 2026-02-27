@@ -79,6 +79,8 @@ Mass rallies are a common feature of <span style="color: #c00000;">social democr
 - @chris: Bring Catholic Workers over to the left.
 - @busilib: Start organizing among Government workers
 - @local: A mixture of various local and national concerns that resonate most with the audience.
+- @wip: Out of government rallies
+- @wip1a: Rally against the KPD
 - @easy_discard
 
 @class_struggle
@@ -131,3 +133,42 @@ We begin to organize government workers, bringing them away from the <span style
 on-arrival: workers_spd += 3*(1-dissent); old_middle_spd += 1*(1-dissent); new_middle_spd += 2*(1-dissent); unemployed_spd += 3*(1-dissent);
 
 Our speakers have gauged the mood and are speaking to the issues that seem to most affect the workers in this moment.
+
+@wip
+view-if: wip = 1
+
+- @wip1: Rally for solidarity among striking workers
+- @wip2: Rally for an Economic plan
+- @wip3: Rally for land reform
+- @wip4: Rally for higher wages
+- @wip5: Rally against Emergency Decree and Brünings minority Government
+
+@wip1
+view-if: wip = 1
+
+wip
+
+@wip2
+view-if: wip = 1
+
+wip
+
+@wip3
+view-if: wip = 1
+
+wip
+
+@wip4
+view-if: wip = 1
+
+wip
+
+@wip5
+view-if: wip = 1
+
+wip
+
+@wip1a
+view-if: wip = 1
+
+wip
