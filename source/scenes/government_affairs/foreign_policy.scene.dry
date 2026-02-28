@@ -75,7 +75,7 @@ What should our foreign policy priority be?
 - @european_union_2
 - @expand_eu_west: Expand the EU to include [? if spa_republican = 1 : Spain ?], [? if por_republican = 1 : Portugal ?], [? if swi_republican = 1 and swi_neutral = 0 : Switzerland ?], and [? if aus_democratic = 1 : Austria ?]
 - @expand_eu_east: Expand the EU to include [? if yugo_republican = 1 : Yugoslavia ?], [? if alb_republican = 1 and alb_recognised = 1 : Albania ?], [? if gre_republican = 1 : Greece ?], [? if bul_republican = 1 : Bulgaria ?], and [? if rom_republican = 1 : Romania ?]
-- @expand_eu_baltics_nordics: Expand the EU to include Lithuania, Latvia, Estonia, Finland, Sweden, Norway, Denmark, and Iceland
+- @expand_eu_baltics_nordics: Expand the EU to include [? if lit_republican = 1 : Lithuania ?], [? if lat_republican = 1 : Latvia ?], [? if est_republican = 1 : Estonia ?], [? if fin_republican = 1 : Finland ?], [? if swe_republican = 1 : Sweden ?], [? if nor_republican = 1 : Norway ?], [? if den_republican = 1 : Denmark ?], and [? if ice_republican = 1 : Iceland ?]
 - @expand_eu_soviet_dissolved: Expand the EU to include Belarus, and Ukraine
 - @expand_eu_caucasia: Expand the EU to include Georgia, Chechnya, Azerbaijan, and Armenia
 - @expand_eu_isles: Expand the EU to include Britain, and Ireland
