@@ -45,7 +45,7 @@ What should our foreign policy priority be?
 - @improve_swe
 - @improve_nor
 - @improve_ice
-- @improve_bel
+- @improve_blr
 - @improve_ukr
 - @improve_geo
 - @improve_che
@@ -76,10 +76,10 @@ What should our foreign policy priority be?
 - @expand_eu_west: Expand the EU to include [? if spa_republican = 1 : Spain ?], [? if por_republican = 1 : Portugal ?], [? if swi_republican = 1 and swi_neutral = 0 : Switzerland ?], and [? if aus_democratic = 1 : Austria ?]
 - @expand_eu_east: Expand the EU to include [? if yugo_republican = 1 : Yugoslavia ?], [? if alb_republican = 1 and alb_recognised = 1 : Albania ?], [? if gre_republican = 1 : Greece ?], [? if bul_republican = 1 : Bulgaria ?], and [? if rom_republican = 1 : Romania ?]
 - @expand_eu_baltics_nordics: Expand the EU to include [? if lit_republican = 1 : Lithuania ?], [? if lat_republican = 1 : Latvia ?], [? if est_republican = 1 : Estonia ?], [? if fin_republican = 1 : Finland ?], [? if swe_republican = 1 : Sweden ?], [? if nor_republican = 1 : Norway ?], [? if den_republican = 1 : Denmark ?], and [? if ice_republican = 1 : Iceland ?]
-- @expand_eu_soviet_dissolved: Expand the EU to include Belarus, and Ukraine
-- @expand_eu_caucasia: Expand the EU to include Georgia, Chechnya, Azerbaijan, and Armenia
-- @expand_eu_isles: Expand the EU to include Britain, and Ireland
-- @expand_eu_microstates: Expand the EU to include San Marino, the Vatican, Liechtenstein, Andorra, and Monaco
+- @expand_eu_soviet_dissolved: Expand the EU to include [? if blr_formed = 1 and blr_republican = 1 : Belarus ?], and [? if ukr_formed = 1 and ukr_republican = 1 : Ukraine ?]
+- @expand_eu_caucasia: Expand the EU to include [? if geo_formed = 1 and geo_republican = 1 : Georgia ?], [? che_formed = 1 and che_republican = 1 : Chechnya ?], [? if azr_formed = 1 and azr_republican = 1 : Azerbaijan ?], and [? if arm_formed = 1 and arm_republican = 1 : Armenia ?]
+- @expand_eu_isles: Expand the EU to include [? if bri_republican : Britain ?], and [? if ire_republican = 1 : Ireland ?]
+- @expand_eu_microstates: Expand the EU to include [? if san_mar_republican = 1 : San Marino ?], the [? if vat_formed = 1 and vat_republican = 1 and reichskonkordat = 1 : Vatican ?], [? if lic_republican = 1 : Liechtenstein ?], [? if and_republican = 1 : Andorra ?], and [? if mor_republican = 1 : Monaco ?]
 - @federalize_eu: Federalize the EU into one state
 - @concordat_negotiate
 - @concordat
