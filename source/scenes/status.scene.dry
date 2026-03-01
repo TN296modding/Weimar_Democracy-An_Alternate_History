@@ -445,6 +445,9 @@ Soviet Union: [+ soviet_relation : foreign_relations +]
 Diplomatic Leverage [+ diplo_lev +] 
 
 @domestic_tab
+on-arrival: {!
+Q.food_national = (Q.state_buyer/4) + (Q.socializations/2)
+}
 
 = Domestic Affairs
 
@@ -458,4 +461,4 @@ Rural Affairs:
 
     State Buyer: [? if state_buyer = 0 : Not Established ?][? if state_buyer = 1 : Established ?]
 
-    Food Market Nationalization: wip
+    Food Market Nationalization: [+ food_national : government_food_markets +]
