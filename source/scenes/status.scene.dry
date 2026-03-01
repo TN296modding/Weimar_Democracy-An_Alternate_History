@@ -443,3 +443,7 @@ Lithuania: [+ lit_relation : foreign_relations +]
 Soviet Union: [+ soviet_relation : foreign_relations +] 
 
 Diplomatic Leverage [+ diplo_lev +] 
+
+@domestic_tab
+
+= Domestic Affairs
