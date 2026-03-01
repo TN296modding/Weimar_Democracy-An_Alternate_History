@@ -446,8 +446,8 @@ Diplomatic Leverage [+ diplo_lev +]
 
 @domestic_tab
 on-arrival: {!
-Q.food_national = (Q.state_buyer/4) + (Q.socializations/2)
-}
+Q.food_national = (Q.state_buyer/4) + (Q.socializations/2);
+!}
 
 = Domestic Affairs
 
