@@ -58,6 +58,18 @@ on-arrival: upper_tax_rates += 1; capital_strike_progress += 1; capital_strike_p
 
 Raising taxes on the rich is popular among our base, but it alienates the bourgeoisie. Increasing taxes also decreases economic demand, which may lead to more unemployment. [? if in_grand_coalition or in_weimar_coalition: Furthermore, the liberals in our governing coalition will also face backlash from their support base for participating in the government that increases their own taxes. ?]
 
+@raise_big_bus
+
+wip
+
+@raise_business
+
+wip
+
+@raise_small_bus
+
+wip
+
 @raise_middle
 title: Raise taxes on the middle class
 subtitle: +2 budget. This will greatly anger the Bourgeois-Liberal parties.
