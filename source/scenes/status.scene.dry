@@ -440,15 +440,81 @@ Portugal: [+ por_relation : foreign_relations +]
 
 Spain: [+ spa_relation : foreign_relations +]
 
-Eastern European Countries:
+(PO)Eas(CZ)te(SV)rn European Countries:
 
 Poland: [+ pol_relation : foreign_relations +] 
 
 Czeschoslovakia: [+ cze_relation : foreign_relations +] 
 
+Soviet Union: [+ soviet_relation : foreign_relations +]
+
+(LI)Ba(LA)lt(ES)ic Countries:
+
 Lithuania: [+ lit_relation : foreign_relations +] 
 
-Soviet Union: [+ soviet_relation : foreign_relations +] 
+Latvia: [+ lat_relation : foreign_relations +]
+
+Estonia: [+ est_relation : foreign_relations +]
+
+(NO)Sca(SW)ndi(FI)nav(DE)ian Countries:
+
+Norway: [+ nor_relation : foreign_relations +]
+
+Sweden: [+ swe_relation : foreign_relation +]
+
+Finland: [+ fin_relation : foreign_relation +]
+
+Denmark: [+ den_relation : foreign_relation +]
+
+(UR)Po(BR)st-(GE)So(CH)v(AZ)ie(AR)t Countries
+
+Ukraine:
+
+Belarus:
+
+Georgia:
+
+Chechnya:
+
+Azerbaijan:
+
+Armenia:
+
+(YU)B(BU)a(HU)l(AL)k(RO)a(GR)n Countries:
+
+Yugoslavia:
+
+Bulgaria:
+
+Hungary:
+
+Albania:
+
+Romania:
+
+Greece:
+
+Other Countries:
+
+Iceland: [+ ice_relation : foreign_relation +]
+
+Ireland:
+
+Lichtenstein:
+
+San Marino:
+
+Vatican:
+
+Andorra:
+
+Monaco:
+
+Italy:
+
+Switzerland:
+
+Austria:
 
 Diplomatic Leverage [+ diplo_lev +] 
 
