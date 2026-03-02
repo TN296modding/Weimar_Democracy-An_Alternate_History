@@ -41,7 +41,7 @@ on-arrival: budget -= 1; agricultural_finance += 1; rural_spd += 5*(1-dissent); 
 We have increased financial support for small farmers, providing access to credit and insurance, saving them from privation. The left and center of our party are opposed to our rural policy, seeing these policies as giveaways to petit-bourgeois farmers.
 
 
-@pro_consumer
+@food_prices
 title: Food Procurement
 subtitle: -1 budget - Provide inexpensive food for workers.
 choose-if: budget >= 1
