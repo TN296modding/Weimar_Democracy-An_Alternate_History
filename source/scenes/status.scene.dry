@@ -260,11 +260,11 @@ Q.chrun_tot_perc_dis = (Q.chrun_tot_perc * 100).toFixed(3);
 
 {!<span class="tooltip-text" title="Left Nationalists are in favour of Social Democratic policies, in a similar vein to the reformists, however they also have views which are much more socially right-wing. They split from the SPD in 1926 to form the ASPD">Left Nationals</span>!} [? if aspd_j_spd = 1 : Status: ASPD Rejoined ?] [? if aspd_j_spd = 0 : Status: ASPD Independent ?] strength: [+ left_nat_strength : strength +], dissent: [+ left_nat_dissent : dissent +]
 
-Seeheimer Kreis (Business) [? if business_j_spd = 0 : Status: Not Formed; ?] [? if business_j_spd = 1 : Status: Forming; ?] [? if ddp_j_spd = 2: Formed; ?] strength: [+ business_strength : strength +], dissent: [+ business_dissent : dissent +] 
+Seeheimer Kreis (Business) [? if business_j_spd = 0 : Status: Not Formed; ?] [? if business_j_spd = 1 : Status: Forming; ?] [? if business_j_spd = 2: Formed; ?] strength: [+ business_strength : strength +], dissent: [+ business_dissent : dissent +] 
 
-Agrarian Socialist (Rural) [? if rural_j_spd = 0 : Status: Support Base; ?] [? if rural_j_spd = 0 : Status: Faction; ?] strength: [+ rural_strength : strength +], dissent: [+ rural_dissent : dissent +]
+Agrarian Socialist (Rural) [? if rural_j_spd = 0 : Status: Support Base; ?] [? if rural_j_spd = 1 : Status: Faction; ?] strength: [+ rural_strength : strength +], dissent: [+ rural_dissent : dissent +]
 
-Social Liberal (Liberal) [? if ddp_j_spd = 0 : Status: DDP faction; ?] [? if ddp_j_spd = 0 : Status: SPD Faction; ?] strength: [+ liberal_strength : strength +], dissent [+ liberal_dissent : dissent +]
+Social Liberal (Liberal) [? if ddp_j_spd = 0 : Status: DDP faction; ?] [? if ddp_j_spd = 1 : Status: SPD Faction; ?] strength: [+ liberal_strength : strength +], dissent: [+ liberal_dissent : dissent +]
 
 Right Communists [? if kpo_j_spd = 0 and (( year = 1929 and month <= 6) or ( year < 1929 ))  : Status: KPD Faction; ?] [? if kpo_j_spd = 0 and (( year = 1929 and month >= 7) or (year >= 1930)) : Status: Kommunistische Partei Deutschlands (Opposition) ;; KPD(O); ?] [? if kpo_j_spd = 1 and spd_dom_sed = 1 : Status: SED Faction; ?] [? if kpo_j_spd = 1 and sed_formed = 0: SPD Faction; ?] strength: [+ rightcom_strength : strength +], dissent: [+ rightcom_dissent : dissent +]
 
@@ -290,9 +290,9 @@ IWW Unionised New Middle Class: [+ iww_nmc_perc : trun_amnt +] ( [+ iww_nmc_perc
 
 IWW Unionised Farmworkers: [+ iww_rur_perc : trun_amnt +] ( [+ iww_rur_perc_dis +] % ) 
 
-IWW Unionised Unemployed [+ iww_unm_perc : trun_amnt +] ( [+ iww_unm_perc_dis +] % ) 
+IWW Unionised Unemployed: [+ iww_unm_perc : trun_amnt +] ( [+ iww_unm_perc_dis +] % ) 
 
-Christian Unionised Workers [+ chrun_tot_perc : trun_amnt +] ( [+ chrun_tot_perc_dis +] % )
+Christian Unionised Workers: [+ chrun_tot_perc : trun_amnt +] ( [+ chrun_tot_perc_dis +] % )
 
 @paramilitaries
 on-arrival: {!
@@ -424,7 +424,7 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 = Foreign Relations
 
-(FR)W(UK)e(NT)s(BL)t(LX)e(PR)r(SP)n European Countries:
+= (FR)W(UK)e(NT)s(BL)t(LX)e(PR)r(SP)n European Countries:
 
 France: [+ fra_relation : foreign_relations +] 
 
@@ -440,7 +440,7 @@ Portugal: [+ por_relation : foreign_relations +]
 
 Spain: [+ spa_relation : foreign_relations +]
 
-(PO)Eas(CZ)te(SV)rn European Countries:
+= (PO)Eas(CZ)te(SV)rn European Countries:
 
 Poland: [+ pol_relation : foreign_relations +] 
 
@@ -448,7 +448,7 @@ Czeschoslovakia: [+ cze_relation : foreign_relations +]
 
 Soviet Union: [+ soviet_relation : foreign_relations +]
 
-(LI)Ba(LA)lt(ES)ic Countries:
+= (LI)Ba(LA)lt(ES)ic Countries:
 
 Lithuania: [+ lit_relation : foreign_relations +] 
 
@@ -456,7 +456,7 @@ Latvia: [+ lat_relation : foreign_relations +]
 
 Estonia: [+ est_relation : foreign_relations +]
 
-(NO)Sca(SW)ndi(FI)nav(DE)ian Countries:
+= (NO)Sca(SW)ndi(FI)nav(DE)ian Countries:
 
 Norway: [+ nor_relation : foreign_relations +]
 
@@ -466,7 +466,7 @@ Finland: [+ fin_relation : foreign_relations +]
 
 Denmark: [+ den_relation : foreign_relations +]
 
-(UR)Po(BR)st-(GE)So(CH)v(AZ)ie(AR)t Countries
+= (UR)Po(BR)st-(GE)So(CH)v(AZ)ie(AR)t Countries
 
 Ukraine: [+ ukr_relation : foreign_relations +]
 
@@ -480,7 +480,7 @@ Azerbaijan: [+ azr_relation : foreign_relations +]
 
 Armenia: [+ arm_relation : foreign_relations +]
 
-(YU)B(BU)a(HU)l(AL)k(RO)a(GR)n Countries:
+= (YU)B(BU)a(HU)l(AL)k(RO)a(GR)n Countries:
 
 Yugoslavia: [+ yug_relation : foreign_relations +]
 
@@ -494,7 +494,7 @@ Romania: [+ rom_relation : foreign_relations +]
 
 Greece: [+ gre_relation : foreign_relations +]
 
-Other Countries:
+= Other Countries:
 
 Iceland: [+ ice_relation : foreign_relations +]
 
