@@ -62,7 +62,7 @@ Raising taxes on the rich is popular among our base, but it alienates the bourge
 title: Raise taxes on the middle class
 subtitle: +2 budget. This will greatly anger the Bourgeois-Liberal parties.
 choose-if: middle_tax_rates <= 5
-on-arrival: middle_tax_rates += 1; capital_strike_progress += 1; new_middle_spd -= 7; old_middle_spd -= 7; ddp_relation -= 10; z_relation -= 15; dvp_relation -= 20; coalition_dissent += 3 if in_grand_coalition = 1; coaltion_dissent += 2 if in_weimar_coaltion; coalition_dissent += 1 if in_social_christian_coaltion; coalition_dissent += 3 if in_social_liberal_coaltion; new_middle_ddp -= 3 if in_grand_coaltion = 1 and coaltion_dissent <= 4; new_middle_dvp -= 3 if in_grand_coalition and coalition dissent <=4; kpd_relation += 10; budget += 2
+on-arrival: middle_tax_rates += 1; capital_strike_progress += 1; new_middle_spd -= 7; old_middle_spd -= 7; ddp_relation -= 10; z_relation -= 15; dvp_relation -= 20; coalition_dissent += 3 if in_grand_coalition = 1; coaltion_dissent += 2 if in_weimar_coaltion; coalition_dissent += 1 if in_social_christian_coaltion = 1; coalition_dissent += 3 if in_social_liberal_coaltion; new_middle_ddp -= 3 if in_grand_coaltion = 1 and coaltion_dissent <= 4; new_middle_dvp -= 3 if in_grand_coalition and coalition dissent <=4; kpd_relation += 10; budget += 2
 
 Raising taxes on the middle class is popular with nobody except the KPD, who praises us for 'Reducing the power of the Petit-Bourgeois'. Our [? if in_grand_coalition or in_weimar_coaltion : Bourgeois-Liberal allies are understandably enraged with us and are threatening to bring down the coaltion, especially after some of their already-small support base deserts them ?].
 
