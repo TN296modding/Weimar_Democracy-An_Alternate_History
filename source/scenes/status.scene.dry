@@ -460,61 +460,61 @@ Estonia: [+ est_relation : foreign_relations +]
 
 Norway: [+ nor_relation : foreign_relations +]
 
-Sweden: [+ swe_relation : foreign_relation +]
+Sweden: [+ swe_relation : foreign_relations +]
 
-Finland: [+ fin_relation : foreign_relation +]
+Finland: [+ fin_relation : foreign_relations +]
 
-Denmark: [+ den_relation : foreign_relation +]
+Denmark: [+ den_relation : foreign_relations +]
 
 (UR)Po(BR)st-(GE)So(CH)v(AZ)ie(AR)t Countries
 
-Ukraine:
+Ukraine: [+ ukr_relation : foreign_relations +]
 
-Belarus:
+Belarus: [+ blr_relation : foreign_relations +]
 
-Georgia:
+Georgia: [+ geo_relation : foreign_relations +]
 
-Chechnya:
+Chechnya: [+ che_relation : foreign_relations +]
 
-Azerbaijan:
+Azerbaijan: [+ azr_relation : foreign_relations +]
 
-Armenia:
+Armenia: [+ arm_relation : foreign_relations +]
 
 (YU)B(BU)a(HU)l(AL)k(RO)a(GR)n Countries:
 
-Yugoslavia:
+Yugoslavia: [+ yug_relation : foreign_relations +]
 
-Bulgaria:
+Bulgaria: [+ bul_relation : foreign_relations +]
 
-Hungary:
+Hungary: [+ hun_relation : foreign_relations +]
 
-Albania:
+Albania: [+ alb_relation : foreign_relations +]
 
-Romania:
+Romania: [+ rom_relation : foreign_relations +]
 
-Greece:
+Greece: [+ gre_relation : foreign_relations +]
 
 Other Countries:
 
-Iceland: [+ ice_relation : foreign_relation +]
+Iceland: [+ ice_relation : foreign_relations +]
 
-Ireland:
+Ireland: [+ ire_relation : foreign_relations +]
 
-Lichtenstein:
+Lichtenstein: [+ lic_relation : foreign_relations +]
 
-San Marino:
+San Marino: [+ san_mar_relation : foreign_relations +]
 
-Vatican:
+Vatican: [+ vat_relation : foreign_relations +]
 
-Andorra:
+Andorra: [+ and_relation : foreign_relations +]
 
-Monaco:
+Monaco: [+ mon_relation : foreign_relations +]
 
-Italy:
+Italy: [+ ita_relation : foreign_relations +]
 
-Switzerland:
+Switzerland: [+ swi_relation : foreign_relations +]
 
-Austria:
+Austria: [+ aus_relation : foreign_relations +]
 
 Diplomatic Leverage [+ diplo_lev +] 
 
