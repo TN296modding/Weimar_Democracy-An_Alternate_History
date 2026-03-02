@@ -422,6 +422,7 @@ on-arrival: bri_relation += 1; ire_relation += 1; net_relation += 1; bel_relatio
 wip
 
 @improve_isles
+title: Improve relations with the island nations of the North Sea
 on-arrival: bri_relation += 1.5; ire_relation += 1.5; ice_relation += 1.5;
 
 @improve_soviet_eco
