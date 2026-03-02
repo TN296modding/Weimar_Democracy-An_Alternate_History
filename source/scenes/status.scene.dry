@@ -456,15 +456,15 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 <span style="color: #0072CE;">Estonia</span>: [+ est_relation : foreign_relations +]
 
-<span style="color: #00205B;">Sca</span><span style="color: #FECC02;">ndi</span>(FI)<span style="color: #002F6C;">nav</span>(DE)<span style="color: #C8102E;">ian</span> Countries:
+<span style="color: #00205B;">Sca</span><span style="color: #FECC02;">ndi</span><span style="color: #002F6C;">nav</span><span style="color: #C8102E;">ian</span> Countries:
 
-Norway: [+ nor_relation : foreign_relations +]
+<span style="color: #00205B;">Norway</span>: [+ nor_relation : foreign_relations +]
 
-Sweden: [+ swe_relation : foreign_relations +]
+<span style="color: #FECC02;">Sweden</span>: [+ swe_relation : foreign_relations +]
 
-Finland: [+ fin_relation : foreign_relations +]
+<span style="color: #002F6C;">Finland</span>: [+ fin_relation : foreign_relations +]
 
-Denmark: [+ den_relation : foreign_relations +]
+<span style="color: #C8102E;">Denmark</span>: [+ den_relation : foreign_relations +]
 
 (UR)Po(BR)st-(GE)So(CH)v(AZ)ie(AR)t Countries
 
