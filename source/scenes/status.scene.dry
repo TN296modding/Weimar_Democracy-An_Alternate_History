@@ -456,7 +456,7 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 <span style="color: #0072CE;">Estonia</span>: [+ est_relation : foreign_relations +]
 
-(NO)Sca(SW)ndi(FI)nav(DE)ian Countries:
+<span style="color: #00205B;">Sca</span><span style="color: #FECC02;">ndi</span>(FI)<span style="color: #002F6C;">nav</span>(DE)<span style="color: #C8102E;">ian</span> Countries:
 
 Norway: [+ nor_relation : foreign_relations +]
 
