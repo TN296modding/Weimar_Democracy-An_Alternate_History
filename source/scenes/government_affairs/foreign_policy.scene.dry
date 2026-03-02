@@ -314,11 +314,40 @@ on-arrival: den_relation += 2
 wip
 
 @improve_blr
+title: Improve relations with the Belarussians
+on-arrival: blr_relation += 2
+
+wip
+
 @improve_ukr
+title: Improve relations with the Ukrainians
+on-arrival: ukr_relation += 2
+
+wip
+
 @improve_geo
+title: Improve relations with the Georgians
+on-arrival: geo_relation += 2
+
+wip
+
 @improve_che
+title: Improve relations with the Chechnyans
+on-arrival: che_relation += 2
+
+wip
+
 @improve_azr
+title: Improve relations with the Azerbaijani
+on-arrival: azr_relation += 2
+
+wip
+
 @improve_arm
+title: Improve relations with the Armenians
+on-arrival: arm_relation += 2
+
+wip
 
 @improve_san_mar
 title: Improve relations with the Sammarinese
