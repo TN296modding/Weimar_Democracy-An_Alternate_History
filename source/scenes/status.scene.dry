@@ -442,19 +442,19 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 <span style="color: #DC143C;">EAS</span><span style="color: #11457e;">TE</span><span style="color: #CC0000;">RN</span> European Countries:
 
-Poland: [+ pol_relation : foreign_relations +] 
+<span style="color: #DC143C;">Poland</span>: [+ pol_relation : foreign_relations +] 
 
-Czeschoslovakia: [+ cze_relation : foreign_relations +] 
+<span style="color: #11457e;">Czechoslovakia</span>: [+ cze_relation : foreign_relations +] 
 
-Soviet Union: [+ soviet_relation : foreign_relations +]
+<span style="color: #CC0000;">Soivet Union</span>: [+ soviet_relation : foreign_relations +]
 
-<span style="color: #FFB81C;">Ba</span><span style="color: #A4343A;">lt</span><span style="color: #0072CE;">ic</span> Countries:
+<span style="color: #FFB81C;">BA</span><span style="color: #A4343A;">LT</span><span style="color: #0072CE;">IC</span> Countries:
 
-Lithuania: [+ lit_relation : foreign_relations +] 
+<span style="color: #FFB81C;">Lithuania</span>: [+ lit_relation : foreign_relations +] 
 
-Latvia: [+ lat_relation : foreign_relations +]
+<span style="color: #A4343A;">Lativa</span>: [+ lat_relation : foreign_relations +]
 
-Estonia: [+ est_relation : foreign_relations +]
+<span style="color: #0072CE;">Estonia</span>: [+ est_relation : foreign_relations +]
 
 (NO)Sca(SW)ndi(FI)nav(DE)ian Countries:
 
