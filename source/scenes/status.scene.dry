@@ -440,7 +440,7 @@ Portugal: [+ por_relation : foreign_relations +]
 
 Spain: [+ spa_relation : foreign_relations +]
 
-(PO)Eas(CZ)te(SV)rn European Countries:
+<span style="color: #DC143C;">EAS</span><span style="color: #11457e;">TE</span>(SV)<span style="color: #CC0000;">RN</span> European Countries:
 
 Poland: [+ pol_relation : foreign_relations +] 
 
@@ -448,7 +448,7 @@ Czeschoslovakia: [+ cze_relation : foreign_relations +]
 
 Soviet Union: [+ soviet_relation : foreign_relations +]
 
-(LI)Ba(LA)lt(ES)ic Countries:
+<span style="color: #FFB81C;">Ba</span><span style="color: #A4343A;">lt</span><span style="color: #0072CE;">ic</span> Countries:
 
 Lithuania: [+ lit_relation : foreign_relations +] 
 
