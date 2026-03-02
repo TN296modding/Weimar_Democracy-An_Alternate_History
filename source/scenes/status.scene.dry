@@ -424,15 +424,23 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 = Foreign Relations
 
-France: [+ west_relation : foreign_relations +] 
+(FR)W(UK)e(NT)s(BL)t(LX)e(PR)r(SP)n European Countries:
 
-Britain: [+ west_relation : foreign_relations +] 
+France: [+ fra_relation : foreign_relations +] 
+
+Britain: [+ bri_relation : foreign_relations +] 
 
 Netherlands: [+ net_relation : foreign_relations +] 
 
 Belgium: [+ bel_relation : foreign_relations +] 
 
 Luxembourg: [+ lux_relation : foreign_relations +] 
+
+Portugal: [+ por_relation : foreign_relations +]
+
+Spain: [+ spa_relation : foreign_relations +]
+
+Eastern European Countries:
 
 Poland: [+ pol_relation : foreign_relations +] 
 
