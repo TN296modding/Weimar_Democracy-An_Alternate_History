@@ -421,11 +421,7 @@ Unemployed: [? if dnef_formed: DNEF: [+ unemployed_dnef_display +]%, ?]SPD: [+ u
 Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ catholics_spd_display +]%, [+ z_party_name +]: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ catholics_ddp_display +]%, [? if dvp_exist: DVP: [+ catholics_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ catholics_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ catholics_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ catholics_dnf_display +]%  ?][? if kvp_formed: KVP: [+ catholics_kvp_display +]%  ?]NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]%
 
 @foreign_tab
-on-arrival: {!
-Q.debugfor = 1;
-if (Q.debugfor == 1) Q.fra_relation = 5;
-if (Q.debugfor == 0) Q.fra_relation = 5;
-!}
+on-arrival:
 
 = Foreign Relations
 
@@ -435,7 +431,7 @@ if (Q.debugfor == 0) Q.fra_relation = 5;
 
 <span style="color: #C8102E;">Britain</span>: [? if bri_relation <= -3 : {!<span style="color: #FF0000;">!}[+ bri_relation : foreign_relations +]{!</span>!} ?][? if bri_relation >= -2 and bri_relation <= 2 : {!<span style="color: #FFE000;">!}[+ bri_relation : foreign_relations +]{!</span>!} ?][? if bri_relation >= 3 : {!<span style="color: #00B300;">!}[+ bri_relation : foreign_relations +]{!</span>!} ?]
 
-<span style="color: #003DA5;">Netherlands</span>: [+ net_relation : foreign_relations +] 
+<span style="color: #003DA5;">Netherlands</span>: [? if net_relation <= -3 : {!<span style="color: #FF0000;">!}[+ net_relation : foreign_relations +]{!</span>!} ?][? if net_relation >= -2 and net_relation <= 2 : {!<span style="color: #FFE000;">!}[+ net_relation : foreign_relations +]{!</span>!} ?][? if net_relation >= 3 : {!<span style="color: #00B300;">!}[+ net_relation : foreign_relations +]{!</span>!} ?] 
 
 <span style="color: #FFCD00;">Belgium</span>: [+ bel_relation : foreign_relations +] 
 
