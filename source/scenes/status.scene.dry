@@ -423,8 +423,8 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 @foreign_tab
 on-arrival: {!
 Q.debugfor = 1;
-if (Q.debugfor == 1) Q.fra_relation += 5;
-if (Q.debugfor == 0) Q.fra_relation -= 5;
+if (Q.debugfor == 1) Q.fra_relation = 5;
+if (Q.debugfor == 0) Q.fra_relation = 5;
 !}
 
 = Foreign Relations
