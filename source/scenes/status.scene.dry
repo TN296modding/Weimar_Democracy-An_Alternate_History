@@ -466,19 +466,19 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 <span style="color: #C8102E;">Denmark</span>: [+ den_relation : foreign_relations +]
 
-(UR)Po(BR)st-(GE)So(CH)v(AZ)ie(AR)t Countries
+<span style="color: #FFDD00;">Po</span><span style="color: #00AF66;">st</span><span style="color: #DA291C;">-S</span><span style="color: #2B7338;">ov</span><span style="color: #0092BC;">ie</span><span style="color: #FF9E1B;">t</span> Countries
 
-Ukraine: [+ ukr_relation : foreign_relations +]
+<span style="color: #FFDD00;">Ukraine</span>: [+ ukr_relation : foreign_relations +]
 
-Belarus: [+ blr_relation : foreign_relations +]
+<span style="color: #00AF66;">Belarus</span>: [+ blr_relation : foreign_relations +]
 
-Georgia: [+ geo_relation : foreign_relations +]
+<span style="color: #DA291C;">Georgia</span>: [+ geo_relation : foreign_relations +]
 
-Chechnya: [+ che_relation : foreign_relations +]
+<span style="color: #2B7338;">Chechnya</span>: [+ che_relation : foreign_relations +]
 
-Azerbaijan: [+ azr_relation : foreign_relations +]
+<span style="color: #0092BC;">Azerbaijan</span>: [+ azr_relation : foreign_relations +]
 
-Armenia: [+ arm_relation : foreign_relations +]
+<span style="color: #FF9E1B;">Armenia</span>: [+ arm_relation : foreign_relations +]
 
 (YU)B(BU)a(HU)l(AL)k(RO)a(GR)n Countries:
 
