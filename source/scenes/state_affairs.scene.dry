@@ -1,0 +1,19 @@
+title: state_affairs
+new-page: true
+is-special: true
+go-to: state_menu
+
+= State Affairs
+
+@state_menu
+
+- @wip1
+- @wip2
+
+@wip1
+
+wip
+
+@wip2
+
+wip
