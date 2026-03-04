@@ -8,7 +8,7 @@ go-to: state_menu
 @state_menu
 
 - @alsace: Deal with the <span style="color: #EC1E2F;">Alsace</span>-<span style="color: #EFBF04;">Lorraine</span>
-- @wip2: wwiipp
+- @anhalt: Deal with <span style="color: #FF000D;">Anh</span><span style="color: #2E6F40;">alt</span>
 
 @alsace
 view-if: alsace_ger = 1
@@ -37,7 +37,23 @@ view-if: (spd_in_alsace_gov = 1 and spd_in_alsace_interior)
 
 - @staf_return
 
-@wip2
+@anhalt
+
+- @anhalt_landtag: Deal with the <span style="color: #FF000D;">Anh</span><span style="color: #2E6F40;">alt</span> Landtag 
+- @anhalt_domestic: Deal with <span style="color: #FF000D;">Anh</span><span style="color: #2E6F40;">alt</span> civilian affairs
+- @anhalt_police: Deal with the <span style="color: #FF000D;">Anh</span><span style="color: #2E6F40;">alt</span> police force
+
+@anhalt_landtag
+
+- @staf_return
+
+@anhalt_domestic
+view-if: spd_in_alsace_gov = 1
+
+- @staf_return
+
+@anhalt_police
+view-if: (spd_in_anhalt_gov = 1 and spd_in_anhalt_interior)
 
 - @staf_return
 
