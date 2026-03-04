@@ -117,3 +117,23 @@ view-if: (spd_in_eastaustria_gov = 1 and spd_in_eastaustria_interior)
 @staf_return
 title: Return to the State Affairs menu
 go-to: state_menu
+
+@baden
+
+- @baden_landtag: Deal with the <span style="color: #FED700;">Ba</span> <span style="color: #E81B23;">d</span><span style="color: #FED700;">en</span> Landtag 
+- @baden_domestic: Deal with <span style="color: #FED700;">Bad</span> <span style="color: #E81B23;">en</span><span style="color: #FED700;">ite</span> civilian affairs
+- @baden_police: Deal with the <span style="color: #FED700;">Bad</span> <span style="color: #E81B23;">en</span><span style="color: #FED700;">ite</span> police force
+
+@baden_landtag
+
+- @staf_return
+
+@baden_domestic
+view-if: spd_in_alsace_gov = 1
+
+- @staf_return
+
+@baden_police
+view-if: (spd_in_anhalt_gov = 1 and spd_in_anhalt_interior)
+
+- @staf_return
