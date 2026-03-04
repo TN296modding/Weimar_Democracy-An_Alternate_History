@@ -11,7 +11,7 @@ go-to: state_menu
 - @anhalt: Deal with <span style="color: #FF000D;">Anh</span><span style="color: #2E6F40;">alt</span>
 - @westaus: Deal with <span style="color: #EF3340;">West</span> <span style="color: #FFFFFF;">Aus</span><span style="color: #EF3340;">tria</span>
 - @eastaus: Deal with <span style="color: #EF3340;">East</span> <span style="color: #FFFFFF;">Aus</span><span style="color: #EF3340;">tria</span>
-### - @baden: Deal with  <span style="color: #FED700;">Ba</span> <span style="color: #E81B23;">d</span><span style="color: #FED700;">en</span>
+- @baden: Deal with  <span style="color: #FED700;">Ba</span> <span style="color: #E81B23;">d</span><span style="color: #FED700;">en</span>
 
 @alsace
 view-if: alsace_ger = 1
