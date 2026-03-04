@@ -61,7 +61,7 @@ view-if: (spd_in_anhalt_gov = 1 and spd_in_anhalt_interior)
 - @staf_return
 
 @westaus
-view-if: anschluss = 1
+view-if: anschluss = 1 or wip = 0
 
 - @westaus_landtag: Deal with the <span style="color: #EF3340;">West</span> <span style="color: #FFFFFF;">Aust</span><span style="color: #EF3340;">rian</span> Landtag Affairs
 - @westaus_intergration: Deal with intergrating <span style="color: #EF3340;">West</span> <span style="color: #FFFFFF;">Aus</span><span style="color: #EF3340;">ria</span>
