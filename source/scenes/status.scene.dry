@@ -517,7 +517,7 @@ Other Countries:
 
 <span style="color: #EF3340;">Austria</span>: [+ aus_relation : foreign_relations +]
 
-<span style="color: #OF52BA;">Diplomatic</span> <span style="color: #38664C;">Leverage</span> [+ diplo_lev +] 
+<span style="color: #OF52BA;">Diplomatic</span> <span style="color: #38664C;">Leverage</span>: [+ diplo_lev +] 
 
 @domestic_tab
 on-arrival: {!
