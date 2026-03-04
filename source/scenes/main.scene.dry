@@ -2635,3 +2635,18 @@ card-image: img/portraits/SchmidtRobert.jpg
 is-deck: true
 
 - @economic_policy
+
+@my_hand
+title: State Affairs wip
+is-hand: true
+max-cards: 3
+
+- @state
+
+@state
+title: State Affairs wip2
+view-if: wip = 0
+is-deck: true
+
+- #state_affairs
+
