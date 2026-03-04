@@ -497,27 +497,27 @@ on-arrival:
 
 Other Countries:
 
-Iceland: [+ ice_relation : foreign_relations +]
+<span style="color: #DC1E35;">Iceland</span>: [+ ice_relation : foreign_relations +]
 
-Ireland: [+ ire_relation : foreign_relations +]
+<span style="color: #FF8200;">Ireland</span>: [+ ire_relation : foreign_relations +]
 
-Lichtenstein: [+ lic_relation : foreign_relations +]
+<span style="color: #003DA5;">Liechtenstein</span>: [+ lic_relation : foreign_relations +]
 
-San Marino: [+ san_mar_relation : foreign_relations +]
+<span style="color: #62B5E5;">San Marino</span>: [+ san_mar_relation : foreign_relations +]
 
-Vatican: [+ vat_relation : foreign_relations +]
+<span style="color: #FFF200;">Vatican</span>: [+ vat_relation : foreign_relations +]
 
-Andorra: [+ and_relation : foreign_relations +]
+<span style="color: #FEDD00;">Andorra</span>: [+ and_relation : foreign_relations +]
 
-Monaco: [+ mon_relation : foreign_relations +]
+<span style="color: #CE1126;">Monaco</span>: [+ mon_relation : foreign_relations +]
 
-Italy: [+ ita_relation : foreign_relations +]
+<span style="color: #008C45;">Italy</span>: [+ ita_relation : foreign_relations +]
 
-Switzerland: [+ swi_relation : foreign_relations +]
+<span style="color: #DA291C;">Switzerland</span>: [+ swi_relation : foreign_relations +]
 
-Austria: [+ aus_relation : foreign_relations +]
+<span style="color: #EF3340;">Austria</span>: [+ aus_relation : foreign_relations +]
 
-Diplomatic Leverage [+ diplo_lev +] 
+<span style="color: #OF52BA;">Diplomatic</span> <span style="color: #38664C;">Leverage</span> [+ diplo_lev +] 
 
 @domestic_tab
 on-arrival: {!
