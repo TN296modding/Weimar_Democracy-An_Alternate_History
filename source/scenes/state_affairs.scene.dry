@@ -42,4 +42,5 @@ view-if: (spd_in_alsace_gov = 1 and spd_in_alsace_interior) or wip = 0
 - @staf_return
 
 @staf_return
+title: Return to the State Affairs menu
 go-to: state_menu
