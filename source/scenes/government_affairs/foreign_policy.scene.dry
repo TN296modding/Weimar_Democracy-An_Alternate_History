@@ -153,19 +153,19 @@ on-arrival: pol_relation += 1; cze_relation += 1; sudeten_ger += 0.01; danzig_pr
 We also aim to improve relations with our eastern neighbors, <span style="color: #DC143C;">Pol</span><span style="color: #FFFFFF;">and</span> and <span style="color: #11457E;">Czech</span><span style="color: #FFFFFF;">oslo</span><span style="color: #D7141A;">vakia</span>, who are rightfully terrified of German aggression. Hopefully we can convince them of our peaceful intentions.
 
 @improve_pol
-title: Improve our relations with Poland
-on-arrival: pol_relation += 2; danzig_prog += 2; masuria_aut -= 0.02; silesia_aut -= 0.02; ger_pomerania_aut -= 0.02; pol_pomerania_ger += 0.05; katowice_ger += 0.04
+title: Improve our relations with <span style="color: #DC143C;">Poland</span>
+on-arrival: pol_relation += 2; danzig_prog += 0.5; masuria_aut -= 0.02; silesia_aut -= 0.02; ger_pomerania_aut -= 0.02; pol_pomerania_ger += 0.05; katowice_ger += 0.04
 
 wip
 
 @improve_cze
-title: Improve our relations with Czechoslovakia
+title: Improve our relations with <span style="color: #11457e;">Czechoslovakia</span>
 on-arrival: cze_relation += 2; sudeten_ger += 0.05
 
 wip
 
 @improve_lit
-title: Improve Relations with Lithuania
+title: Improve Relations with <span style="color: #FFB81C;">Lithuania</span>
 on-arrival: lit_relation += 2; memel_ger += 0.03; viln_lit += 0.02;
 
 wip.
@@ -178,33 +178,33 @@ on-arrival: budget -= 1; memel_ger += 0.05; viln_lit += 0.01; sudeten_ger += 0.0
 wip.
 
 @improve_spa
-title: Improve Relations with Spain
+title: Improve Relations with <span style="color: #F1BF00;">Spain</span>
 on-arrival: spa_relation += 2; spa_repub_str += 2
 
 wip
 
 @intervene_spa_civ_war_spd
-title: Provide aid to the Republicans in Spain
+title: Provide aid to the (wip: colour) Republicans in <span style="color: #F1BF00;">Spain</span>
 view-if: sed_formed = 0 and spanish_civil_war = 1
 subtitle: -1 Budget
 
 wip
 
 @intervene_spa_civ_war_sed
-title: Provide aid to the Communists in Spain
+title: Provide aid to the (wip: colour) Communists in <span style="color: #F1BF00;">Spain</span>
 view-if: sed_formed = 1 and spanish_civil_war = 1
 subtitle: -1 Budget
 
 wip
 
 @improve_por
-title: Improve relations with Portugal
+title: Improve relations with <span style="color: #046A38;">Portugal</span>
 on-arrival: por_relation += 2; por_repub_aid += 1
 
 wip
 
 @aid_por
-title: Aid the Portugeuse Republicans in their fight
+title: Aid the <span style="color: #046A38;">Portugeuse</span> (wip: colour) Republicans in their fight
 subtitle: -1 Budget
 view-if: por_civil_war = 1
 on-arrival: por_repub_aid += 2; budget -= 1
@@ -212,169 +212,169 @@ on-arrival: por_repub_aid += 2; budget -= 1
 wip
 
 @improve_swi
-title: Improve relations with the Swiss
+title: Improve relations with <span style="color: #DA291C;">Switzerland</span>
 on-arrival: swi_relation += 2; swi_neutral -= 0.05
 
 wip
 
 @improve_aus
-title: Improve relations with the Austrians
+title: Improve relations with <span style="color: #EF3340;">Austria</span>
 on-arrival: aus_relation += 2; anschluss_prog += 0.75;
 
 wip
 
 @improve_yug
-title: Improve relations with the Yugoslavians
+title: Improve relations with <span style="color: #003893;">Yugoslavia</span>
 on-arrival: yug_relation += 2; yug_repub_aid += 1
 
 wip
 
 @improve_ita
-title: Improve relations with the Italians
+title: Improve relations with <span style="color: #008C45;">Italy</span>
 on-arrival: ita_relation += 2; ita_repub_aid += 1;
 
 wip
 
 @recognise_alb
-title: Recognise Albania's status as a country
+title: Recognise <span style="color: #DA291C;">Albania's</span> status as a country
 subtitle: This will anger neigbouring nations!
 on-arrival: alb_recognised = 1; ita_relation -= 1; yug_relation -= 1; gre_relation -= 1; alb_relation += 3
 
 wip
 
 @improve_alb
-title: Improve relations with Albania
+title: Improve relations with <span style="color: #DA291C;">Albania</span>
 on-arrival: alb_relation += 2;
 
 wip
 
 @improve_gre
-title: Improve relations with the Greek
+title: Improve relations with <span style="color: #0D5EAF;">Greece</span>
 on-arrival: gre_relation += 2;
 
 wip
 
 @improve_bul
-title: Improve relations with the Bulgarians
+title: Improve relations with <span style="color: #00966E;">Bulgaria</span>
 on-arrival: bul_relation += 2; bul_repub_aid += 1
 
 wip
 
 @improve_rom
-title: Improve relations with the Romanians
+title: Improve relations with <span style="color: #FCD116;">Romania</span>
 on-arrival: rom_relation += 2
 
 wip
 
 @improve_ire
-title: Improve relations with the Irish
+title: Improve relations with <span style="color: #FF8200;">Ireland</span>
 on-arrival: ire_relation += 2
 
 wip
 
 @improve_lat
-title: Improve relations with the Latvians
+title: Improve relations with <span style="color: #A4343A;">Latvia</span>
 on-arrival: lat_relation += 2
 
 wip
 
 @improve_est
-title: Improve relations with the Estonians
+title: Improve relations with <span style="color: #0072CE;">Estonia</span>
 on-arrival: est_relation += 2
 
 wip
 
 @improve_fin
-title: Improve relations with the Finnish
+title: Improve relations with <span style="color: #002F6C;">Finland</span>
 on-arrival: fin_relation += 2
 
 wip
 
 @improve_swe
-title: Improve relations with the Swedish
+title: Improve relations with <span style="color: #FECC02;">Sweden</span>
 on-arrival: swe_relation += 2
 
 wip
 
 @improve_nor
-title: Improve relations with the Norweginas
+title: Improve relations with <span style="color: #00205B;">Norway</span>
 on-arrival: nor_relation += 2
 
 wip
 
 @improve_ice
-title: Improve relations with the Icelanders
+title: Improve relations with <span style="color: #DC1E35;">Iceland</span>
 on-arrival: ice_relation += 2
 
 wip
 
 @improve_den
-title: Improve relations with the Danish
+title: Improve relations with <span style="color: #C8102E;">Denmark</span>
 on-arrival: den_relation += 2
 
 wip
 
 @improve_blr
-title: Improve relations with the Belarussians
+title: Improve relations with <span style="color: #00AF66;">Belarus</span>
 on-arrival: blr_relation += 2
 
 wip
 
 @improve_ukr
-title: Improve relations with the Ukrainians
+title: Improve relations with <span style="color: #FFDD00;">Ukraine</span>
 on-arrival: ukr_relation += 2
 
 wip
 
 @improve_geo
-title: Improve relations with the Georgians
+title: Improve relations with <span style="color: #DA291C;">Georgia</span>
 on-arrival: geo_relation += 2
 
 wip
 
 @improve_che
-title: Improve relations with the Chechnyans
+title: Improve relations with <span style="color: #2B7338;">Chechnya</span>
 on-arrival: che_relation += 2
 
 wip
 
 @improve_azr
-title: Improve relations with the Azerbaijani
+title: Improve relations with <span style="color: #0092BC;">Azerbaijan</span>
 on-arrival: azr_relation += 2
 
 wip
 
 @improve_arm
-title: Improve relations with the Armenians
+title: Improve relations with <span style="color: #FF9E1B;">Armenia</span>
 on-arrival: arm_relation += 2
 
 wip
 
 @improve_san_mar
-title: Improve relations with the Sammarinese
+title: Improve relations with <span style="color: #62B5E5;">San Marino</span>
 on-arrival: san_mar_relation += 2
 
 wip
 
 @improve_vat
-title: Improve relations with the Holy See
+title: Improve relations with the <span style="color: #FFF200;">Vatican</span>
 on-arrival: reichskonkordat_progress += 0.5; prussian_concordat_progress += 0.5; z_relation += 10; vat_relation += 2
 
 wip
 
 @improve_lic
-title: Improve relations with the Liechtensteiners
+title: Improve relations with <span style="color: #003DA5;">Liechtenstein</span>
 on-arrival: lic_relation += 2
 
 wip
 
 @improve_and
-title: Improve relations with the Andorrans
+title: Improve relations with <span style="color: #FEDD00;">Andorra</span>
 subtitle: -1 budget
 on-arrival: and_relation += 2
 
 @improve_mon
-title: Improve relations with the Monocans
+title: Improve relations with <span style="color: #CE1126;">Monaco</span>
 on-arrival: mon_relation += 2
 
 wip
