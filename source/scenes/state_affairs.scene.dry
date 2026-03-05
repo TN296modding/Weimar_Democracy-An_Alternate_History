@@ -14,7 +14,7 @@ go-to: state_menu
 - @baden: Deal with  <span style="color: #FED700;">Ba</span><span style="color: #E81B23;">d</span><span style="color: #FED700;">en</span>
 
 @alsace
-view-if: alsace_ger = 1
+view-if: alsace_ger = 1 or wip = 0
 
 - @alsace_landtag: Deal with <span style="color: #EC1E2F;">Alsa</span><span style="color: #EFBF04;">cian</span> Landtag Affairs
 - @alsace_intergration: Deal with intergrating the <span style="color: #EC1E2F;">Alsace</span>-<span style="color: #EFBF04;">Loraine</span>
@@ -51,7 +51,7 @@ view-if: (spd_in_alsace_gov = 1 and spd_in_alsace_interior)
 - @staf_return
 
 @anhalt_domestic
-view-if: spd_in_alsace_gov = 1
+view-if: spd_in_anhalt_gov = 1
 
 - @staf_return
 
@@ -114,10 +114,6 @@ view-if: (spd_in_eastaustria_gov = 1 and spd_in_eastaustria_interior)
 
 - @staf_return
 
-@staf_return
-title: Return to the State Affairs menu
-go-to: state_menu
-
 @baden
 
 - @baden_landtag: Deal with the <span style="color: #FED700;">Ba</span><span style="color: #E81B23;">d</span><span style="color: #FED700;">en</span> Landtag 
@@ -129,11 +125,36 @@ go-to: state_menu
 - @staf_return
 
 @baden_domestic
-view-if: spd_in_alsace_gov = 1
+view-if: spd_in_baden_gov = 1
 
 - @staf_return
 
 @baden_police
-view-if: (spd_in_anhalt_gov = 1 and spd_in_anhalt_interior)
+view-if: (spd_in_baden_gov = 1 and spd_in_baden_interior)
 
 - @staf_return
+
+@bavaria
+
+- @bavaria_landtag: Deal with the <span style="color: #0098D4;">Ba</span><span style="color: #FFFFFF;">va</span><span style="color: #0098D4;">ri</span><span style="color: #FFFFFF;">an</span> Landtag 
+- @bavaria_intergration: Deal with <span style="color: #0098D4;">Ba</span><span style="color: #FFFFFF;">va</span><span style="color: #0098D4;">ri</span><span style="color: #FFFFFF;">an</span> Seperatism
+- @bavaria_domestic: Deal with <span style="color: #0098D4;">Ba</span><span style="color: #FFFFFF;">va</span><span style="color: #0098D4;">ri</span><span style="color: #FFFFFF;">an</span> civilian affairs
+- @bavaria_police: Deal with the <span style="color: #0098D4;">Ba</span><span style="color: #FFFFFF;">va</span><span style="color: #0098D4;">ri</span><span style="color: #FFFFFF;">an</span> police force
+
+@bavaria_landtag
+
+- @staf_return
+
+@baden_domestic
+view-if: spd_in_bav_gov = 1
+
+- @staf_return
+
+@baden_police
+view-if: (spd_in_bav_gov = 1 and spd_in_bav_interior)
+
+- @staf_return
+
+@staf_return
+title: Return to the State Affairs menu
+go-to: state_menu
