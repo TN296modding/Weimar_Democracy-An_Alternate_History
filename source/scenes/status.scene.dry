@@ -284,7 +284,7 @@ Prussian police: [+ prussian_police_strength +] thousand members.
 
 Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
 
-[? if spd_in_government : Interior Police: [+ interior_police_strength +] thousand members.
+[? if spd_in_government : Interior Police: [+ interior_police_strength +] thousand members. ?]
 
 [? if spd_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
 
