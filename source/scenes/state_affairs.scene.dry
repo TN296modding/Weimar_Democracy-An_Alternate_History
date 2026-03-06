@@ -21,7 +21,7 @@ go-to: state_menu
 - @baden: Deal with  <span style="color: #FED700;">Ba</span><span style="color: #E81B23;">d</span><span style="color: #FED700;">en</span>
 - @bavaria: Deal with <span style="color: #0098D4;">Ba</span><span style="color: #FFFFFF;">va</span><span style="color: #0098D4;">ri</span><span style="color: #FFFFFF;">a</span>
 - @bremen: Deal with <span style="color: #DD0000;">T</span><span style="color: #FFFFFF;">h</span><span style="color: #DD0000;">e</span> <span style="color: #FFFFFF;">c</span><span style="color: #DD0000;">i</span><span style="color: #FFFFFF;">ty of</span> <span style="color: #DD0000;">Bre</span><span style="color: #FFFFFF;">men</span>
-- @brunswick: Deal with <span style="color: ##0047ab;">Bruns</span><span style="color: ##ffce08;">wick</span>
+- @brunswick: Deal with <span style="color: #0047ab;">Bruns</span><span style="color: #ffce08;">wick</span>
 
 @alsace
 view-if: alsace_ger = 1 or wip = 0
@@ -200,9 +200,9 @@ view-if: (spd_in_brem_gov = 1 and spd_in_brem_interior)
 
 @brunswick
 
-- @brunswick_landtag: Deal with the <span style="color: ##0047ab;">Bruns</span><span style="color: ##ffce08;">wick</span> Landtag 
-- @brunswick_domestic: Deal with <span style="color: ##0047ab;">Bruns</span><span style="color: ##ffce08;">wick</span> civilian affairs
-- @brunswick_police: Deal with the <span style="color: ##0047ab;">Bruns</span><span style="color: ##ffce08;">wick</span> police force
+- @brunswick_landtag: Deal with the <span style="color: #0047ab;">Bruns</span><span style="color: #ffce08;">wick</span> Landtag 
+- @brunswick_domestic: Deal with <span style="color: #0047ab;">Bruns</span><span style="color: #ffce08;">wick</span> civilian affairs
+- @brunswick_police: Deal with the <span style="color: #0047ab;">Bruns</span><span style="color: #ffce08;">wick</span> police force
 
 @brunswick_landtag
 
