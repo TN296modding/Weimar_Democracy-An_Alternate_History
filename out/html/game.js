@@ -362,8 +362,6 @@ window.disableGrayMode = function() {
         document.body.classList.add('gray-mode');
     }
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
-    window.statusTab = "status";
-    window.updateSidebar();
   };
 
 }());
