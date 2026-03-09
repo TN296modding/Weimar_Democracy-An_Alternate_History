@@ -17,9 +17,10 @@ Tax Deduction 1 DESC (WIP)
 - @upper_class_charity_deduction
 - @upper_class_welfare_deduction
 - @impoverished_tax_exemption
-- @volunteering_credit: wip
-- @new_business_credit: wip
-- @cooperatives_credit: wip
+- @volunteering_credit: Provide tax credits for people volunteering in registered organisations
+- @new_business_credit: Provide tax credits for newly-establsihed small businesses
+- @cooperatives_credit: Provide tax credits for all co-operatives
+- @credit_union_grants: Provide grants to credit unions, reducing power among big banks
 - @root: Do not change the tax system.
 - @easy_discard
 - @cancel_advisor_action
@@ -65,7 +66,6 @@ on-arrival: welfare_cost -= 0.25 if ucwddc = 0; welfare_cost -= 0.15 if ucwddc =
 description
 
 @volunteering_credit
-title: Provide a small cash bonus for people who volunteer for registered organisations
 subtitle: -1 budget
 unavailable-subtitle: Not enough budget
 choose-if: budget >= 1
@@ -75,7 +75,6 @@ on-arrival: budget -= 1; charity += 1; workers_spd += 3; unemployed_spd += 3; dd
 description
 
 @new_business_credit
-title: Provide a small tax credit to new businesses
 subtitle: -1 budget
 unavailable-subtitle: Not enough budget
 choose-if: budget >= 1
@@ -85,12 +84,11 @@ on-arrival: budget -= 1; old_middle_spd += 5; new_middle_spd += 3; ddp_relation 
 Description
 
 @cooperatives_credit
-title: Provide a small tax credit for Co-ops
 subtitle: -1 budget
 unavailable-subtitle: Not enough budget
 choose-if: budget >= 1
 max-visits: 1
-on-arrival: budget -= 1; cooperatives += 1; workers_spd += 3; unemployed_spd += 1;
+on-arrival: budget -= 1; cooperatives += 1; workers_spd += 5; unemployed_spd += 2; labor_dissent -= 7; center_dissent -= 7; left_dissent -= 7; reformist_dissent -= 7; dvp_right += 1 if dvp_right + 5 > dvp_left; dvp_left += 1 if dvp_left + 5 > dvp_right; ddp_left += 1;
 
 dsecription
 
@@ -103,3 +101,10 @@ max-visits: 1
 on-arrival: workers_spd += 7; unemployed_spd += 7; rural_spd += 1; catholics_spd += 1; z_relation -= 10; dvp_relation -= 15; ddp_relation -= 5; dvp_right += 3; ddp_right += 1; lvp_right += 2; ddp_cohesion -= 2
 
 Description
+
+@credit_union_grants
+subtitle: -1 budget
+unavailable-sbutitle: Not enough budget
+choose-if: budget >= 1
+
+wip
