@@ -344,6 +344,7 @@ if (Q.month_actions >= 4) {
             Q.resources -= 1;
         }
     }
+}
     // decrement timers
     if (!Q.rubicon) {
         for (timer of Q.timers) {
