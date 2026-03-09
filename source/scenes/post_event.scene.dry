@@ -329,7 +329,7 @@ Q.month_actions_checked = Q.month_actions;
 if (Q.ddp_in_popular_front && !Q.in_popular_front) Q.ddp_in_popular_front = 0;
 
 // 1. update dates
-(Q.month_actions >= 4) {
+if (Q.month_actions >= 4) {
     Q.time += 1;
     Q.month_actions = 0;
     Q.month += 1;
