@@ -19,7 +19,7 @@ As we control the Labor [? if economic_minister_party == "SPD" : and Economic ?]
 - @expand_councils_3
 - @nationalize_1
 - @cooperatives_1
-- @credit_union_grants
+- @credit_union_grants: Provide grants to credit unions, reducing power among big banks
 - @return: Do not enact any policies for now.
 - @easy_discard
 - @cancel_advisor_action
@@ -82,5 +82,6 @@ We have enacted legislation that makes it easier to create cooperative enterpris
 subtitle: -1 budget
 unavailable-sbutitle: Not enough budget
 choose-if: budget >= 1
+on-arrival: budget -= 1; economic_democracy += 1; cooperatives += 0.5; workers_spd += 2; new_middle_spd += 4; old_middle_spd += 3; economic_growth += 2; big_bank_control -= 1
 
 wip
