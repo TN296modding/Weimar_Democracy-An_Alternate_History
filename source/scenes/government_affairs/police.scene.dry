@@ -22,7 +22,7 @@ As with the state police units and the Reichswehr, the internal police tends to 
 - @cancel_advisor_action
 
 @loyalty
-on-arrival: interior_police_loyalty += 0.1
+on-arrival: interior_police_loyalty += 0.1; interior_police_loyalty_kpd -= 0.01; interior_police_loyalty_ddp -= 0.01; interior_police_loyalty_z -= 0.01; interior_police_loyalty_dvp -= 0.01; interior_police_loyalty_dnvp -= 0.01; interior_police_loyalty_nsdap -= 0.01; interior_police_loyalty_other_rural -= 0.01; interior_police_loyalty_other_economic -= 0.01; interior_police_loyalty_kvp -= 0.01; interior_police_loyalty_monarchy -= 0.01;
 
 As with the Prussian state police, there are measures we can take to root out <span style="color: #808080;">reactionary</span> and anti-democratic sentiment in the police. We can improve training and recruiting procedures, and identify and remove known <span style="color: #7A3C00;">fascists</span> and the like.
 
