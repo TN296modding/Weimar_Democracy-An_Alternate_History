@@ -62,22 +62,33 @@ What do the three arrows stand for?
 - @anti: Opposition to <span style="color: #7A3C00;">Fascism</span>, <span style="color:rgb(90, 0, 0);">Stalinism</span>, and <span style="color: #808080;">Monarchism</span>.
 - @orgs: The <span style="color: #c00000;">**SPD**</span>, ADGB, and Reichsbanner.
 - @wtb: Woytinsky, Tarnow, and Baade of the WTB-Plan
+- @weimar: the SPD, DDP, and Z of the Weimar Coaltion (WIP note: colour)
 - @all: All of the above.
 
 @unity
+on-arrival: labor_dissent -= 3; center_dissent -= 3; left_dissent -= 3; reformist_dissent -= 3; neorevisionist_dissent -= 3;
 go-to: if_end
 
 @anti
+on-arrival: kpd_relation -= 7; workers_nsdap -= 1; workers_dnvp -= 1; workers_kpd -= 1;
 go-to: if_end
 
 @orgs
+on-arrival: trun_ind_perc += 0.001; rb_strength += 10;
 go-to: if_end
 
 @wtb
 view-if: wtb_adopted == 1
+on-arrival: labor_dissent -= 3; labor_strength += 1
 go-to: if_end
 
 @all
+view-if: in_weimar_coaltion = 1
+on-arrival: get_trolled += 1
+go-to: if_end
+
+@weimar
+on-arrival: workers_kpd -= 1; workers_dnvp -= 1; workers_nsdap -= 1; kpd_relation -= 3; ddp_relation += 3; z_relation += 3; workers_ddp += 1; workers_z += 1;
 go-to: if_end
 
 @if_end
