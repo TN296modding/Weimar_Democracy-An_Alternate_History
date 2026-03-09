@@ -116,8 +116,8 @@ if (Q.pro_republic < 0) {
 if (Q.reichswehr_strength < 0) {
     Q.reichswehr_strength = 0;
 }
-if (Q.pro_republic >= 100) {
-    Q.pro_republic = 99;
+if (Q.pro_republic >= 101) {
+    Q.pro_republic = 100;
 }
 // math.randoms
 if (Q.randomwest >= 1) {
@@ -624,11 +624,17 @@ if (Q.ddp_in_popular_front && !Q.in_popular_front) Q.ddp_in_popular_front = 0;
             Q.old_middle_spd -= 6/12;
             Q.old_middle_nsdap += 2/12;
         }
-        if (Q.rural_spd > 4) {
+        if (Q.rural_spd > 4 && agricultural_policy == 0) {
             Q.rural_spd -= 6/12;
             Q.rural_nsdap += 2/12;
         }
-        if (Q.workers_spd_normalized > 40) {
+        if (Q.rural_spd > 30 ) {
+            Q.rural_spd -= 3/12
+            if (Q.nationalism > 70) {
+                Q.rural_dnvp += 2/12
+            }
+        }
+        if (Q.workers_spd_normalized > 50) {
             Q.workers_spd -= 4/12;
         }
         if (Q.catholics_spd > 15) {
