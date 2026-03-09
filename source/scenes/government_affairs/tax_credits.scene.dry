@@ -20,7 +20,6 @@ Tax Deduction 1 DESC (WIP)
 - @volunteering_credit: Provide tax credits for people volunteering in registered organisations
 - @new_business_credit: Provide tax credits for newly-establsihed small businesses
 - @cooperatives_credit: Provide tax credits for all co-operatives
-- @credit_union_grants: Provide grants to credit unions, reducing power among big banks
 - @root: Do not change the tax system.
 - @easy_discard
 - @cancel_advisor_action
@@ -101,10 +100,3 @@ max-visits: 1
 on-arrival: workers_spd += 7; unemployed_spd += 7; rural_spd += 1; catholics_spd += 1; z_relation -= 10; dvp_relation -= 15; ddp_relation -= 5; dvp_right += 3; ddp_right += 1; lvp_right += 2; ddp_cohesion -= 2
 
 Description
-
-@credit_union_grants
-subtitle: -1 budget
-unavailable-sbutitle: Not enough budget
-choose-if: budget >= 1
-
-wip
