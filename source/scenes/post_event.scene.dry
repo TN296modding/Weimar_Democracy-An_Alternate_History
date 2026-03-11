@@ -338,7 +338,8 @@ if (Q.month_actions >= 4) {
         Q.year += 1;
         Q.resources += Q.dues;
         if (Q.cooperatives_credit_check == 1) {
-            Q.cooperatives_credit += (Q.cooperatives/unemployed)
+            Q.cooperatives_credit += (Q.cooperatives/Q.unemployed)
+        }
         Q.cooperatives_tax += ((Q.cooperatives/10) - (Q.cooperatives_credit))
         Q.budget += Q.budgetgrowth;
         Q.budget += (Q.economic_growth/10)
