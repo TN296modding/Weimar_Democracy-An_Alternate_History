@@ -71,7 +71,8 @@ tabButtons.forEach((button) => {
         button.style.display = 'none';
     } else {
         button.style.display = '';
-}});
+    }
+});
 
 const activeTabButton = document.querySelector('.tab_button.active');
 if (activeTabButton) {
