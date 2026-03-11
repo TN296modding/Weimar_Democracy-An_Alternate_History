@@ -67,10 +67,11 @@ tabButtons.forEach((button) => {
         button.style.marginLeft = '2px';
     }
     if (button.id == 'poll_tab') {
-    if (Q.historical_mode || Q.rubicon) {
-        button.style.display = 'none';
-    } else {
-        button.style.display = '';
+        if (Q.historical_mode || Q.rubicon) {
+            button.style.display = 'none';
+        } else {
+            button.style.display = '';
+        }
     }
 });
 
