@@ -47,10 +47,6 @@ if (qualitiesH1) {
     qualitiesH1.style.color = 'white';
 }
 
-const emergencyTab = document.getElementById('emergency_tab');
-emergencyTab.style.display = '';
-emergencyTab.style.width = '100%';
-
 const headerLinks = document.querySelectorAll('#header-links a');
 headerLinks.forEach(link => {
     link.style.color = 'black';
