@@ -334,14 +334,6 @@ blockquote+blockquote.attribution {
   background-color: var(--tab-hover-color);
 }
 
-#emergency_tab {
-  width: 100%;
-}
-
-#scheming_tab {
-  display: none;
-}
-
 
 .overlay {
   background: rgba(0, 0, 0, 0.7);
@@ -733,14 +725,6 @@ th {
   fill: #7A3C00;
 }
 
-.seat.dsu {
-  fill: #6A1E1E;
-}
-
-.seat.nvf {
-  fill: #142e20;
-}
-
 .seat.sapd {
   fill: #9B0000;
 }
@@ -755,24 +739,6 @@ th {
 
 .seat.lvp {
   fill: #FFCC00;
-}
-
-.seat.dnef {
-  fill: #BFC8CC;
-  stroke: #000000;
-  stroke-width: 1.5px;
-}
-
-.seat.right_dnef {
-  fill: #5F7278;
-  stroke: #000000;
-  stroke-width: 1.5px;
-}
-
-.seat.left_dnef {
-  fill: #B86558;
-  stroke: #000000;
-  stroke-width: 1.5px;
 }
 
 .seat.dnvp_wholesome {
