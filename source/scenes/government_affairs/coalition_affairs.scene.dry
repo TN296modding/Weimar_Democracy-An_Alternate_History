@@ -17,6 +17,7 @@ How do we reduce tensions with the coalition?
 - @dvp_prussia_2: Let the <span style="color: #C0A054;">**DVP**</span> into Prussia.
 - @promise_cuts: Agree to the bourgeois plans to cut welfare.
 - @resources: Use our party resources to support our allies.
+- @no_national: Agree to not nationalising business -- even bankrupt ones
 - @bring_down: Instead, we will bring down the government with a no-confidence vote, and call for new elections.
 - @no_change: Take none of these actions.
 - @easy_discard
@@ -67,6 +68,14 @@ go-to: elections if bruning_event_seen or year < 1930
 We have called for a vote of no confidence in ourselves, and have brought down this government. Chancellor [+ chancellor +] currently rules as acting chancellor.
 
 [? if not bruning_event_seen and year >= 1930: New elections haven't been called yet but it's likely that they will be soon, considering Brüning most likely doesn't have the majority of the Reichstag behind him. ?]
+
+@no_national
+subtitle: This significantly decreases dissent among the Bourgeois. This signifcantly increases our Left's dissent
+on-arrival: coalition_dissent -= 3; kpd_relation -= 20; left_dissent += 15; center_dissent += 5
+choose-if: left_strength <= 40
+view-if: left_strength <= 60
+
+We have promised not to nationalise any business, significantly lowering the dissent, however our Left strongly object.
 
 @elections
 call: set_next_election_time
