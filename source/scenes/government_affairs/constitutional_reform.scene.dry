@@ -27,6 +27,7 @@ A constitutional reform requires either a two-thirds supermajority in the Reichs
 - @vote_threshold: Change the vote threshold.
 - @constructive_vonc: Ban non-constructive votes of no confidence.
 - @presidential_powers: Reduce presidential powers.
+# - @landtag_reform Split Prussia into landtags, and re-allocate old noble holdings.
 - @as_is: Do not pursue constitutional reform.
 - @easy_discard
 - @cancel_advisor_action
@@ -139,6 +140,54 @@ We have successfully passed a constitutional amendment to limit presidential pow
 @bundesrepublik
 achievement: bundesrepublik
 
+@landtag_reform
+subtitle: The rest of the "Weimar Coalition" won't support this
+on-arrival: {!
+Q.reform_support = Q.spd_normalized;
+if ((Q.ddp_relation > 70) && (Q.ddp_left > Q.ddp_right + 5)) {
+    Q.reform_support += Q.ddp_normalized;
+}
+Q.reform_support += Q.kpd_normalized;
+Q.reform_support += Q.nsdap_normalized;
+Q.reform_support += Q.dnvp_normalized;
+Q.reform_support += Q.dvp_normalized;
+Q.reform_support += Q.others_normalized;
+Q.reform_support += Q.kvp_normalized;
+Q.reform_support ++ Q.dnf_normalized;
+}
+!}
+view-if: landtag_reform = 0
+
+The other Weimar coaltion parties will oppose this reform, as they wish to keep the "Prussian Stronghold" in place. [? if ddp_relation > 70 and ddp_left > (ddp_right + 3) : Surprisingly, [+ ddp_name +] supports this reform, it seems the DDP's progressiveness is not fully gone ?] Unsurprisingly, the <span style="color: #700000;">**KPD**</span>, DVP, DNVP, and NSDAP supports this reform, as they have rarely (or never) been in a Prussian Coalition.
+
+- @landtag_2: Call a constitutional referendum to pass the reform!
+- @reforms_menu: See other reform options.
+
+@landtag_2
+choose-if: reform_support >= pass_threshold
+unavailable-subtitle: We do not have enough support for this policy. 
+on-arrival: constitutional_reform += 1; landtag_reform = 1
+achievement: verfassungsreform
+
+We have successfully passed a constitutional amendment to break up Prussia! Hopefully this results in a less centralized Germany.
+
+- @let_see
+
+@let_see
+title: What will the states be?
+on-arrival: silesia_landtag = 1; pomerania_landtag = 1; new_prussia_landtag = 1; schleswig_landtag = 1; holstein_landtag = 1; hannover_landtag = 1; upper_rhine_landtag = 1; lower_rhine_landtag = 1; brandenburg_landtag = 1; berlin_landtag = 1; hesse_landtag = 1;
+
+# - @silesia: Silesia becomes a state
+# - @pomerania: Pomerania becomes state
+# - @new_prussia: New Prussia becomes a state
+# - @schleswig: Schleswig becomes a state
+# - @holstein: Holstein bcomes a state
+# - @hannover: Hannover becomes a state
+# - @upper_rhine: Ruhr-Westphalia becomes a state
+# - @lower_rhine: Rhhineland becomes a state
+# - @brandenburg: Brandenburg becomes a state
+# - @berlin: Berlin becomes a state
+# - @hesse: Hesse becomes a state
 
 @constitutional_bans
 
