@@ -97,7 +97,24 @@ Economic growth: [+ economic_growth_2 +]%
 ###
 ### [? if spd_government_burden_peoples: = Secondary Goals ?]
 ###
-### kpd goals wip
+### [? if kpd_goals_seen: = KPD Goals ?]
+###
+###[? if welfare_goal = 1 : - Expand social welfare programs. ?] wip/1
+###
+###[? if agriculture_goal = 1 : - Enact a land reform program. ?] wip/1 
+###
+###[? if economy_goal = 1 : - Start substantial nationalization of the economy. ?] wip/1
+###
+###[? if finance_goal = 1 : - Make taxes more progressive. ?] wip/1
+###
+###[? if labor_goal = 1 : - Support workers in labor disputes. ?] wip/1
+###
+###[? if foreign_goal = 1 : - Improve our relations with the <span style="color: #750e0e;">Soviet Union</span>. ?] wip/1
+###
+###[? if interior_goal = 1 : - Ban the <span style="color: #7A3C00;">**SA**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span>. ?] wip/1
+###
+###[? if reichswehr_goal = 1 : - Reduce funding for the Reichswehr. ?] wip/1
+
 
 @politics
 on-arrival: {!
