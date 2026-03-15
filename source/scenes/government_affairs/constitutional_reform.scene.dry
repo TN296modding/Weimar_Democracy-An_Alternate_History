@@ -153,7 +153,7 @@ Q.reform_support += Q.dnvp_normalized;
 Q.reform_support += Q.dvp_normalized;
 Q.reform_support += Q.others_normalized;
 Q.reform_support += Q.kvp_normalized;
-Q.reform_support ++ Q.dnf_normalized;
+Q.reform_support += Q.dnf_normalized;
 !}
 view-if: landtag_reform = 0
 
