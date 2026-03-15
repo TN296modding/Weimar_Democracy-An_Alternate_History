@@ -1,4 +1,4 @@
-title: Agricultural Policy
+title: <span style=" color: #228B22;">Agricultural</span> <span style=" color: #999999;">Policy</span>
 new-page: true
 is-card: true
 on-arrival: agricultural_policy_timer += 6; month_actions += 1
