@@ -403,7 +403,7 @@ view-if: aspd_j_spd > 0 and n_advisors < 3
 - #aspd_advisor
 
 @rural
-view-if: farmers_j_spd > 0 and n_advisors < 3
+view-if: rural_j_spd > 0 and n_advisors < 3
 
 - #rural_advisor
 
@@ -427,10 +427,11 @@ subtitle: Generally disinterested in internal struggles. Reduces faction loyalty
 view-if: n_advisors < 3
 
 - #nonfactional_advisor
+
 @add_wip
 title: wip_advisor
 subtitle: wip
-tags: leftcom_advisor; rightcom_advisor; aspd_advisor; rural_advisor; lib_advisor; business_advisor; chris_advisor;
+tags: leftcom_advisor, rightcom_advisor, aspd_advisor, rural_advisor, lib_advisor, business_advisor, chris_advisor
 
 @add_hilferding
 title: Rudolf Hilferding
@@ -708,7 +709,7 @@ title: Fritz Baade
 subtitle: Fritz Baade is one of the few agricultural policy experts in the <span style="color: #c00000;">**SPD**</span>. {!<br><br>!}[? if difficulty < 0 : Actions - Agricultural Policy, Rural Campaigning, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/BaadeFritz.jpg
-view-if: baade_advisor = 0 and n_advisors < 3
+view-if: baade_advisor = 0 and n_advisors < 3 and rural_j_spd = 0
 on-arrival: baade_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: nonfactional_advisor
@@ -754,4 +755,28 @@ tags: nonfactional_advisor
 
 Friedrich Stampfer is now an advisor.
 
+# Rural advisors
 
+@add_baade
+title: Fritz Baade
+subtitle: Fritz Baade is one of the few agricultural policy experts in the <span style="color: #c00000;">**SPD**</span>. {!<br><br>!}[? if difficulty < 0 : Actions - Agricultural Policy, Rural Campaigning, Addressing the Economic Crisis ?]
+is-card: true
+card-image: img/portraits/BaadeFritz.jpg
+view-if: baade_advisor = 0 and n_advisors < 3 and rural_j_spd = 1
+on-arrival: baade_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+tags: rural_advisor
+
+Fritz Baade is now an advisor.
+
+@add_kopp
+title: Leon Kopp
+subtitle: Leon Kopp is our main campaign strategist among rural regions, and can improve our relations with the Rural parties
+is-card: true
+card-image: img/portraits/BaadeFritz.jpg
+view-if: kopp_advisor = 0 and n_advisors < 3
+on-arrival: kopp_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+tags: rural_advisor
+
+Fritz Baade is now an advisor.
