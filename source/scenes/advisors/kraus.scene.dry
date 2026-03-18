@@ -38,13 +38,6 @@ title: Increase our influence with the ADGB and the trade unions
 subtitle: Try to encourage our members to take leadership roles within the rural trade unions
 choose-if: advisor_action_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: {! 
-Q.advisor_action_timer = 6;
-Q.others_relation += 10;
-Q.cnblp_relation += 10;
-Q.wip_relations += 0;
-Q.rural_relations_unlocked = 1;
-if (Q.cnblp_relation >= 40) { Q.cnblp_left += 1; }
-Q.cnblp_left += ((Q.cnblp_relation / 10) - 3);
-!}
+on-arrival: advisor_action_timer = 6; trun_infl += 1; trun_rur_perc += rural_spd/1000; adgb_infiltrated += 1; cnblp_left += 1 if cnblp_relation >= 40
+
 We have increased our influecnea mong the rural ADGB branches
