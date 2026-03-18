@@ -27,7 +27,7 @@ wip
 
 @borders
 
-- @alsace_negotiating: Attempt to gain leverage in negotiating back the Alsace-Lorraine
+- @border_negotiating: Attempt to gain leverage in negotiating back the Alsace-Lorraine
 - @alsace_1: WIP: Fail to negotiate back the Alsace-Lorraine, and our relations seriously damaged, thankfully no further action has been taking
 - @alsace_2: WIP: Fail to negotiate for the A-L, but nothing bad has come of it.
 - @alsace_3: WIP: Fail to negotiate for the A-L, but we have progressed in reducing reparations, and gained diplomatic leverage
@@ -35,6 +35,34 @@ wip
 - @alsace_5: WIP: Sucessfully negotiate Alsace, but Lorraine remains French (Appears with alsace_6, but mutually exclusive)
 - @alsace_6: WIP: Sucessfully negotiate Lorraine, but Alsace etc
 - @alsace_7: WIP: Sucessfully negotiate the A-L, but FRA relations drastically reduced and French snap elec
+
+@border_negotiating
+title: Attempt to gain leverage in negotiating our borders
+subtitle: [? if tips = 1 : This has a 66% chance of working ?]
+on-arrival: {!
+var roll = Math.random();
+if (roll < 0.33) {
+    Q.border_lev += 0;
+    Q.border_trigger_1 = 0;
+} else if (roll < 0.66) {
+    Q.border_lev += 1;
+    Q.border_trigger_1 = 1;
+} else {
+    Q.border_lev += 2;
+    Q.border_trigger_1 = 1;
+}
+var roll = Math.random();
+if (roll < 0.90) {
+    Q.diplo_lev += 0;
+} else {
+    Q.diplo_lev += 1;
+}
+!}
+
+[? if border_trigger_1 = 0 : We have failed to gain more leverage ?][? if border_trigger_1 = 1 : We have succeeded in gaining more leverage ?]
+
+@alsace_1
+title: Attempt to negotiate the clauses regarding the Alsace-Lorraine
 
 @saar
 
