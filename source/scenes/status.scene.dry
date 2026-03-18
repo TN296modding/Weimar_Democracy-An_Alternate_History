@@ -150,7 +150,7 @@ Q.chrun_tot_perc_dis = (Q.chrun_tot_perc * 100).toFixed(3);
 
 <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_relation : relationships +]
 
-<span style="color: #7FCEB1;">**CNBLP**</span> [+ cnblp_relation : relationships +]
+<span style="color: #7FCEB1;">**CNBLP**</span>: [+ cnblp_relation : relationships +]
 
 = Party Leadership
 
