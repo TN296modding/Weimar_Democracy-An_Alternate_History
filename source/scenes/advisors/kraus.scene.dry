@@ -29,7 +29,7 @@ subtitle: Try to encourage our members to join the IWW.
 view-if: syndicalism = 1
 choose-if: advisor_action_timer == 0 and rural_policy > 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rural_policy == 0 : We have not enacted any rural policies. ?]
-on-arrival: advisor_action_timer = 6; iww_infl += 1; iww_rur_perc += rural_spd +=/500; iww_infiltrated += 1;
+on-arrival: advisor_action_timer = 6; iww_infl += 1; iww_rur_perc += rural_spd/500; iww_infiltrated += 1;
 
 We have increased our influence among the rural IWW branches.
 
@@ -38,6 +38,6 @@ title: Increase our influence with the ADGB and the trade unions
 subtitle: Try to encourage our members to take leadership roles within the rural trade unions
 choose-if: advisor_action_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; trun_infl += 1; trun_rur_perc += rural_spd/1000; adgb_infiltrated += 1;
+on-arrival: advisor_action_timer = 6; trun_infl += 1; trun_rur_perc += rural_spd/1000; adgb_infiltrated += 1; cnblp_left += 1 if cnblp_relation >= 40
 
 We have increased our influecnea mong the rural ADGB branches
