@@ -48,7 +48,7 @@ We have declined to exclude overt union advertising in our campaign.
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: new_middle_spd += 6*(1-dissent)*(new_middle_reach+1); new_middle_spd -= 4 if socialism <= 49 and peoples_party == 0; resources -= 1; peoples_party_support += 1; labor_dissent -= 5; labor_strength += 3; nmc_cc += 1;
+on-arrival: new_middle_spd += 6*(1-dissent)*(new_middle_reach+1); new_middle_spd += 2*(1-dissent)*(new_middle_reach+1) if nmc_awakened = 1; new_middle_spd += 4 if socialism <= 49 and peoples_party == 0 and nmc_awakened = 1; new_middle_spd -= 4 if socialism <= 49 and peoples_party == 0; resources -= 1; peoples_party_support += 1; labor_dissent -= 5; labor_strength += 3; nmc_cc += 1;
 
 We have increased our campaigning among the new middle class. [? if socialism <= 49 and peoples_party == 0: The popular antipathy towards <span style="color: #c00000;">socialism</span> among this group makes our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
 
@@ -59,7 +59,7 @@ We have increased our campaigning among the new middle class. [? if socialism <=
 subtitle: -0.5 resource
 unavailable-subtitle: Not enough resources
 choose-if: resources >= 0.5
-on-arrival: new_middle_spd -= 0.5*(1-dissent); trun_infl += 0.1; trun_nmc_perc += 0.001; trun_nmc_growth_y += 0.001; iww_nmc_perc += 0.001 if syndicalism = 1; resources -= 0.5; labor_dissent -= 3; labor_strength += 3; nmc_cc += 1;
+on-arrival: new_middle_spd -= 0.5*(1-dissent); trun_infl += 0.1; trun_nmc_perc += 0.001; trun_nmc_perc += 0.003 if nmc_awakened = 1; trun_nmc_growth_y += 0.001; trun_nmc_growth_y += 0.001 if nmc_awakened = 1; iww_nmc_perc += 0.001 if syndicalism = 1; iww_nmc_perc += 0.001 if syndicalism = 1 and nmc_awakened; resources -= 0.5; labor_dissent -= 3; labor_strength += 3; nmc_cc += 1;
 
 The unions are already seeing growth. While not super effecive, this is an easy way to increase union membership. Siegfried Aufhäuser thanks us.
 
