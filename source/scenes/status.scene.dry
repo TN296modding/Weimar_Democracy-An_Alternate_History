@@ -150,15 +150,15 @@ Q.chrun_tot_perc_dis = (Q.chrun_tot_perc * 100).toFixed(3);
 
 <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_relation : relationships +]
 
-[? if rural_relations_unlocked or wip = 0 : <span style="color: #7FCEB1;">**CNBLP**</span>: [+ cnblp_relation : relationships +] ?]
+[? if rural_relations_unlocked : <span style="color: #7FCEB1;">**CNBLP**</span>: [+ cnblp_relation : relationships +] ?]
 
-[? if rural_relations_unlocked or wip = 0 : <span style="color: #e9ebf0;">**DBP**</span>: [+ dbp_relation : relationships +] ?]
+[? if rural_relations_unlocked : <span style="color: #e9ebf0;">**DBP**</span>: [+ dbp_relation : relationships +] ?]
 
-[? if rural_relations_unlocked or wip = 0 : <span style="color: #808080;">**Independents**</span>: [+ others_relations : relationships +] ?]
+[? if rural_relations_unlocked : <span style="color: #808080;">**Independents**</span>: [+ others_relations : relationships +] ?]
 
-[? if economic_relations_unlocked or wip = 0 : <span style="color: #e9ebf0;">**WP**</span>: [+ wp_relation : relationships +] ?]
+[? if economic_relations_unlocked : <span style="color: #e9ebf0;">**WP**</span>: [+ wp_relation : relationships +] ?]
 
-[? if economic_relations_unlocked or wip = 0 : <span style="color: #67bed9;">**CSVD**</span>: [+ csvd_relation : relationships +] ?]
+[? if economic_relations_unlocked : <span style="color: #67bed9;">**CSVD**</span>: [+ csvd_relation : relationships +] ?]
 
 = Party Leadership
 
@@ -238,7 +238,7 @@ Left Christian [? if left_chris_spd = 0 and sczp_formed = 0 : Status: Z Faction;
 
 Social Fascist Thoery Credibility: [+ socfas_tc : sf_theory +]
 
-Influence in the Trade Unions: [+ trun_infl : other_influence +]
+Influence in the Trade Unions: [+ trun_infl : other_influence +] [? if tips = 1 and syndicalism = 1 : ( <span style="color:#000000;">TIP:</span> Trade Union influence only applies to the ADGB - The IWW is affected by its own hidden values. ) ?]
 
 ADGB Unionised Industrial Workers: [+ trun_ind_perc : trun_amnt +] ( [+ trun_ind_perc_dis +] % )
 
