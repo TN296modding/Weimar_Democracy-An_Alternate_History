@@ -10,6 +10,7 @@ new-page: true
 Aufhäuser is a leader of the AfA-Bund, the federation of <span style="color: #c00000;">socialist</span> white-collar trade unions.
 
 - @white_collar
+- @unlock_nmc_cc
 - @union_unity
 - @crisis
 - @moderate_economic_plan
@@ -23,6 +24,16 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; new_middle_spd += 6*(1-dissent); nmc_cc += 1;
 
 We have increased our organizing among white-collar workers.
+
+@unlock_nmc_cc
+title: Awaken the Class Consciousness of the New Middle Class
+subtitle: This will make them more receptive to socialism, as well as pushing the Economic-Liberal (WIP note: Colour) parties to the left
+choose-if: advisor_action_timer <= 0
+view-if: nmc_cc >= 10
+unavailable-subtitle: [+ advisor_action_timer +] months before next advisor action
+on-arrival: advisor_action_timer = 6; new_middle_spd += 8; ddp_left += 5; ddp_cohesion -= 1; dvp_left += 3; wp_left += 3; kvp_left += 3; csvd_left += 3; pro_republic += 3; nationalism -= 4;
+
+We have sucessfully fostered Class consciousness in the New Middle Class, and pushed the Economic-Liberal left.
 
 @union_unity
 title: Union-party coordination
