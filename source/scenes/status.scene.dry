@@ -152,6 +152,14 @@ Q.chrun_tot_perc_dis = (Q.chrun_tot_perc * 100).toFixed(3);
 
 [? if rural_relations_unlocked : <span style="color: #7FCEB1;">**CNBLP**</span>: [+ cnblp_relation : relationships +] ?]
 
+[? if rural_relations_unlocked : <span style="color: #e9ebf0;">**DBP**</span>: [+ dbp_relation : relationships +] ?]
+
+[? if rural_relations_unlocked : <span style="color: #808080;">**Independents**</span>: [+ others_relations : relationships +] ?]
+
+[? if economic_relations_unlocked : <span style"color: #e9ebf0;">**WP**</span>: [+ wp_relation : relationships +] ?]
+
+[? if economic_relations_unlocked : <span style"color: #67bed9;">**CSVD**</span>: [+ csvd_relation : relationships +] ?]
+
 = Party Leadership
 
 [? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: [? if z_party_name != "CVP": <span class="tooltip-text" title="Center Party" style="color: #000000;">**[+ z_party_name +]**</span>?][? if z_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party" style="color: #000000;">**[+ z_party_name +]**</span>?]: [? if not cvp_formed: [? if z_ideology == "Right" and not cvp_kvp_formed and z_leader != "Joos" and z_leader != "Bracht": Center to Center-Right?][? if z_ideology == "Right" and cvp_kvp_formed: Christian Democracy?][? if z_leader == "Joos": Center-Left to Center-Right?][? if z_leader == "Kaiser": Center-Left to Center?][? if z_leader == "Bracht": Catholic Conservatism?]?][? if cvp_formed: [? if cvp_leader == "Lambach": Christian Corporatism?][? if cvp_leader == "Stegerwald": Paternalistic Conservatism?][? if cvp_leader == "Gereke": Agrarian Conservatism?][? if cvp_leader == "Westarp" or cvp_leader == "Goerdeler" or cvp_leader = "Lejeune-Jung" or cvp_leader == "Lettow-Vorbeck": National Conservatism?][? if cvp_leader == "Adenauer": Christian Democracy?][? if cvp_leader == "Bolz": Christian Conservatism?][? if cvp_leader == "Treviranus": Tory Democracy?]?] ([? if not cvp_formed:[+ z_leader +]?][? if cvp_formed:[+ cvp_leader +]?])?]
