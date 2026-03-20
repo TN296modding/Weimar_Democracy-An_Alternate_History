@@ -1,0 +1,9 @@
+@unlock_nmc_cc
+title: Awaken the Class Consciousness of the New Middle Class
+subtitle: This will make them more receptive to socialism, as well as pushing the Economic-Liberal (WIP note: Colour) parties to the left
+choose-if: advisor_action_timer <= 0
+view-if: nmc_cc >= 10
+unavailable-subtitle: [+ advisor_action_timer +] months before next advisor action
+on-arrival: advisor_action_timer = 6; new_middle_spd += 8; ddp_left += 5; ddp_cohesion -= 1; dvp_left += 3; wp_left += 3; kvp_left += 3; csvd_left += 3; pro_republic += 3; nationalism -= 4;
+
+We have sucessfully fostered Class consciousness in the New Middle Class, and pushed the Economic-Liberal left.
