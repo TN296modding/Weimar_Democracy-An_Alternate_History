@@ -156,9 +156,9 @@ Q.chrun_tot_perc_dis = (Q.chrun_tot_perc * 100).toFixed(3);
 
 [? if rural_relations_unlocked or wip = 0 : <span style="color: #808080;">**Independents**</span>: [+ others_relations : relationships +] ?]
 
-[? if economic_relations_unlocked or wip = 0 : <span style"color: #e9ebf0;">**WP**</span>: [+ wp_relation : relationships +] ?]
+[? if economic_relations_unlocked or wip = 0 : <span style="color: #e9ebf0;">**WP**</span>: [+ wp_relation : relationships +] ?]
 
-[? if economic_relations_unlocked or wip = 0 : <span style"color: #67bed9;">**CSVD**</span>: [+ csvd_relation : relationships +] ?]
+[? if economic_relations_unlocked or wip = 0 : <span style="color: #67bed9;">**CSVD**</span>: [+ csvd_relation : relationships +] ?]
 
 = Party Leadership
 
@@ -224,7 +224,7 @@ Q.chrun_tot_perc_dis = (Q.chrun_tot_perc * 100).toFixed(3);
 
 Seeheimer Kreis (Business) [? if business_j_spd = 0 : Status: Not Formed; ?] [? if business_j_spd = 1 : Status: Forming; ?] [? if business_j_spd = 2: Formed; ?] strength: [+ business_strength : strength +], dissent: [+ business_dissent : dissent +] 
 
-Agrarian Socialist (Rural) [? if rural_j_spd = 0 : Status: Support Base; ?] [? if rural_j_spd = 1 : Status: Faction; ?] strength: [+ rural_strength : strength +], dissent: [+ rural_dissent : dissent +]
+<span style=" color: #228B22;">Agrarian</span> <span style=" color: #c90000;">Socialist</span> (Rural) [? if rural_j_spd = 0 : Status: Support Base; ?] [? if rural_j_spd = 1 : Status: Faction; ?] strength: [+ rural_strength : strength +], dissent: [+ rural_dissent : dissent +]
 
 Social Liberal (Liberal) [? if ddp_j_spd = 0 : Status: DDP faction; ?] [? if ddp_j_spd = 1 : Status: SPD Faction; ?] strength: [+ liberal_strength : strength +], dissent: [+ liberal_dissent : dissent +]
 
