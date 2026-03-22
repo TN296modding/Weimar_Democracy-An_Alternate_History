@@ -27,8 +27,8 @@ go-to: state_menu
 - @bavaria: Deal with <span style="color: #0098D4;">Ba</span><span style="color: #FFFFFF;">va</span><span style="color: #0098D4;">ri</span><span style="color: #FFFFFF;">a</span>
 - @bremen: Deal with <span style="color: #DD0000;">T</span><span style="color: #FFFFFF;">h</span><span style="color: #DD0000;">e</span> <span style="color: #FFFFFF;">c</span><span style="color: #DD0000;">i</span><span style="color: #FFFFFF;">ty of</span> <span style="color: #DD0000;">Bre</span><span style="color: #FFFFFF;">men</span>
 - @brunswick: Deal with <span style="color: #0047ab;">Bruns</span><span style="color: #ffce08;">wick</span>
-- @coburg: Deal with Coburg
-- @danzig: Deal with Danzig
+- @coburg: Deal with <span style="color:#000000;">Cob</span><span style="color:#fff02;">urg</span>
+- @danzig: Deal with <span style="color:#bf0000;">Da</span><span style="color:#f3c547;">nz</span><span style="color:#ffffff;">ig</span>
 
 @alsace
 view-if: alsace_ger = 1 or wip = 0
