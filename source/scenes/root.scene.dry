@@ -1151,6 +1151,29 @@ For more information on the politics and government of the German Republic, see 
 
 **If you are playing this mod via the Mod Loader in base game, there will be various items missing (parliament colours, images, arrows, etc.). For the intended experience, please play using <a href="https://originn0.github.io/dynamic_social_democracy/" style="color: #0077FF">this</a> link.**
 
+- @1919_start: 1919 Start
+- @1922_start: 1922 Start
+- @1925_start: 1925 Start
+- @1928_start: 1928 Start
+- @1930_start: 1930 Start
+
+@1919_start
+choose-if: wip = 1919
+unavailable_subtitle: Coming Soon
+
+@1922_start
+choose-if: wip = 1922
+unavailable_subtitle: Coming Soon
+
+@1925_start
+choose-if: wip = 1925
+unavailable-subtitle: Coming Soon
+
+@1930_start
+choose-if: wip = 1930
+unavailable-subtitle: Coming Soon
+
+@1928_start
 - @1928_mod_mode: Begin (<span style="color: #0077FF;">dynamic</span> mode)
 - @1928_easy: Begin (<span style="color: #5B9A8D;">easy</span> difficulty)
 - @1928_main: Begin (<span style="color: #C4B156;">normal</span> difficulty)
