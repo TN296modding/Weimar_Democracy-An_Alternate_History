@@ -47,6 +47,7 @@ on-arrival: enemies = "bourgeois parties"; left_strength += 8; left_dissent -= 5
 Our anti-bourgeois rhetoric is popular among the left, but may make it harder to build the coalitions that are necessary for government in the future.
 
 @wip
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
