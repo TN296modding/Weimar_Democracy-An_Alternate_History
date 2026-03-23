@@ -12,7 +12,7 @@ go-to: sandbox_menu
 - @nat_rep_support: Increase/Decrease Repub Support/Nationalism
 - @free_agenda: clear your hand for free
 - @adopt_plan: Adopt any (or every) economic plan
-- @time_skip: Skip time 1 month at a time (doing it more than 1 month at a time may break the game)
+- @time_skip: Skip time 1 month at a time (doing it more than 1 month at a time may break the game) - Do othe rsnadbox actions befoore this
 - @advisor_actions: Access options for advisors
 - @edit_hindy_angry: determines how angry hindenburg is at you
 - @editresources: Edit Resources
@@ -436,7 +436,6 @@ on-arrival: left_strength += 50; reformist_strength = 0; kpd_relation = 100; wit
 @free_agenda
 go-to: sandbox_menu
 on-arrival: {!
-Q.advisor_action_timer = 6;
 if (Q.difficulty >= 0) {
     window.dendryUI.dendryEngine.state.currentHands['main'] = [];
 } else {
@@ -469,9 +468,8 @@ go-to: adopt_plan
 on-arrival: nationalization_plan = 1
 
 @time_skip
-go-to: sandbox_menu
-on-arrival: month_actions += 4
 go-to: post_event
+on-arrival: month_actions += 4
 
 @advisor_actions
 
