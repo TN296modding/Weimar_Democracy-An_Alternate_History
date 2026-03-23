@@ -470,7 +470,8 @@ on-arrival: nationalization_plan = 1
 
 @time_skip
 go-to: sandbox_menu
-on-arrival: month_actions += 1
+on-arrival: month_actions += 4
+go-to: post_event
 
 @advisor_actions
 
