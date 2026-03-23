@@ -353,11 +353,22 @@ for (var party of parties) {
 for (var party of parties) {
     Q[party + '_votes'] = Math.round((Q[party + '_votes_raw'] / total) * 100 * 10) / 10;
 }
+
+### add splinter parties to the Prog coal
+Q.prog_list_disp = Q.kpd_votes + Q.spd_votes + Q.ddp_votes
+
+if (Q.lvp_formed) {
+    Q.lib_list_disp = Q.lvp_votes + (Q.other_votes/2)
+}
+if (Q.lvp_formed = 0) {
+    Q.lib_list_disp = Q.ddp_votes + Q.dvp_votes + (Q.other_votes/2)
+}
 !}
 
 = Projected election results
 
 (if the election were to be held now):
+### Add Splinter parties, with either their vote percent or "Not Formed" if they're'n't formed
 
 <span style="color: #c00000;">**SPD**</span>: [+ spd_votes +]%
 
@@ -404,6 +415,24 @@ Rural: SPD: [+ rural_spd_display +]%, [+ z_party_name +]: [+ rural_z_display +]%
 Unemployed: SPD: [+ unemployed_spd_display +]%, [+ z_party_name +]: [+ unemployed_z_display +]%, KPD: [+ unemployed_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ unemployed_ddp_display +]%, [? if dvp_exist: DVP: [+ unemployed_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ unemployed_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ unemployed_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ unemployed_dnf_display +]%  ?][? if kvp_formed: KVP: [+ unemployed_kvp_display +]%  ?]NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]%
 
 Catholics: SPD: [+ catholics_spd_display +]%, [+ z_party_name +]: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ catholics_ddp_display +]%, [? if dvp_exist: DVP: [+ catholics_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ catholics_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ catholics_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ catholics_dnf_display +]%  ?][? if kvp_formed: KVP: [+ catholics_kvp_display +]%  ?]NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]%
+
+[? if lists >= 1 or wip = 0 : = **Lists** ?]
+
+[? if wip = 0 : Progressive List: [+ prog_list_disp +] ?]
+
+[? if wip = 0 : Liberal List: [+ lib_list_disp +] ?]
+
+[? if wip = 0 : Harzburg Front: [+ harz_list_disp +] ?]
+
+[? if wip = 0 : Bourgeois List: [+ bou_list_disp +] ?]
+
+[? if wip = 0 : Agrarian List [+ agr_list_disp +] ?]
+
+[? if wip = 0 : Agrarian-Socialist List [+ agr_soc_list_disp +] ?]
+
+[? if wip = 0 : Weimar List [+ wei_list_disp +] ?]
+
+[? if wip = 0 : People's List [+ lnd_list_disp +] ?]
 
 @foreign_tab
 
