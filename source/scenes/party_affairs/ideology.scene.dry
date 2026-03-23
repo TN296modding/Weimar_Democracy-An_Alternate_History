@@ -91,41 +91,49 @@ on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; reformis
 We have changed ideologies. Many in the party feel unmoored.
 
 @wip1
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip2
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip3
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip4
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip5
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip6
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip7
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip8
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
