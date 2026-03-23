@@ -86,16 +86,19 @@ on-arrival: radio += 1; resources -= 1; new_middle_spd += 3*(1 - dissent); new_m
 We are continuing to invest in our radio stations. Both commercial and political radio are becoming more prevalent, making it harder to spread our message amidst the competition.
 
 @wip1
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip2
-view-if: wip = 2
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @publicity
-view-if: wip = 3
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
