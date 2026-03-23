@@ -632,7 +632,7 @@ if (Q.month_actions >= 4) {
             Q.old_middle_spd -= 6/48;
             Q.old_middle_nsdap += 2/48;
         }
-        if (Q.rural_spd > 4 && agricultural_policy == 0) {
+        if (Q.rural_spd > 4 && Q.agricultural_policy == 0) {
             Q.rural_spd -= 6/48;
             Q.rural_nsdap += 2/48;
         }
