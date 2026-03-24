@@ -329,7 +329,7 @@ Q.pro_republic_disp = Math.floor(Q.pro_republic);
 Q.nationalism_disp = Math.floor(Q.nationalism);
 Q.socialism_disp = Math.floor(Q.socialism);
 
-var parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+var parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other', 'lvp', 'kvp', 'dnf'];
 var classes = ['workers', 'new_middle', 'old_middle', 'rural', 'unemployed', 'catholics'];
 var classSizes = {
     workers: Q.workers,
@@ -360,9 +360,35 @@ Q.prog_list_disp = Q.kpd_votes + Q.spd_votes + Q.ddp_votes
 if (Q.lvp_formed) {
     Q.lib_list_disp = Q.lvp_votes + (Q.other_votes/2)
 }
+
 if (Q.lvp_formed = 0) {
     Q.lib_list_disp = Q.ddp_votes + Q.dvp_votes + (Q.other_votes/2)
 }
+
+Q.harz_list_disp = Q.nsdap_votes + Q.dnf_votes
+
+if (Q.dnvp_ideology == "Radical") {
+    Q.harz_list_disp += dnvp_votes
+}
+
+Q.bou_list_disp = Q.z_votes + Q.ddp_votes + Q.lvp_votes + Q.dvp_votes + Q.kvp_votes
+
+if (Q.dnvp_ideology == "Moderate") {
+    Q.bou_list_disp += Q.dnvp_votes
+}
+
+Q.agr_list_disp = Q.dnvp_votes + Q.others_votes
+
+Q.agr_soc_list_disp = 0
+
+if (not lvp_formed) {
+    Q.wei_list_disp = (Q.z_votes -= 3) + Q.ddp_votes + Q.spd_votes
+}
+
+if (lvp_formed) {
+    Q.wei_list_disp = (Q.z_votes -= 3) + Q.lvp_votes + Q.spd_votes
+}
+
 !}
 
 = Projected election results
