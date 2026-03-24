@@ -355,39 +355,42 @@ for (var party of parties) {
 }
 
 ### add splinter parties to the Prog coal
-Q.prog_list_disp = Q.kpd_votes + Q.spd_votes + Q.ddp_votes
+
+Q.prog_list_disp = Q.kpd_votes + Q.spd_votes + Q.ddp_votes;
 
 if (Q.lvp_formed) {
-    Q.lib_list_disp = Q.lvp_votes + (Q.other_votes/2)
+    Q.lib_list_disp = Q.lvp_votes + (Q.other_votes/2);
 }
 
-if (Q.lvp_formed = 0) {
-    Q.lib_list_disp = Q.ddp_votes + Q.dvp_votes + (Q.other_votes/2)
+if (Q.lvp_formed == 0) {
+    Q.lib_list_disp = Q.ddp_votes + Q.dvp_votes + (Q.other_votes/2);
 }
 
-Q.harz_list_disp = Q.nsdap_votes + Q.dnf_votes
+Q.harz_list_disp = Q.nsdap_votes + Q.dnf_votes;
 
 if (Q.dnvp_ideology == "Radical") {
-    Q.harz_list_disp += dnvp_votes
+    Q.harz_list_disp += Q.dnvp_votes;
 }
 
-Q.bou_list_disp = Q.z_votes + Q.ddp_votes + Q.lvp_votes + Q.dvp_votes + Q.kvp_votes
+Q.bou_list_disp = Q.z_votes + Q.ddp_votes + Q.lvp_votes + Q.dvp_votes + Q.kvp_votes;
 
 if (Q.dnvp_ideology == "Moderate") {
-    Q.bou_list_disp += Q.dnvp_votes
+    Q.bou_list_disp += Q.dnvp_votes:
 }
 
-Q.agr_list_disp = Q.dnvp_votes + Q.others_votes
+Q.agr_list_disp = Q.dnvp_votes + Q.others_votes:
 
-Q.agr_soc_list_disp = 0
+Q.agr_soc_list_disp = 0:
 
 if (not lvp_formed) {
-    Q.wei_list_disp = (Q.z_votes -= 3) + Q.ddp_votes + Q.spd_votes
+    Q.wei_list_disp = (Q.z_votes -= 3) + Q.ddp_votes + Q.spd_votes;
 }
 
 if (lvp_formed) {
-    Q.wei_list_disp = (Q.z_votes -= 3) + Q.lvp_votes + Q.spd_votes
+    Q.wei_list_disp = (Q.z_votes -= 3) + Q.lvp_votes + Q.spd_votes;
 }
+
+Q.lnd_list_disp = Q.lvp_votes + Q.z_votes + Q.dvp_votes + Q.kvp_votes + Q.other_votes
 
 !}
 
