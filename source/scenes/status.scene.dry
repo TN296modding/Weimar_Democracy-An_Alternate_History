@@ -331,6 +331,7 @@ Q.socialism_disp = Math.floor(Q.socialism);
 
 var parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other', 'lvp', 'kvp', 'dnf'];
 var classes = ['workers', 'new_middle', 'old_middle', 'rural', 'unemployed', 'catholics'];
+
 var classSizes = {
     workers: Q.workers,
     new_middle: Q.new_middle,
@@ -339,19 +340,29 @@ var classSizes = {
     unemployed: Q.unemployed,
     catholics: Q.catholics
 };
+
 var total = 0;
 
+// Calculate raw votes
 for (var party of parties) {
     var raw = 0;
+
     for (var c of classes) {
         raw += classSizes[c] * Q[c + '_' + party];
     }
+
     Q[party + '_votes_raw'] = raw;
     total += raw;
 }
 
+if (total === 0) {
+    total = 1;
+}
+
 for (var party of parties) {
-    Q[party + '_votes'] = Math.round((Q[party + '_votes_raw'] / total) * 100 * 10) / 10;
+    Q[party + '_votes'] = +((Q[party + '_votes_raw'] / total) * 100).toFixed(1);
+
+    console.log(party + ': ' + Q[party + '_votes'] + '%');
 }
 
 Q.prog_list_disp = Q.kpd_votes + Q.spd_votes + Q.ddp_votes;
@@ -381,11 +392,11 @@ Q.agr_list_disp = Q.dnvp_votes + Q.others_votes;
 Q.agr_soc_list_disp = 0;
 
 if (!Q.lvp_formed) {
-    Q.wei_list_disp = (Q.z_votes -= 3) + Q.ddp_votes + Q.spd_votes;
+    Q.wei_list_disp = (Q.z_votes - 3) + Q.ddp_votes + Q.spd_votes;
 }
 
 if (Q.lvp_formed) {
-    Q.wei_list_disp = (Q.z_votes -= 3) + Q.lvp_votes + Q.spd_votes;
+    Q.wei_list_disp = (Q.z_votes - 3) + Q.lvp_votes + Q.spd_votes;
 }
 
 Q.lnd_list_disp = Q.lvp_votes + Q.z_votes + Q.dvp_votes + Q.kvp_votes + Q.other_votes;
