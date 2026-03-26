@@ -78,7 +78,8 @@ on-arrival: resources -= 1; rb_strength += 50; rb_militancy += 0.02; young_socia
 Our new youth members flock to the left or neorevisionist wings of the party, and also bring new radicalism to the Reichsbanner.
 
 @wip1
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 - @wip1A: Fund political education
 - @wip1B: Fund scholarships and promote students with outstanding intellectual abilities or personality
@@ -92,57 +93,68 @@ wip
 wip
 
 @wip2
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip3
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip4
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip5
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip6
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip7
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip8
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip9
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip10
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip11
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
 @wip12
-view-if: wip = 1
+choose-if: wip = 1
+unavailable-subtitle: Coming Soon
 
 wip
 
