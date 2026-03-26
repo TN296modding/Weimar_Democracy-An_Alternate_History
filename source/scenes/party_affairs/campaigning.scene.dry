@@ -76,7 +76,7 @@ We have increased our campaigning among the old middle class. [? if nationalism 
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: rural_spd += 5*(1-dissent)*(rural_reach+1); rural_spd -= 3*(1-dissent) if peoples_party == 0; resources -= 1; peoples_party_support += 1; rural_spd += 3*(1-dissent) if rural_policy >= 2; rural_campaigned += 1;
+on-arrival: rural_spd += 5*(1-dissent)*(rural_reach+1); rural_spd += 2*(rural_reach+1) if agr_awakened = 1; rural_spd -= 3*(1-dissent) if peoples_party == 0; rural_spd += 3 if agr_awakened == 1 and peoples_party == 0; resources -= 1; peoples_party_support += 1; rural_spd += 3*(1-dissent) if rural_policy >= 2; rural_campaigned += 1; agr_cc += 1
 
 We have increased our campaigning among farmers. [? if peoples_party == 0: We have not historically campaigned much among the farmers, and they do not trust us. ?][? if peoples_party > 0: As a people's party, we have an easier time increasing support among farmers than before. ?][? if rural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
 
@@ -87,7 +87,7 @@ We have increased our campaigning among farmers. [? if peoples_party == 0: We ha
 subtitle: -0.5 resource
 unavailable-subtitle: Not enough resources
 choose-if: resources >= 0.5
-on-arrival: rural_spd -= 0.5*(1-dissent); trun_infl += 0.1; trun_rur_perc += 0.002; trun_growth_y += 0.001; trun_growth_y += 0.001 if land_reform >= 1; trun_rur_perc += 0.003 if land_reform >= 1; iww_rur_perc += 0.001 if syndicalism = 1; resources -= 0.5; labour_dissent -= 4; labor_strength += 3; rural_dissent -= 6;
+on-arrival: rural_spd -= 0.5*(1-dissent); trun_infl += 0.1; trun_rur_perc += 0.002; trun_rur_perc += 0.003 if agr_awakened = 1; trun_growth_y += 0.001; trun_growth_y += 0.001 if agr_awakened = 1; trun_growth_y += 0.001 if land_reform >= 1; trun_rur_perc += 0.003 if land_reform >= 1; iww_rur_perc += 0.001 if syndicalism = 1; iww_rur_perc += 0.001 if syndicalism = 1 and agr_awakened = 1; resources -= 0.5; labour_dissent -= 4; labor_strength += 3; rural_dissent -= 6;
 
 The unions are already seeing growth. While not super effective, this is an easy way to increase union membership. Fritz Baade thanks us.
 
