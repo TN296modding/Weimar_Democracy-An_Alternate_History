@@ -24,7 +24,7 @@ As we control the Labor [? if economic_minister_party == "SPD" : and Economic ?]
 - @easy_discard
 - @cancel_advisor_action
 # - @unions1: Relax restrictions on unions
-# - @unions2: Provide unions with more pwoers
+# - @unions2: Provide unions with more freedoms to strike & bargain
 # - @unions3: Make sure all unions have mandatory funding that cannot be withheld [? if gov_pay: which the government will pay for ?] [? if left_stronk : which the business will pay for (Evil laughter) ?]
 
 @expand_councils
@@ -61,7 +61,7 @@ Sectorial works councils can now negotiate wage and price policies for entire ec
 @nationalize_1
 title: Begin to socialize key industries.
 subtitle: -1 budget - we should buy out industries and govern them together with workers and consumers.
-on-arrival: economic_democracy += 1; capital_strike_progress += 1; budget -= 1; socializations += 1; workers_spd += 6*(1-dissent); unemployed_spd += 3*(1-dissent); coalition_dissent += 1; capital_strike_progress += 1 if black_thursday_seen; unemployed -= 1 if unemployed > 9; dvp_relation -= 3; ddp_relation -= 3; lvp_relation -= 3; dvp_right += 1; lvp_right += 1; ddp_right += 1; ddp_cohesion -= 1; economy_goal_spd += 1; goal_spd_cancel_peoples += 1; economic_growth += 0.2 if economic_growth < 5; economy_goal_completed += 1 if socializations >= 2
+on-arrival: economic_democracy += 1; capital_strike_progress += 1; budget -= 1; socializations += 1; workers_spd += 6*(1-dissent); unemployed_spd += 3*(1-dissent); coalition_dissent += 1; capital_strike_progress += 1 if black_thursday_seen; unemployed -= 1 if unemployed > 9; dvp_relation -= 3; ddp_relation -= 3; lvp_relation -= 3; dvp_right += 1; lvp_right += 1; ddp_right += 1; ddp_cohesion -= 1; economy_goal_spd += 1; goal_spd_cancel_peoples += 1; economic_growth += 0.2 if economic_growth < 5; economy_goal_completed += 1 if socializations >= 2; budgetgrowth += 0.2;
 choose-if: budget >= 1
 max-visits: 3
 
@@ -82,6 +82,6 @@ We have enacted legislation that makes it easier to create cooperative enterpris
 subtitle: -1 budget
 unavailable-subtitle: Not enough budget
 choose-if: budget >= 1
-on-arrival: budget -= 1; economic_democracy += 1; cooperatives += 0.5; workers_spd += 2; new_middle_spd += 4; old_middle_spd += 3; economic_growth += 2; big_bank_control -= 1
+on-arrival: budget -= 1; economic_democracy += 1; cooperatives += 0.5; workers_spd += 2; new_middle_spd += 4; old_middle_spd += 3; economic_growth += 2; big_bank_control -= 1; budgetgrowth += 0.1;
 
 wip
