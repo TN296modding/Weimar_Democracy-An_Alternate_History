@@ -17,7 +17,7 @@ While the SPD is primarily a party of the Working Class, some proponents argue t
 - @return: We can deal with this later
 - @easy_discard
 
-@unlock_nmc_cc
+@unlock_agr_cc
 title: Awaken the Class Consciousness of the Peasants
 subtitle: This will make them more receptive to socialism, as well as pushing the Agrarian-Conservative (WIP note: Colour) parties to the left
 choose-if: agr_cc >= 8
