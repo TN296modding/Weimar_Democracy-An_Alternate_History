@@ -16,6 +16,7 @@ if (Q.economic_growth) {
 
 = Status
 
+[? if debug = 0 : debug debug ?]
 [+ month : month +] [+ year +] Week [+ week +]
 
 Resources available: [+ resources +]
