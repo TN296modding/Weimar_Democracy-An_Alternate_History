@@ -1,0 +1,38 @@
+title: Class Consciousness in the New Middle Class
+new-page: true
+view-if: nmc_cc >= 8 and nmc_cc_timer <= 0 and nmc_awakened = 0
+on-arrival: month_actions += 1; nmc_cc_timer = 4
+max-visits: 4
+is-card: true
+card-image: img/freiheit_und_arbeit.jpg
+tags: party_affairs
+
+= Socialism in the New Middle Class
+
+While the SPD is primarily a party of the Working Class, some proponents argue that the New Middle Class is part of the Working Class.
+
+- @unlock_nmc_cc
+- @foster_cc
+- @petit_bourgeois
+- @root
+- @easy_discard
+
+@unlock_nmc_cc
+title: Awaken the Class Consciousness of the New Middle Class
+subtitle: This will make them more receptive to socialism, as well as pushing the Economic-Liberal (WIP note: Colour) parties to the left
+choose-if: nmc_cc >= 10
+unavailable-subtitle: The New Middle Class has not yet had enough exposure to Socialist ideals
+on-arrival: advisor_action_timer = 6; new_middle_spd += 8; ddp_left += 5; ddp_cohesion -= 1; dvp_left += 3; wp_left += 3; kvp_left += 3; csvd_left += 3; pro_republic += 3; nationalism -= 4; trun_nmc_perc += 0.03; iww_nmc_perc += 0.02 if syndicalism = 1; nmc_awakened = 1;
+
+We have sucessfully fostered Class consciousness in the New Middle Class, and pushed the Economic-Liberal parties left.
+
+@foster_cc
+title: Push Socialist ideas onto the New Middle Class
+subtitle: This will make it easier to make them class-conscious
+on-arrival: nmc_cc += 1; new_middle_spd += 1
+
+We are progressing towards class-consciousness in the New Middle Class
+
+@petit_bourgeois
+title: The New Middle Class are petit-bourgeois, and will always stay that way - There's nothing we can do
+on-arrival: nmc_awakened = -1; new_middle_spd -= 2

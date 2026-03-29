@@ -1,0 +1,142 @@
+title: Negotiating Versailles
+new-page: true
+is-card: true
+on-arrival: neg_versailles_timer += 6; month_actions += 1
+view-if: spd_in_government and (foreign_minister_party = "SPD") and neg_versailles_timer == 0
+#card-image:
+tags: govt_affairs, cabinet
+
+= Negotiating Versailles
+
+- @military: Negotiating the articles limiting our military
+- @borders: Negotiate the articles that have reduced our territory
+- @saar: Negotiate the articles dealing with the Saarland
+- @colonies: Negotiate the articles dealing with the colonies
+- @austrohungary: Negotiate the articles dealing with the formed Austro-Hungarian Empire
+- @danzig: Negotiatate the articles regarding Danzig
+- @reparations: Negotiate our reparations
+- @finance: Negotiate the articles regarding finance
+- @other: Negotiate parts XIV (French Occupation), and parts XV (Miscellaneous)
+- @incrlev: Increase our <span style="color: #0F52BA;">Diplomatic</span> <span style="color: #38664C;">Leverage</span>
+- @root: Do not pursue negotiations
+- @easy_discard
+
+@military
+
+wip
+
+@borders
+
+- @border_negotiating: Attempt to gain leverage in negotiating back the Alsace-Lorraine
+- @alsace_1
+- @alsace_2
+- @alsace_3
+- @alsace_4
+- @alsace_5
+- @alsace_6
+
+@border_negotiating
+title: Attempt to gain leverage in negotiating our borders
+subtitle: [? if tips = 1 : This has a 66% chance of working ?]
+on-arrival: {!
+var roll = Math.random();
+if (roll < 0.33) {
+    Q.border_lev += 0;
+    Q.border_trigger_1 = 0;
+} else if (roll < 0.66) {
+    Q.border_lev += 1;
+    Q.border_trigger_1 = 1;
+} else {
+    Q.border_lev += 2;
+    Q.border_trigger_1 = 1;
+}
+var roll = Math.random();
+if (roll < 0.90) {
+    Q.diplo_lev += 0;
+} else {
+    Q.diplo_lev += 1;
+}
+!}
+
+[? if border_trigger_1 = 0 : We have failed to gain more leverage ?][? if border_trigger_1 = 1 : We have succeeded in gaining more leverage ?]
+
+@alsace_1
+title: Attempt the final negotiations of the clauses regarding the Alsace-Lorraine
+subtitle: [? if tips = 1 : You may wish to increase your <span style="color: #0F52BA;">Diplomatic</span> <span style="color: #38664C;">Leverage</span> or your Border Negotiating ?]
+view-if: (border_lev + diplo_lev) <= 1 and alsace_resolved = 0
+on-arrival: fra_relation -= 3; border_lev -= 2; alsace_resolved = 1;
+
+We have utterly failed to improve upon the clauses regarding the Treaty of Versailles, and have even sown distrust among our Socialist-French allies
+
+@alsace_2
+title: Attempt the final negotiations of the clauses regarding the Alsace-Lorraine
+subtitle: [? if tips = 1 : You may wish to increase your <span style="color: #0F52BA;">Diplomatic</span> <span style="color: #38664C;">Leverage</span> or your Border Negotiating ?]
+view-if: (border_lev + diplo_lev) <= 4 and (border_lev + diplo_lev) >= 2 and alsace_resolved = 0
+on-arrival: border_lev -= 4 if border_lev >= diplo_lev; border_lev -= 2 if diplo_lev > border_lev; diplo_lev -= 2 if diplo_lev > border_lev; alsace_resolved = 1;
+
+We have failed to improve upon the clauses regarding the Treaty of Versailles, but nothing bad has come of it.
+
+@alsace_3
+title: Attempt the final negotiations of the clauses regarding the Alsace-Lorraine
+subtitle: [? if tips = 1 : You may wish to increase your <span style="color: #0F52BA;">Diplomatic</span> <span style="color: #38664C;">Leverage</span> or your Border Negotiating, though this option will provide minor benefits, although not necessarily related to what you wanted ?]
+view-if: (border_lev + diplo_lev) <= 6 and (border_lev + diplo_lev) >= 5 and alsace_resolved = 0
+on-arrival: border_lev -= 6 if border_lev >= diplo_lev; border_lev -= 3 if diplo_lev > border_lev; diplo_lev -= 3 if diplo_lev > border_lev; alsace_resolved = 1; reparations_negotiation += 1; 
+
+We have failed to improve upon the clauses regarding the Treaty of Versailles, but we have secured some progress in reparations negotiations
+
+@alsace_4
+title: Attempt to secure Alsace
+subtitle: [? if tips = 1 : You may wish to increase your <span style="color: #0F52BA;">Diplomatic</span> <span style="color: #38664C;">Leverage</span> or your Border Negotiating, as this option is mutually exclusive with the other one ?]
+view-if: (border_lev + diplo_lev) <= 8 and (border_lev + diplo_lev) > 6 and alsace_resolved = 0
+on-arrival: fra_relation -= 1; border_lev -= 8 if border_lev >= diplo_lev; border_lev -= 4 if diplo_lev > border_lev; diplo_lev -= 4 if diplo_lev > border_lev; alsace_resolved = 1; alsace_prussia = 1;
+
+We have failed to secure the whole of Alsace-Lorraine, but we have sucessfully negotiated Alsace, which has been annexed into Prussia
+
+@alsace_5
+title: Attempt to secure Lorraine
+subtitle: [? if tips = 1 : You may wish to increase your <span style="color: #0F52BA;">Diplomatic</span> <span style="color: #38664C;">Leverage</span> or your Border Negotiating, as this option is mutually exclusive with the other one ?]
+view-if: (border_lev + diplo_lev) <= 8 and (border_lev + diplo_lev) > 6 and alsace_resolved = 0
+on-arrival: fra_relation -= 1; border_lev -= 8 if border_lev >= diplo_lev; border_lev -= 4 if diplo_lev > border_lev; diplo_lev -= 4 if diplo_lev > border_lev; alsace_resolved = 1; lorraine_prussia = 1;
+
+We have failed to secure the whole of Alsace-Lorraine, but we have sucessfully negotiated Lorraine, which has been annexed into Prussia
+
+@alsace_6
+title: Attempt the final negotiations of the clauses regarding the Alsace-Lorraine
+subtitle: [? if tips = 1 : You may wish to increase your <span style="color: #0F52BA;">Diplomatic</span> <span style="color: #38664C;">Leverage</span> or your Border Negotiating ?]
+view-if: (border_lev + diplo_lev) <= 10 and (border_lev + diplo_lev) > 8 and alsace_resolved = 0
+on-arrival: fra_relation -= 2; border_lev -= 10 if border_lev >= diplo_lev; border_lev -= 5 if diplo_lev > border_lev; diplo_lev -= 5 if diplo_lev > border_lev; alsace_resolved = 1; france_snap_timer = 6; alsace_ger = 1; workers_spd += 3; new_middle_nsdap -= 6; new_middle_spd += 2; new_middle_ddp += 3; new_middle_dvp += 1 if dvp_left >= (dvp_right + 2); new_middle_ddp += 1 if dvp_left < (dvp_right + 2); old_middle_nsdap -= 8; old_middle_spd += 1; old_middle_spd += 1 if pro_republic >= 75; old_middle_ddp += 1 if pro_republic < 75; old_middle_ddp += 4; old_middle_dvp += 1; old_middle_dvp += 1 if dvp_left >= dvp_right; rural_dnvp -= 3 if dnvp_ideology == "Radical"; rural_nsdap -= 2; unemployed_nsdap -= 2; unemployed_kpd -= 1; pro_republic += 5; nationalism -= 3;
+
+We have somehow negotiated the Alsace-Lorraine back into the German fold, though the French have demanded a seperate <i>Länd</i> (State) for the new territory
+
+@saar
+
+wip negotiate a earlier referendum
+
+@colonies
+
+wip
+
+@austrohungary
+
+wip help Austria and Hungary with Trianon and En-Laye
+
+@danzig
+
+wip
+
+@reparations
+
+wip
+
+@finance
+
+wip
+
+@other
+
+wip
+
+@incrlev
+on-arrival: diplo_lev += 1
+
+We have increased our <span style="color: #0F52BA;">Diplomatic</span> <span style="color: #38664C;">Leverage</span>

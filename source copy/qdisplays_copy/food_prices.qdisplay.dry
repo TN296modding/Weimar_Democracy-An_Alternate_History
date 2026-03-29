@@ -1,0 +1,8 @@
+
+(..0) Market Control
+(1..2) Minor Government Control
+(3..4) Stable (Ensured by the Government)
+(5..6) Medium (Ensured by the Government)
+(7..8) Low (Ensured by the Government)
+(9..) Free
+#wip event if the food price >= 10, similar to the one that happens if agri-finance is too high

@@ -1,0 +1,8 @@
+
+(..0) None
+(1..2) Little
+(3..4) Some
+(4..5) Lots
+(6..7) Complete
+(8..) Surplus
+# wip: if in Surplus, add an event to removed 1 agriculutural financing (possibly bringing it down to Complete), to gain budget, or put the surplus into another agricultural/food based project

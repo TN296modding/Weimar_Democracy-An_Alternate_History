@@ -1,0 +1,102 @@
+title: Tax Reform
+new-page: true
+is-card: true
+tags: govt_affairs, cabinet
+on-arrival: fiscal_policy_timer += 6; month_actions += 1
+view-if: spd_in_government = 1 and finance_minister_party = "SPD" and fiscal_policy_timer = 0
+card-image: img/portraits/HilferdingRudolf.jpg
+
+= Fiscal Policy
+
+Tax policy involves issues of taxation (WIP).
+
+Tax Deduction 1 DESC (WIP)
+
+- @union_deductions1
+- @union_deductions2
+- @upper_class_charity_deduction
+- @upper_class_welfare_deduction
+- @impoverished_tax_exemption
+- @volunteering_credit: Provide tax credits for people volunteering in registered organisations
+- @new_business_credit: Provide tax credits for newly-establsihed small businesses
+- @cooperatives_credit: Provide tax credits for all co-operatives
+- @root: Do not change the tax system.
+- @easy_discard
+- @cancel_advisor_action
+
+@union_deductions1
+title: Provide tax deductions for union dues
+subtitle: -0.5 budget
+unavailable-subtitle: Not enough budget
+choose-if: budget >= 0.5
+view-if: (trun_ind_perc + trun_nmc_perc + trun_rur_perc + iww_ind_perc + iww_nmc_perc + iww_rur_perc + iww_unm_perc + chrun_tot_perc) < 0.12 and union_ddcs = 0
+on-arrival: budget -= 0.5; trun_ind_perc += 0.03; trun_nmc_perc += 0.007; trun_rur_perc += 0.015; iww_ind_perc += 0.004 if syndicalism = 1; iww_nmc_perc += 0.003 if syndicalism = 1; iww_rur_perc += 0.003 if syndicalism = 1; iww_unm_perc += 0.004 if syndicalism = 1; chrun_tot_perc += 0.02; union_ddcs = 1;
+
+Description
+
+@union_deductions2
+title: Provide tax deductions for union dues
+subtitle: -1 budget
+unavailable-subtitle: Not enough budget
+choose-if: budget >= 1
+view-if: (trun_ind_perc + trun_nmc_perc + trun_rur_perc + iww_ind_perc + iww_nmc_perc + iww_rur_perc + iww_unm_perc + chrun_tot_perc) > 0.12 and union_ddcs = 0
+on-arrival: budget -= 1; trun_ind_perc += 0.015; trun_nmc_perc += 0.009; trun_rur_perc += 0.03; iww_ind_perc += 0.006 if syndicalism = 1; iww_nmc_perc += 0.004 if syndicalism = 1; iww_rur_perc += 0.006 if syndicalism = 1; iww_unm_perc += 0.007 if syndicalism = 1; chrun_tot_perc += 0.03;
+
+Description
+
+@upper_class_charity_deduction
+title: Provide tax deductions for donating to charities
+subtitle: -1.5 budget
+unavailable-subtitle: Not enough budget
+choose-if: budget >= 1.5
+max-visits: 1
+on-arrival: budget -= 1.5; charity += 2; new_middle_spd += 4; old_middle_spd += 4; unemployed_spd += 2; left_dissent += 8; center_dissent += 6; labour_dissent += 2; dvp_left += 2; ddp_left += 4; lvp_left += 3; ddp_relation += 10; dvp_relation += 7; z_relation += 5; kpd_relation -= 12; ddp_cohesion += 1; inflation += 0.2; economic_growth += 0.2;
+
+description
+
+@upper_class_welfare_deduction 
+title: [? if ucwddc = 0 : Provide a tax deduction for donating to the welfare fund ?] [? if ucwddc = 1 : Increase the deduction for donating to welfare ?]
+subtitle: -1 budget
+unavailable-subtitle: Not enough budget
+choose-if: budget >= 1
+max-visits: 2
+on-arrival: welfare_cost -= 0.25 if ucwddc = 0; welfare_cost -= 0.15 if ucwddc = 1; z_relation += 3; ddp_relation += 3; dvp_relation += 3; ddp_left += 1; dvp_left += 1; lvp_left += 1; left_dissent += 4; center_dissent += 2; labour_dissent -= 2; reformist_dissent -= 4;
+
+description
+
+@volunteering_credit
+subtitle: -1 budget
+unavailable-subtitle: Not enough budget
+choose-if: budget >= 1
+max-visits: 1
+on-arrival: budget -= 1; charity += 1; workers_spd += 3; unemployed_spd += 3; ddp_relation += 5; z_relation += 2; dvp_relation -= 3; ddp_left += 1; dvp_right -= 1; new_middle_spd += 2; catholics_spd += 1;
+
+description
+
+@new_business_credit
+subtitle: -1 budget
+unavailable-subtitle: Not enough budget
+choose-if: budget >= 1
+max-visits: 1
+on-arrival: budget -= 1; old_middle_spd += 5; new_middle_spd += 3; ddp_relation += 12; z_relation += 5; dvp_relation += 15; ddp_left += 1; dvp_left += 3; ddp_cohesion += 1;
+
+Description
+
+@cooperatives_credit
+subtitle: -1 budget
+unavailable-subtitle: Not enough budget
+choose-if: budget >= 1
+max-visits: 1
+on-arrival: budget -= 1; cooperatives += 1; workers_spd += 5; unemployed_spd += 2; labor_dissent -= 7; center_dissent -= 7; left_dissent -= 7; reformist_dissent -= 7; dvp_right += 1 if dvp_right + 5 > dvp_left; dvp_left += 1 if dvp_left + 5 > dvp_right; ddp_left += 1;
+
+dsecription
+
+@impoverished_tax_exemption
+title: Provide a tax exemption for the impoverished
+subtitle: -2 budget
+unavailable-subtitle: Not enough budget
+choose-if: budget >= 2
+max-visits: 1
+on-arrival: workers_spd += 7; unemployed_spd += 7; rural_spd += 1; catholics_spd += 1; z_relation -= 10; dvp_relation -= 15; ddp_relation -= 5; dvp_right += 3; ddp_right += 1; lvp_right += 2; ddp_cohesion -= 2
+
+Description

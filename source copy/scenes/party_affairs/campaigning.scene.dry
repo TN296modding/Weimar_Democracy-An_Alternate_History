@@ -1,0 +1,132 @@
+title: Campaigning
+new-page: true
+view-if: campaigning_timer <= 0
+on-arrival: month_actions += 1;
+max-visits: 360
+is-card: true
+card-image: img/flags.jpg
+frequency: 100
+tags: party_affairs, state_affairs
+
+= Campaigning
+
+Whether or not we are in an electoral campaign, the party is always trying to broaden its voter base. Who should we focus our campaign efforts on?
+
+- @workers: The urban working class, our traditional support base.
+- @new_middle: The "new middle class" of government employees and white-collar workers.
+- @old_middle: The "old middle class" of small independent businessmen and artisans.
+- @rural: Rural workers and small farmers, who have felt neglected by us in the past.
+- @unemployed: The unemployed.
+- @catholics: Catholics, who typically support the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
+- @all: Campaign among all groups - This will have a lesser effect, however
+- @root: We either don't want to or cannot campaign right now.
+- @easy_discard
+
+@workers
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: workers_spd += 6*(1-dissent)*(workers_reach+1); workers_spd -= 1 if unemployed >= 20; workers_spd -= 1 if unemployed >= 30; workers_spd += 3*(1-dissent) if wtb_adopted = 1; resources -= 1; workers_spd += 3*(1-dissent) if nationalization_progress >= 1;
+
+We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract workers. ?]
+
+- @unionise_wkr: Make unions a part of this campaign run
+- @no_union: Don't push unions in this campign run
+
+@unionise_wkr
+subtitle: -0.5 resource
+unavailable-subtitle: Not enough resources
+choose-if: resources >= 0.5
+on-arrival: workers_spd -= 0.5*(1-dissent); trun_infl += 0.5; trun_ind_perc += 0.007; trun_ind_growth_m += 0.001; trun_ind_growth_y += 0.002; trun_ind_growth_y += 0.002 if wtb_adopted = 1; trun_ind_perc += 0.003 if wtb_adopted = 1; iww_ind_perc += 0.004 if syndicalism = 1; iww_growth_y += 0.001; resources -= 0.5
+
+The unions are already seeing growth. While not super effecive, this is an easy way to increase union membership
+
+@no_union
+
+We have declined to exclude overt union advertising in our campaign.
+
+@new_middle
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: new_middle_spd += 6*(1-dissent)*(new_middle_reach+1); new_middle_spd += 2*(1-dissent)*(new_middle_reach+1) if nmc_awakened = 1; new_middle_spd += 4 if socialism <= 49 and peoples_party == 0 and nmc_awakened = 1; new_middle_spd -= 4 if socialism <= 49 and peoples_party == 0; resources -= 1; peoples_party_support += 1; labor_dissent -= 5; labor_strength += 3; nmc_cc += 1;
+
+We have increased our campaigning among the new middle class. [? if socialism <= 49 and peoples_party == 0: The popular antipathy towards <span style="color: #c00000;">socialism</span> among this group makes our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
+
+- @unionise_nmc: Make unions a part of this campaign run
+- @no_union: Don't push unions in this campign run
+
+@unionise_nmc
+subtitle: -0.5 resource
+unavailable-subtitle: Not enough resources
+choose-if: resources >= 0.5
+on-arrival: new_middle_spd -= 0.5*(1-dissent); trun_infl += 0.1; trun_nmc_perc += 0.001; trun_nmc_perc += 0.003 if nmc_awakened = 1; trun_nmc_growth_y += 0.001; trun_nmc_growth_y += 0.001 if nmc_awakened = 1; iww_nmc_perc += 0.001 if syndicalism = 1; iww_nmc_perc += 0.001 if syndicalism = 1 and nmc_awakened; resources -= 0.5; labor_dissent -= 3; labor_strength += 3; nmc_cc += 1;
+
+The unions are already seeing growth. While not super effecive, this is an easy way to increase union membership. Siegfried Aufhäuser thanks us.
+
+@old_middle
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: old_middle_spd += 5*(1-dissent)*(old_middle_reach+1); resources -= 1; old_middle_spd -= 3 if nationalism >= 51 and peoples_party == 0; peoples_party_support += 1
+
+We have increased our campaigning among the old middle class. [? if nationalism >= 51 and peoples_party == 0: The high levels of nationalism among this group make our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
+
+@rural
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: rural_spd += 5*(1-dissent)*(rural_reach+1); rural_spd += 2*(rural_reach+1) if agr_awakened = 1; rural_spd -= 3*(1-dissent) if peoples_party == 0; rural_spd += 3 if agr_awakened == 1 and peoples_party == 0; resources -= 1; peoples_party_support += 1; rural_spd += 3*(1-dissent) if rural_policy >= 2; rural_campaigned += 1; agr_cc += 1
+
+We have increased our campaigning among farmers. [? if peoples_party == 0: We have not historically campaigned much among the farmers, and they do not trust us. ?][? if peoples_party > 0: As a people's party, we have an easier time increasing support among farmers than before. ?][? if rural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
+
+- @unionise_rur: Make unions a part of this campaign run
+- @no_union: don't make unions a part of this campaign run
+
+@unionise_rur
+subtitle: -0.5 resource
+unavailable-subtitle: Not enough resources
+choose-if: resources >= 0.5
+on-arrival: rural_spd -= 0.5*(1-dissent); trun_infl += 0.1; trun_rur_perc += 0.002; trun_rur_perc += 0.003 if agr_awakened = 1; trun_growth_y += 0.001; trun_growth_y += 0.001 if agr_awakened = 1; trun_growth_y += 0.001 if land_reform >= 1; trun_rur_perc += 0.003 if land_reform >= 1; iww_rur_perc += 0.001 if syndicalism = 1; iww_rur_perc += 0.001 if syndicalism = 1 and agr_awakened = 1; resources -= 0.5; labour_dissent -= 4; labor_strength += 3; rural_dissent -= 6;
+
+The unions are already seeing growth. While not super effective, this is an easy way to increase union membership. Fritz Baade thanks us.
+
+@unemployed
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: unemployed_spd += 6*(1-dissent)*(unemployed_reach+1); resources -= 1; unemployed_spd -= 3 if welfare < 0; unemployed_spd -= 2 if unemployed >= 30; unemployed_spd += 6*(1-dissent) if wtb_adopted = 1; unemployed_spd += 3*(1-dissent) if welfare >= 2;
+
+We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract support from the unemployed. ?]
+
+- @unionise_iww: Make unemployed unions a part of this campaign run
+
+@unionise_iww
+subtitle: -0.5 resource
+unavailable-subtitle: Not enough resources
+choose-if: resources >= 0.5
+view-if: syndicalism = 1
+on-arrival: iww_rur_perc += 0.002 if syndicalism = 1; resources -= 0.5;
+
+The IWW is already seeing growth. While not super effecive, this is an easy way to increase IWW membership
+
+@catholics
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+view-if: peoples_party == 1
+on-arrival: catholics_spd += 6*(1-dissent)*(catholics_reach+1); resources -= 1
+
+We have increased our campaigning among Catholics.
+
+- @unionise_cat: Attract catholics to the TRNS -- WIP this option does nothing
+
+@unionise_cat
+
+wip
+
+@all
+choose-if: wip = 6
+unavailable-subtitle: Coming Soon
+
+e

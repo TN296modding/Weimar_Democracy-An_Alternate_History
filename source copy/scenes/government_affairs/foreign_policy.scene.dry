@@ -1,0 +1,642 @@
+title: Foreign Policy
+new-page: true
+is-card: true
+tags: govt_affairs, cabinet
+on-arrival: month_actions += 1; foreign_policy_timer += 8
+view-if: spd_in_government = 1 and foreign_minister_party = "SPD" and  foreign_policy_timer <= 0
+card-image: img/portraits/BreitscheidRudolf.jpg
+go-to: fp_menu
+#subtitle: International relations and dealing with Versailles.
+
+= Foreign Policy
+
+What should our foreign policy priority be?
+
+@fp_menu
+
+- @improve_west
+- @improve_bri
+- @improve_fra
+- @improve_low
+- @improve_net
+- @improve_bel
+- @improve_lux
+- @improve_east
+- @improve_pol
+- @improve_cze
+- @east_ger_love
+- @improve_lit
+- @improve_spa
+- @intervene_spa_civ_war_spd
+- @intervene_spa_civ_war_sed
+- @improve_por
+- @improve_swi
+- @improve_aus
+- @improve_yug
+- @improve_ita
+- @recognise_alb
+- @improve_alb
+- @improve_gre
+- @improve_bul
+- @improve_rom
+- @improve_ire
+- @improve_lat
+- @improve_est
+- @improve_fin
+- @improve_swe
+- @improve_nor
+- @improve_ice
+- @improve_den
+- @improve_blr
+- @improve_ukr
+- @improve_geo
+- @improve_che
+- @improve_azr
+- @improve_arm
+- @improve_san_mar
+- @improve_vat
+- @improve_lic
+- @improve_and
+- @improve_mon
+- @improve_micro
+- @improve_former_sov
+- @improve_scandi
+- @improve_baltics
+- @improve_balkans
+- @improve_southwest_europe
+- @improve_north_europe
+- @improve_isles
+- @improve_soviet
+- @improve_soviet_eco
+- @customs_union
+- @negotiate
+- @reduce_reparations
+- @settle_reparations
+- @expose
+- @european_union
+- @european_union_2
+- @expand_eu_west: Expand the EU to include Spain, Portugal, Switzerland, and Austria.
+- @expand_eu_east: Expand the EU to include Yugoslavia, Albania, Greece, Bulgaria, and Romania.
+- @expand_eu_baltics_nordics: Expand the EU to include Lithuania, Latvia, Estonia, Finland, Sweden, Norway, Denmark, and Iceland.
+- @expand_eu_soviet_dissolved: Expand the EU to include Belarus, and Ukraine.
+- @expand_eu_caucasia: Expand the EU to include Georgia, Chechnya, Azerbaijan, and Armenia.
+- @expand_eu_isles_low: Expand the EU to include the Low Countries, and Ireland.
+- @expand_eu_microstates: Expand the EU to include San Marino, the Vatican, Liechtenstein, Andorra, and Monaco.
+- @federalize_eu: Federalize the EU into one state
+- @concordat_negotiate
+- @concordat
+- @support_austria
+- @support_austria_2
+- @root: Do not enact any policies for now.
+- @easy_discard
+- @cancel_advisor_action
+
+@improve_west
+title: Improve our relations with the <span style="color: #002654;">Western</span> <span style="color: #D7141A;">Allies</span>.
+on-arrival: west_relation += 2; reparations_negotiation += 1
+
+The key to peace in Europe is a rapprochement between <span style="color: #002654;">France</span> and Germany. We are taking steps towards that rapprochement. [? if young_plan_seen == 0 : This is difficult to do when <span style="color: #002654;">France</span> is occupying a major portion of Germany's territory, but we are working on that part. ?]
+
+@improve_bri
+title: wip does nothing
+
+wip
+
+@improve_fra
+title: wip does nothing
+
+wip
+
+@improve_low
+title: Improve our relations with the <span style="color: #003DA5;">Low</span> <span style="color: #FFCD00;">Coun</span><span style="color: #51ADDA;">tries</span>
+on-arrival: net_relation += 1; bel_relation += 1; lux_relation += 1; lux_ger_love += 0.1; eup_ger_love += 0.1; fla_net_uni += 0.05;
+
+wip
+
+@improve_net
+title: Improve our relations with the <span style="color: #C8102E;">Neth</span><span style="color: #FFFFFF;">erl</span><span style="color: #003DA5;">ands</span> [? if fla_net_uni >= 0.1 : ,and perhaps help increase the unity between <span style"color: #FEEA28;">Fla</span><span style="color: #000000;">nd</span><span style="color: #FF0000;">ers</span> and the <span style="color: #C8102E;">Neth</span><span style="color: #FFFFFF;">erl</span><span style="color #003DA5;">ands</span> ?]
+
+- @improve_net2
+- @improve_netfla
+
+@improve_net2
+title: Just improve relations with the <span style="color: #C8102E;">Neth</span><span style="color: #FFFFFF;">erl</span><span style="color: #003DA5;">ands</span>
+on-arrival: net_relation += 2; net_ger_love += 0.5; fla_net_uni += 0.05;
+
+wip
+
+@improve_netfla
+title: Help connect important Flemish Nationalists with Dutch officials, as well as increase our relations with the <span style="color: #C8102E;">Neth</span><span style="color: #FFFFFF;">erl</span><span style="color: #003DA5;">ands</span>
+subtitle: -0.5 Budget
+on-arrival: net_relation += 2; net_ger_love += 0.5; fla_net_uni += 0.2; fla_unrest += 0.05; budget -= 0.5;
+choose-if: fla_net_uni >= 0.1 and budget >= 0.5
+unavailable-subtitle: [? if fla_net_uni <= 0.09 : the Flemish Nationalists need a foothold before they can start interacting internationally ?] [? if budget <= 0.4 : We need more budget ?]
+
+wip
+
+@improve_bel
+title: Improve our relations with Belgium (WIP note: Colour Belgium text)
+on-arrival: bel_relation += 2; eup_ger_love += 0.5; fla_unrest += 0.05; wal_unrest += 0.05; eup_unrest += 0.05;
+
+wip
+
+@improve_lux
+title: Improve our relations with Luxembourg (WIP note: Colour Luxembourg text)
+on-arrival: lux_relation += 2; lux_ger_love += 1; lux_ger_intergration += 0.5
+
+wip
+
+@improve_east
+title: Improve our relations with our eastern neighbors.
+on-arrival: pol_relation += 1; cze_relation += 1; sudeten_ger += 0.01; danzig_prog += 1; masuria_aut -= 0.01; silesia_aut -= 0.01; ger_pomerania_aut -= 0.01; pol_pomerania_ger += 0.01;
+
+We also aim to improve relations with our eastern neighbors, <span style="color: #DC143C;">Pol</span><span style="color: #FFFFFF;">and</span> and <span style="color: #11457E;">Czech</span><span style="color: #FFFFFF;">oslo</span><span style="color: #D7141A;">vakia</span>, who are rightfully terrified of German aggression. Hopefully we can convince them of our peaceful intentions.
+
+@improve_pol
+title: Improve our relations with <span style="color: #DC143C;">Poland</span>
+on-arrival: pol_relation += 2; danzig_prog += 0.5; masuria_aut -= 0.02; silesia_aut -= 0.02; ger_pomerania_aut -= 0.02; pol_pomerania_ger += 0.05; katowice_ger += 0.04
+
+wip
+
+@improve_cze
+title: Improve our relations with <span style="color: #11457e;">Czechoslovakia</span>
+on-arrival: cze_relation += 2; sudeten_ger += 0.05
+
+wip
+
+@improve_lit
+title: Improve Relations with <span style="color: #FFB81C;">Lithuania</span>
+on-arrival: lit_relation += 2; memel_ger += 0.03; viln_lit += 0.02;
+
+wip.
+
+@east_ger_love
+title: Discreetly support pro-german movements in the East.
+subtitle: -1 budget
+on-arrival: budget -= 1; memel_ger += 0.05; viln_lit += 0.01; sudeten_ger += 0.07; pol_pomerania_ger += 0.06; katowice_ger += 0.02
+
+wip.
+
+@improve_spa
+title: Improve Relations with <span style="color: #F1BF00;">Spain</span>
+on-arrival: spa_relation += 2; spa_repub_str += 2
+
+wip
+
+@intervene_spa_civ_war_spd
+title: Provide aid to the (wip: colour) Republicans in <span style="color: #F1BF00;">Spain</span>
+view-if: sed_formed = 0 and spanish_civil_war = 1
+subtitle: -1 Budget
+
+wip
+
+@intervene_spa_civ_war_sed
+title: Provide aid to the (wip: colour) Communists in <span style="color: #F1BF00;">Spain</span>
+view-if: sed_formed = 1 and spanish_civil_war = 1
+subtitle: -1 Budget
+
+wip
+
+@improve_por
+title: Improve relations with <span style="color: #046A38;">Portugal</span>
+on-arrival: por_relation += 2; por_repub_aid += 1
+
+wip
+
+@aid_por
+title: Aid the <span style="color: #046A38;">Portugeuse</span> (wip: colour) Republicans in their fight
+subtitle: -1 Budget
+view-if: por_civil_war = 1
+on-arrival: por_repub_aid += 2; budget -= 1
+
+wip
+
+@improve_swi
+title: Improve relations with <span style="color: #DA291C;">Switzerland</span>
+on-arrival: swi_relation += 2; swi_neutral -= 0.05
+
+wip
+
+@improve_aus
+title: Improve relations with <span style="color: #EF3340;">Austria</span>
+on-arrival: aus_relation += 2; anschluss_prog += 0.75;
+
+wip
+
+@improve_yug
+title: Improve relations with <span style="color: #003893;">Yugoslavia</span>
+on-arrival: yug_relation += 2; yug_repub_aid += 1
+
+wip
+
+@improve_ita
+title: Improve relations with <span style="color: #008C45;">Italy</span>
+on-arrival: ita_relation += 2; ita_repub_aid += 1;
+
+wip
+
+@recognise_alb
+title: Recognise <span style="color: #DA291C;">Albania's</span> status as a country
+subtitle: This will anger neigbouring nations!
+on-arrival: alb_recognised = 1; ita_relation -= 1; yug_relation -= 1; gre_relation -= 1; alb_relation += 3
+
+wip
+
+@improve_alb
+title: Improve relations with <span style="color: #DA291C;">Albania</span>
+on-arrival: alb_relation += 2;
+
+wip
+
+@improve_gre
+title: Improve relations with <span style="color: #0D5EAF;">Greece</span>
+on-arrival: gre_relation += 2;
+
+wip
+
+@improve_bul
+title: Improve relations with <span style="color: #00966E;">Bulgaria</span>
+on-arrival: bul_relation += 2; bul_repub_aid += 1
+
+wip
+
+@improve_rom
+title: Improve relations with <span style="color: #FCD116;">Romania</span>
+on-arrival: rom_relation += 2
+
+wip
+
+@improve_ire
+title: Improve relations with <span style="color: #FF8200;">Ireland</span>
+on-arrival: ire_relation += 2
+
+wip
+
+@improve_lat
+title: Improve relations with <span style="color: #A4343A;">Latvia</span>
+on-arrival: lat_relation += 2
+
+wip
+
+@improve_est
+title: Improve relations with <span style="color: #0072CE;">Estonia</span>
+on-arrival: est_relation += 2
+
+wip
+
+@improve_fin
+title: Improve relations with <span style="color: #002F6C;">Finland</span>
+on-arrival: fin_relation += 2
+
+wip
+
+@improve_swe
+title: Improve relations with <span style="color: #FECC02;">Sweden</span>
+on-arrival: swe_relation += 2
+
+wip
+
+@improve_nor
+title: Improve relations with <span style="color: #00205B;">Norway</span>
+on-arrival: nor_relation += 2
+
+wip
+
+@improve_ice
+title: Improve relations with <span style="color: #DC1E35;">Iceland</span>
+on-arrival: ice_relation += 2
+
+wip
+
+@improve_den
+title: Improve relations with <span style="color: #C8102E;">Denmark</span>
+on-arrival: den_relation += 2
+
+wip
+
+@improve_blr
+title: Improve relations with <span style="color: #00AF66;">Belarus</span>
+on-arrival: blr_relation += 2
+
+wip
+
+@improve_ukr
+title: Improve relations with <span style="color: #FFDD00;">Ukraine</span>
+on-arrival: ukr_relation += 2
+
+wip
+
+@improve_geo
+title: Improve relations with <span style="color: #DA291C;">Georgia</span>
+on-arrival: geo_relation += 2
+
+wip
+
+@improve_che
+title: Improve relations with <span style="color: #2B7338;">Chechnya</span>
+on-arrival: che_relation += 2
+
+wip
+
+@improve_azr
+title: Improve relations with <span style="color: #0092BC;">Azerbaijan</span>
+on-arrival: azr_relation += 2
+
+wip
+
+@improve_arm
+title: Improve relations with <span style="color: #FF9E1B;">Armenia</span>
+on-arrival: arm_relation += 2
+
+wip
+
+@improve_san_mar
+title: Improve relations with <span style="color: #62B5E5;">San Marino</span>
+on-arrival: san_mar_relation += 2
+
+wip
+
+@improve_vat
+title: Improve relations with the <span style="color: #FFF200;">Vatican</span>
+on-arrival: reichskonkordat_progress += 0.5; prussian_concordat_progress += 0.5; z_relation += 10; vat_relation += 2
+
+wip
+
+@improve_lic
+title: Improve relations with <span style="color: #003DA5;">Liechtenstein</span>
+on-arrival: lic_relation += 2
+
+wip
+
+@improve_and
+title: Improve relations with <span style="color: #FEDD00;">Andorra</span>
+subtitle: -1 budget
+on-arrival: and_relation += 2
+
+@improve_mon
+title: Improve relations with <span style="color: #CE1126;">Monaco</span>
+on-arrival: mon_relation += 2
+
+wip
+
+@improve_micro
+title: Improve relations with the Micronations
+on-arrival: mon_relation += 1; and_relation += 1; lic_relation += 1; san_mar_relation += 1; lux_relation += 1; vat_relation += 1;
+
+wip
+
+@improve_former_sov
+title: Improve relations with the former Soviet states
+on-arrival: ukr_relation += 1; blr_relation += 1; geo_relation += 1; che_relation += 1; arm_relation += 1; azr_relation += 1;
+
+wip
+
+@improve_scandi
+title: Improve relations with the Scandinavian Nations
+on-arrival: nor_relation += 1; swe_relation += 1; fin_relation += 1; den_relation += 1; ice_relation += 1
+
+wip
+
+@improve_baltics
+title: Improve relations with the Baltic Nations
+on-arrival: lit_relation += 1; lat_relation += 1; est_relation += 1
+
+wip
+
+@improve_balkans
+title: Improve relations with the Balkan nations
+on-arrival: yug_relation += 1; alb_relation += 1; bul_relation += 1; cze_relation += 1; rom_relation += 1; gre_relation += 1; ukr_relation += 1 if sov_dissolved = 1;
+
+wip
+
+@improve_southwest_europe
+title: Improve relations with Southwest Europe
+on-arrival: ita_relation += 1; spa_relation += 1; por_relation += 1; vat_relation += 1; san_mar_relation += 1;
+
+wip
+
+@improve_north_europe
+title: Improve relations with non-scandinavian Northern Europe
+on-arrival: bri_relation += 1; ire_relation += 1; net_relation += 1; bel_relation += 1; lux_relation += 1; pol_relation += 1;
+
+wip
+
+@improve_isles
+title: Improve relations with the island nations of the North Sea
+on-arrival: bri_relation += 1.5; ire_relation += 1.5; ice_relation += 1.5;
+
+@improve_soviet_eco
+title: Expand our exports to the <span style="color: #750e0e;">**Soviet Union**</span>.
+subtitle: A win for our economy and for our relationship with the <span style="color: #700000;">**KPD**</span>.
+view-if: year >= 1930
+on-arrival: soviet_export = 1; soviet_relation += 1; economic_growth += 0.5; unemployed -= 0.5; foreign_goal_completed += 1; kpd_relation += 6; communist_coalition += 1; hindenburg_angry += 15; z_relation -= 3; ddp_relation -= 3; dvp_relation -= 3; lvp_relation -= 3; dvp_right += 1; lvp_right += 1; ddp_right += 1
+max-visits: 1
+
+The <span style="color: #750e0e;">Soviet Union</span>, with its centrally planned economy and isolation from global markets, has insulated itself from the effects of the Great Depression. They have since been rapidly industrializing in accordance with their Five-Year Plan, making them a prime partner for exports, especially as tariffs from our nominal trading partners in the West have increased, along with their general isolation from international markets.
+
+The <span style="color: #940000;">Soviets</span> are pleased by this, and we stand to reap the economic benefits. The only downside is that the right-wing propaganda machine has decried this action, pressuring [? if president == "Hindenburg": President Hindenburg and?] the bourgeois parties to break with us.
+
+@improve_soviet
+title: Improve our relations with the <span style="color: #750e0e;">**Soviet Union**</span>.
+subtitle: We could also broach the question of the <span style="color: #700000;">**KPD**</span>...
+
+The <span style="color: #750e0e;">Soviet Union</span> also suffered from the international order created by the Treaty of Versailles; they have been participating in our secret rearmament program. The Treaty of Rapallo in 1922 affirmed our friendly relations.
+
+The <span style="color: #940000;">Soviets</span> are asking for economic and developmental assistance. They are still a poor country on the whole, and are desperately trying to catch up to the western powers. There is a chance that our <span style="color: #FF0000;">anti</span>-<span style="color: #700000;">communist</span> coalition partners would be upset, but we could assuage them by asking the <span style="color: #940000;">Soviets</span> for secret assistance in training and equipping the Reichswehr.
+
+- @soviet_economic_aid_yes_mil: Provide aid, in exchange for Reichswehr assistance.
+- @soviet_economic_aid_yes: Provide aid, in exchange for only good relations.
+- @soviet_economic_aid_no: Don't provide aid.
+
+@soviet_economic_aid_yes_mil
+choose-if: budget >= 1
+subtitle: -1 budget
+on-arrival: soviet_aid_forpol = 1; budget -= 1; soviet_relation += 1; reichswehr_militancy += 0.2; reichswehr_loyalty += 0.05; foreign_goal_completed += 1
+
+The <span style="color: #940000;">Soviets</span> are pleased that we have sent them aid, and have agreed to help train our military. The Reichswehr appreciates our support.
+
+@soviet_economic_aid_yes
+choose-if: budget >= 1
+subtitle: -1 budget
+on-arrival: soviet_aid_forpol = 1; budget -= 1; soviet_relation += 2; coalition_dissent += 1; foreign_goal_completed += 1
+
+The <span style="color: #940000;">Soviets</span> are pleased that we have sent them aid, and have not asked for anything specific in exchange. Our coalition partners are less pleased.
+
+- @kpd: Ask if <span style="color: #940000;">Moscow</span> could help repair our relations with the <span style="color: #700000;">**KPD**</span>.
+- @wittorf: Do the <span style="color: #940000;">Soviets</span> know about the Wittorf Affair? Do they know that we know?
+- @root: Do not mention the <span style="color: #700000;">**KPD**</span>.
+
+@soviet_economic_aid_no
+
+The <span style="color: #940000;">Soviets</span> are slightly upset, but they seemed to expect this answer.
+
+
+@kpd
+on-arrival: kpd_relation += 8*(1-dissent); communist_coalition += 1 if kpd_foreign_seen == 0; kpd_foreign_seen = 1
+
+We also mention the <span style="color: #700000;">**KPD**</span> in our conversations with the <span style="color: #940000;">Soviet</span> ambassador. They claim that the <span style="color: #700000;">**KPD**</span> is entirely independent of the <span style="color: #940000;">Soviet</span> government, and that the conflict is Thälmann's doing. But, soon after our conversation we notice a slight improvement in attitudes from the <span style="color: #700000;">**KPD**</span>.
+
+@wittorf
+view-if: wittorf_secret = 1 and ((year = 1929 and month < 6) or year = 1928) and wittorf_soviet_union = 0
+unavailable-subtitle: It is impossible that <span style="color: #8B0000;">Stalin</span> and the <span style="color: #D50000;">Comintern</span> could be moved on their policy.
+on-arrival: wittorf_soviet_union = 1; kpd_relation += 6*(1-dissent); kpd_foreign_seen = 1
+max-visits: 1
+
+Of course <span style="color: #8B0000;">Stalin</span> and the various leaders of the <span style="color: #D50000;">Comintern</span> know about the Wittorf Affair, but they do not seem to know that we know as well. The <span style="color: #D50000;">Comintern</span> was planning to build a narrative around the affair that absolves Thälmann, but perhaps now they will be less inclined to defend him.
+
+
+@customs_union
+title: Form a customs union with Austria?
+subtitle: This will likely incur the wrath of <span style="color: #002654;">France</span>.
+unavailable-subtitle: This is superseded by the <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>.
+choose-if: eu = 0
+view-if: black_thursday_seen = 1 and customs_union = 0
+
+The right has long desired closer ties with Austria, with the eventual goal of the merger of the two German-speaking countries. A customs union with Austria is the first step towards this goal. Additionally, many believe that a union with Austria would improve our current economic circumstances.
+
+However, the Allies, especially <span style="color: #002654;">France</span>, are likely to object. This agreement would break the terms of the Versailles Treaty, and could lead to economic sanctions, further hurting our economy.
+
+- @customs_union_2: Yes, do it!
+- @fp_menu: No, we should do something else.
+
+@customs_union_2
+on-arrival: banking_crisis_timer = 4; customs_union = 1; west_relation -= 2; east_relation -= 2; z_relation += 6; dvp_relation += 6; ddp_relation += 4; lvp_relation += 6; coalition_dissent -= 1 if coalition_dissent > 0; coup_progress -= 1; hindenburg_angry -= 15
+max-visits: 1
+
+We have formed a customs union with Austria! The right-wing parties are praising us for this unexpected turn of events.
+
+Immediately, <span style="color: #002654;">France</span> and other neighboring countries lodge their protests. The longer-term response is yet to be seen.
+
+
+@negotiate
+title: Negotiate regarding our remaining obligations from the Treaty of Versailles.
+subtitle: [? if young_plan_seen == 1 and black_thursday_seen : After passing the Young Plan, <span style="color: #002654;">France</span> has committed to withdrawing from the Rhineland. Now, we must see if they can reduce our reparations further, given the economic depression. ?][? if young_plan_seen == 1 and not black_thursday_seen : After passing the Young Plan, <span style="color: #002654;">France</span> has committed to withdrawing from the Rhineland. Now, we must see if they can reduce our reparations further. ?]
+view-if: reparations > -2 and reparations_negotiation < 3
+on-arrival: west_relation += 1; reparations_negotiation += 1; reparations_negotiation += 1 if pacifism >= 3; reparations_negotiation += 1 if nationalism <= 50; reparations_negotiation += 1 if west_relation >= 3
+
+Negotiations proceed smoothly for the most part. The Western powers are convinced of Germany's sincerity and goodwill. [? if nationalism <= 50 or pacifism >= 3 : They are pleased to see that we are renouncing militarism. ?]
+
+
+@reduce_reparations
+title: The <span style="color: #0A3161;">Western</span> <span style="color: #C8102E;">Allies</span> are finally willing to pause our reparations payments!
+subtitle: Our negotiations have been successful.
+unavailable-subtitle: [? if not young_plan_ratified: We must wait for the ratification of the Young Plan. ?][? if west_relation < 4: <span style="color: #002654;">France</span>'s government has major quarrels with other Western powers regarding a pause in reparations, higher relations with the West are required. ?]
+choose-if: young_plan_ratified == 1 and west_relation >= 4
+view-if: reparations_negotiation >= 3 and reparations > -2 and young_plan_seen
+on-arrival: west_relation += 1; reparations = -2; budget += 2 if hoover_memorandum_seen == 0; budget += 1 if hoover_memorandum_seen == 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); coup_progress -= 2 if coup_progress > 2; dvp_left += 3; pro_republic += 8; ddp_left += 1; ddp_cohesion += 1; lvp_left += 3; hindenburg_angry -= 20; economic_growth += 0.5 if economic_growth < 0; labor_dissent -= 15; dvp_relation += 5; ddp_relation += 5; z_relation += 5; lvp_relation += 5
+max-visits: 1
+
+Finally, given both the economic circumstances and our continued negotiations, the <span style="color: #0A3161;">Western</span> <span style="color: #C8102E;">Allies</span> are willing to pause our reparations payments! Much of the credit must go to <span style="color: #0A3161;">Western</span> president Hoover, who has been friendlier towards us than the <span style="color: #001489;">Europeans</span>.
+
+This has reduced tensions within our government, and our party has gotten credit for the achievement.
+
+@settle_reparations
+title: We will finally settle the reparations issues with the <span style="color: #0A3161;">Western</span> <span style="color: #C8102E;">Allies</span>!
+subtitle: The issue of reparations and future payments will finally be resolved.
+unavailable-subtitle: [? if west_relation < 6: <span style="color: #002654;">France</span>'s government has major quarrels with other Western powers regarding an outright abolition of reparations. ?][? if not france_left_seen and year < 1932: <span style="color: #002654;">France</span>'s right-wing government won't approve of this; we must wait until a more favorable cabinet comes to power. ?][? if not france_left_seen and year >= 1932: <span style="color: #002654;">France</span>'s government won't be able to make a decision with its own elections approaching in May. ?]
+choose-if: west_relation >= 6 and france_left_seen
+view-if: reparations == -2 and not lausanne_seen
+on-arrival: west_relation += 1; eu_progress += 1; reparations_resolved = 1; budget += 1; coalition_dissent -= 3 if coalition_dissent > 0; workers_spd += 8*(1-dissent); old_middle_spd += 6*(1-dissent); new_middle_spd += 6*(1-dissent); rural_spd += 6*(1-dissent); catholics_spd += 6*(1-dissent); unemployed_spd += 6*(1-dissent); coup_progress -= 4 if coup_progress > 4; dvp_left += 8; ddp_left += 4; ddp_cohesion += 4; pro_republic += 15; lvp_left += 8; hindenburg_angry -= 100; economic_growth += 2.5; unemployed -= 3; labor_dissent -= 15; workers_nsdap -= 5; unemployed_nsdap -= 5; new_middle_nsdap -= 5; old_middle_nsdap -= 5; rural_nsdap -= 5; catholics_nsdap -= 5; dvp_relation += 10; ddp_relation += 10; z_relation += 10; lvp_relation += 10
+max-visits: 1
+
+With our success in negotiating a pause in reparation payments, the <span style="color: #0A3161;">Western</span> <span style="color: #C8102E;">Allies</span> have been convinced of our sincere commitment to pacifism and distancing from militarism. Additionally, <span style="color: #002654;">France</span>'s new <span style="color: #E0B0FF;">left-wing</span> Prime Minister has been considerably more amicable than their predecessor. As a result, we have secured their agreement to a conference aimed at finally settling the reparations issue.
+
+In the end, Germany is required to make only a final payment of three billion marks, effectively ending future reparation obligations. This has greatly boosted investor confidence and sparked a new wave of capital inflows to Germany. This has greatly eased tensions within our government, with our party receiving credit for the achievement—much to the detriment of the <span style="color: #7A3C00;">**NSDAP**</span>, which had built much of its appeal on the narrative of Germany’s "national slavery."
+
+@expose
+title: Expose the secret rearmament plans of the previous foreign ministry!
+view-if: rearmament_exposed == 0
+on-arrival: west_relation += 2; east_relation += 1; nationalism -= 5*(1-dissent); pro_republic += 5*(1-dissent); coalition_dissent += 1; reichswehr_loyalty -= 0.05; rearmament_exposed += 1; reparations_negotiation += 3; coup_progress += 2; dvp_right += 2; ddp_left += 1; ddp_cohesion -= 1; lvp_right += 1; hindenburg_angry += 20
+
+The previous foreign ministry, despite its benevolent and peaceful face, was secretly helping the Reichswehr to build up its forces, in contravention of the Treaty of Versailles.
+
+The Allies are grateful of our exposure and repudiation of militarism. Our partners in the coalition are less supportive.
+
+@expand_eu_west
+
+wip
+
+@expand_eu_east
+
+wip
+
+@expand_eu_baltics_nordics 
+
+wip
+
+@expand_eu_soviet_dissolved
+
+wip
+
+@expand_eu_caucasia
+
+wip
+
+@expand_eu_isles_low
+
+wip
+
+@expand_eu_microstates
+
+wip
+
+@federalize_eu
+
+wip
+
+@concordat_negotiate
+title: Negotiate a Concordat between the Germany and the Vatican.
+view-if: (prussian_concordat = 1 or not spd_prussia) and reichskonkordat = 0 and reichskonkordat_progress < 4
+on-arrival: reichskonkordat_progress += 1; reichskonkordat_progress += 1 if z_leader == "Kaas"; reichskonkordat_progress -= 1 if abortion_rights; reichskonkordat_progress -= 1 if family_law; reichskonkordat_progress += vat_relation / 5; z_relation += 3*(1-dissent); dvp_relation -= 1; ddp_relation -= 2; ddp_cohesion -= 0.25; lvp_relation -= 1; foreign_goal_spd_peoples += 1; vat_relation += 1;
+
+The Roman Catholic Church is interested in furthering relations with the German Republic, seeing us as preferable to the old anti-Catholic policies of the Empire. We are working towards the signing of a Concordat, an agreement between the Vatican and the Republic that formally recognizes the Church's rights and interests in the country. The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is especially interested in making this agreement. The liberal parties are against this idea.
+
+[? if family_law : Our liberalized divorce policies make it difficult to build relations with the Vatican. ?] [? if abortion : Our legalization of abortion make it difficult to connect with the Church. ?] [? if z_leader == "Kaas" : Kaas from the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is able to use his connections to speed up negotiations. ?]
+
+@concordat
+title: We can sign a Concordat with the Vatican!
+view-if: reichskonkordat_progress >= 4 and reichskonkordat = 0
+on-arrival: reichskonkordat = 1; z_relation += 15*(1-dissent); catholics_spd += 8*(1-dissent); catholics_z += 5 if in_weimar_coalition or in_grand_coalition or in_popular_front; foreign_goal_spd_peoples += 1; vat_relation += 3
+achievement: reichskonkordat
+
+We have successfully signed a Concordat between Germany and the Roman Catholic Church! This treaty defines a formal relationship between the Church and the German state, guaranteeing freedom of worship for Catholics, and the right of the church to appoint their own clergy. Catholics in Germany are pleased, as are their representatives in the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
+
+@support_austria
+title: Diplomatically support Austrian democracy against the Dollfuß dictatorship.
+view-if: austrian_parliament_seen = 1 and austrian_civil_war_seen = 0
+on-arrival: sdapo_strength += 1; left_dissent -= 3; center_dissent -= 3
+
+We provide verbal backing to Austrian democracy, wage a war of words against <span style="color: #7A3C00;">Austrofascism</span>, and promulgate additional trade sanctions. Time will tell if it will be enough.
+
+@support_austria_2
+title: Provide material support to Austrian democracy against the Dollfuß dictatorship.
+subtitle: -1 budget
+choose-if: budget >= 1
+view-if: austrian_parliament_seen = 1 and austrian_civil_war_seen = 0
+on-arrival: budget -= 1; sdapo_strength += 3; left_dissent -= 6; center_dissent -= 6
+
+In public, we provide verbal backing to Austrian democracy, wage a war of words against <span style="color: #7A3C00;">Austrofascism</span>, and promulgate additional trade sanctions. Privately, we provide financial and various forms of "support" to our comrades in Austria in their struggle against dictatorship.
+
+@european_union
+title: Take steps to form a "<span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>".
+subtitle: Is a "United States of Europe" possible?
+unavailable-subtitle: [? if west_relation < 7 : Our relations with the West are not good enough. ?] [? if east_relation < 4 : Our relations with the East are not good enough. ?]
+view-if: reparations <= -2 and eu_progress < 3 and not eu and france_left_seen
+choose-if: west_relation >= 7 and east_relation >= 4
+on-arrival: eu_negotiation = 1; eu_progress += 1; west_relation += 1; foreign_goal_spd_peoples += 1
+
+Forming a "<span style="color: #FFDD00;">United States</span> of <span style="color: #001489;">Europe</span>" has long been part of the <span style="color: #c00000;">**Social Democratic**</span> foreign program. Finally, we are taking steps towards it. Given our positive relations with the other countries of <span style="color: #001489;">Europe</span>, we can begin to hold multilateral negotiations for more <span style="color: #001489;">European</span> <span style="color: #FFDD00;">federalism</span>. It will take time to hammer out the exact shape of this future "<span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>", however.
+
+
+@european_union_2
+title: We can sign a treaty to form a <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>!
+view-if: west_relation >= 5 and east_relation >= 4 and eu_progress >= 3 and not eu and france_left_seen
+on-arrival: eu = 1; unemployed -= 2 if unemployed >= 10; inflation += 2 if inflation <= -2; inflation -= 1 if inflation >= 4.5; workers_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); old_middle_spd += 5*(1-dissent); rural_spd += 4*(1-dissent); catholics_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); pro_republic += 5; nationalism -= 5; budget += 1; ddp_left += 3; ddp_cohesion += 3; ddp_relation += 10; lvp_relation += 5; foreign_goal_spd_peoples += 1; economic_growth += 1 if economic_growth < 3; kpd_coalition_dissent += 1; kpd_relation -= 10; ger_eu = 1; net_eu = 1 if ger_annex_net = 0 and net_comintern = 0; bel_eu = 1 if belgium_dissolved = 0 and bel_comintern = 0; lux_eu = 1 if ger_annex_lux = 0; fra_eu = 1 if fra_comintern = 0; pol_eu = 1 if pol_comintern = 0; cze_eu = 1 if cze_comintern = 0; ita_eu = 1 if ita_fasc = 0 and ita_comintern = 0;
+max-visits: 1
+achievement: eu
+
+Along with <span style="color: #002654;">France</span>, <span style="color: #C8102E;">Great Britain</span>, and many other states of Western and Eastern Europe, we have signed a treaty to form a <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>! It is hoped that <span style="color: #001489;">Europe</span> has learned the lessons of the Great War; never again will there be another war that tears the continent apart.
+
+A major component of the union is the free movement of people and goods across the countries of Europe, as well as the stabilization of currency exchange rates. This provides new markets for German products and new sources of investment.
+
+<span style="color: #7A3C00;">Fascist</span> Italy remains a problem, and the <span style="color: #750e0e;">Soviet Union</span> also lies outside the system. But for now, there is new hope for peace and prosperity throughout the continent.

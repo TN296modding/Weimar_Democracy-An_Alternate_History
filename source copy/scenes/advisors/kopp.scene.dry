@@ -1,0 +1,52 @@
+title: Leon Kopp
+is-pinned-card: true
+tags: advisor, rural
+card-image: img/portraits/AufhäuserSiegfried.jpg
+view-if: kopp_advisor = 1
+new-page: true 
+
+= Leon Kopp
+
+Leon Kopp is an <span style=" color: #228B22;">Agrarian</span> <span style=" color: #c90000;">Socialist</span>, is our main campaign strategist among rural regions, and can improve our relations with the Rural parties
+
+- @agriculture_union
+- @rural_campaign
+- @rural_relations
+- @root: Return to main
+
+@agriculture_union
+title: Agricultural Organising
+subtitle: Leon Kopp can help with attracting farmworkers to rural unions.
+choose-if: advisor_action_timer <= 0 and (rural_policy > 0 or rural_campaigned >= 1)
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rural_campaigned <= 0 : The <span style="color: #c00000;">SPD</span> has not campaigned enough among the rural populace. ?]
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; trun_infl += 1; trun_rur_perc += rural_spd/2000; trun_rur_perc += rural_campaigned/500; agr_cc += 1;
+
+We have organised farmworkers across Germany, which has also bolstered our influence among the trade unions
+
+@rural_campaign
+title: Rural Campaign
+subtitle: Try to campaign among the rural populace.
+choose-if: advisor_action_timer == 0 and rural_policy > 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rural_policy == 0 : We have not enacted any rural policies. ?]
+on-arrival: advisor_action_timer = 6; rural_spd += 6*(1-dissent)*((rural_reach*2)+1); peoples_party_support += 1; agr_cc += 1;
+
+We have increased our campaigning among farmers and the rural populace.
+
+@rural_relations
+title: Rural Relations
+subtitle: Leon Kopp can use his connections to move the rural parties closer to the left -- or at least, the <span style=" color: #c90000";>SPD</span>
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: {!
+Q.advisor_action_timer = 6;
+Q.others_relation += 10;
+Q.cnblp_relation += 10;
+Q.dbp_relations += 10;
+Q.rural_relations_unlocked = 1;
+if (Q.cnblp_relation >= 40) { 
+Q.cnblp_left += 1;
+Q.cnblp_left += ((Q.cnblp_relation / 10) - 3);
+}
+!}
+
+We have improved relations with the rural parties, such as the CNBLP

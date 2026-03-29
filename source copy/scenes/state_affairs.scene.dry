@@ -1,0 +1,276 @@
+title: state_affairs
+new-page: true
+is-special: true
+go-to: state_menu
+### Add emergency situations, like calling general strikes
+### Alsace Minstries: Government Ministries + Culture Ministry
+### Anhalt Ministries: Government Ministries
+## Anhalt Elections (Hist): 6 Jun 1920; 22 Jun 1924; 9 Nov 1924; 20 May 1928; 24 Apr 1932; 5 Mar 1933;
+### Baden Ministries: State President, Interior Ministry, Culture and Teaching, Finance, Justice 
+### All Baden Elections (Hist.): 30 Oct 1921; 25 Oct 1925; 27 Oct 1929; 5 mar 1933;
+### Bavaria Ministries: Prime Minister, (Bavarian) Foreign Ministry, Justice, Interior, Culture, Finance, Trade;Industry; and Commerce;, Social Minstry, Agriculture
+### All Bavaria Elections (Hist.): 6 Jun 1920; 4 May 1924; 20 May 1928; 24 Apr 1932; 5 Mar 1933;
+### Bremen Ministries: Internal Affairs, Justice, Police, Food and Agriculture, Economy and Transport, Education, Work and Social Work, Finances
+### All Bremen Elections (Hist.): 6 Jun 1920; 20 Feb 1921; 18 Nov 1923; 7 Dec 1924; 13 Nov 1927; 30 Nov 1930; 5 March 1933;
+### Brunswick Ministries: Work, Interior, Trade, Transport, Finance, Justice, Education
+### All Brunswick Elections (Hist.): 16 May 1920; 22 Jan 1922; 7 Dec 1924; 27 Nov 1927; 14 Sep 1930; 5 Mar 1933;
+
+= State Affairs
+
+@state_menu
+
+- @alsace: Deal with the <span style="color: #EC1E2F;">Alsace</span>-<span style="color: #EFBF04;">Lorraine</span>
+- @anhalt: Deal with <span style="color: #FF000D;">Anh</span><span style="color: #2E6F40;">alt</span>
+- @westaus: Deal with <span style="color: #EF3340;">West</span> <span style="color: #FFFFFF;">Aus</span><span style="color: #EF3340;">tria</span>
+- @eastaus: Deal with <span style="color: #EF3340;">East</span> <span style="color: #FFFFFF;">Aus</span><span style="color: #EF3340;">tria</span>
+- @baden: Deal with  <span style="color: #FED700;">Ba</span><span style="color: #E81B23;">d</span><span style="color: #FED700;">en</span>
+- @bavaria: Deal with <span style="color: #0098D4;">Ba</span><span style="color: #FFFFFF;">va</span><span style="color: #0098D4;">ri</span><span style="color: #FFFFFF;">a</span>
+- @bremen: Deal with <span style="color: #DD0000;">T</span><span style="color: #FFFFFF;">h</span><span style="color: #DD0000;">e</span> <span style="color: #FFFFFF;">c</span><span style="color: #DD0000;">i</span><span style="color: #FFFFFF;">ty of</span> <span style="color: #DD0000;">Bre</span><span style="color: #FFFFFF;">men</span>
+- @brunswick: Deal with <span style="color: #0047ab;">Bruns</span><span style="color: #ffce08;">wick</span>
+- @coburg: Deal with <span style="color:#000000;">Cob</span><span style="color:#fff02;">urg</span>
+- @danzig: Deal with <span style="color:#bf0000;">Da</span><span style="color:#f3c547;">nz</span><span style="color:#ffffff;">ig</span>
+
+@alsace
+view-if: alsace_ger = 1 or wip = 0
+
+- @alsace_landtag: Deal with <span style="color: #EC1E2F;">Alsa</span><span style="color: #EFBF04;">cian</span> Landtag Affairs
+- @alsace_intergration: Deal with intergrating the <span style="color: #EC1E2F;">Alsace</span>-<span style="color: #EFBF04;">Loraine</span>
+- @alsace_domestic: Deal with <span style="color: #EC1E2F;">Alsa</span><span style="color: #EFBF04;">cian</span> civilian affairs
+- @alsace_police: Deal with the <span style="color: #EC1E2F;">Alsa</span><span style="color: #EFBF04;">cian</span> police force
+
+@alsace_landtag
+
+- @staf_return
+
+@alsace_intergration
+view-if: alsace_intergrated = 0
+
+- @staf_return
+
+@alsace_domestic
+view-if: spd_in_alsace_gov = 1
+
+- @staf_return
+
+@alsace_police
+view-if: (spd_in_alsace_gov = 1 and spd_in_alsace_interior)
+
+- @staf_return
+
+@anhalt
+
+- @anhalt_landtag: Deal with the <span style="color: #FF000D;">Anh</span><span style="color: #2E6F40;">alt</span> Landtag 
+- @anhalt_domestic: Deal with <span style="color: #FF000D;">Anh</span><span style="color: #2E6F40;">alt</span> civilian affairs
+- @anhalt_police: Deal with the <span style="color: #FF000D;">Anh</span><span style="color: #2E6F40;">alt</span> police force
+
+@anhalt_landtag
+
+- @staf_return
+
+@anhalt_domestic
+view-if: spd_in_anhalt_gov = 1
+
+- @staf_return
+
+@anhalt_police
+view-if: (spd_in_anhalt_gov = 1 and spd_in_anhalt_interior)
+
+- @staf_return
+
+@westaus
+view-if: anschluss = 1 or wip = 0
+
+- @westaus_landtag: Deal with the <span style="color: #EF3340;">West</span> <span style="color: #FFFFFF;">Aust</span><span style="color: #EF3340;">rian</span> Landtag Affairs
+- @westaus_intergration: Deal with intergrating <span style="color: #EF3340;">West</span> <span style="color: #FFFFFF;">Aus</span><span style="color: #EF3340;">ria</span>
+- @westaus_domestic: Deal with <span style="color: #EF3340;">West</span> <span style="color: #FFFFFF;">Aust</span><span style="color: #EF3340;">rian</span> civilian affairs
+- @westaus_police: Deal with the <span style="color: #EF3340;">West</span> <span style="color: #FFFFFF;">Aust</span><span style="color: #EF3340;">rian</span> police force
+
+@westaus_landtag
+
+- @staf_return
+
+@westaus_intergration
+view-if: austria_intergrated = 0
+
+- @staf_return
+
+@westaus_domestic
+view-if: spd_in_westaustria_gov = 1
+
+- @staf_return
+
+@westaus_police
+view-if: (spd_in_westaustria_gov = 1 and spd_in_westaustria_interior)
+
+- @staf_return
+
+@eastaus
+view-if: anschluss = 1 or wip = 0
+
+- @eastaus_landtag: Deal with the <span style="color: #EF3340;">East</span> <span style="color: #FFFFFF;">Aust</span><span style="color: #EF3340;">rian</span> Landtag Affairs
+- @eastaus_intergration: Deal with intergrating <span style="color: #EF3340;">East</span> <span style="color: #FFFFFF;">Aus</span><span style="color: #EF3340;">ria</span>
+- @eastaus_domestic: Deal with <span style="color: #EF3340;">East</span> <span style="color: #FFFFFF;">Aust</span><span style="color: #EF3340;">rian</span> civilian affairs
+- @eastaus_police: Deal with the <span style="color: #EF3340;">East</span> <span style="color: #FFFFFF;">Aust</span><span style="color: #EF3340;">rian</span> police force
+
+@eastaus_landtag
+
+- @staf_return
+
+@eastaus_intergration
+view-if: austria_intergrated = 0
+
+- @staf_return
+
+@eastaus_domestic
+view-if: spd_in_eastaustria_gov = 1
+
+- @staf_return
+
+@eastaus_police
+view-if: (spd_in_eastaustria_gov = 1 and spd_in_eastaustria_interior)
+
+- @staf_return
+
+@baden
+
+- @baden_landtag: Deal with the <span style="color: #FED700;">Ba</span><span style="color: #E81B23;">d</span><span style="color: #FED700;">en</span> Landtag 
+- @baden_domestic: Deal with <span style="color: #FED700;">Bad</span><span style="color: #E81B23;">en</span><span style="color: #FED700;">ite</span> civilian affairs
+- @baden_police: Deal with the <span style="color: #FED700;">Bad</span><span style="color: #E81B23;">en</span><span style="color: #FED700;">ite</span> police force
+
+@baden_landtag
+
+- @staf_return
+
+@baden_domestic
+view-if: spd_in_baden_gov = 1
+
+- @staf_return
+
+@baden_police
+view-if: (spd_in_baden_gov = 1 and spd_in_baden_interior)
+
+- @staf_return
+
+@bavaria
+
+- @bavaria_landtag: Deal with the <span style="color: #0098D4;">Ba</span><span style="color: #FFFFFF;">va</span><span style="color: #0098D4;">ri</span><span style="color: #FFFFFF;">an</span> Landtag 
+- @bavaria_intergration: Deal with <span style="color: #0098D4;">Ba</span><span style="color: #FFFFFF;">va</span><span style="color: #0098D4;">ri</span><span style="color: #FFFFFF;">an</span> Seperatism
+- @bavaria_domestic: Deal with <span style="color: #0098D4;">Ba</span><span style="color: #FFFFFF;">va</span><span style="color: #0098D4;">ri</span><span style="color: #FFFFFF;">an</span> civilian affairs
+- @bavaria_police: Deal with the <span style="color: #0098D4;">Ba</span><span style="color: #FFFFFF;">va</span><span style="color: #0098D4;">ri</span><span style="color: #FFFFFF;">an</span> police force
+- @bavaria_extra_parl: Deal with extraparliamentry actions in <span style="color: #0098D4;">Ba</span><span style="color: #FFFFFF;">va</span><span style="color: #0098D4;">ri</span><span style="color: #FFFFFF;">a</span>
+
+@bavaria_landtag
+
+- @staf_return
+
+@bavaria_intergration
+view-if: bav_intergrated = 0
+
+- @staf_return
+
+@bavaria_domestic
+view-if: spd_in_bav_gov = 1
+
+- @staf_return
+
+@bavaria_police
+view-if: (spd_in_bav_gov = 1 and spd_in_bav_interior)
+
+- @staf_return
+
+@bavaria_extra_parl
+view-if: spd_in_bav_gov = 1
+
+@staf_return
+title: Return to the State Affairs menu
+go-to: state_menu
+
+@bremen
+
+- @bremen_landtag: Deal with <span style="color: #DD0000;">T</span><span style="color: #FFFFFF;">h</span><span style="color: #DD0000;">e</span><span style="color: #FFFFFF;">c</span><span style="color: #DD0000;">i</span><span style="color: #FFFFFF;">ty of</span><span style="color: #DD0000;">brem</span><span style="color: #FFFFFF;">en's</span> Landtag 
+- @bremen_domestic: Deal with <span style="color: #DD0000;">T</span><span style="color: #FFFFFF;">h</span><span style="color: #DD0000;">e</span><span style="color: #FFFFFF;">c</span><span style="color: #DD0000;">i</span><span style="color: #FFFFFF;">ty of</span><span style="color: #DD0000;">brem</span><span style="color: #FFFFFF;">en's</span> civilian affairs
+- @bremen_police: Deal with the <span style="color: #DD0000;">bre</span><span style="color: #FFFFFF;">men</span> police force
+
+@bremen_landtag
+
+- @staf_return
+
+@bremen_domestic
+view-if: spd_in_brem_gov = 1
+
+- @staf_return
+
+@bremen_police
+view-if: (spd_in_brem_gov = 1 and spd_in_brem_interior)
+
+- @staf_return
+
+@brunswick
+
+- @brunswick_landtag: Deal with the <span style="color: #0047ab;">Bruns</span><span style="color: #ffce08;">wick</span> Landtag 
+- @brunswick_domestic: Deal with <span style="color: #0047ab;">Bruns</span><span style="color: #ffce08;">wick</span> civilian affairs
+- @brunswick_police: Deal with the <span style="color: #0047ab;">Bruns</span><span style="color: #ffce08;">wick</span> police force
+
+@brunswick_landtag
+
+- @staf_return
+
+@brunswick_domestic
+view-if: spd_in_brunswick_gov = 1
+
+- @staf_return
+
+@brunswick_police
+view-if: (spd_in_brunswick_gov = 1 and spd_in_brunswick_interior)
+
+- @staf_return
+
+@coburg
+
+- @coburg_landtag: Deal with the Coburg Landtag 
+- @coburg_domestic: Deal with Coburg civilian affairs
+- @coburg_police: Deal with the Coburg police force
+
+@coburg_landtag
+
+- @staf_return
+
+@coburg_domestic
+view-if: spd_in_coburg_gov = 1
+
+- @staf_return
+
+@coburg_police
+view-if: (spd_in_coburg_gov = 1 and spd_in_coburg_interior)
+
+- @staf_return
+
+@danzig
+
+- @danzig_landtag: Deal with the Danzig Landtag 
+- @danzig_domestic: Deal with Danziger civilian affairs
+- @danzig_police: Deal with the Danzig police force
+- @danzig_extra_parl: Deal with Danziger extraparliamentary affairs
+- @danzig_intergration: Deal with intergrating Danzig
+
+@danzig_landtag
+
+- @staf_return
+
+@danzig_domestic
+view-if: spd_in_coburg_gov = 1
+
+- @staf_return
+
+@danzig_police
+view-if: (spd_in_coburg_gov = 1 and spd_in_coburg_interior)
+
+- @staf_return
+
+@danzig_extra_parl
+
+- @staf_return
+
+@danzig_intergration
+
+- @staf_return

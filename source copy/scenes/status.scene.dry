@@ -1,0 +1,602 @@
+title: Status
+new-page: true
+is-special: true
+on-arrival: {!
+if (Q.unemployed) {
+    Q.unemployed_2 = Q.unemployed.toFixed(1);
+}
+if (Q.inflation) {
+    Q.inflation_2 = Q.inflation.toFixed(1);
+}
+Q.economic_growth_2 = '0';
+if (Q.economic_growth) {
+    Q.economic_growth_2 = Q.economic_growth.toFixed(1);
+}
+!}
+
+= Status
+
+[? if debug = 0 : debug debug ?]
+[+ month : month +] [+ year +] Week [+ week +]
+
+Resources available: [+ resources +]
+
+<span style="color: #c00000;">**SPD**</span> position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
+[? if in_weimar_coalition and not in_social_catholic_coalition and not in_social_liberal_coalition and spd_in_government: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition ?][? if in_social_catholic_coalition and spd_in_government: <span style="color: #c00000;">Social</span>-[? if not stegerwald_path: <span style="color: #000000;">Catholic</span>?][? if stegerwald_path: <span style="color: #000000;">Christian</span>?] Coalition ?][? if in_social_liberal_coalition and spd_in_government: <span style="color: #c00000;">Ketchup</span> and [? if not lvp_formed: <span style="color: #D3C24D;">Mustard</span>?][? if lvp_formed: <span style="color: #FFCC00;">Mustard</span>?] Coalition ?][? if in_grand_coalition and spd_in_government: [? if not in_wholesome_coalition: Grand Coalition?][? if in_wholesome_coalition: Wholesome Coalition?] ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #c00000;">**SPD**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
+
+[? if bruning_time and spd_toleration: Bruning's reichstag backing: [+ bruning_coalition +]% ?]
+
+[? if bruning_time and president == "Hindenburg": Hindenburg's approval: [+ hindenburg_angry_bruning : hindenburg_angry_bruning +] ?]
+
+Prussian government: [? if spd_prussia : in government - ?]
+[? if in_social_catholic_coalition_prussia: [? if in_minority_social_catholic_coalition_prussia: minority ?] <span style="color: #c00000;">Social</span>-<span style="color: #000000;">Christian</span> Coalition ?][? if in_social_liberal_coalition_prussia: [? if in_minority_social_liberal_coalition_prussia: minority ?] <span style="color: #c00000;">Ketchup</span> and [? if not lvp_formed: <span style="color: #D3C24D;">Mustard</span>?][? if lvp_formed: <span style="color: #FFCC00;">Mustard</span>?] Coalition ?][? if in_weimar_coalition_prussia: [? if in_minority_weimar_coalition_prussia: minority ?] <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition ?][? if in_grand_coalition_prussia: [? if in_minority_grand_coalition_prussia: minority ?] Grand Coalition ?][? if in_far_right_coalition_prussia and prussia_leader = "Goring" and not dnf_formed: <span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> Coalition ?][? if in_far_right_coalition_prussia and prussia_leader = "Goring" and dnf_formed: <span style="color: #7A3C00;">Far</span>-<span style="color: #003755;">right</span> Coalition ?][? if in_popular_front_prussia: Popular Front ?][? if in_left_front_prussia: Left Front ?][? if in_spd_majority_prussia: <span style="color: #c00000;">**SPD**</span> majority ?][? if in_center_right_coalition_prussia: Center-right Coalition ?][? if in_right_coalition_prussia: Right Coalition ?][? if spd_toleration_prussia: Bourgeois Coalition ?][? if ((prussia_leader = "Papen" or prussia_leader == "Schleicher" or prussia_leader == "Goerdeler") or (chancellor == nsdap_chancellor and (not rubicon_mini or game_over) and not prussia_leader == "Goring")) and not in_schleicher_majority_coalition_prussia and not in_schleicher_right_coalition_prussia and started: <span style="color: #808080;"><i>Reichskommissar</i></span> ruled ?][? if in_schleicher_majority_coalition_prussia: <span style="color: #BFC8CC;">**DNEF**</span> majority ?][? if in_schleicher_right_coalition_prussia: Schleicher Right Coalition ?][? if not in_social_liberal_coalition_prussia and not in_social_catholic_coalition_prussia and not in_weimar_coalition_prussia and not in_grand_coalition_prussia and not in_far_right_coalition_prussia and not in_popular_front_prussia and not in_left_front_prussia and not in_center_right_coalition_prussia and not in_right_coalition_prussia and not spd_toleration_prussia and not prussia_leader == "Papen" and prussia_leader != "Schleicher" and chancellor != nsdap_chancellor and ddp_name != 0: caretaker government ?]
+
+[? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+
+[? if spd_in_government and president == "Hindenburg" : Hindenburg's approval: [+ hindenburg_angry : hindenburg_angry +] ?]
+
+[? if spd_in_government and (in_left_front or in_popular_front): <span style="color: #700000;">**KPD**</span> coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
+
+Internal dissent: [+ dissent_percent : dissent +]
+
+= Government
+
+President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun" or president == "Schumacher" or president == "Wels" or president == "Grzesinski" or president == "Juchacz" or (president == "Rosenfeld" and not left_split): <span style="color: #c00000;">[+ president +]</span> ?][? if president == "Rosenfeld" and left_split: <span style="color: #9B0000;">[+ president +]</span> ?][? if president == "Thälmann": <span style="color: #700000;">[+ president +]</span> ?][? if president == "Münzenberg": <span style="color: #9B0000;">[+ president +]</span> ?][? if president == "Hitler" or president == "Göring" or president == "Frick": <span style="color: #7A3C00;">[+ president +]</span> ?][? if president == "Eckener": <span style="color: #000000;">Ec</span><span style="color: #DD0000;">ken</span><span style="color: #FFCC00;">er</span> ?][? if (president == "Gessler" or president == "Heuss") and not lvp_formed: <span style="color: #D3C24D;">[+ president +]</span> ?][? if (president == "Luther" or president == "Jarres") and not lvp_formed: <span style="color: #C0A054;">[+ president +]</span> ?][? if (president == "Gessler" or president == "Heuss" or president == "Jarres" or president == "Luther") and lvp_formed: <span style="color: #FFCC00;">[+ president +]</span> ?][? if (president == "Adenauer" or president == "Brüning" or president == "Stegerwald") or ((president == "Westarp" or president == "Lettow-Vorbeck") and cvp_formed): <span style="color: #000000;">[+ president +]</span> ?][? if president == "Seldte" or president == "Hergt" or ((president == "Westarp" or president == "Lettow-Vorbeck") and dnvp_ideology == "Moderate" and not cvp_formed): <span style="color: #3E88B3;">[+ president +]</span> ?][? if (president == "Westarp" or president == "Lettow-Vorbeck") and dnvp_ideology == "Radical" and not cvp_kvp_formed: <span style="color: #0087DC;">[+ president +]</span> ?][? if president == "Großmann (acting)" or president == "Bumke (acting)" or president == "Seeckt": <span style="color: #808080;">[+ president +]</span> ?][? if president == "Hammerstein": <span style="color: #BFC8CC;">[+ president +]</span> ?][? if president == "Mann" or president == "Ossietzky": <span style="color: #E0A0A0;">[+ president +]</span> ?][? if president == "Einstein": <span style="color: #CFC88F;">[+ president +]</span> ?] ([? if (president == "Adenauer" or president == "Brüning" or president == "Stegerwald") or ((president == "Westarp" or president == "Lettow-Vorbeck") and cvp_formed):<span style="color: #000000;">**[+ z_party_name +]**</span>?][? if president == "Braun" or president == "Schumacher" or president == "Wels" or president == "Juchacz" or (president == "Rosenfeld" and not left_split):<span style="color: #c00000;">**SPD**</span>?][? if president == "Rosenfeld" and left_split:<span style="color: #9B0000;">**SAPD**</span>?][? if president == "Thälmann" or president == "Münzenberg":<span style="color: #700000;">**KPD**</span>?][? if president == "Seldte" or president == "Hergt" or ((president == "Westarp" or president == "Lettow-Vorbeck") and dnvp_ideology == "Moderate" and not cvp_formed): <span style="color: #3E88B3;">**DNVP**</span>?][? if (president == "Westarp" or president == "Lettow-Vorbeck") and dnvp_ideology == "Radical" and not cvp_kvp_formed: <span style="color: #0087DC;">**KVP**</span>?][? if president == "Hitler" or president == "Göring" or president == "Frick":<span style="color: #7A3C00;">**NSDAP**</span>?][? if (president == "Gessler" or president == "Heuss") and not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if (president == "Luther" or president == "Jarres") and not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if (president == "Gessler" or president == "Heuss" or president == "Jarres" or president == "Luther") and lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if president == "Eckener" or president == "Hindenburg" or president == "Großmann (acting)" or president == "Bumke (acting)" or president == "Seeckt": <span style="color: #808080;">I</span>?][? if president == "Hammerstein": <span style="color: #BFC8CC;">**DNEF**</span>?][? if president == "Mann" or president == "Ossietzky": <span style="color: #E0A0A0;">I</span>?][? if president == "Einstein": <span style="color: #CFC88F;">I</span>?])
+
+Chancellor: [? if chancellor_party == "SPD": <span style="color: #c00000;">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: #000000;">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: #7A3C00;">[+ chancellor +]</span>?][? if chancellor_party == "DSU": <span style="color: #6A1E1E;">[+ chancellor +]</span>?][? if chancellor_party == "KPD": <span style="color: #700000;">[+ chancellor +]</span>?][? if chancellor_party == "DNVP": <span style="color: #3E88B3;">[+ chancellor +]</span>?][? if (chancellor == "Schleicher" and not dnef_formed) or chancellor == "Papen": <span style="color: #808080;">[+ chancellor +]</span>?][? if (chancellor == "Schleicher" or chancellor == "Goerdeler" or chancellor == "Bredow") and dnef_formed: <span style="color: #BFC8CC;">[+ chancellor +]</span>?][? if chancellor == "Goerdeler" and not dnef_formed: <span style="color: #808080;">[+ chancellor +]</span>?] ([? if chancellor_party == "Z":<span style="color: #000000;">**[+ z_party_name +]**</span>?][? if chancellor_party == "SPD":<span style="color: #c00000;">**SPD**</span>?][? if chancellor_party == "KPD":<span style="color: #700000;">**KPD**</span>?][? if chancellor_party == "DNVP": <span style="color: #3E88B3;">**DNVP**</span>?][? if chancellor_party == "DSU":<span style="color: #6A1E1E;">**DSU**</span>?][? if chancellor_party == "NSDAP":<span style="color: #7A3C00;">**NSDAP**</span>?][? if chancellor_party == "I":<span style="color: #808080;">I</span>?][? if chancellor_party == "DNEF":<span style="color: #BFC8CC;">**DNEF**</span>?])
+
+Prussian Minister-President: [? if prussia_leader = "Braun" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #c00000;">Braun</span> (<span style="color: #c00000;">**SPD**</span>)?][? if prussia_leader = "Rosenfeld" and not left_split and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #c00000;">Rosenfeld</span> (<span style="color: #c00000;">**SPD**</span>)?][? if prussia_leader = "Rosenfeld" and left_split and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #9B0000;">Rosenfeld</span> (<span style="color: #9B0000;">**SAPD**</span>)?][? if prussia_leader = "Stegerwald" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #000000;">Stegerwald</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>)?][? if prussia_leader = "Brüning" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #000000;">Brüning</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>)?][? if prussia_leader = "Luther" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)) and not lvp_formed and dvp_exist: <span style="color: #C0A054;">Luther</span> (<span style="color: #C0A054;">**DVP**</span>)?][? if prussia_leader = "Luther" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)) and not lvp_formed and not dvp_exist: <span style="color: #D3C24D;">Luther</span> (<span style="color: #D3C24D;">**DVP**</span>)?][? if prussia_leader = "Luther" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)) and lvp_formed: <span style="color: #FFCC00;">Luther</span> (<span style="color: #FFCC00;">**LVP**</span>)?][? if prussia_leader = "Goring": <span style="color: #7A3C00;">Göring</span> (<span style="color: #7A3C00;">**NSDAP**</span>)?][? if (prussia_leader = "Papen" or (chancellor == nsdap_chancellor and (not rubicon_mini or game_over)) and not prussia_leader == "Goring") and started: <span style="color: #808080;">Papen</span> (<span style="color: #808080;">I</span>)?][? if prussia_leader = "Schleicher" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): [? if not dnef_formed: <span style="color: #808080;">Schleicher</span>?][? if dnef_formed: <span style="color: #BFC8CC;">Schleicher</span>?] ([? if not dnef_formed: <span style="color: #808080;">I</span>?][? if dnef_formed: <span style="color: #BFC8CC;">**DNEF**</span>?])?][? if prussia_leader = "Goerdeler" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #808080;">Goerdeler</span> (<span style="color: #808080;">I</span>)?][? if prussia_leader = "Strasser" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #6A1E1E;">Strasser</span> (<span style="color: #6A1E1E;">**DSU**</span>)?][? if prussia_leader = "joavig" and (chancellor != nsdap_chancellor or (rubicon_mini and not game_over)): <span style="color: #700000;">joavig</span> (<span style="color: #7A3C00;">**NSDAP**</span>)?]
+
+Reichstag composition:
+
+# 1928: 30, 1930: 25, 1932: 22
+
+<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #c00000;">**SPD**</span>: [+ spd_r +]%
+[? if sapd_formed and sapd_r > 0: <span class="tooltip-text" title="Socialist Workers' Party of Germany" style="color: #9B0000;">**SAPD**</span>: [+ sapd_r +]% ?]
+# 1928: 15, 1930: 15, 1932: 
+[? if started: [? if z_party_name != "CVP": <span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span></span>?][? if z_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party + Bavarian People's Party"><span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span></span>?]?][? if not started: <span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span></span> ?]: [+ z_r +]%
+# 1928: 10, 1930: 13
+<span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_r +]%
+# 1928: 5, 1930: 4 (as DStP)
+[? if lvp_formed: <span class="tooltip-text" title="Liberal People's Party" style="color: #FFCC00;">**LVP**</span>: [+ lvp_r +]% ?]
+[? if (not lvp_formed or not ddp_name) : [? if not ddp_name:<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**DDP**</span>?][? if ddp_name = "DDP":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if ddp_name = "DStP":<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_r +]% ?]
+# 1928: 9, 1930: 5
+[? if not lvp_formed and dvp_exist : <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [+ dvp_r +]% ?]
+[? if kvp_formed and not dnvp_dvp_formed : <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [+ kvp_r +]% ?]
+[? if dnvp_dvp_formed: <span class="tooltip-text" title="Free Conserative Party" style="color: #00C0FF;">**FKP**</span>: [+ kvp_r +]% ?]
+# 1928: 14, 1930: 7
+[? if not cvp_formed and not dnvp_defunct: <span class="tooltip-text" title="German National People's Party" style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_r +]%?]
+[? if dnf_formed: <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: [+ dnf_r +]% ?]
+# 1928: 3, 1930: 18
+<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_r +]%
+# 1928: 9, 1930: 10
+**Others**: [+ other_r +]%
+
+[? if spd_in_government = 1 : Budget: [+ budget +] ?]
+
+Next election: [+ next_election_month : month +] [+ next_election_year +]
+
+Next Prussian election: [? if prussia_leader != "Papen" and prussia_leader != "Schleicher": [+ next_election_month_prussia : month +] [+ next_election_year_prussia +] Week [+ next_election_week_prussia +] ?]
+
+= Economics
+
+Inflation: [+ inflation_2 +]%
+
+[? if black_thursday_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]
+
+Economic growth: [+ economic_growth_2 +]%
+
+[? if debug = 1 : Average Income Per Capita: [+ income_pc +] [+ currency +] ?]
+
+### = Goals
+###
+###[? if spd_government_burden_seen: Government Goals: [? if goal_spd_cancel == 0: [+ goal_spd_total +]?][? if goal_spd_cancel >= 1: Failed?] / 2 completed, due in [+ spd_government_burden_timer +] months ?]
+###
+###[? if spd_government_burden_peoples: Secondary Government Goals: [? if goal_spd_cancel_peoples == 0: [+ goal_spd_total_peoples +]?][? if goal_spd_cancel_peoples >= 1: Failed?] / 1 completed, due in [+ spd_government_burden_timer +] months ?]
+###
+### [? if spd_government_burden_seen: = Primary Goals ?]
+###
+### [? if spd_government_burden_peoples: = Secondary Goals ?]
+###
+### [? if kpd_goals_seen: = KPD Goals ?]
+###
+###[? if welfare_goal = 1 : - Expand social welfare programs. ?] wip/1
+###
+###[? if agriculture_goal = 1 : - Enact a land reform program. ?] wip/1 
+###
+###[? if economy_goal = 1 : - Start substantial nationalization of the economy. ?] wip/1
+###
+###[? if finance_goal = 1 : - Make taxes more progressive. ?] wip/1
+###
+###[? if labor_goal = 1 : - Support workers in labor disputes. ?] wip/1
+###
+###[? if foreign_goal = 1 : - Improve our relations with the <span style="color: #750e0e;">Soviet Union</span>. ?] wip/1
+###
+###[? if interior_goal = 1 : - Ban the <span style="color: #7A3C00;">**SA**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span>. ?] wip/1
+###
+###[? if reichswehr_goal = 1 : - Reduce funding for the Reichswehr. ?] wip/1
+
+
+@politics
+on-arrival: {!
+Q.trun_ind_perc_dis = (Q.trun_ind_perc * 100).toFixed(3);
+Q.trun_rur_perc_dis = (Q.trun_rur_perc * 100).toFixed(3);
+Q.trun_nmc_perc_dis = (Q.trun_nmc_perc * 100).toFixed(3);
+Q.iww_ind_perc_dis = (Q.iww_ind_perc * 100).toFixed(3);
+Q.iww_nmc_perc_dis = (Q.iww_nmc_perc * 100).toFixed(3);
+Q.iww_rur_perc_dis = (Q.iww_rur_perc * 100).toFixed(3);
+Q.iww_unm_perc_dis = (Q.iww_unm_perc * 100).toFixed(3);
+Q.chrun_tot_perc_dis = (Q.chrun_tot_perc * 100).toFixed(3);
+!}
+
+= Inter-party Relations
+
+[? if z_party_name != "CVP": <span class="tooltip-text" title="Center Party" style="color: #000000;">**[+ z_party_name +]**</span>?][? if z_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party" style="color: #000000;">**[+ z_party_name +]**</span>?]: [+ z_relation : relationships +]
+
+[? if not lvp_formed or not ddp_name: [? if not ddp_name:<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**DDP**</span>?][? if ddp_name = "DDP":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if ddp_name = "DStP":<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_relation : relationships +] ?]
+
+[? if lvp_formed: <span class="tooltip-text" title="Liberal People's Party" style="color: #FFCC00;">**LVP**</span>: [+ lvp_relation : relationships +]?]
+
+[? if not lvp_formed and dvp_exist: <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [+ dvp_relation : relationships +] ?]
+
+<span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_relation : relationships +]
+
+[? if kvp_formed and not dnvp_dvp_formed : <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [+ kvp_relation : relationships +] ?]
+
+[? if dnvp_dvp_formed: <span class="tooltip-text" title="Free Conserative Party" style="color: #00C0FF;">**FKP**</span>: [+ fkp_relation : relationships +]?]
+
+[? if not cvp_formed and not dnvp_defunct: <span class="tooltip-text" title="German National People's Party" style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_relation : relationships +]?]
+
+[? if dnf_formed : <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: [+ dnf_relation : relationships +] ?]
+
+<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_relation : relationships +]
+
+[? if rural_relations_unlocked : <span style="color: #7FCEB1;">**CNBLP**</span>: [+ cnblp_relation : relationships +] ?]
+
+[? if rural_relations_unlocked : <span style="color: #e9ebf0;">**DBP**</span>: [+ dbp_relation : relationships +] ?]
+
+[? if rural_relations_unlocked : <span style="color: #808080;">**Independents**</span>: [+ others_relations : relationships +] ?]
+
+[? if economic_relations_unlocked : <span style="color: #e9ebf0;">**WP**</span>: [+ wp_relation : relationships +] ?]
+
+[? if economic_relations_unlocked : <span style="color: #67bed9;">**CSVD**</span>: [+ csvd_relation : relationships +] ?]
+
+= Party Leadership
+
+[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: [? if z_party_name != "CVP": <span class="tooltip-text" title="Center Party" style="color: #000000;">**[+ z_party_name +]**</span>?][? if z_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party" style="color: #000000;">**[+ z_party_name +]**</span>?]: [? if not cvp_formed: [? if z_ideology == "Right" and not cvp_kvp_formed and z_leader != "Joos" and z_leader != "Bracht": Center to Center-Right?][? if z_ideology == "Right" and cvp_kvp_formed: Christian Democracy?][? if z_leader == "Joos": Center-Left to Center-Right?][? if z_leader == "Kaiser": Center-Left to Center?][? if z_leader == "Bracht": Catholic Conservatism?]?][? if cvp_formed: [? if cvp_leader == "Lambach": Christian Corporatism?][? if cvp_leader == "Stegerwald": Paternalistic Conservatism?][? if cvp_leader == "Gereke": Agrarian Conservatism?][? if cvp_leader == "Westarp" or cvp_leader == "Goerdeler" or cvp_leader = "Lejeune-Jung" or cvp_leader == "Lettow-Vorbeck": National Conservatism?][? if cvp_leader == "Adenauer": Christian Democracy?][? if cvp_leader == "Bolz": Christian Conservatism?][? if cvp_leader == "Treviranus": Tory Democracy?]?] ([? if not cvp_formed:[+ z_leader +]?][? if cvp_formed:[+ cvp_leader +]?])?]
+
+[? if not ddp_name and not lvp_formed: UNINITIALIZED ?][? if not lvp_formed and ddp_name != 0 and not dstp_dnef: [? if ddp_name = "DDP" and ddp_ideology == "Right":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>: Classical Liberalism ([+ ddp_leader +])?][? if ddp_name = "DDP" and ddp_ideology == "Moderate":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>: Left Liberalism ([+ ddp_leader +])?][? if ddp_name = "DDP" and ddp_ideology == "Left":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>: Progressive Liberalism ([+ ddp_leader +])?]?][? if not lvp_formed and ddp_name = "DDP" and dstp_dnef: <span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>: Liberal Corporatism ([+ ddp_leader +])?]
+
+[? if ddp_name = "DStP" and not lvp_formed and (not dstp_collapsed or dstp_dnef):<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>: Liberal Corporatism ([+ ddp_leader +])?][? if ddp_name = "DStP" and not lvp_formed and dstp_collapsed and not dstp_dnef:<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>: [? if ddp_ideology == "Right": Statist Liberalism ?][? if ddp_ideology == "Moderate": Classical Liberalism ?][? if ddp_ideology == "Left": Left Liberalism?] ([+ ddp_leader +])?]
+
+[? if lvp_formed and not lvp_dnef: <span class="tooltip-text" title="Liberal People's Party" style="color: #FFCC00;">**LVP**</span>: [? if lvp_ideology == "Left": Left Liberalism ([+ lvp_leader +])?][? if lvp_ideology == "Moderate": Classical Liberalism ([+ lvp_leader +])?][? if lvp_ideology == "Right": National Liberalism ([+ lvp_leader +])?]?]
+
+[? if lvp_formed and lvp_dnef: <span class="tooltip-text" title="Liberal People's Party" style="color: #FFCC00;">**LVP**</span>: Liberal Corporatism ([+ lvp_leader +])?]
+
+[? if not ddp_name and not lvp_formed: UNINITIALIZED ?][? if not lvp_formed and dvp_exist and ddp_name != 0 and not dvp_dnef: [? if ddp_name != 0 and dvp_leader != "Thiel" and dvp_leader != "Glatzel": <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [? if dvp_ideology = "Left": Classical Liberalism ?][? if dvp_ideology = "Moderate": Conservative Liberalism?][? if dvp_ideology = "Right" and (dvp_right - dvp_left < 10 or dvp_leader == "Stresemann"): National Liberalism?][? if dvp_ideology = "Right" and dvp_right - dvp_left >= 10 and dvp_leader != "Stresemann": National Capitalism?] ([+ dvp_leader +])?][? if ddp_name != 0 and (dvp_leader == "Thiel" or dvp_leader == "Glatzel"): <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: Paternalistic Liberalism ([+ dvp_leader +])?]?]
+
+[? if not lvp_formed and dvp_exist and ddp_name != 0 and dvp_dnef: <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: National Liberalism ([+ dvp_leader +])?]
+
+[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [? if kpd_leader = "Conciliators": United Front Marxism-Leninism?][? if kpd_leader = "Thälmann": Third Period Marxism-Leninism?] ([+ kpd_leader +])?]
+
+[? if kvp_formed and not dnvp_dvp_formed: <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [? if not kvp_dnef: Christian Conservatism?][? if kvp_dnef: National Conservatism?] ([+ kvp_leader +])?]
+
+[? if dnvp_dvp_formed: <span class="tooltip-text" title="Free Conserative Party" style="color: #00C0FF;">**FKP**</span>: [+ fkp_ideology +]: ([+ fkp_leader +])?]
+
+[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0 and not cvp_formed and not dnvp_dnef and not dnvp_defunct: <span class="tooltip-text" title="German National People's Party" style="color: #3E88B3;">**DNVP**</span>: [? if dnvp_leader = "Hugenberg" or dnvp_leader = "Triumvirate": Authoritarian Conservatism?][? if dnvp_leader = "Westarp" or dnvp_leader = "Hergt" or dnvp_leader == "Lejeune-Jung" or dnvp_leader == "Keudell": National Conservatism?][? if dnvp_leader = "Lambach": Christian Corporatism?][? if dnvp_leader = "Treviranus" and not true_christian_democracy: National Conservatism?][? if dnvp_leader = "Treviranus" and true_christian_democracy: Tory Democracy?][? if dnvp_leader = "Schiele": Agrarian Conservatism?] ([+ dnvp_leader +])?]
+
+[? if ddp_name != 0 and not cvp_formed and dnvp_dnef: <span class="tooltip-text" title="German National People's Party" style="color: #3E88B3;">**DNVP**</span>: [? if dnvp_leader == "Lambach": Christian Corporatism?][? if dnvp_leader == "Treviranus": National Conservatism?] ([+ dnvp_leader +])?]
+
+[? if dnf_formed : <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: Authoritarian Conservatism (Hugenberg) ?]
+
+[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: National Socialism ([+ nsdap_leader +])?]
+
+= Industrial Backing
+
+[? if z_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party" style="color: #000000;">**[+ z_party_name +]**</span>: [? if industrial_z_backing == 3: high?][? if industrial_z_backing == 4: highest?]  ?]
+
+[? if not lvp_formed: [? if ddp_name == "DStP": <span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if ddp_name == "DDP": <span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [? if industrial_ddp_backing == 0: none?][? if industrial_ddp_backing == 1: low?][? if industrial_ddp_backing == 2: medium?]  ?]
+
+[? if lvp_formed: <span class="tooltip-text" title="Liberal People's Party" style="color: #FFCC00;">**LVP**</span>: [? if industrial_lvp_backing == 2: medium?][? if industrial_lvp_backing == 3: high?][? if industrial_lvp_backing == 4: highest?] ?]
+
+[? if not lvp_formed and dvp_exist: <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [? if industrial_dvp_backing == 1: low?][? if industrial_dvp_backing == 2: medium?][? if industrial_dvp_backing == 3: high?] ?]
+
+[? if not cvp_formed and not dnvp_defunct: <span class="tooltip-text" title="German National People's Party" style="color: #3E88B3;">**DNVP**</span>: [? if industrial_dnvp_backing == 4: highest?][? if industrial_dnvp_backing == 3: high?][? if industrial_dnvp_backing == 2: medium?][? if industrial_dnvp_backing == 1: low?][? if industrial_dnvp_backing == 0: [? if dnvp_ideology == "Moderate": none?][? if dnvp_ideology == "Radical": Hugenberg funded?]?]?]
+
+[? if dnvp_ideology == "Moderate": <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: Hugenberg funded ?]
+
+[? if kvp_formed and not dnvp_dvp_formed: <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: high ?]
+
+[? if dnvp_dvp_formed: <span class="tooltip-text" title="Free Conserative Party" style="color: #00C0FF;">**FKP**</span>: high ?] 
+
+<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: [? if industrial_nsdap_backing == 0: none?][? if industrial_nsdap_backing == 1: low?][? if industrial_nsdap_backing == 2: medium?]
+
+= Internal Factions of the <span style="color: #c00000;">**SPD**</span>
+
+{!<span class="tooltip-text" title="The Left is interested in radical, transformative policies and cooperation with the KPD.">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
+
+{!<span class="tooltip-text" title="The Center is a faction of Center Marxists, between reform and revolution.">Center</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +]
+
+{!<span class="tooltip-text" title="Labor's goal is economic reform and benefits for organized workers.">Labor</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +]
+
+{!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">Reformist</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
+
+{!<span class="tooltip-text" title="Left Nationalists are in favour of Social Democratic policies, in a similar vein to the reformists, however they also have views which are much more socially right-wing. They split from the SPD in 1926 to form the ASPD">Left Nationals</span>!} [? if aspd_j_spd = 1 : Status: ASPD Rejoined ?] [? if aspd_j_spd = 0 : Status: ASPD Independent ?] strength: [+ left_nat_strength : strength +], dissent: [+ left_nat_dissent : dissent +]
+
+Seeheimer Kreis (Business) [? if business_j_spd = 0 : Status: Not Formed; ?] [? if business_j_spd = 1 : Status: Forming; ?] [? if business_j_spd = 2: Formed; ?] strength: [+ business_strength : strength +], dissent: [+ business_dissent : dissent +] 
+
+<span style=" color: #228B22;">Agrarian</span> <span style=" color: #c90000;">Socialist</span> (Rural) [? if rural_j_spd = 0 : Status: Support Base; ?] [? if rural_j_spd = 1 : Status: Faction; ?] strength: [+ rural_strength : strength +], dissent: [+ rural_dissent : dissent +]
+
+Social Liberal (Liberal) [? if ddp_j_spd = 0 : Status: DDP faction; ?] [? if ddp_j_spd = 1 : Status: SPD Faction; ?] strength: [+ liberal_strength : strength +], dissent: [+ liberal_dissent : dissent +]
+
+Right Communists [? if kpo_j_spd = 0 and (( year = 1929 and month <= 6) or ( year < 1929 ))  : Status: KPD Faction; ?] [? if kpo_j_spd = 0 and (( year = 1929 and month >= 7) or (year >= 1930)) : Status: Kommunistische Partei Deutschlands (Opposition) ;; KPD(O); ?] [? if kpo_j_spd = 1 and spd_dom_sed = 1 : Status: SED Faction; ?] [? if kpo_j_spd = 1 and sed_formed = 0: SPD Faction; ?] strength: [+ rightcom_strength : strength +], dissent: [+ rightcom_dissent : dissent +]
+
+Leftcom [? if sed_formed = 0 : Status: KPD Faction; ?] [? if sed_formed = 1 : Status: SED Faction; ?] strength: [+ leftcom_strength : strength +], dissent: [+ leftcom_dissent : dissent +]
+
+Left Christian [? if left_chris_spd = 0 and sz_formed = 0 : Status: Z Faction; ?] [? if sz_formed = 1 : Status: Sozialchristliches Zentrumspartei (SZ); ?] [? if left_chris_spd = 1 and sz_formed = 0 : Status: SPD Faction ?] strength: [+ leftchris_strength : strength +], dissent: [+ leftchris_dissent : dissent +]
+
+= Other
+
+Social Fascist Thoery Credibility: [+ socfas_tc : sf_theory +]
+
+Influence in the Trade Unions: [+ trun_infl : other_influence +] [? if tips = 1 and syndicalism = 1 : ( <span style="color:#000000;">TIP:</span> Trade Union influence only applies to the ADGB - The IWW is affected by its own hidden values. ) ?]
+
+ADGB Unionised Industrial Workers: [+ trun_ind_perc : trun_amnt +] ( [+ trun_ind_perc_dis +] % )
+
+AfA-Bund Unionised New Middle Class: [+ trun_nmc_perc : trun_amnt +] ( [+ trun_nmc_perc_dis +] % )
+
+ADGB Unionised Farmworkers: [+ trun_rur_perc : trun_amnt +] ( [+ trun_rur_perc_dis +] % )
+
+IWW Unionised Industrial Workers: [+ iww_ind_perc : trun_amnt +] ( [+ iww_ind_perc_dis +] % )
+
+IWW Unionised New Middle Class: [+ iww_nmc_perc : trun_amnt +] ( [+ iww_nmc_perc_dis +] % ) 
+
+IWW Unionised Farmworkers: [+ iww_rur_perc : trun_amnt +] ( [+ iww_rur_perc_dis +] % ) 
+
+IWW Unionised Unemployed: [+ iww_unm_perc : trun_amnt +] ( [+ iww_unm_perc_dis +] % ) 
+
+Christian Unionised Workers: [+ chrun_tot_perc : trun_amnt +] ( [+ chrun_tot_perc_dis +] % )
+
+@paramilitaries
+on-arrival: {!
+Q.rb_strength_2 = Q.rb_strength.toFixed(1);
+Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
+Q.sh_strength_2 = Q.sh_strength.toFixed(1);
+Q.sa_strength_2 = Q.sa_strength.toFixed(1);
+!}
+
+= Paramilitaries
+
+<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD." style="color: #c00000;">**Reichsbanner**</span> Strength: [+ rb_strength_2 +] thousand
+
+<span style="color: #c00000;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
+
+<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD." style="color: #8B0000;">**RFB**</span> Strength: [+ rfb_strength_2 +] thousand
+
+<span style="color: #8B0000;">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
+
+<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the DNVP." style="color:#3E88B3;">**Stahlhelm**</span> Strength: [+ sh_strength_2 +] thousand
+
+<span style="color: #3E88B3;">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
+
+<span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary." style="color: #7A3C00;">**SA**</span> Strength: [+ sa_strength_2 +] thousand
+
+<span style="color: #7A3C00;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
+
+[? if year >= 1930 and not streetfighting_joever: <h1>Distribution of Power</h1> ?]
+
+[? if year >= 1930 and not streetfighting_joever: <h4>[? if not kpd_truce: <span style="color: #000000;">Dem</span><span style="color: #DD0000;">ocra</span><span style="color: #FFCC00;">tic</span>?][? if kpd_truce: Anti-<span style="color: #7A3C00;">Fascist</span>?] strength: [+ democracy_force +]%</h4>?]
+
+[? if year >= 1930 and not streetfighting_joever: <span style="color: #c00000;">**Reichsbanner**</span>: [+ rb_force +]%?]
+
+[? if year >= 1930 and not streetfighting_joever and prussia_leader != "Papen" and prussia_leader != "Schleicher" and prussia_leader != "Strasser": <b>Prussian police: [+ prussia_force +]%</b>?]
+
+[? if year >= 1930 and not streetfighting_joever and kpd_truce: <span style="color: #8B0000;">**RFB**</span>: [+ rfb_force +]%?]
+
+[? if year >= 1930 and not streetfighting_joever: <h4><span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> strength: [+ far_right_force +]%</h4>?]
+
+[? if year >= 1930 and not streetfighting_joever: <span style="color: #7A3C00;">**SA**</span>: [+ sa_force +]%?]
+
+[? if year >= 1930 and not streetfighting_joever: <span style="color: #3E88B3;">**Stahlhelm**</span>: [+ sh_force +]%?]
+
+[? if year >= 1930 and not streetfighting_joever and not kpd_truce: <span style="color: #8B0000;">**RFB**</span>: [+ rfb_force +]%?]
+
+[? if year >= 1930 and not streetfighting_joever and (prussia_leader == "Papen" or prussia_leader == "Schleicher" or prussia_leader == "Strasser") or reichswehr_street: <h4><span style="color: #BFC8CC;">**State**</span> strength: [+ state_force +]%</h4>?]
+
+[? if year >= 1930 and not streetfighting_joever and prussia_leader == "Papen" or prussia_leader == "Schleicher" or prussia_leader == "Strasser": <b>Prussian police: [+ prussia_force +]%</b>?]
+
+[? if year >= 1930 and not streetfighting_joever and reichswehr_street: <b>Reichswehr Gendarmerie: [+ reichswehr_force +]%</b>?]
+
+[? if year >= 1930 and not streetfighting_joever: Currently, the streets are [? if far_right_paramilitary and rfb_force < far_right_force:[? if far_right_paramilitary_highest: fully controlled by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_high: dominated by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_med: controlled by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_low: in the slight control of the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if sa_paramilitary:, mainly by the violent <span style="color: #7A3C00;">**SA**</span>?]?][? if rfb_force >= far_right_force and far_right_paramilitary: controlled by the <span style="color: #700000;">**RFB**</span>?][? if democracy_paramilitary and rfb_force < democracy_force:[? if democracy_paramilitary_highest: fully controlled by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_high: dominated by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_med: controlled by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_low: in the slight control of the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?]?][? if rfb_force >= democracy_force and democracy_paramilitary: controlled by the <span style="color: #700000;">**RFB**</span>?][? if state_paramilitary:[? if state_paramilitary_highest: fully controlled by the <span style="color: #BFC8CC;">**State**</span>?][? if state_paramilitary_high: dominated by the <span style="color: #BFC8CC;">**State**</span>?][? if state_paramilitary_med: controlled by the <span style="color: #BFC8CC;">**State**</span>?][? if state_paramilitary_low: in the slight control of the <span style="color: #BFC8CC;">**State**</span>?]?].?]
+
+
+= Official military/paramilitaries
+
+Reichswehr: [+ reichswehr_strength +] thousand troops.
+
+Reichswehr Loyalty: [+ reichswehr_loyalty : loyalty +]
+
+Prussian police: [+ prussian_police_strength +] thousand members.
+
+Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
+
+[? if spd_in_government : Interior Police: [+ interior_police_strength +] thousand members. ?]
+
+[? if spd_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
+
+@polls
+on-arrival: {!
+Q.pro_republic_disp = Math.floor(Q.pro_republic);
+Q.nationalism_disp = Math.floor(Q.nationalism);
+Q.socialism_disp = Math.floor(Q.socialism);
+
+var parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other', 'lvp', 'kvp', 'dnf'];
+var classes = ['workers', 'new_middle', 'old_middle', 'rural', 'unemployed', 'catholics'];
+
+var classSizes = {
+    workers: Q.workers,
+    new_middle: Q.new_middle,
+    old_middle: Q.old_middle,
+    rural: Q.rural,
+    unemployed: Q.unemployed,
+    catholics: Q.catholics
+};
+
+var total = 0;
+
+for (var party of parties) {
+    var raw = 0;
+
+    for (var c of classes) {
+        var classSize = classSizes[c];
+        var support = Q[c + '_' + party];
+
+        if (classSize === undefined) {
+            console.log('Missing class size:', c);
+        }
+        if (support === undefined) {
+            console.log('Missing support:', c + '_' + party);
+        }
+
+        raw += (classSize || 0) * (support || 0);
+    }
+
+    Q[party + '_votes_raw'] = raw;
+    total += raw;
+}
+
+if (total === 0) {
+    console.log('WARNING: Vote = 0');
+    total = 1;
+}
+
+for (var party of parties) {
+    Q[party + '_votes'] = +((Q[party + '_votes_raw'] / total) * 100).toFixed(1);
+    console.log(party + ': ' + Q[party + '_votes'] + '%');
+}
+
+Q.prog_list_disp = Q.kpd_votes + Q.spd_votes + Q.ddp_votes;
+
+if (Q.lvp_formed) {
+    Q.lib_list_disp = Q.lvp_votes + (Q.other_votes/2);
+}
+
+if (!Q.lvp_formed) {
+    Q.lib_list_disp = Q.ddp_votes + Q.dvp_votes + (Q.other_votes/2);
+}
+
+Q.harz_list_disp = Q.nsdap_votes + Q.dnf_votes;
+
+if (Q.dnvp_ideology == "Radical") {
+    Q.harz_list_disp += Q.dnvp_votes;
+}
+
+Q.bou_list_disp = Q.z_votes + Q.ddp_votes + Q.lvp_votes + Q.dvp_votes + Q.kvp_votes;
+
+if (Q.dnvp_ideology == "Moderate") {
+    Q.bou_list_disp += Q.dnvp_votes;
+}
+
+Q.agr_list_disp = Q.dnvp_votes + Q.others_votes;
+
+Q.agr_soc_list_disp = 0;
+
+if (!Q.lvp_formed) {
+    Q.wei_list_disp = (Q.z_votes - 3) + Q.ddp_votes + Q.spd_votes;
+}
+
+if (Q.lvp_formed) {
+    Q.wei_list_disp = (Q.z_votes - 3) + Q.lvp_votes + Q.spd_votes;
+}
+
+Q.lnd_list_disp = Q.lvp_votes + Q.z_votes + Q.dvp_votes + Q.kvp_votes + Q.other_votes;
+
+!}
+
+= Projected election results
+
+(if the election were to be held now):
+### Add Splinter parties, with either their vote percent or "Not Formed" if they're'n't formed
+
+<span style="color: #c00000;">**SPD**</span>: [+ spd_votes +]%
+
+[? if sapd_formed: <span style="color: #9B0000;">**SAPD**</span>: [+ sapd_votes +]% ?]
+
+<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span>: [+ z_votes +]%
+
+<span style="color: #700000;">**KPD**</span>: [+ kpd_votes +]%
+
+[? if not lvp_formed: [? if not ddp_name: <span style="color: #D3C24D;">**DDP**</span>?][? if ddp_name != 0: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]% ?]
+
+[? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>: [+ lvp_votes +]% ?]
+
+[? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span>: [+ dvp_votes +]% ?]
+
+[? if kvp_formed and not dnvp_dvp_formed: <span style="color: #0087DC;">**KVP**</span>: [+ kvp_votes +]% ?]
+
+[? if dnvp_dvp_formed: <span class="tooltip-text" title="Free Conserative Party" style="color: #00C0FF;">**FKP**</span>: [+ kvp_votes +]% ?]
+
+[? if not cvp_formed and not dnvp_defunct: <span style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_votes +]%?]
+
+[? if dnf_formed: <span style="color: #003755;">**DNF**</span>: [+ dnf_votes +]% ?]
+
+[? if not nsdap_split: <span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_votes +]% ?]
+
+**Others**: [+ other_votes +]%
+
+Support for the Republic: [+ pro_republic_disp +]%
+
+Nationalism: [+ nationalism_disp +]%
+
+Support for Socialism [+ socialism_disp +]%
+
+**Detailed results for each demographic**
+
+Workers: SPD: [+ workers_spd_display +]%, [+ z_party_name +]: [+ workers_z_display +]%, KPD: [+ workers_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ workers_ddp_display +]%, [? if dvp_exist: DVP: [+ workers_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ workers_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ workers_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ workers_dnf_display +]%  ?][? if kvp_formed: KVP: [+ workers_kvp_display +]%  ?]NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]%
+
+New Middle Class: SPD: [+ new_middle_spd_display +]%, [+ z_party_name +]: [+ new_middle_z_display +]%, KPD: [+ new_middle_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ new_middle_ddp_display +]%, [? if dvp_exist: DVP: [+ new_middle_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ new_middle_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ new_middle_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ new_middle_dnf_display +]%  ?][? if kvp_formed: KVP: [+ new_middle_kvp_display +]%  ?]NSDAP: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]%
+
+Old Middle Class: SPD: [+ old_middle_spd_display +]%, [+ z_party_name +]: [+ old_middle_z_display +]%, KPD: [+ old_middle_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ old_middle_ddp_display +]%, [? if dvp_exist: DVP: [+ old_middle_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ old_middle_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ old_middle_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ old_middle_dnf_display +]%  ?][? if kvp_formed: KVP: [+ old_middle_kvp_display +]%  ?]NSDAP: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]%
+
+Rural: SPD: [+ rural_spd_display +]%, [+ z_party_name +]: [+ rural_z_display +]%, KPD: [+ rural_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ rural_ddp_display +]%, [? if dvp_exist: DVP: [+ rural_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ rural_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ rural_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ rural_dnf_display +]%  ?][? if kvp_formed: KVP: [+ rural_kvp_display +]%  ?]NSDAP: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]%
+
+Unemployed: SPD: [+ unemployed_spd_display +]%, [+ z_party_name +]: [+ unemployed_z_display +]%, KPD: [+ unemployed_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ unemployed_ddp_display +]%, [? if dvp_exist: DVP: [+ unemployed_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ unemployed_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ unemployed_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ unemployed_dnf_display +]%  ?][? if kvp_formed: KVP: [+ unemployed_kvp_display +]%  ?]NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]%
+
+Catholics: SPD: [+ catholics_spd_display +]%, [+ z_party_name +]: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ catholics_ddp_display +]%, [? if dvp_exist: DVP: [+ catholics_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ catholics_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ catholics_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ catholics_dnf_display +]%  ?][? if kvp_formed: KVP: [+ catholics_kvp_display +]%  ?]NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]%
+
+[? if lists >= 1 or wip = 0 : = **Lists** ?]
+
+[? if wip = 0 : Progressive List: <span style="color:#FF0000;">[+ prog_list_disp +]</span> ?]
+
+[? if wip = 0 : Liberal List: <span style="color:#FFF000;">[+ lib_list_disp +]</span> ?]
+
+[? if wip = 0 : Harzburg Front: <span style="color:#00008B;">[+ harz_list_disp +]</span> ?]
+
+[? if wip = 0 : Bourgeois List: <span style="color:#D2E8BA;">[+ bou_list_disp +]</span> ?]
+
+[? if wip = 0 : Agrarian List <span style="color:#6A7A52;">[+ agr_list_disp +]</span> ?]
+
+[? if wip = 0 : Agrarian-Socialist List <span style="color:7F2B0A;">**[+ agr_soc_list_disp +]**</span> ?]
+
+[? if wip = 0 : Weimar List <span style="color:#FDAA48;">**[+ wei_list_disp +]**</span> ?]
+
+[? if wip = 0 : People's List <span style="color:#90d5ff;">**[+ lnd_list_disp +]**</span> ?]
+
+[? if wip = 0 : <span style="color:#c90000;">SPD</span> <span style="color:#ffc0cb;">Splinter</span> Parties: <span style="color:#ffc0cb;">**[+ splin_list_disp +]**</span>
+
+@foreign_tab
+
+= Foreign Relations
+
+<span style="color: #000091;">W</span><span style="color: #C8102E;">e</span><span style="color: #003DA5;">s</span><span style="color: #FFCD00;">t</span><span style="color: #51ADDA;">e</span><span style="color: #046A38;">r</span><span style="color: #F1BF00;">n</span> European Countries:
+
+<span style="color: #000091;">France</span>: [? if fra_relation <= -3 : {!<span style="color: #FF0000;">!}[+ fra_relation : foreign_relations +]{!</span>!} ?][? if fra_relation >= -2 and fra_relation <= 2 : {!<span style="color: #FFE000;">!}[+ fra_relation : foreign_relations +]{!</span>!} ?][? if fra_relation >= 3 : {!<span style="color: #00B300;">!}[+ fra_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #C8102E;">Britain</span>: [? if bri_relation <= -3 : {!<span style="color: #FF0000;">!}[+ bri_relation : foreign_relations +]{!</span>!} ?][? if bri_relation >= -2 and bri_relation <= 2 : {!<span style="color: #FFE000;">!}[+ bri_relation : foreign_relations +]{!</span>!} ?][? if bri_relation >= 3 : {!<span style="color: #00B300;">!}[+ bri_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #003DA5;">Netherlands</span>: [? if net_relation <= -3 : {!<span style="color: #FF0000;">!}[+ net_relation : foreign_relations +]{!</span>!} ?][? if net_relation >= -2 and net_relation <= 2 : {!<span style="color: #FFE000;">!}[+ net_relation : foreign_relations +]{!</span>!} ?][? if net_relation >= 3 : {!<span style="color: #00B300;">!}[+ net_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FFCD00;">Belgium</span>: [? if bel_relation <= -3 : {!<span style="color: #FF0000;">!}[+ bel_relation : foreign_relations +]{!</span>!} ?][? if bel_relation >= -2 and bel_relation <= 2 : {!<span style="color: #FFE000;">!}[+ bel_relation : foreign_relations +]{!</span>!} ?][? if bel_relation >= 3 : {!<span style="color: #00B300;">!}[+ bel_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #51ADDA;">Luxembourg</span>: [? if lux_relation <= -3 : {!<span style="color: #FF0000;">!}[+ lux_relation : foreign_relations +]{!</span>!} ?][? if lux_relation >= -2 and lux_relation <= 2 : {!<span style="color: #FFE000;">!}[+ lux_relation : foreign_relations +]{!</span>!} ?][? if lux_relation >= 3 : {!<span style="color: #00B300;">!}[+ lux_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #046A38;">Portugal</span>: [? if por_relation <= -3 : {!<span style="color: #FF0000;">!}[+ por_relation : foreign_relations +]{!</span>!} ?][? if por_relation >= -2 and por_relation <= 2 : {!<span style="color: #FFE000;">!}[+ por_relation : foreign_relations +]{!</span>!} ?][? if por_relation >= 3 : {!<span style="color: #00B300;">!}[+ por_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #F1BF00;">Spain</span>: [? if spa_relation <= -3 : {!<span style="color: #FF0000;">!}[+ spa_relation : foreign_relations +]{!</span>!} ?][? if spa_relation >= -2 and spa_relation <= 2 : {!<span style="color: #FFE000;">!}[+ spa_relation : foreign_relations +]{!</span>!} ?][? if spa_relation >= 3 : {!<span style="color: #00B300;">!}[+ spa_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #DC143C;">Eas</span><span style="color: #11457e;">te</span><span style="color: #CC0000;">rn</span> European Countries:
+
+<span style="color: #DC143C;">Poland</span>: [? if pol_relation <= -3 : {!<span style="color: #FF0000;">!}[+ pol_relation : foreign_relations +]{!</span>!} ?][? if pol_relation >= -2 and pol_relation <= 2 : {!<span style="color: #FFE000;">!}[+ pol_relation : foreign_relations +]{!</span>!} ?][? if pol_relation >= 3 : {!<span style="color: #00B300;">!}[+ pol_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #11457e;">Czechoslovakia</span>: [? if cze_relation <= -3 : {!<span style="color: #FF0000;">!}[+ cze_relation : foreign_relations +]{!</span>!} ?][? if cze_relation >= -2 and cze_relation <= 2 : {!<span style="color: #FFE000;">!}[+ cze_relation : foreign_relations +]{!</span>!} ?][? if cze_relation >= 3 : {!<span style="color: #00B300;">!}[+ cze_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #CC0000;">Soviet Union</span>: [? if soviet_relation <= -3 : {!<span style="color: #FF0000;">!}[+ soviet_relation : foreign_relations +]{!</span>!} ?][? if soviet_relation >= -2 and soviet_relation <= 2 : {!<span style="color: #FFE000;">!}[+ soviet_relation : foreign_relations +]{!</span>!} ?][? if soviet_relation >= 3 : {!<span style="color: #00B300;">!}[+ soviet_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FFB81C;">Ba</span><span style="color: #A4343A;">lt</span><span style="color: #0072CE;">ic</span> Countries:
+
+<span style="color: #FFB81C;">Lithuania</span>: [? if lit_relation <= -3 : {!<span style="color: #FF0000;">!}[+ lit_relation : foreign_relations +]{!</span>!} ?][? if lit_relation >= -2 and lit_relation <= 2 : {!<span style="color: #FFE000;">!}[+ lit_relation : foreign_relations +]{!</span>!} ?][? if lit_relation >= 3 : {!<span style="color: #00B300;">!}[+ lit_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #A4343A;">Latvia</span>: [? if lat_relation <= -3 : {!<span style="color: #FF0000;">!}[+ lat_relation : foreign_relations +]{!</span>!} ?][? if lat_relation >= -2 and lat_relation <= 2 : {!<span style="color: #FFE000;">!}[+ lat_relation : foreign_relations +]{!</span>!} ?][? if lat_relation >= 3 : {!<span style="color: #00B300;">!}[+ lat_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #0072CE;">Estonia</span>: [? if est_relation <= -3 : {!<span style="color: #FF0000;">!}[+ est_relation : foreign_relations +]{!</span>!} ?][? if est_relation >= -2 and est_relation <= 2 : {!<span style="color: #FFE000;">!}[+ est_relation : foreign_relations +]{!</span>!} ?][? if est_relation >= 3 : {!<span style="color: #00B300;">!}[+ est_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #00205B;">Sca</span><span style="color: #FECC02;">ndi</span><span style="color: #002F6C;">nav</span><span style="color: #C8102E;">ian</span> Countries:
+
+<span style="color: #00205B;">Norway</span>: [? if nor_relation <= -3 : {!<span style="color: #FF0000;">!}[+ nor_relation : foreign_relations +]{!</span>!} ?][? if nor_relation >= -2 and nor_relation <= 2 : {!<span style="color: #FFE000;">!}[+ nor_relation : foreign_relations +]{!</span>!} ?][? if nor_relation >= 3 : {!<span style="color: #00B300;">!}[+ nor_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FECC02;">Sweden</span>: [? if swe_relation <= -3 : {!<span style="color: #FF0000;">!}[+ swe_relation : foreign_relations +]{!</span>!} ?][? if swe_relation >= -2 and swe_relation <= 2 : {!<span style="color: #FFE000;">!}[+ swe_relation : foreign_relations +]{!</span>!} ?][? if swe_relation >= 3 : {!<span style="color: #00B300;">!}[+ swe_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #002F6C;">Finland</span>: [? if fin_relation <= -3 : {!<span style="color: #FF0000;">!}[+ fin_relation : foreign_relations +]{!</span>!} ?][? if fin_relation >= -2 and fin_relation <= 2 : {!<span style="color: #FFE000;">!}[+ fin_relation : foreign_relations +]{!</span>!} ?][? if fin_relation >= 3 : {!<span style="color: #00B300;">!}[+ fin_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #C8102E;">Denmark</span>: [? if den_relation <= -3 : {!<span style="color: #FF0000;">!}[+ den_relation : foreign_relations +]{!</span>!} ?][? if den_relation >= -2 and den_relation <= 2 : {!<span style="color: #FFE000;">!}[+ den_relation : foreign_relations +]{!</span>!} ?][? if den_relation >= 3 : {!<span style="color: #00B300;">!}[+ den_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FFDD00;">Po</span><span style="color: #00AF66;">st</span><span style="color: #DA291C;">-S</span><span style="color: #2B7338;">ov</span><span style="color: #0092BC;">ie</span><span style="color: #FF9E1B;">t</span> Countries:
+
+<span style="color: #FFDD00;">Ukraine</span>: [? if ukr_relation <= -3 : {!<span style="color: #FF0000;">!}[+ ukr_relation : foreign_relations +]{!</span>!} ?][? if ukr_relation >= -2 and ukr_relation <= 2 : {!<span style="color: #FFE000;">!}[+ ukr_relation : foreign_relations +]{!</span>!} ?][? if ukr_relation >= 3 : {!<span style="color: #00B300;">!}[+ ukr_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #00AF66;">Belarus</span>: [? if blr_relation <= -3 : {!<span style="color: #FF0000;">!}[+ blr_relation : foreign_relations +]{!</span>!} ?][? if blr_relation >= -2 and blr_relation <= 2 : {!<span style="color: #FFE000;">!}[+ blr_relation : foreign_relations +]{!</span>!} ?][? if blr_relation >= 3 : {!<span style="color: #00B300;">!}[+ blr_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #DA291C;">Georgia</span>: [? if geo_relation <= -3 : {!<span style="color: #FF0000;">!}[+ geo_relation : foreign_relations +]{!</span>!} ?][? if geo_relation >= -2 and geo_relation <= 2 : {!<span style="color: #FFE000;">!}[+ geo_relation : foreign_relations +]{!</span>!} ?][? if geo_relation >= 3 : {!<span style="color: #00B300;">!}[+ geo_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #2B7338;">Chechnya</span>: [? if che_relation <= -3 : {!<span style="color: #FF0000;">!}[+ che_relation : foreign_relations +]{!</span>!} ?][? if che_relation >= -2 and che_relation <= 2 : {!<span style="color: #FFE000;">!}[+ che_relation : foreign_relations +]{!</span>!} ?][? if che_relation >= 3 : {!<span style="color: #00B300;">!}[+ che_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #0092BC;">Azerbaijan</span>: [? if azr_relation <= -3 : {!<span style="color: #FF0000;">!}[+ azr_relation : foreign_relations +]{!</span>!} ?][? if azr_relation >= -2 and azr_relation <= 2 : {!<span style="color: #FFE000;">!}[+ azr_relation : foreign_relations +]{!</span>!} ?][? if azr_relation >= 3 : {!<span style="color: #00B300;">!}[+ azr_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FF9E1B;">Armenia</span>: [? if arm_relation <= -3 : {!<span style="color: #FF0000;">!}[+ arm_relation : foreign_relations +]{!</span>!} ?][? if arm_relation >= -2 and arm_relation <= 2 : {!<span style="color: #FFE000;">!}[+ arm_relation : foreign_relations +]{!</span>!} ?][? if arm_relation >= 3 : {!<span style="color: #00B300;">!}[+ arm_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #003893;">B</span><span style="color: #00966E;">a</span><span style="color: #477050;">l</span><span style="color: #DA291C;">k</span><span style="color: #FCD116;">a</span><span style="color: #0D5EAF;">n</span> Countries:
+
+<span style="color: #003893;">Yugoslavia</span>: [? if yug_relation <= -3 : {!<span style="color: #FF0000;">!}[+ yug_relation : foreign_relations +]{!</span>!} ?][? if yug_relation >= -2 and yug_relation <= 2 : {!<span style="color: #FFE000;">!}[+ yug_relation : foreign_relations +]{!</span>!} ?][? if yug_relation >= 3 : {!<span style="color: #00B300;">!}[+ yug_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #00966E;">Bulgaria</span>: [? if bul_relation <= -3 : {!<span style="color: #FF0000;">!}[+ bul_relation : foreign_relations +]{!</span>!} ?][? if bul_relation >= -2 and bul_relation <= 2 : {!<span style="color: #FFE000;">!}[+ bul_relation : foreign_relations +]{!</span>!} ?][? if bul_relation >= 3 : {!<span style="color: #00B300;">!}[+ bul_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #477050;">Hungary</span>: [? if hun_relation <= -3 : {!<span style="color: #FF0000;">!}[+ hun_relation : foreign_relations +]{!</span>!} ?][? if hun_relation >= -2 and hun_relation <= 2 : {!<span style="color: #FFE000;">!}[+ hun_relation : foreign_relations +]{!</span>!} ?][? if hun_relation >= 3 : {!<span style="color: #00B300;">!}[+ hun_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #DA291C;">Albania</span>: [? if alb_relation <= -3 : {!<span style="color: #FF0000;">!}[+ alb_relation : foreign_relations +]{!</span>!} ?][? if alb_relation >= -2 and alb_relation <= 2 : {!<span style="color: #FFE000;">!}[+ alb_relation : foreign_relations +]{!</span>!} ?][? if alb_relation >= 3 : {!<span style="color: #00B300;">!}[+ alb_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FCD116;">Romania</span>: [? if rom_relation <= -3 : {!<span style="color: #FF0000;">!}[+ rom_relation : foreign_relations +]{!</span>!} ?][? if rom_relation >= -2 and rom_relation <= 2 : {!<span style="color: #FFE000;">!}[+ rom_relation : foreign_relations +]{!</span>!} ?][? if rom_relation >= 3 : {!<span style="color: #00B300;">!}[+ rom_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #0D5EAF;">Greece</span>: [? if gre_relation <= -3 : {!<span style="color: #FF0000;">!}[+ gre_relation : foreign_relations +]{!</span>!} ?][? if gre_relation >= -2 and gre_relation <= 2 : {!<span style="color: #FFE000;">!}[+ gre_relation : foreign_relations +]{!</span>!} ?][? if gre_relation >= 3 : {!<span style="color: #00B300;">!}[+ gre_relation : foreign_relations +]{!</span>!} ?]
+
+Other Countries:
+
+<span style="color: #DC1E35;">Iceland</span>: [? if ice_relation <= -3 : {!<span style="color: #FF0000;">!}[+ ice_relation : foreign_relations +]{!</span>!} ?][? if ice_relation >= -2 and ice_relation <= 2 : {!<span style="color: #FFE000;">!}[+ ice_relation : foreign_relations +]{!</span>!} ?][? if ice_relation >= 3 : {!<span style="color: #00B300;">!}[+ ice_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FF8200;">Ireland</span>: [? if ire_relation <= -3 : {!<span style="color: #FF0000;">!}[+ ire_relation : foreign_relations +]{!</span>!} ?][? if ire_relation >= -2 and ire_relation <= 2 : {!<span style="color: #FFE000;">!}[+ ire_relation : foreign_relations +]{!</span>!} ?][? if ire_relation >= 3 : {!<span style="color: #00B300;">!}[+ ire_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #003DA5;">Liechtenstein</span>: [? if lic_relation <= -3 : {!<span style="color: #FF0000;">!}[+ lic_relation : foreign_relations +]{!</span>!} ?][? if lic_relation >= -2 and lic_relation <= 2 : {!<span style="color: #FFE000;">!}[+ lic_relation : foreign_relations +]{!</span>!} ?][? if lic_relation >= 3 : {!<span style="color: #00B300;">!}[+ lic_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #62B5E5;">San Marino</span>: [? if san_mar_relation <= -3 : {!<span style="color: #FF0000;">!}[+ san_mar_relation : foreign_relations +]{!</span>!} ?][? if san_mar_relation >= -2 and san_mar_relation <= 2 : {!<span style="color: #FFE000;">!}[+ san_mar_relation : foreign_relations +]{!</span>!} ?][? if san_mar_relation >= 3 : {!<span style="color: #00B300;">!}[+ san_mar_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FFF200;">Vatican</span>: [? if vat_relation <= -3 : {!<span style="color: #FF0000;">!}[+ vat_relation : foreign_relations +]{!</span>!} ?][? if vat_relation >= -2 and vat_relation <= 2 : {!<span style="color: #FFE000;">!}[+ vat_relation : foreign_relations +]{!</span>!} ?][? if vat_relation >= 3 : {!<span style="color: #00B300;">!}[+ vat_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FEDD00;">Andorra</span>: [? if and_relation <= -3 : {!<span style="color: #FF0000;">!}[+ and_relation : foreign_relations +]{!</span>!} ?][? if and_relation >= -2 and and_relation <= 2 : {!<span style="color: #FFE000;">!}[+ and_relation : foreign_relations +]{!</span>!} ?][? if and_relation >= 3 : {!<span style="color: #00B300;">!}[+ and_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #CE1126;">Monaco</span>: [? if mon_relation <= -3 : {!<span style="color: #FF0000;">!}[+ mon_relation : foreign_relations +]{!</span>!} ?][? if mon_relation >= -2 and mon_relation <= 2 : {!<span style="color: #FFE000;">!}[+ mon_relation : foreign_relations +]{!</span>!} ?][? if mon_relation >= 3 : {!<span style="color: #00B300;">!}[+ mon_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #008C45;">Italy</span>: [? if ita_relation <= -3 : {!<span style="color: #FF0000;">!}[+ ita_relation : foreign_relations +]{!</span>!} ?][? if ita_relation >= -2 and ita_relation <= 2 : {!<span style="color: #FFE000;">!}[+ ita_relation : foreign_relations +]{!</span>!} ?][? if ita_relation >= 3 : {!<span style="color: #00B300;">!}[+ ita_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #DA291C;">Switzerland</span>: [? if swi_relation <= -3 : {!<span style="color: #FF0000;">!}[+ swi_relation : foreign_relations +]{!</span>!} ?][? if swi_relation >= -2 and swi_relation <= 2 : {!<span style="color: #FFE000;">!}[+ swi_relation : foreign_relations +]{!</span>!} ?][? if swi_relation >= 3 : {!<span style="color: #00B300;">!}[+ swi_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #EF3340;">Austria</span>: [? if aus_relation <= -3 : {!<span style="color: #FF0000;">!}[+ aus_relation : foreign_relations +]{!</span>!} ?][? if aus_relation >= -2 and aus_relation <= 2 : {!<span style="color: #FFE000;">!}[+ aus_relation : foreign_relations +]{!</span>!} ?][? if aus_relation >= 3 : {!<span style="color: #00B300;">!}[+ aus_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #0F52BA;">Diplomatic</span> <span style="color: #38664C;">Leverage</span>: [+ diplo_lev +]
+
+@domestic_tab
+on-arrival: {!
+Q.food_national = (Q.state_buyer/4) + (Q.socializations/2);
+!}
+
+= Domestic Affairs
+
+Rural Affairs:
+
+    Land Reform: [+ land_reform : land_reform +]
+
+    Agricultural Financing: [+ agricultural_finance : agri_financing +]
+
+    Food Prices: [+ food_prices : food_prices +]
+
+    State Buyer: [? if state_buyer = 0 : Not Established ?][? if state_buyer = 1 : Established ?]
+
+    Food Market Nationalization: [+ food_national : government_food_markets +]

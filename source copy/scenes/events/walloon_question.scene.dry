@@ -1,0 +1,44 @@
+title: The question of Walloon
+subtitle: Walloon decides its direction
+on-arrival: wal_qst_resolved = 1
+tags: event
+view-if: belgium_dissolved = 1 and wal_timer = 0 and wal_qst_resolved = 0
+priority: 1
+max-visits: 1
+
+- @wal_independent: Walloon Independent!
+- @wal_french: Wallon joins France!
+- @wal_ger: Flanders joins Germany!?
+
+@wal_independent
+subtitle: Walloon pursues nationhood
+unavailable-subtitle: Walloon wants to join another country
+choose-if: ger_annex_fla = 0
+on-arrival: flanders_ind = 1
+
+wip
+
+@wal_french
+subtitle: Walloon unites with FRance
+unavailable-subtitle: Walloon does not want to be French
+choose-if: west_relation <= 6 and ger_annex_fla = 0
+on-arrival: fra_annex_wal = 1
+
+wip
+
+
+@wal_ger
+subtitle: Flanders wishes to unite with Germany
+choose-if: ger_annex_fla = 1
+
+- @annexfla: Walloon is German!
+- @refusefla: We do not wish to annex Walloon
+
+@annexfla
+on-arrival: ger_annex_wal = 1
+
+annex flanders wip
+
+@refusefla
+
+don't annex flanders wip

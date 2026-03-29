@@ -1,0 +1,38 @@
+title: Class Consciousness in the Peasant Class
+new-page: true
+view-if: agr_cc >= 6 and agr_cc_timer <= 0 and agr_awakened = 0
+on-arrival: month_actions += 1; agr_cc_timer = 4
+max-visits: 4
+is-card: true
+card-image: img/freiheit_und_arbeit.jpg
+tags: party_affairs
+
+= Socialism in the Peasant Class
+
+While the SPD is primarily a party of the Working Class, some proponents argue that the Peasant Class is part of the Working Class.
+
+- @unlock_agr_cc
+- @foster_cc
+- @petit_bourgeois
+- @return: We can deal with this later
+- @easy_discard
+
+@unlock_agr_cc
+title: Awaken the Class Consciousness of the Peasants
+subtitle: This will make them more receptive to socialism, as well as pushing the Agrarian-Conservative (WIP note: Colour) parties to the left
+choose-if: agr_cc >= 8
+unavailable-subtitle: The Peasant Class has not yet had enough exposure to Socialist ideals
+on-arrival: advisor_action_timer = 6; rural_spd += 8; ddp_left += 5 if rural_ddp > 10; ddp_cohesion -= 1 if rural_ddp > 10; cnblp_left += 3; kvp_left += 3; dnvp_left += 3; others_left += 3; pro_republic += 4; nationalism -= 6; trun_rur_perc += 0.03; iww_rur_perc += 0.02 if syndicalism = 1; agr_awakened = 1; agr_form_timer = 6
+
+We have sucessfully fostered Class consciousness in the Peasant Class, and pushed the Agrarian-Conservative parties left.
+
+@foster_cc
+title: Push Socialist ideas onto the Peasant Class
+subtitle: This will make it easier to make them class-conscious
+on-arrival: agr_cc += 1; rural_spd += 1
+
+We are progressing towards class-consciousness in the Peasant Class
+
+@petit_bourgeois
+title: The Peasant Class seeks only to become petit-bourgeois, and will always stay that way - There's nothing we can do
+on-arrival: agr_awakened = -1; rural_spd -= 2

@@ -1,0 +1,47 @@
+title: Adler Schwarz
+is-pinned-card: true
+tags: advisor, rural
+card-image: img/portraits/AufhäuserSiegfried.jpg
+view-if: schwarz_advisor = 1
+new-page: true 
+
+### wip: Agrarian socialist advisor
+### Action: Awaken the clas-consciouness of the Peasant class
+### Action: Agriculture Govenrment Card
+### Action: Strengthen the Rural faction and reduce its dissent
+
+= Adler Schwarz
+
+Adler Schwarz is the leading Agrarian Socialist theorist within the <span style=" color:#c90000;">SPD</span>
+
+- @agr_cc
+- @agriculture
+- @rural_faction
+- @root: Return to main
+
+@agr_cc
+title: Awaken Class-Consciousness within the Peasant class
+subtitle: This will make them more receptive to Socialist ideals, and push the Agrarian-Conservative parties further left
+choose-if: advisor_action_timer <= 0
+view-if: agr_cc >= 7
+unavailable-subtitle: [+ advisor_action_timer +] months before next advisor action
+on-arrival: advisor_action_timer = 6; rural_spd += 8; catholics_spd += 2; cnblp_left += 5; dhp_left += 3; dbp_left += 3; others_left += 3; cnblp_relation += 5; dbp_relation += 10; others_relation += 12; dhp_relation += 15; pro_republic += 6; nationalism -= 5;
+
+We have sucessfully fostered Class consciousness in the New Middle Class, and pushed the Economic-Liberal left.
+
+@agriculture
+title: Agricultural Policy
+subtitle: Schwarz can influence Baade.
+choose-if: advisor_action_timer <= 0 and spd_in_government and agriculture_minister_party == "SPD"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The <span style="color: #c00000;">SPD</span> is not in government. ?][? if agriculture_minister_party != "SPD": The <span style="color: #c00000;">SPD</span> does not have the Agriculture Ministry. ?]
+on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advisor_action = 1
+go-to: agricultural_policy
+
+@rural_faction
+title: Strength the Agrarian Socialists
+subtitle: Schwarz holds a lot of influence among the Agrarian Socialists. Strengthening the Agrarian Socialists will make the Agrarian-Conservative parties more receptive to us.
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [+ advisor_action_timer +] months before next advisor action
+on-arrival: advisor_action_timer = 6; rural_strength += 10; rural_dissent -= 10; rural_nsdap -= 1; rural_others += 1; cnblp_left += 1; dhp_left += 1; dbp_left += 1; others_left += 1; dhp_Relation += 3; dbp_relation += 3; cnblp_rleation += 3; others_relation += 2
+
+We have strengthened the Agrarian Socialists

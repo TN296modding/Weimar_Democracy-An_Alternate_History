@@ -1,0 +1,9 @@
+
+(0..0): No Government Food Markets
+(0.25..0.25): Significantly Bankrupt Only
+(0.5..0.5): Bankrupt Only
+(0.75..0.75): Bankrupt & Impoverished only
+(1..1): Minor 
+(1.25..1.25): Major 
+(1.5..1.5): Complete
+(1.75..1.75): Complete & Surplus budget

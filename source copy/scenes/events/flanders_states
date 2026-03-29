@@ -1,0 +1,37 @@
+title: Flemish Landtags
+subtitle: Deciding the adminstration of flanders
+tags: event
+view-if: ger_annex_fla = 1 and wal_qst_resolved = 1
+priority: 1
+max-visits: 1
+
+- @one_state: Flanders shall be its own state wip
+- @two_states: Flanders shall be split into Two states wip
+- @three_states: Flanders shall be split into Three states wip
+- @bel_state: Flanders shall be combined with Walloon in one Belgian state wip
+- @net_state1: Flanders shall be combined with WIP state wip
+- @net_state2: Flasnders shall be combined with the Dutch state wip
+
+@one_state
+
+wip
+
+@two_states
+
+wip
+
+@three_states
+
+wip
+
+@bel_state
+
+wip
+
+@net_state1
+
+wip
+
+@net_state2
+
+wip
