@@ -10,7 +10,8 @@ go-to: start_menu_2
 
 @start_menu_2
 
-- @start_1: Start game
+- @start_1: Start game (<span style="color:#c90000;">SPD</span>)
+- @start_2: Start game (DDP)
 - @modinfo: Mod Info - Last Updated 2026/03/6
 - @credits: Credits
 - @game_over.achievements
@@ -19,6 +20,8 @@ go-to: start_menu_2
 on-arrival: player_beg = 1 if not achievement_game_completed
 go-to: start if achievement_game_completed; pls_player if not achievement_game_completed
 
+@start_2
+go-to: root_ddp
 
 @pls_player
 
