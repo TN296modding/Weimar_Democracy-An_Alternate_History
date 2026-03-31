@@ -1,9 +1,0 @@
-title: Unrest in Belgium
-subtitle: Flemish, Wallonian separatists voice concern
-on-arrival: bel_unrest_1_seen = 1; eup_ger_love += 1; 
-tags: event
-view-if: bel_unrest_1_seen = 0 and fla_unrest >= 0.2 and wal_unrest >= 0.2 and eup_unrest >= 0.2
-priority: 1
-max-visits: 1
-
-wip; belgium unrest; etc
