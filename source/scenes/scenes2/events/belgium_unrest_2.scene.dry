@@ -1,9 +1,0 @@
-title: Unrest in Belgium
-subtitle: Belgium moves towards dissolution
-on-arrival: bel_unrest_1_seen = 1; eup_ger_love += 1; 
-tags: event
-view-if: bel_unrest_1_seen = 1 and bel_unrest_2_seen = 0 and fla_unrest >= 0.3 and wal_unrest >= 0.3 and eup_unrest >= 0.3
-priority: 1
-max-visits: 1
-
-wip; belgium going to split soon; neighbours eyeing belgium; etc
