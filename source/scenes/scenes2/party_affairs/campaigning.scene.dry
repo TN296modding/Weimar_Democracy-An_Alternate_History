@@ -4,7 +4,7 @@ view-if: campaigning_timer <= 0
 on-arrival: month_actions += 1;
 max-visits: 360
 is-card: true
-card-image: img/flags.jpg
+card-image: img/ddp_campaign.png
 frequency: 100
 tags: party_affairs, state_affairs
 
@@ -12,11 +12,11 @@ tags: party_affairs, state_affairs
 
 Whether or not we are in an electoral campaign, the party is always trying to broaden its voter base. Who should we focus our campaign efforts on?
 
-- @workers: The urban working class, our traditional support base.
-- @new_middle: The "new middle class" of government employees and white-collar workers.
-- @old_middle: The "old middle class" of small independent businessmen and artisans.
+- @workers: The urban working class, the <span style="color:#c90000;">SPD</span>'s traditional support base.
+- @new_middle: The "new middle class" of government employees and white-collar workers, our traditional support base.
+- @old_middle: The "old middle class" of small independent businessmen and artisans, who have been receptive in the past.
 - @rural: Rural workers and small farmers, who have felt neglected by us in the past.
-- @unemployed: The unemployed.
+- @unemployed: The unemployed, a potentially untapped support base.
 - @catholics: Catholics, who typically support the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 - @all: Campaign among all groups - This will have a lesser effect, however
 - @root: We either don't want to or cannot campaign right now.
@@ -26,15 +26,16 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: workers_spd += 6*(1-dissent)*(workers_reach+1); workers_spd -= 1 if unemployed >= 20; workers_spd -= 1 if unemployed >= 30; workers_spd += 3*(1-dissent) if wtb_adopted = 1; resources -= 1; workers_spd += 3*(1-dissent) if nationalization_progress >= 1;
+on-arrival: workers_ddp += 1*(1-dissent)*(workers_reach+1); workers_ddp -= 1 if unemployed >= 20 and ddp_in_government; workers_ddp -= 0.5 if unemployed >= 30 and ddp_in_government; workers_ddp += 1.5*(1-dissent) if economic_plan_adopted = 1; resources -= 1; workers_spd += 1.5*(1-dissent) if pro_worker >= 8;
 
-We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract workers. ?]
+We have increased our campaigning among the workers, however most are unmoved by our efforts. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if wtb_adopted = 1 : Adopting the [+ economic_plan_name +] gives us a new rallying point around which to attract workers. ?]
 
 - @unionise_wkr: Make unions a part of this campaign run
 - @no_union: Don't push unions in this campign run
 
 @unionise_wkr
 subtitle: -0.5 resource
+view-if: lib_unions = 1
 unavailable-subtitle: Not enough resources
 choose-if: resources >= 0.5
 on-arrival: workers_spd -= 0.5*(1-dissent); trun_infl += 0.5; trun_ind_perc += 0.007; trun_ind_growth_m += 0.001; trun_ind_growth_y += 0.002; trun_ind_growth_y += 0.002 if wtb_adopted = 1; trun_ind_perc += 0.003 if wtb_adopted = 1; iww_ind_perc += 0.004 if syndicalism = 1; iww_growth_y += 0.001; resources -= 0.5
@@ -42,6 +43,7 @@ on-arrival: workers_spd -= 0.5*(1-dissent); trun_infl += 0.5; trun_ind_perc += 0
 The unions are already seeing growth. While not super effecive, this is an easy way to increase union membership
 
 @no_union
+view-if: lib_unions = 1
 
 We have declined to exclude overt union advertising in our campaign.
 
@@ -49,15 +51,16 @@ We have declined to exclude overt union advertising in our campaign.
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: new_middle_spd += 6*(1-dissent)*(new_middle_reach+1); new_middle_spd += 2*(1-dissent)*(new_middle_reach+1) if nmc_awakened = 1; new_middle_spd += 4 if socialism <= 49 and peoples_party == 0 and nmc_awakened = 1; new_middle_spd -= 4 if socialism <= 49 and peoples_party == 0; resources -= 1; peoples_party_support += 1; labor_dissent -= 5; labor_strength += 3; nmc_cc += 1;
+on-arrival: new_middle_ddp += 3*(1-dissent)*(new_middle_reach+1); new_middle_ddp += 1*(1-dissent)*(new_middle_reach+1) if pro_republic >= 80; new_middle_ddp += 1 if socialism_communism <= 49 and spd_peoples_party == 0 and pro_republic >= 80; new_middle_spd -= 2 if socialism_communism >= 49 and spd_peoples_party == 1 and pro_republic < 80; resources -= 1;
 
-We have increased our campaigning among the new middle class. [? if socialism <= 49 and peoples_party == 0: The popular antipathy towards <span style="color: #c00000;">socialism</span> among this group makes our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
+We have increased our campaigning among the new middle class, our traditional support base. [? if socialism <= 49 and peoples_party == 0: The popular antipathy towards <span style="color: #c00000;">socialism</span> among this group makes our campaign more easier. ?] [? if peoples_party > 0: As a=the SPD is a people's party, we have an harder time increasing support among the middle class than before. ?]
 
 - @unionise_nmc: Make unions a part of this campaign run
 - @no_union: Don't push unions in this campign run
 
 @unionise_nmc
 subtitle: -0.5 resource
+view-if: lib_unions = 1
 unavailable-subtitle: Not enough resources
 choose-if: resources >= 0.5
 on-arrival: new_middle_spd -= 0.5*(1-dissent); trun_infl += 0.1; trun_nmc_perc += 0.001; trun_nmc_perc += 0.003 if nmc_awakened = 1; trun_nmc_growth_y += 0.001; trun_nmc_growth_y += 0.001 if nmc_awakened = 1; iww_nmc_perc += 0.001 if syndicalism = 1; iww_nmc_perc += 0.001 if syndicalism = 1 and nmc_awakened; resources -= 0.5; labor_dissent -= 3; labor_strength += 3; nmc_cc += 1;
