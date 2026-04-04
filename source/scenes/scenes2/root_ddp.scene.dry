@@ -1,8 +1,8 @@
 title: Root Scene
 new-page: true
-go-to: post_event if started = 1; start_menu if started = 0
+go-to: post_event_ddp if started = 1; start_menu_ddp if started = 0
 
-@start_menu
+@start_menu_ddp
 new-page: true
 go-to: start_menu_2
 
@@ -10,24 +10,11 @@ go-to: start_menu_2
 
 @start_menu_2
 
-- @start_1: Start game
-- @modinfo: Mod Info - Last Updated 2026/03/6
-- @credits: Credits
-- @game_over.achievements
-
-@start_1
-on-arrival: player_beg = 1 if not achievement_game_completed
-go-to: start if achievement_game_completed; pls_player if not achievement_game_completed
+- @start_ddp: Start game
+- @root: Return to Start Menu
 
 
-@pls_player
-
-Read.
-
-- @modinfo.infotext: Mod Info - Last Updated 2025/09/27
-
-
-@start
+@start_ddp
 on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
