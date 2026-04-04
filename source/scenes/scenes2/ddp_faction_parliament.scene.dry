@@ -27,19 +27,8 @@ Q.ddp_party_work_right = ((Q.ddp_r_faction)*(Q.ddp_work_right_ddp/20))
 Q.ddp_party_work_left = Math.floor(Q.ddp_party_work_left)
 Q.ddp_party_work_right = Math.floor(Q.ddp_party_work_right)
 Q.ddp_party_line_wlpwr -= ((Q.ddp_party_work_left)+(Q.ddp_party_work_right))
-
-const inputPercentages = {
-  ddp_wlpwr: Q.ddp_party_line_wlpwr,
-  ddp_wl: Q.ddp_party_work_left,
-  ddp_wr: Q.ddp_party_work_right,
-  ddp_ppn: Q.ddp_party_line_ppn,
-  ddp_p: Q.ddp_party_pacifist,
-  ddp_n: Q.ddp_party_nationalism,
-  ddp_lpr: Q.ddp_party_line_lpr,
-  ddp_l: Q.ddp_party_left,
-  ddp_rt: Q.ddp_party_right
-};
 !}
+
 A dissenting member is one who will vote based on their ideology, rather than the party line, on a decision. This is assuming that the party line doesn't match the ideology in question.
 
 - @lpr: View dissenting Left & Right seats
