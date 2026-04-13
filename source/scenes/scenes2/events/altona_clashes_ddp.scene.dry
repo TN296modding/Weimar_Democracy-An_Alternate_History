@@ -9,8 +9,8 @@ max-visits: 1
 
 The <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> is planning a march through Altona, a working-class neighborhood of Hamburg known for its high working-class population. Altona is a <span style="color: #700000;">Communist</span> stronghold, and the planned march will almost certainly lead to violent conflict.
 
-- @ban_march_ddo: Ban the march before it starts.
-- @allow_police_ddo: Allow the march, with a heavy police presence.
+- @ban_march_ddp: Ban the march before it starts.
+- @allow_police_ddp: Allow the march, with a heavy police presence.
 - @allow_no_police_ddp: Allow the march without a police presence.
 
 @ban_march_ddp
