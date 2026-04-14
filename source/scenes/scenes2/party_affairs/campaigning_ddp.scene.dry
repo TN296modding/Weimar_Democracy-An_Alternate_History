@@ -31,6 +31,7 @@ We have increased our campaigning among the workers, however most are unmoved by
 
 - @unionise_wkr: Make unions a part of this campaign run
 - @no_union: Don't push unions in this campign run
+- @ddp_continue
 
 @unionise_wkr
 subtitle: -0.5 resource
@@ -41,10 +42,14 @@ on-arrival: workers_ddp -= 0.5*(1-dissent); trun_infl += 0.1; libun_ind_perc += 
 
 The unions are already seeing growth. While not super effecive, this is an easy way to increase union membership
 
+- @ddp_continue
+
 @no_union
 view-if: lib_unions = 1
 
 We have declined to exclude overt union advertising in our campaign.
+
+- @ddp_continue
 
 @new_middle
 subtitle: -1 resources
@@ -56,6 +61,7 @@ We have increased our campaigning among the new middle class, our traditional su
 
 - @unionise_nmc: Make unions a part of this campaign run
 - @no_union: Don't push unions in this campign run
+- @ddp_continue
 
 @unionise_nmc
 subtitle: -0.5 resource
@@ -66,6 +72,8 @@ on-arrival: new_middle_ddp -= 0.5*(1-dissent); trun_infl += 0.1; libun_nmc_perc 
 
 The unions are already seeing growth. While not super effecive, this is an easy way to increase union membership. Siegfried Aufhäuser thanks us.
 
+- @ddp_continue
+
 @old_middle
 subtitle: -1 resources
 choose-if: resources >= 1
@@ -73,6 +81,8 @@ unavailable-subtitle: Not enough resources.
 on-arrival: old_middle_ddp += 2*(1-dissent)*(old_middle_reach+1); old_middle_ddp += ((pro_republic - 20)/20) if pro_republic >= 20; old_middle_ddp -= (nationalism/10) if nationalism <= 40; resources -= 1;
 
 We have increased our campaigning among the old middle class. [? if nationalism >= 51 and peoples_party == 0: The high levels of nationalism among this group make our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
+
+- @ddp_continue
 
 @rural
 subtitle: -1 resources
@@ -84,6 +94,7 @@ We have increased our campaigning among farmers. [? if peoples_party == 0: We ha
 
 - @unionise_rur: Make unions a part of this campaign run
 - @no_union: don't make unions a part of this campaign run
+- @ddp_continue
 
 @unionise_rur
 subtitle: -0.5 resource
@@ -93,6 +104,8 @@ on-arrival: rural_spd -= 0.5*(1-dissent); trun_infl += 0.1; trun_rur_perc += 0.0
 
 The unions are already seeing growth. While not super effective, this is an easy way to increase union membership. Fritz Baade thanks us.
 
+- @ddp_continue
+
 @unemployed
 subtitle: -1 resources
 choose-if: resources >= 1
@@ -101,16 +114,7 @@ on-arrival: unemployed_spd += 6*(1-dissent)*(unemployed_reach+1); resources -= 1
 
 We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract support from the unemployed. ?]
 
-- @unionise_iww: Make unemployed unions a part of this campaign run
-
-@unionise_iww
-subtitle: -0.5 resource
-unavailable-subtitle: Not enough resources
-choose-if: resources >= 0.5
-view-if: syndicalism = 1
-on-arrival: iww_rur_perc += 0.002 if syndicalism = 1; resources -= 0.5;
-
-The IWW is already seeing growth. While not super effecive, this is an easy way to increase IWW membership
+- @ddp_continue
 
 @catholics
 subtitle: -1 resources
@@ -121,14 +125,12 @@ on-arrival: catholics_spd += 6*(1-dissent)*(catholics_reach+1); resources -= 1
 
 We have increased our campaigning among Catholics.
 
-- @unionise_cat: Attract catholics to the TRNS -- WIP this option does nothing
-
-@unionise_cat
-
-wip
+- @ddp_continue
 
 @all
 choose-if: wip = 6
 unavailable-subtitle: Coming Soon
 
 e
+
+- @ddp_continue
