@@ -43,6 +43,9 @@ if (Q.shuffle_leadership_timer <= 0) {
 } else {
     Q.pinnedCardsDescription += '\n- next reshuffle in ' + Q.shuffle_leadership_timer + ' weeks.';
 }
+Q.last_time_updated = Q.time;
+Q.last_week_updated = Q.week;
+!}
 max-cards: 5
 
 - @party_ddp
