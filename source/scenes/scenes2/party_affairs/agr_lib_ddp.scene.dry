@@ -5,7 +5,7 @@ on-arrival: month_actions += 1; agr_lib_timer = 4
 max-visits: 4
 is-card: true
 card-image: img/volksgemeinschaft_dstp.jpg
-tags: party_affairs
+tags: party_affairs_ddp
 
 = Liberalism in the Peasant Class
 
