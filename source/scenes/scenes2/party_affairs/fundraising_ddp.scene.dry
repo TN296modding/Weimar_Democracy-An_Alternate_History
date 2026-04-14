@@ -4,7 +4,7 @@ view-if: fundraising_timer <= 0
 on-arrival: fundraising_timer = 12
 is-card: true
 card-image: img/DDP_fundraising.png
-tags: party_affairs
+tags: party_affairs_ddp
 
 = Fundraising
 
