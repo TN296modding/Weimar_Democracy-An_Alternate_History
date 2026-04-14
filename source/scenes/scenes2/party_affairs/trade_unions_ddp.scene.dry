@@ -34,7 +34,7 @@ unavailable-subtitle: There is not enough support. Only [+ lib_trun_support_hard
 
 wip
 
-@hirsch_duncker_trade-unions
+@hirsch_duncker_trade_unions
 title: Form "Hirsch-Duncker" style trade unions, which are class-collaborationist
 subtitle: It will likely be easier to convince the party to support this style of union
 choose-if: lib_trun_support_easy > 50
