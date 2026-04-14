@@ -1,12 +1,23 @@
 title: Questions of Ideology
 new-page: true
 is-card: true
-tags: party_affairs
+tags: party_affairs_ddp
 view-if: ideology_timer = 0
 on-arrival: month_actions += 1; old_ideology = ideology; ideology_timer = 24
-card-image: img/arbeiterbew.jpg
+card-image: img/DDP_ideology.png
 max-visits: 30
-#subtitle: Setting the party's ideological direction.
+
+# Soc libs: Otto Nuschke, Marie-Elizabeth Lüders, Gertrud Bäumer 
+# Soc Repubs: Theodor Heuss, Ernest Lemmer, Harry von Kessler
+# Progs: Theodor Wolff, Ludwig Quidde, Elly Heuss-Knapp
+# Cnt Libs: Koch Weser, Carl Wilhem Petersen, Wilhelm Solf
+# Business: Willy Hellpach, Hermann Dietrich, Bernhard Dernburg
+# Lib Corps: Otto Geßler, Friedrich Meinecke, Artur Mahraun
+# "Other" advisors: Hjalmar Schacht, Hugo Preuß
+
+# Wilhelm Külz was Schaumberg-Lippe president
+# Hellpach was Baden person
+# Reinhold Maier was Baden-Württemberg
 
 = Questions of Ideology
 
@@ -14,19 +25,12 @@ The <span style="color: #c00000;">**SPD**</span> is torn between many different 
 
 [? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
 
-- @class_struggle: Class struggle and preparing the proletariat for the revolution are our primary goals.
-- @centrist: The Center <span style="color: #9B0000;">Marxism</span> of Karl Kautsky remains the best way to resolve our internal contradictions.
-- @labor: We should work with the trade unions to improve the lives of workers.
-- @reform: Following Eduard Bernstein, we should work for ethical <span style="color: #c00000;">socialism</span>, strengthen democracy, and expand the party's electorate.
-- @socpat: Pursue the fusion of <span style='color: #c00000;'>socialism</span> and patriotism.
-- @wip1: Syndicalism wip
-- @wip2: Left-communist wip
-- @wip3: Right-communist wip
-- @wip4: neorevisionist wip
-- @wip5: rural wip
-- @wip6: liberal wip
-- @wip7: business wip
-- @wip8: left christian
+- @soc_lib
+- @soc_repub
+- @progressives
+- @centre_lib
+- @business
+- @lib_corporatism
 - @easy_discard
 
 @class_struggle
