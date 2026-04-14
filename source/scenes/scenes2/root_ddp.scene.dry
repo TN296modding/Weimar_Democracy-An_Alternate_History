@@ -1226,6 +1226,7 @@ go-to: tips_menu
 
 @tips
 on-arrival: {! Q.tips = 1 !}
+go-to: 1928_main
 
 @no_tips
 go-to: 1928_main
