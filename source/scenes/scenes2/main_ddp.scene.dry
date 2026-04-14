@@ -66,7 +66,7 @@ is-deck: true
 
 - #govt_affairs_ddp
 
-@eco
+@eco_ddp
 title: Economic Policy
 view-if: ddp_in_government = 1 and (economic_minister_party == "DDP" or finance_minister_party == "DDP") and economic_policy_timer <= 0 and economic_plan > 0 and black_thursday_seen
 card-image: img/portraits/SchmidtRobert.jpg
