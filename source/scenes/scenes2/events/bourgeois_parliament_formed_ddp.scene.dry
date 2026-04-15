@@ -1,6 +1,6 @@
 title: Bourgeois Parliamentary Group Formed
 subtitle: Crazy stuffs.
-view-if: bourgeois_parliament_trigger_event == 1
+view-if: bourgeois_parliament_trigger_event == 1 and ddp_start = 1
 max-visits: 1
 tags: event
 new-page: true
