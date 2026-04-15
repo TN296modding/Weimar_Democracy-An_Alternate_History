@@ -1,6 +1,6 @@
 title: "Agrarian Bolshevism"
 subtitle: A controversial policy involving settling unemployed workers on bankrupt estates in the east.
-view-if: bruning_toleration_time >= 6 and second_bruning_cabinet_seen and ((year == 1932 and month >= 5) or year >= 1933) and president == "Hindenburg" and hindenburg_angry_bruning >= 150
+view-if: bruning_toleration_time >= 6 and second_bruning_cabinet_seen and ((year == 1932 and month >= 5) or year >= 1933) and president == "Hindenburg" and hindenburg_angry_bruning >= 150 and ddp_start = 1
 max-visits: 1
 tags: event
 new-page: true
