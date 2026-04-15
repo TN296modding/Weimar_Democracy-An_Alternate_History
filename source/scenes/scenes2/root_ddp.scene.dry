@@ -17,7 +17,7 @@ go-to: start_menu_2
 @start_ddp
 on-arrival: {!
 Q.started = 1;
-Q.ddp_start
+Q.ddp_start = 1
 // time elapsed (in months)
 Q.time = 1;
 Q.year = 1928;
