@@ -7,7 +7,7 @@ if (Q.works_program && Q.works_program >= 2) {
 }
 !}
 tags: event
-view-if: year = 1933 and month = 1 and not rubicon
+view-if: year = 1933 and month = 1 and ddp_start = 1
 priority: 2
 max-visits: 1
 
