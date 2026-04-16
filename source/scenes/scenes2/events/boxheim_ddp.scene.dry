@@ -26,6 +26,8 @@ Due to our thorough reform of the judicial system, the <span style="color: #7A3C
 
 Our Hesse government is set to continue in a caretaker capacity for the foreseeable future, following the collapse of talks between the <span style="color: #7A3C00;">**NSDAP**</span> and [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 
+- @ddp_continue
+
 @nothing
 view-if: judicial_reform < 4
 on-arrival: boxheim_persecuted = 0; neorevisionist_dissent -= 10; neorevisionist_strength += 5; workers_nsdap -= 2; new_middle_nsdap -= 6; old_middle_nsdap -= 6; rural_nsdap -= 2; pro_republic += 5; sa_militancy -= 0.05; workers_spd += 2; new_middle_spd += 2
@@ -33,3 +35,5 @@ on-arrival: boxheim_persecuted = 0; neorevisionist_dissent -= 10; neorevisionist
 Expectedly, the Ministry of Justice believes that the documents did not constitute a crime of high treason, as they argue that the document was directed against <span style="color: #700000;">communist</span> putschists, rather than the government. [? if bruning_time: We are sure that Chancellor Brüning is behind this downplaying, to keep cooperation with the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> open. ?]
 
 We have at least discredited the <span style="color: #7A3C00;">Nazis</span> in the eyes of many, and have managed to keep our Hesse government functioning in a caretaker capacity due to the collapse of talks between the <span style="color: #7A3C00;">**NSDAP**</span> and [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
+
+- @ddp_continue
