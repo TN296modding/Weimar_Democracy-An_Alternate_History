@@ -6,6 +6,8 @@ max-visits: 20
 is-card: true
 card-image: img/volksgemeinschaft_dstp.jpg
 tags: party_affairs
+### The Hirsch-Duncker union is called the DFA, or the Deutsche Freie Arbeitergewerkschaft
+### The True union is called the DF, or the Deutshce Facharbeitergewerkschaft
 
 = The Liberal Trade Unions
 
@@ -13,7 +15,7 @@ tags: party_affairs
 
 - @lib_trun_menu: Go to options
 - @easy_discard
-- @root
+- @root_ddp
 
 @lib_trun_menu
 go-to: trun_lib_false if trun_lib_true = 0; trun_lib_true if trun_lib_true = 1
@@ -28,7 +30,8 @@ go-to: trun_lib_false if trun_lib_true = 0; trun_lib_true if trun_lib_true = 1
 
 @true_lib_trade_unions
 title: Form "True" Liberal trade unions
-subtitle: It will likely be harder to convince the party to support this style fo union
+subtitle: It will likely be harder to convince the party to support this style of union
+on-arrival: true_lbtu = 1
 choose-if: lib_trun_support_hard > 50
 unavailable-subtitle: There is not enough support. Only [+ lib_trun_support_hard +]% of the party supports these
 
@@ -37,6 +40,7 @@ wip
 @hirsch_duncker_trade_unions
 title: Form "Hirsch-Duncker" style trade unions, which are class-collaborationist
 subtitle: It will likely be easier to convince the party to support this style of union
+on-arrival: false_lbtu = 1
 choose-if: lib_trun_support_easy > 50
 unavailable-subtitle: There is not enough support. Only [+ lib_trun_support_eaasy +]% of the party supports these
 
@@ -53,12 +57,59 @@ title: We will deal with this later
 go-to: trade_unions_ddp
 
 @no_lib_trun
-title: Unions are nothing but Socialist foolery, we need not have any
+title: Unions are nothing but Socialist foolery, we have no need for them.
 subtitle: Labour will be displeased
 on-arrival: lib_trun_trvthnvke = 1
 
 wip
 
 @trun_lib_true 
+go-to: trun_lib_true_true if true_lbtu; trun_lib_true_false if false_lbtu
+
+@trun_lib_true_true
+
+- @option1: ee
+
+@option1
+
+wip
+
+@trun_lib_true_false
+
+- @imp_rel_trun: Improve relations between the DFA and Business
+- @negotiate: Help negotiate better conditions for workers
+- @ddpinfl_dfa: Increase the DDP's influence in the DFA
+- @truninfl_dfa: Increase the DFA's bargaining power
+- @busi_infldfa: Increase the DDP's influence among businesses
+- @nmc_member: Influence the New Middle Class to join the DFA
+- @worker_member: Influence the Working Class to join the DFA
+- @root_ddp: Do none of these actions
+- @postpone
+
+@imp_rel_trun
+on-arrival: lbtu_busi_relation += 5; lbtu_busi_relation += 5 if weeks_since_negot > 4; lbtu_busi_relation += 5 if lbtu_power >= 4; lbtu_busi_relation -= 3 if weeks_since_negot < 2; lbtu_busi_relation -= 2 if lbtu_power < 0;
+
+wip
+
+@negotiate
+on-arrival: weeks_since_negot = 0; workers_ddp_base_neg_true += 0.1 if workers_ddp_base_neg_true <= 0.4; workers_ddp_base_neg += 0.1 if workers_ddp_base_neg_true <= 0.4; workers_ddp_base += workers_ddp_base_neg; workers_ddp_base_neg = 0; lbtu_power -= 1; ddp_busi_infl -= 0.5; ddp_lbtu_infl += 0.5;
+
+wip
+
+@ddpinfl_dfa
+on-arrival: workers_ddp_base_infl_true += 0.25 if workers_ddp_base_infl_true <= 1.25; workers_ddp_base_infl += 0.25 if workers_ddp_base_infl_true <= 1.25; workers_ddp_base += workers_ddp_base_infl; workers_ddp_base_infl = 0; ddp_lbtu_infl += 1; lbtu_power += 0.25;
+
+@truninfl_dfa
+on-arrival: lbtu_power += 1.25; lbtu_busi_relation += 2
+
+@busi_infl_dfa
+
+wip
+
+@nmc_member
+
+wip
+
+@worker_member
 
 wip
