@@ -832,6 +832,18 @@ th {
   fill: #ADC1FD;
 }
 
+.seat.ddp_l {
+  fill: #fff700
+}
+
+.seat.ddp_lpr {
+  fill: #D3C24D
+}
+
+.seat.ddp_r {
+  fill: #e3d04f
+}
+
 .tooltip-text {
   text-decoration: underline;
   text-decoration-style: dotted;
