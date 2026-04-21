@@ -53,6 +53,7 @@ max-cards: 5
 - @eco_ddp
 - #advisor_ddp
 - @shuffle_leadership_pinned
+- @ddp_parliament_viewer
 
 @party_ddp
 title: Party Affairs
@@ -76,3 +77,7 @@ card-image: img/portraits/SchmidtRobert.jpg
 is-deck: true
 
 - @economic_policy_ddp
+
+@ddp_parliament_viewer
+title: View Reichstag Delegates
+go-to: ddp_faction_parliament
