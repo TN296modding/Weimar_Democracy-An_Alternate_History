@@ -8,21 +8,22 @@ card-image: img/weimar_coalition.jpg
 
 = Inter-Party Relationships
 
-The <span style="color: #c00000;">**SPD**</span> cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">Center</span>, and [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?] parties. [? if cvp_formed: However the formation of the <span style="color: #000000;">**[+ z_party_name +]**</span> has only really made cooperation with the <span style="color: #D3C24D;">liberals</span> possible. ?] We can reach out and build additional connections with these parties, or perhaps we can stand alone.
+The <span style="color: #D3C24D;">**DDP**</span> cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">Center</span>, and [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?] parties. [? if cvp_formed: However the formation of the <span style="color: #000000;">**[+ z_party_name +]**</span> has only really made cooperation with the <span style="color: #D3C24D;">liberals</span> possible. ?] We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
 - @center: Strengthen our bonds with the Catholic [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 - @cvp: Reconcile with the <span style="color: #000000;">Christian People's Party</span>.
 - @kpd: Work towards repairing relationships with the <span style="color: #700000;">Communist Party</span>.
 - @spd: The <span style="color: #c00000;">SPD</span> can stand alone for now.
 - @dvp: The DVP
-- @others: The small independents
+- @others: The smaller independents, regional parties, and the like
 - @dnvp: The DNVP
 - @ddp_alone: The DDP alone
 - @easy_discard
 
 @spd
+on-arrival: spd_relation += 2; spd_relation += 2 if ideology = "Social Liberal" or ideology = "Social Republican"; spd_relation += 2 if (spd_ideology = "Reformist") or (spd_ideology = "Labour" and (false_lbtu or true_lbtu)); spd_relation += 1 if ddp_in_government and spd_in_government; spd_relation += 1 if coalition_dissent <= 2;
 
-wip
+We have improved relations with the SPD. [? if (ideology = "Social Liberal" or ideology = "Social Republican" or ideology = "Centre Liberal") and ((spd_ideology = "Reformist") or (spd_ideology = "Labour" and ideology != "Centre Liberal" and (false_lbtu or true_lbtu))) : This is made easier by our ideological common ground. ?][? if ddp_in_government and spd_in_government : This is also made easier by both of our parties being in government. ?]
 
 @others
 
@@ -38,7 +39,7 @@ on-arrival: kpd_relation += 6*(1 - dissent); communist_coalition += 1 if kpd_int
 The <span style="color: #700000;">communists</span> are suspicious of our overtures, especially the <span style="color: #8B0000;">Stalinist</span> leadership, who persist in calling us "<span style="color: #c00000;">social</span> <span style="color: #7A3C00;">fascists</span>". However, connections are made at the grassroots and local levels.
 
 @center
-on-arrival: z_relation += 8*(1 - dissent)
+on-arrival: z_relation += 4*(1 - dissent) if ddp_in_government and z_in_government; z_relation += 4
 
 We are currently coalition partners with them, so improving relations comes naturally.
 
