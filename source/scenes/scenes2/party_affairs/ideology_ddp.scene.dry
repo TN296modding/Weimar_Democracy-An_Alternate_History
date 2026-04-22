@@ -21,13 +21,13 @@ max-visits: 30
 
 = Questions of Ideology
 
-The <span style="color: #c00000;">**SPD**</span> is torn between many different ideological currents. What should be our primary ideological guidance for now?
+The <span style="color: #D3C24D;">**DDP**</span> is torn between many different ideological currents. What should be our primary ideological guidance for now?
 
 [? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
 
-- @soc_lib: Building up Liberalism among the working class and allying the Socialist parties is our primary goals
-- @soc_repub: Undermining the Anti-Democratic right is our primary goal
-- @progressives: Maintain the Progressive course of mediating between the Socialist and Bourgeois parties
+- @soc_lib: Building up <span style="color: #FFF700;">Liberalism</span> among the working class and allying the <span style="color: #c90000;">Socialist</span> parties is our primary goals
+- @soc_repub: Undermining the <span style="color: #7A3C00;">Anti</span>-<span style="color: #3E88B3;'>Democratic</span> right is our primary goal
+- @progressives: Maintain the Progressive course of mediating between the <span style="color: #c90000;">Socialist</span> and <span style="color: #000000;">Bour</span><span style="color: #C0A054;">geois</span> parties
 - @centre_lib: Pursue the Centre course of maintaing stability both within the Coalition and the Party
 - @business: Allying with the businesses is the only way to keep our party afloat
 - @lib_corporatism: Continuing the Corporatist course of Artur Mahraun is best

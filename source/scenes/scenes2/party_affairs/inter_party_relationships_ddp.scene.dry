@@ -13,11 +13,11 @@ The <span style="color: #D3C24D;">**DDP**</span> cannot govern by itself yet. Be
 - @center: Strengthen our bonds with the Catholic [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 - @cvp: Reconcile with the <span style="color: #000000;">Christian People's Party</span>.
 - @kpd: Work towards repairing relationships with the <span style="color: #700000;">Communist Party</span>.
-- @spd: The <span style="color: #c00000;">SPD</span> can stand alone for now.
-- @dvp: The DVP
-- @others: The smaller independents, regional parties, and the like
-- @dnvp: The DNVP
-- @ddp_alone: The DDP alone
+- @spd: Improve our relations with the <span style="color: #c00000;">SPD</span>.
+- @dvp: Cooperate with the <span style="color: #C0A054;">DVP</span>, our <span style="color: #FFF700;">liberal</span> allies
+- @others: The smaller <span style="color: #999999;">independents</span>, <span style="color: #006400;">regional</span> parties, and the like
+- @dnvp: Reconcile with the <span style-"color: #3E88B3;">DNVP</span>
+- @ddp_alone: The <span style="color: #D3C24D;">DDP</span> shall stand alone
 - @easy_discard
 
 @spd

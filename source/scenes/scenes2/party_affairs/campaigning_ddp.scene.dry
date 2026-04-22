@@ -11,8 +11,8 @@ tags: party_affairs_ddp
 
 Whether or not we are in an electoral campaign, the party is always trying to broaden its voter base. Who should we focus our campaign efforts on?
 
-- @workers: The urban working class, the <span style="color:#c90000;">SPD</span>'s traditional support base.
-- @new_middle: The "new middle class" of government employees and white-collar workers, the (Colour wip) DDP's traditional support base.
+- @workers: The urban working class, the <span style="color: #c90000;">SPD</span>'s traditional support base.
+- @new_middle: The "new middle class" of government employees and white-collar workers, the <span style="color: #D3C24D;">DDP</span>'s traditional support base.
 - @old_middle: The "old middle class" of small independent businessmen and artisans, who have been receptive in the past.
 - @rural: Rural workers and small farmers, who have felt neglected by us in the past.
 - @unemployed: The unemployed, a potentially untapped support base.
