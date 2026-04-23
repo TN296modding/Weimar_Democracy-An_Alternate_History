@@ -6,8 +6,8 @@ if (Q.ddp_start) {
 Q.ddp_r_faction = ((Q.ddp_r)*(Q.reichstag_size))
 Q.ddp_r_faction = Math.ceil(Q.ddp_r_faction);
 Q.ddp_party_line_lpr = Q.ddp_r_faction
-Q.ddp_party_left = ((Q.ddp_r_faction)*(Q.ddp_left_ddp/10))
-Q.ddp_party_right = ((Q.ddp_r_faction)*(Q.ddp_right_ddp/10))
+Q.ddp_party_left = (Q.ddp_left_ddp/10)
+Q.ddp_party_right = (Q.ddp_right_ddp/10)
 Q.ddp_party_left = Math.floor(Q.ddp_party_left)
 Q.ddp_party_right = Math.floor(Q.ddp_party_right)
 Q.ddp_party_line_lpr -= ((Q.ddp_party_left)+(Q.ddp_party_right))
