@@ -1,6 +1,6 @@
 title: Panzerkreuzer A
 subtitle: A planned new battleship construction
-tags: event
+tags: event_ddp
 max-visits: 1
 face-image: img/panzerkreuzer.jpg
 view-if: year = 1928 and month == 3

@@ -2,7 +2,7 @@ title: The 'Potempa Five' Are Pardoned!
 subtitle: Murder excused in the name of politics.
 view-if: chancellor = "Papen" and papen_time == 13 and potempa_five_convicted and prussia_leader == "Papen"
 new-page: true
-tags: event
+tags: event_ddp
 max-visits: 1
 on-display: {!  
     var cardEl = document.createElement('div');  

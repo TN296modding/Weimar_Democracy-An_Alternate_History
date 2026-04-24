@@ -11,7 +11,7 @@ if (Q.in_social_catholic_coalition_prussia || Q.in_social_liberal_coalition_prus
 }
 !}
 new-page: true
-tags: event
+tags: event_ddp
 priority: 1
 face-image: img/prussia_flag_old.png
 go-to: coalition_menu

@@ -2,7 +2,7 @@ title: The <span style="color: #FFCC00;">**LVP**</span> and the Reichsbanner
 subtitle: Due to its militarization, the <span style="color: #FFCC00;">liberals</span> are leaving the Reichsbanner.
 view-if: rb_militancy >= 0.04 and not rb_exit and not rb_stay and lvp_formed and lvp_ideology != "Left"
 new-page: true
-tags: event
+tags: event_ddp
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  

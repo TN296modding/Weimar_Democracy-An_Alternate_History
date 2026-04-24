@@ -27,7 +27,7 @@ if (Q.nsdap_candidate_1932) {
     Q.dnvp_candidate_1932_disp = "Theodor Duesterberg";
 }
 !}
-tags: event
+tags: event_ddp
 view-if: year = 1932 and month >= 2 and not hindenburg_term_extended
 on-display: {!  
     var cardEl = document.createElement('div');  

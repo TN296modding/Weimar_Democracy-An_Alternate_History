@@ -2,7 +2,7 @@ title: The 'Potempa Five' Stand Trial for Murder
 subtitle: The <span style="color: #7A3C00;">Nazis</span> are to exploit their conviction as a propaganda tool.
 view-if: chancellor = "Papen" and papen_time == 11
 new-page: true
-tags: event
+tags: event_ddp
 max-visits: 1
 on-display: {!  
     var cardEl = document.createElement('div');  

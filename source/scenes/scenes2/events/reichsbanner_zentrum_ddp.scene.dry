@@ -2,7 +2,7 @@ title: Exodus from the Reichsbanner
 subtitle: Owing to its militarization, the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] [? if not lvp_formed: and <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed and not lvp_leave_reichsbanner: and <span style="color: #FFCC00;">**LVP**</span>?] are leaving the Reichsbanner.
 view-if: rb_militancy >= 0.2 and not rb_exit and not rb_stay and not lvp_leave and not cvp_formed
 new-page: true
-tags: event
+tags: event_ddp
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  

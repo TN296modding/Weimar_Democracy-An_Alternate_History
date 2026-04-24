@@ -2,7 +2,7 @@ title: The <span style="color: #000000;">**[+ z_party_name +]**</span> Disaffili
 subtitle: Expectedly, the <span style="color: #000000;">Christians</span> have left the <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> organization.
 view-if: not rb_exit and cvp_formed
 new-page: true
-tags: event
+tags: event_ddp
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  

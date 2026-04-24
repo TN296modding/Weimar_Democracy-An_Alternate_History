@@ -2,7 +2,7 @@ title: The <span style="color: #7A3C00;">Nazis</span> Have Peaked!
 subtitle: The explosive rise of their dynamic movement has stalled—there are simply no more votes left for them to tap into...
 view-if: nazi_peak_triggered
 max-visits: 1
-tags: event
+tags: event_ddp
 new-page: true
 on-display: {!  
     var cardEl = document.createElement('div');  

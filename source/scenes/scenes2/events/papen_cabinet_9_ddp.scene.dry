@@ -2,7 +2,7 @@ title: Papen Drafts Sweeping Amendments to the Constitution!
 subtitle: Despite his extreme unpopularity, the chancellor has ordered his cabinet to begin drafting sweeping constitutional amendments.
 view-if: chancellor = "Papen" and papen_time and papen_post_2
 new-page: true
-tags: event
+tags: event_ddp
 max-visits: 1
 face-image: img/weimar_constitution.jpg
 

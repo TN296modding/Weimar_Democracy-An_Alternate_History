@@ -2,7 +2,7 @@ title: Emergency Ordinance for the Reactivation of Economy
 subtitle: Tax relief for the rich and businesses.
 view-if: chancellor = "Papen" and papen_time == 13
 new-page: true
-tags: event
+tags: event_ddp
 max-visits: 1
 on-display: {!  
     var cardEl = document.createElement('div');  

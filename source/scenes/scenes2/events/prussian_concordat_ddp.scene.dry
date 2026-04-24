@@ -2,7 +2,7 @@ title: Prussian Concordat
 subtitle: The Prussian government has reached an agreement with the Vatican.
 view-if: year = 1929 and month = 7 and prussia_leader != "Braun" and spd_prussia and prussian_concordat = 0
 max-visits: 1
-tags: event
+tags: event_ddp
 new-page: true
 
 = Prussian Concordat

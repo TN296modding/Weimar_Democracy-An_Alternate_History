@@ -24,7 +24,7 @@ if (Q.nsdap_candidate_1932 == "Hitler") {
     Q.workers_nsdap -= 3;
 }
 !}
-tags: event
+tags: event_ddp
 view-if: year = 1932 and month >= 2 and not hindenburg_term_extended and not spd_abstain_1932 and hindenburg_run
 on-display: {!  
     var cardEl = document.createElement('div');  

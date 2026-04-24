@@ -2,7 +2,7 @@ title: <span style="color: #000000;">Bourgeois</span>-<span style="color: #3E88B
 subtitle: New elections scheduled
 new-page: true
 view-if: year = 1928 and month >= 2
-tags: event
+tags: event_ddp
 max-visits: 1
 
 = Right-wing Coalition Dissolved

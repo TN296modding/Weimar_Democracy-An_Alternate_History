@@ -3,7 +3,7 @@ subtitle: The Prussian Ministry of the Interior uncovers shocking revelations ab
 view-if: year == 1932 and month == 3 and not hindenburg_term_extended and spd_prussia and not repealed_175
 priority: 3
 max-visits: 1
-tags: event
+tags: event_ddp
 new-page: true
 on-arrival: nazi_urgency += 1
 face-image: img/portraits/rohm.jpg

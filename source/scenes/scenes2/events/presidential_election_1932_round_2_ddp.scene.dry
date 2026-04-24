@@ -4,7 +4,7 @@ view-if: year = 1932 and month == 4 and not hindenburg_term_extended and preside
 frequency: 1000
 max-visits: 1
 new-page: true
-tags: event
+tags: event_ddp
 priority: 3
 go-to: election_algorithm
 set-jump: pres_election

@@ -1,7 +1,7 @@
 title: Reformist leaders resign
 new-page: true 
 subtitle: Reformist disagreements with our policies have grown too severe.
-tags: event
+tags: event_ddp
 view-if: reformist_dissent >= 60
 on-arrival: {!
 if (Q.reformist_strength < 10) {

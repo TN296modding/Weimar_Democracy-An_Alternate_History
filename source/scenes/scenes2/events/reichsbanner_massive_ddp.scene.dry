@@ -2,7 +2,7 @@ title: Excessive Militarization of the Reichsbanner
 subtitle: Many argue that its militarization is no longer necessary now that we have established dominance over the streets.
 view-if: rb_militancy >= 0.15 and democracy_paramilitary_highest and year >= 1931 and not rb_massive
 new-page: true
-tags: event
+tags: event_ddp
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  

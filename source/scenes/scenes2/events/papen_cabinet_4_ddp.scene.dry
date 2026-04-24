@@ -2,7 +2,7 @@ title: Decree Against Political Terror
 subtitle: Papen attempts to combat the political violence he has enabled.
 view-if: chancellor = "Papen" and papen_time == 10
 new-page: true
-tags: event
+tags: event_ddp
 max-visits: 1
 on-display: {!  
     var cardEl = document.createElement('div');  
