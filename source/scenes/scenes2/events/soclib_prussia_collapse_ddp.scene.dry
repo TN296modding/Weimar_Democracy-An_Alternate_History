@@ -12,7 +12,7 @@ if (Q.in_social_catholic_coalition_prussia || Q.in_social_liberal_coalition_prus
 }
 !}
 new-page: true
-tags: event
+tags: event_ddp
 face-image: img/weimar_coalition_3.jpg
 
 = Democratic Bulwark Dismantled

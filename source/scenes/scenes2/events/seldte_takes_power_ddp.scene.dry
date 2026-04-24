@@ -2,7 +2,7 @@ title: The <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;
 subtitle: The beginning of the end.
 view-if: chancellor == "Seldte"
 on-arrival: spd_in_government = 0
-tags: event
+tags: event_ddp
 new-page: true
 
 With Seldte and Hergt in charge of Germany, presiding over a <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> "New Harzburg" Coalition ruling by presidential decree, the beginning of the end is near. 

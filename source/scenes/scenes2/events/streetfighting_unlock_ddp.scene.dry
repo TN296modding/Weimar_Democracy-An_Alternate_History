@@ -2,7 +2,7 @@ title: Streetfighting
 new-page: true
 view-if: year >= 1930
 max-visits: 1
-tags: event
+tags: event_ddp
 
 = Streetfighting
 

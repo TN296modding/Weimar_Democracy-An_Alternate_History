@@ -41,7 +41,7 @@ if ((Q.dvp_relation < (dvp_toleration_threshold + 5) && !Q.lvp_formed) || (Q.lvp
 }
 !}
 max-visits: 1
-tags: event
+tags: event_ddp
 new-page: true
 
 = Collapse of the Saxon Cabinet
