@@ -78,9 +78,9 @@ The unions are already seeing growth. While not super effecive, this is an easy 
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: old_middle_ddp += 2*(1-dissent)*(old_middle_reach+1); old_middle_ddp += ((pro_republic - 20)/20) if pro_republic >= 20; old_middle_ddp -= (nationalism/10) if nationalism <= 40; resources -= 1;
+on-arrival: campaign_old_middle_ddp += 1*(1-dissent)*(old_middle_reach+1); campaign_old_middle_ddp += (((pro_republic - 20)/20)/2) if pro_republic >= 20; campaign_old_middle_ddp -= ((nationalism/10)/2) if nationalism <= 40; resources -= 1; campaign_old_middle_ddp *= 1.25 if stolper_program_adopted; old_middle_ddp += campaign_old_middle_ddp
 
-We have increased our campaigning among the old middle class. [? if nationalism >= 51 and peoples_party == 0: The high levels of nationalism among this group make our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
+We have increased our campaigning among the old middle class. [? if nationalism >= 51 The high levels of nationalism among this group make our campaign more difficult. ?] 
 
 - @ddp_continue
 
@@ -88,7 +88,7 @@ We have increased our campaigning among the old middle class. [? if nationalism 
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: rural_ddp += 1*(1-dissent)*(rural_reach+1); rural_ddp += 2*(rural_reach+1) if agr_liberalised = 1; rural_spd -= 1*(1-dissent) if rural_policy = 0; rural_spd += 1 if agr_liberalised == 1 and rural_policy = 0; resources -= 1; rural_ddp += (rural_policy/2) if rural_policy <= 3 and agr_liberalised <= 0; rural_ddp += rural_policy if rural_policy <= 3.5 and agr_liberalised = 1; rural_ddp += 1.5 if rural_policy > 3 and agr_liberalised <= 0; rural_ddp += 3.5 if rural_policy >= 3.5 and agr_liberalised = 1; rural_campaigned += 1; agr_lib += 1
+on-arrival: campaign_rural_ddp += 0.5*(1-dissent)*(rural_reach+1); campaign_rural_ddp += 1*(rural_reach+1) if agr_liberalised = 1; campaign_rural_ddp -= 0.5*(1-dissent) if rural_policy = 0; campaign_rural_ddp += 0.5 if agr_liberalised == 1 and rural_policy = 0; resources -= 1; campaign_rural_ddp += (rural_policy/4) if rural_policy <= 3 and agr_liberalised <= 0; campaign_rural_ddp += (rural_policy/2) if rural_policy <= 3.5 and agr_liberalised = 1; campaign_rural_ddp += 0.75 if rural_policy > 3 and agr_liberalised <= 0; campaign_rural_ddp += 1.75 if rural_policy >= 3.5 and agr_liberalised = 1; rural_campaigned += 1; agr_lib += 1; campaign_rural_ddp *= 0.8 if stolper_program_adopted; rural_ddp += campaign_rural_ddp
 
 We have increased our campaigning among farmers. [? if peoples_party == 0: We have not historically campaigned much among the farmers, and they do not trust us. ?][? if peoples_party > 0: As a people's party, we have an easier time increasing support among farmers than before. ?][? if rural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
 
