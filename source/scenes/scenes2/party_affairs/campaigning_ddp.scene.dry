@@ -121,7 +121,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 view-if: peoples_party == 1
-on-arrival: catholics_spd += 6*(1-dissent)*(catholics_reach+1); resources -= 1
+on-arrival: catholics_ddp += 1*(1-dissent)*(catholics_reach+1); resources -= 1;
 
 We have increased our campaigning among Catholics.
 

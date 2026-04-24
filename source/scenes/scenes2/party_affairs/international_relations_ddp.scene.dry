@@ -13,7 +13,7 @@ There are many Liberal parties across the world - who shall we contact?
 - @fr_uk_bel: Contact Liberal Parties in France, Belgium, and Britain
 - @america_union: Contact the American Federation of Labour (WIP for Liberal Trade Unions)
 - @minor: Contact minor Liberal parties across the world
-- @inflcom: Plant spies in Communist activities across the world 
+- @inflcom: Plant spies in Communist organizations across the world 
 - @america: Contact the Democrats (Are the Left-Liberal by 1928? Or were the Republicans the progressive party?)
 - @dstp_expansion: Ignite German nationalism within lost territories
 - @return: We do not need international contacts at the moment.
@@ -24,17 +24,15 @@ There are many Liberal parties across the world - who shall we contact?
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; west_relation += 1; reformist_strength += 3; pacifism += 1; moderate_plan_support += 1; international_socialist_support += 1
+on-arrival: resources -= 1; west_relation += 1; reformist_strength += 3; pacifism += 1; moderate_plan_support += 1; international_liberal_support += 1; ddp_cohesion_ddp += 0.25
 
-The <span style="color: #f0456a;">socialists</span> of <span style="color: #002654;">France</span> and <span style="color: #C8102E;">Britain</span> can influence their governments to be friendlier towards Germany. Hopefully they will reduce our reparations burden.
+The <span style="color: #0000cd;">libe</span><span style="color: #ffa500;">ra</span><span style="color: #E0Afff;">ls</span> of <span style="color: #002654;">France</span>, <span style="color: #C8102E;">Britain</span>, and Beligum can influence their governments to be friendlier towards Germany. Hopefully they will reduce our reparations burden.
 
 @america_union
-subtitle: -1 resources [? if austrian_parliament_seen and not austrian_civil_war_seen: - We will also help the Austrians oppose their dictatorship. ?]
-view-if: not rb_explode
+subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-audio: shuffle music/communist/workers_of_vienna_normalized.mp3
-on-arrival: left_strength += 3; radicalization += 1; rb_militancy += 0.03; resources -= 1; austria_relation += 1; sdapo_strength += 1 if austrian_parliament_seen = 1
+on-arrival: resources -= 1; america_relation += 1; ddp_right_ddp += 1; 
 
 Our Reichsbanner can learn much in paramilitary organization and training from the Austrian Republikanischer Schutzbund (Republican Protection Units), the paramilitary branch of the <span style="color: #EF3340;">Au</span><span style="color: #ffffff;"><span style="color: #ffffff;">str</span></span><span style="color: #EF3340;">ian</span> <span style="color: #A50034;">social democrats</span>.
 
@@ -45,7 +43,7 @@ Our Reichsbanner can learn much in paramilitary organization and training from t
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: reformist_strength += 3; wtb_support += 1; resources -= 1; moderate_plan_support += 1
+on-arrival: resources -= 1; minors_relation += 1; 
 
 The programs of the Nordic <span style="color: #D70926;">socialists</span> involve active government intervention in the economy. We can learn from their economic strategies, and how they moved beyond their working-class base to attract a broader set of constituents.
 
