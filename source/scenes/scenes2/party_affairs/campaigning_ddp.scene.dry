@@ -25,7 +25,7 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: workers_ddp += 1*(1-dissent)*(workers_reach+1); workers_ddp -= 1 if unemployed >= 20 and ddp_in_government; workers_ddp -= 0.5 if unemployed >= 30 and ddp_in_government; workers_ddp += 1.5*(1-dissent) if economic_plan_adopted = 1; resources -= 1; workers_spd += 1.5*(1-dissent) if pro_worker >= 8; trun_lib += 1
+on-arrival: true_campaign_workers_ddp += 0.5*(1-dissent)*(workers_reach+1); true_campaign_workers_ddp -= 0.5 if unemployed >= 20 and ddp_in_government; true_campaign_workers_ddp -= 0.25 if unemployed >= 30 and ddp_in_government; true_campaign_workers_ddp += 0.75*(1-dissent) if economic_plan_adopted = 1; resources -= 1; true_campaign_workers_ddp += 0.75*(1-dissent) if pro_worker >= 8; trun_lib += 1; true_campaign_workers_ddp *= 0.5 if stolper_program_adopted; workers_ddp += true_campaign_workers_ddp
 
 We have increased our campaigning among the workers, however most are unmoved by our efforts. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if wtb_adopted = 1 : Adopting the [+ economic_plan_name +] gives us a new rallying point around which to attract workers. ?]
 
@@ -38,7 +38,7 @@ subtitle: -0.5 resource
 view-if: lib_unions = 1
 unavailable-subtitle: Not enough resources
 choose-if: resources >= 0.5
-on-arrival: workers_ddp -= 0.5*(1-dissent); trun_infl += 0.1; libun_ind_perc += 0.003; libun_ind_growth_m += 0.0005; libun_ind_growth_y += 0.001; libun_ind_growth_y += 0.001 if economic_plan_adopted = 1; libun_ind_perc += 0.002 if wtb_adopted = 1; resources -= 0.5
+on-arrival: workers_ddp -= 0.25*(1-dissent); trun_infl += 0.1; libun_ind_perc += 0.003; libun_ind_growth_m += 0.0005; libun_ind_growth_y += 0.001; libun_ind_growth_y += 0.001 if economic_plan_adopted = 1; libun_ind_perc += 0.002 if wtb_adopted = 1; resources -= 0.5
 
 The unions are already seeing growth. While not super effecive, this is an easy way to increase union membership
 
@@ -55,9 +55,9 @@ We have declined to exclude overt union advertising in our campaign.
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: new_middle_ddp += 3*(1-dissent)*(new_middle_reach+1); new_middle_ddp += 1*(1-dissent)*(new_middle_reach+1) if pro_republic >= 80; new_middle_ddp += 1 if socialism_communism <= 49 and spd_peoples_party == 0 and pro_republic >= 80; new_middle_spd -= 2 if socialism_communism >= 49 and spd_peoples_party == 1 and pro_republic < 80; resources -= 1;
+on-arrival: campaign_new_middle_ddp += 1.5*(1-dissent)*(new_middle_reach+1); campaign_new_middle_ddp += 0.5*(1-dissent)*(new_middle_reach+1) if pro_republic >= 80; new_middle_ddp += 0.5 if socialism_communism <= 49 and spd_peoples_party == 0 and pro_republic >= 80; new_middle_spd -= 1 if socialism_communism >= 49 and spd_peoples_party == 1 and pro_republic < 80; resources -= 1; campaign_new_middle_ddp *= 1.5 if stolper_program_adopted; new_middle_ddp += campaign_new_middle_ddp
 
-We have increased our campaigning among the new middle class, our traditional support base. [? if socialism <= 49 and peoples_party == 0: The popular antipathy towards <span style="color: #c00000;">socialism</span> among this group makes our campaign more easier. ?] [? if peoples_party > 0: As a=the SPD is a people's party, we have an harder time increasing support among the middle class than before. ?]
+We have increased our campaigning among the new middle class, our traditional support base. [? if socialism_communism <= 49 and spd_peoples_party == 0: The popular antipathy towards <span style="color: #c00000;">socialism</span> among this group makes our campaign more easier. ?] [? if spd_peoples_party > 0: As the SPD is a people's party, we have an harder time increasing support among the middle class than before. ?]
 
 - @unionise_nmc: Make unions a part of this campaign run
 - @no_union: Don't push unions in this campign run
