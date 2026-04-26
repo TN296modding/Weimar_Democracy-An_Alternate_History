@@ -1,6 +1,6 @@
 title: Liberalism in the Peasant Class
 new-page: true
-view-if: agr_lib >= 6 and agr_lib_timer <= 0 and agr_liberalised = 0 ddp_start
+view-if: agr_lib >= 6 and agr_lib_timer <= 0 and agr_liberalised = 0 and ddp_start
 on-arrival: month_actions += 1; agr_lib_timer = 4
 max-visits: 4
 is-card: true

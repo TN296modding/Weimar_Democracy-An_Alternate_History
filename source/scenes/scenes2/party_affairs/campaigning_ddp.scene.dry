@@ -80,7 +80,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: campaign_old_middle_ddp += 1*(1-dissent)*(old_middle_reach+1); campaign_old_middle_ddp += (((pro_republic - 20)/20)/2) if pro_republic >= 20; campaign_old_middle_ddp -= ((nationalism/10)/2) if nationalism <= 40; resources -= 1; campaign_old_middle_ddp *= 1.25 if stolper_program_adopted; old_middle_ddp += campaign_old_middle_ddp
 
-We have increased our campaigning among the old middle class. [? if nationalism >= 51 The high levels of nationalism among this group make our campaign more difficult. ?] 
+We have increased our campaigning among the old middle class. [? if nationalism >= 51 : The high levels of nationalism among this group make our campaign more difficult. ?] 
 
 - @ddp_continue
 
