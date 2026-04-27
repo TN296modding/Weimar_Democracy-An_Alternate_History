@@ -840,31 +840,31 @@ th {
   fill: #D3C24D
 }
 
-.seat.ddp_r {
+.seat.ddp_rt {
   fill: #e3d04f
 }
 
-.seat.ddp_party_pacifist {
+.seat.ddp_p {
   fill: #FF6699;
 }
 
-.seat.ddp_party_line_ppn {
+.seat.ddp_ppn {
   fill: #7FCEB1;
 }
 
-.seat.ddp_party_nationalism {
+.seat.ddp_n {
   fill: #ADC1FD;
 }
 
-.seat.ddp_party_work_left {
+.seat.ddp_wl {
   fill: #ff0000;
 }
 
-.seat.ddp_party_line_wlpwr {
+.seat.ddp_wlpwr {
   fill: #D3C24D
 }
 
-.seat.ddp_party_work_right {
+.seat.ddp_wr {
   fill:olivedrab
 }
 
