@@ -165,11 +165,11 @@ Q.chrun_tot_perc_dis = (Q.chrun_tot_perc * 100).toFixed(3);
 
 [? if sapd_formed: <span style="color: #9b0000;">**SAPD**</span> : [+ sapd_relation : relationships +] ?]
 
-[? if kpo_formed: <span style="color: #C43988;">**[+kpo_name+]**</span> : [+ kpo_relation : relationships +] ?]
+[? if kpo_formed: <span style="color: #C43988;">**[+ kpo_name +]**</span> : [+ kpo_relation : relationships +] ?]
 
 [? if (sed_formed and ddp_start): <span style="color: #5b0303;">**SED**</span> : [+ sed_relation : relationships +] ?]
 
-[? if srp_formed: <span style="color: #f0b9ca;">**SRP**</span> [+ srp_relation : relationships +] ?]
+[? if srp_formed: <span style="color: #f0b9ca;">**SRP**</span> : [+ srp_relation : relationships +] ?]
 
 [? if adgbpf_formed or unions_in_reichstag: <span style="color: #dd6400;">**ADGB(PF)**</span> [+ adgb_relation : relationships +] ?]
 
@@ -181,25 +181,25 @@ Q.chrun_tot_perc_dis = (Q.chrun_tot_perc * 100).toFixed(3);
 
 [? if sz_formed: <span style="color: #61e790;">**SZ**</span> [+ sz_relation : relationships +] ?]
 
-[? if nspd_formed: <span style="color: #ed5151;">**NSPD**</span> [+ nsdap_relation : relationships +] ?]
+[? if nspd_formed: <span style="color: #ed5151;">**NSPD**</span> [+ nspd_relation : relationships +] ?]
 
 [? if vnr_formed: <span style="color: #D3D3A9;">**VNR**</span> [+ vnr_relation : relationships +] ?]
 
-[? if llb_formed = 0: <span style="color: #ffff50;">**LLB**</span> [+ llb_relation : relationships +] ?]
+[? if llb_formed: <span style="color: #ffff50;">**LLB**</span> [+ llb_relation : relationships +] ?]
 
-[? if pcp_formed = 0: <span style="color: #a85c00;">**PCP**</span> [+ pcp_relation : relationships +] ?]
+[? if pcp_formed: <span style="color: #a85c00;">**PCP**</span> [+ pcp_relation : relationships +] ?]
 
-[? if acvp_formed = 0: <span style="color: #700147;">**ACVP**</span> [+ acvp_relation : relationships +] ?]
+[? if acvp_formed: <span style="color: #700147;">**ACVP**</span> [+ acvp_relation : relationships +] ?]
 
-[? if pvdr_formed = 0: <span style="color: #000000;">**P**</span><span style="color: #ff0000;">**vd**</span><span style="color: #fff700;">**R**</span> [+ pvdr_relation : relationships +] ?]
+[? if pvdr_formed: <span style="color: #000000;">**P**</span><span style="color: #ff0000;">**vd**</span><span style="color: #fff700;">**R**</span> [+ pvdr_relation : relationships +] ?]
 
-[? if pvdef_formed = 0: <span style="color: #000000;">**P**</span><span style="color: #dadada;">**vd**</span><span style="color: #707070;">**EF**</span> [+ pvdef_relation : relationships +] ?]
+[? if pvdef_formed: <span style="color: #000000;">**P**</span><span style="color: #dadada;">**vd**</span><span style="color: #707070;">**EF**</span> [+ pvdef_relation : relationships +] ?]
 
-[? if eapd_formed = 0: <span style="color: #707070;">**E**</span><span style="color: #000000;">**A**</span><span style="color: #ff0000;">**P**</span><span style="color: #fff700;">**D**</span> [+ eapd_relation : relationships +] ?]
+[? if eapd_formed: <span style="color: #707070;">**E**</span><span style="color: #000000;">**A**</span><span style="color: #ff0000;">**P**</span><span style="color: #fff700;">**D**</span> [+ eapd_relation : relationships +] ?]
 
-[? if dlp_formed = 0: <span style="color: #d8c200;">**DLP**</span> [+ dlp_relation : relationships +] ?]
+[? if dlp_formed: <span style="color: #d8c200;">**DLP**</span> [+ dlp_relation : relationships +] ?]
 
-[? if vlp_formed = 0: <span style="color: #b2a000;">**VLP**</span> [+ vlp_relation : relationships +] ?]
+[? if vlp_formed : <span style="color: #b2a000;">**VLP**</span> [+ vlp_relation : relationships +] ?]
 
 = Party Leadership
 
