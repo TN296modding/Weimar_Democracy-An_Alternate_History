@@ -640,3 +640,103 @@ Rural Affairs:
     State Buyer: [? if state_buyer = 0 : Not Established ?][? if state_buyer = 1 : Established ?]
 
     Food Market Nationalization: [+ food_national : government_food_markets +]
+
+Justice & Policing:
+
+    Electoral Threshold: [+ electoral_threshold +]%
+
+    Contructive VONC's: [? if constructive_vonc : Yes ?][? if not constructive_vonc : No ?]
+
+    Presidential Powers: [? if presidential_powers : Limited ?][? if not presidential_powers : Many ?]
+
+    State of Prussia: [? if not prussia_reformed : Dominant State ?][? if prussia_reformed = 1 : Partially Dissolved ?][? if prussia_reformed = 2 : Fully Dissolved ?]
+
+    Banned Parties: [? if parties_banned = 0 : None ?][? if parties_banned = 1 : wip ?]
+
+    Banned Paramilitaries: [? if paramilitaries_banned = 0 : None ?][? if paramilitaries_banned > 0 : [? if rfb_banned : RFB, ?][? if sh_banned : SH, ?][? if sa_banned : SA ?]
+
+    Judiciary Reform: [+ judiciary_reform : judiciary_reform_status +]
+
+Economic Policy
+
+    Works Plan:
+
+    Nationalalization:
+
+    Works Council:
+
+    Cooperatives:
+
+    Credit Union Grants:
+
+    Big bank's influence:
+
+    Upper-income tax rates: [+ upper_tax_rates : taxation +]
+
+    Middle-income tax rates: [+ middle_tax_rates : taxation +]
+
+    Lower-income tax rates: [+ lower_tax_rates : taxation +]
+
+    Big Business tax rates: [+ big_bus_tax_rates : taxation +]
+
+    Small Business tax rates: [+ small_bus_tax_rates: taxation +]
+
+    Tax Credits:
+
+Social Welfare
+
+    General Welfare:
+
+    Unemployment Insurance:
+
+    Pension Plan:
+
+Transport
+
+    Transport Infrastructure:
+
+    Free Transport:
+
+    Autobahn:
+
+Versailles: 
+
+    Military Restrictions:
+
+    Lost Territory:
+
+    Lost Colonies:
+
+    Austro-Hungary:
+
+    Saarland:
+
+    Danzig:
+
+    Reparations:
+
+    Finance:
+
+    Other:
+
+Minority Rights:
+
+    Women's Working Rights:
+
+    Women's Family Rights:
+
+    Womens's Welfare:
+
+    Abortion Rights:
+
+    Homosexual Legality:
+
+    Transsexual Legality:
+
+Labour Affairs:
+
+    Government Support:
+
+    Workweek:
+
+    Safety Regulations:
