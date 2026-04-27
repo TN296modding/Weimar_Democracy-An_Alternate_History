@@ -655,7 +655,7 @@ Justice & Policing:
 
     Banned Paramilitaries: [? if paramilitaries_banned = 0 : None ?][? if paramilitaries_banned > 0 : [? if rfb_banned : RFB, ?][? if sh_banned : SH, ?][? if sa_banned : SA ?]
 
-    Judiciary Reform: [+ judiciary_reform : judiciary_reform_status +]
+    ###Judiciary Reform: [ judiciary_reform : judiciary_reform_status ]
 
 Economic Policy
 
