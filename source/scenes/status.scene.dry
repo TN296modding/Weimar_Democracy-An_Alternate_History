@@ -625,6 +625,7 @@ Other Countries:
 @domestic_tab
 on-arrival: {!
 Q.food_national = (Q.state_buyer/4) + (Q.socializations/2);
+Q.tax_credits = (Q.union_ddcs + Q.ucc_ddc + Q.ucwddc + Q.vol_ddc + Q.nbc_ddc + Q.cpc_ddc + Q.ite_ddc)
 !}
 
 = Domestic Affairs
@@ -659,17 +660,15 @@ Justice & Policing:
 
 Economic Policy
 
-    Works Plan:
+    Works Plan: [? if economic_plan = 0 : None ?][? if economic_plan >= 1 : [+ works_plan_display +] ?]
 
-    Nationalalization:
+    Nationalalization: [+ socializations : assorted1_status +]
 
-    Works Council:
+    Works Councils: [+ works_councils : assorted1_status +]
 
-    Cooperatives:
+    Cooperatives: [+ cooperatives : assorted1_status +]
 
-    Credit Union Grants:
-
-    Big bank's influence:
+    Big bank's influence: [+ big_bank_control : bank_influence +]
 
     Upper-income tax rates: [+ upper_tax_rates : taxation +]
 
@@ -679,25 +678,25 @@ Economic Policy
 
     Big Business tax rates: [+ big_bus_tax_rates : taxation +]
 
-    Small Business tax rates: [+ small_bus_tax_rates: taxation +]
+    Small Business tax rates: [+ small_bus_tax_rates : taxation +]
 
-    Tax Credits:
+    Tax Credits: [+ tax_credits : assorted1_status +]
 
 Social Welfare
 
-    General Welfare:
+    General Welfare: [+ welfare : welfare_status +]
 
-    Unemployment Insurance:
+    Unemployment Insurance: [+ ui_funding : ui_status +]
 
-    Pension Plan:
+    Pension Plan: [+ gpp : gpp_status +]
 
 Transport
 
-    Transport Infrastructure:
+    Transport Infrastructure: [+ infrastructure : infra_status +]
 
-    Free Transport:
+    Free Transport: [? if free_trains = 1 : Yes ?][? if free_trains = 0 : No ?]
 
-    Autobahn:
+    Autobahn: [? if autobahn = 0 : Not built ?][? if autobahn = 1 : Building ?][? if autobahn = 2 : Built ?]
 
 Versailles: 
 
@@ -721,9 +720,9 @@ Versailles:
 
 Minority Rights:
 
-    Women's Working Rights:
+    Women's Working Rights: [+ womens_work : womens_work_status +]
 
-    Women's Family Rights:
+    Women's Family Rights: [+ family_law ; family_law-Stauts +]
 
     Womens's Welfare:
 
