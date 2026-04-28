@@ -722,7 +722,7 @@ Minority Rights:
 
     Women's Working Rights: [+ womens_work : womens_work_status +]
 
-    Women's Family Rights: [+ family_law ; family_law-Stauts +]
+    Women's Family Rights: [+ family_law ; family_law_status +]
 
     Womens's Welfare:
 
