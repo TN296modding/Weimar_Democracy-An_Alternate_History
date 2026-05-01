@@ -261,19 +261,19 @@ Q.chrun_tot_perc_dis = (Q.chrun_tot_perc * 100).toFixed(3);
 
 <span style="color: #f0b9ca;">**Reformist**</span> strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
 
-Left Nationals [? if aspd_j_spd = 1 : Status: ASPD Rejoined ?] [? if aspd_j_spd = 0 : Status: ASPD Independent ?] strength: [+ left_nat_strength : strength +], dissent: [+ left_nat_dissent : dissent +]
+<span style="color: #fe9e00;">**Left Nationals</span> [? if aspd_j_spd = 1 : Status: ASPD Rejoined ?] [? if aspd_j_spd = 0 : Status: ASPD Independent ?] strength: [+ left_nat_strength : strength +], dissent: [+ left_nat_dissent : dissent +]
 
 <span style="color: #acacac;">**Seeheimer Kreis**</span> (Business) [? if business_j_spd = 0 : Status: Not Formed; ?] [? if business_j_spd = 1 : Status: Forming; ?] [? if business_j_spd = 2: Formed; ?] strength: [+ business_strength : strength +], dissent: [+ business_dissent : dissent +] 
 
-<span style=" color: #228B22;">Agrarian</span> <span style=" color: #c90000;">Socialist</span> (Rural) [? if rural_j_spd = 0 : Status: Support Base; ?] [? if rural_j_spd = 1 : Status: Faction; ?] strength: [+ rural_strength : strength +], dissent: [+ rural_dissent : dissent +]
+<span style=" color: #228B22;">**Agrarian**</span> <span style=" color: #c90000;">**Socialist**</span> (Rural) [? if rural_j_spd = 0 : Status: Support Base; ?] [? if rural_j_spd = 1 : Status: Faction; ?] strength: [+ rural_strength : strength +], dissent: [+ rural_dissent : dissent +]
 
-Social Liberal [? if ddp_j_spd = 0 : Status: DDP faction; ?] [? if ddp_j_spd = 1 : Status: SPD Faction; ?] strength: [+ liberal_strength : strength +], dissent: [+ liberal_dissent : dissent +]
+<span style="color: #ffe600;">**Social Liberal**</span> [? if ddp_j_spd = 0 : Status: DDP faction; ?] [? if ddp_j_spd = 1 : Status: SPD Faction; ?] strength: [+ liberal_strength : strength +], dissent: [+ liberal_dissent : dissent +]
 
-Right Communists [? if kpo_j_spd = 0 and (( year = 1929 and month <= 6) or ( year < 1929 ))  : Status: KPD Faction; ?] [? if kpo_j_spd = 0 and (( year = 1929 and month >= 7) or (year >= 1930)) : Status: Kommunistische Partei Deutschlands (Opposition) ;; KPD(O); ?] [? if kpo_j_spd = 1 and spd_dom_sed = 1 : Status: SED Faction; ?] [? if kpo_j_spd = 1 and sed_formed = 0: SPD Faction; ?] strength: [+ rightcom_strength : strength +], dissent: [+ rightcom_dissent : dissent +]
+<span style="color: #C43988;">**Right Communists**</span> [? if kpo_j_spd = 0 and (( year = 1929 and month <= 6) or ( year < 1929 ))  : Status: KPD Faction; ?] [? if kpo_j_spd = 0 and (( year = 1929 and month >= 7) or (year >= 1930)) : Status: Kommunistische Partei Deutschlands (Opposition) ;; KPD(O); ?] [? if kpo_j_spd = 1 and spd_dom_sed = 1 : Status: SED Faction; ?] [? if kpo_j_spd = 1 and sed_formed = 0: SPD Faction; ?] strength: [+ rightcom_strength : strength +], dissent: [+ rightcom_dissent : dissent +]
 
-Leftcom [? if sed_formed = 0 : Status: KPD Faction; ?] [? if sed_formed = 1 : Status: SED Faction; ?] strength: [+ leftcom_strength : strength +], dissent: [+ leftcom_dissent : dissent +]
+<span style="color: #bf0505;">**Leftcom**</span> [? if sed_formed = 0 : Status: KPD Faction; ?] [? if sed_formed = 1 : Status: SED Faction; ?] strength: [+ leftcom_strength : strength +], dissent: [+ leftcom_dissent : dissent +]
 
-Left Christian [? if left_chris_spd = 0 and sz_formed = 0 : Status: Z Faction; ?] [? if sz_formed = 1 : Status: Sozialchristliches Zentrumspartei (SZ); ?] [? if left_chris_spd = 1 and sz_formed = 0 : Status: SPD Faction ?] strength: [+ leftchris_strength : strength +], dissent: [+ leftchris_dissent : dissent +]
+<span style="color: #61e790;">**Left Christian**</span> [? if left_chris_spd = 0 and sz_formed = 0 : Status: Z Faction; ?] [? if sz_formed = 1 : Status: Sozialchristliches Zentrumspartei (SZ); ?] [? if left_chris_spd = 1 and sz_formed = 0 : Status: SPD Faction ?] strength: [+ leftchris_strength : strength +], dissent: [+ leftchris_dissent : dissent +]
 
 = Other
 
