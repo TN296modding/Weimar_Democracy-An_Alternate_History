@@ -664,7 +664,7 @@ Economic Policy
 
     Nationalalization: [+ socializations : assorted1_status +]
 
-    Works Councils: [+ works_councils : assorted1_status +]
+    Works Councils: [+ works_councils : assorted2_status +]
 
     Cooperatives: [+ cooperatives : assorted1_status +]
 
