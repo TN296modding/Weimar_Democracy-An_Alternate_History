@@ -1,0 +1,7 @@
+title: The DBP shifts towards the left
+subtitle: Progressivism is beginning to take root in the peasant class
+view-if: dbp_left >= 9 and not dbp_left_seen
+on-arrival: dbp_left_seen
+tags: events
+
+Text
