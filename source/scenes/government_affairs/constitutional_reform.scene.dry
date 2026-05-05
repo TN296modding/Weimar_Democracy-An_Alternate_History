@@ -6,7 +6,7 @@ frequency: 25
 on-arrival: month_actions += 1; constitutional_reform_timer += 12; pass_threshold = 0.51; pass_threshold = 0.6 if pro_republic < 65;
 card-image: img/portraits/RadbruchGustav.jpg
 go-to: reforms_menu
-tags: govt_affairs, cabinet
+tags: govt_affairs_spd, cabinet
 #subtitle: Major changes to government.
 ### New landtags and states reform, ban antidemocratic parties, 
 

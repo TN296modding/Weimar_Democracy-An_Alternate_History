@@ -4,7 +4,7 @@ is-card: true
 on-arrival: neg_versailles_timer += 6; month_actions += 1
 view-if: spd_in_government and (foreign_minister_party = "SPD") and neg_versailles_timer == 0
 #card-image:
-tags: govt_affairs, cabinet
+tags: govt_affairs_spd, cabinet
 
 = Negotiating Versailles
 

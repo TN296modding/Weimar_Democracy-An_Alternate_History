@@ -5,7 +5,7 @@ view-if: (crisis_urgency >= 2 or year >= 1931 or (month >= 6 and year == 1930)) 
 frequency: 200
 on-arrival: month_actions += 1; crisis_program_timer = 5
 card-image: img/bankrun.jpg
-tags: party_affairs, govt_affairs
+tags: party_affairs_spd, govt_affairs_spd
 
 = Addressing the Economic Crisis
 
