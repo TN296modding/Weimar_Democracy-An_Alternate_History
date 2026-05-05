@@ -21,6 +21,8 @@ on-arrival: player_beg = 1 if not achievement_game_completed
 go-to: start if achievement_game_completed; pls_player if not achievement_game_completed
 
 @start_2
+choose-if: never
+unavailable-subtitle: Not Right Now
 go-to: root_ddp
 
 @pls_player
