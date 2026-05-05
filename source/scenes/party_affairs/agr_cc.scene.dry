@@ -22,7 +22,7 @@ title: Awaken the Class Consciousness of the Peasants
 subtitle: This will make them more receptive to socialism, as well as pushing the Agrarian-Conservative (WIP note: Colour) parties to the left
 choose-if: agr_cc >= 8
 unavailable-subtitle: The Peasant Class has not yet had enough exposure to Socialist ideals
-on-arrival: advisor_action_timer = 6; rural_spd += 8; ddp_left += 5 if rural_ddp > 10; ddp_cohesion -= 1 if rural_ddp > 10; cnblp_left += 3; kvp_left += 3; dnvp_left += 3; others_left += 3; pro_republic += 4; nationalism -= 6; trun_rur_perc += 0.03; iww_rur_perc += 0.02 if syndicalism = 1; agr_awakened = 1; agr_form_timer = 6
+on-arrival: advisor_action_timer = 6; rural_spd += 8; ddp_left += 5 if rural_ddp > 10; ddp_cohesion -= 1 if rural_ddp > 10; dbp_left += 3; cnblp_left += 3; kvp_left += 3; dnvp_left += 3; others_left += 3; pro_republic += 4; nationalism -= 6; trun_rur_perc += 0.03; iww_rur_perc += 0.02 if syndicalism = 1; agr_awakened = 1; agr_form_timer = 6
 
 We have sucessfully fostered Class consciousness in the Peasant Class, and pushed the Agrarian-Conservative parties left.
 
