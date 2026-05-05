@@ -2,5 +2,6 @@ title: The DBP Party Congress
 subtitle: The DBP decides its political direction
 view-if: dbp_congress_timer = 0 and dbp_left_seen and not dbp_congress_seen
 on-arrival: dbp_congress_seen = 1
+tags: event
 
 Options for the DBP to stay centre-right (DBP left under 6 somehow, or if dbp_left under 8 and DStP Formed), to merge with the DDP (Not DStP) as their right-most wing, with the DBP holding a slightly more progressive stance than the Z (Requires dbp left <= 9), an option for the DBP to become centre-left without joining the DDP (Agrarian Progressivism), and stealing votes from the DNVP (DBP left 10-12 or if dbp_left 8-9 and DStP formed), or finally for the DBP to join the SPD if the Agrarian Socialists hold significant power and the DBP left is over 12
