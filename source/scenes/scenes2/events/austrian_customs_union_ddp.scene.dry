@@ -27,7 +27,7 @@ on-arrival: banking_crisis_timer = 4; curtius_banking_crisis = 1 if not in_weima
 The customs union has been formed. Immediately, <span style="color: #002654;">France</span> and other neighboring countries lodge their protests. The longer-term response is yet to be seen.
 
 @end_coalition_ddp
-view-if: spd_in_government = 1
+view-if: ((spd_in_government = 1 and ddp_in_government = 1) or (ddp_in_government = 1 and ddp_r >= 11) or (progressive_coalition > 50)) and (ddp_party_left + ddp_party_line_lpr) > ddp_party_right
 on-arrival: coalition_dissent += 1; dvp_relation -= 5; z_relation -= 4; z_relation -= 3 if chancellor_party == "Z"; dvp_relation -= 3 if chancellor_party == "Z"; ddp_relation -= 4; lvp_relation -= 4; ddp_right += 1; dvp_right += 1; lvp_right += 1;
 
 We attempt to impress upon our coalition partners the gravity of the potential Allied response. The proposal is dead, although the [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] and [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] are not pleased.
