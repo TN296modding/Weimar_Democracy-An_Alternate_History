@@ -2556,7 +2556,7 @@ title: Party Affairs
 card-image: img/Vorwaerts_nr_1.png
 is-deck: true
 
-- #party_affairs
+- #party_affairs_spd
 
 @govt
 title: Government Affairs
@@ -2564,7 +2564,7 @@ view-if: time >= 6
 card-image: img/reichstag_2.jpg
 is-deck: true
 
-- #govt_affairs
+- #govt_affairs_spd
 
 @eco
 title: Economic Policy
@@ -2572,4 +2572,4 @@ view-if: spd_in_government = 1 and (economic_minister_party == "SPD" or finance_
 card-image: img/portraits/SchmidtRobert.jpg
 is-deck: true
 
-- @economic_policy
+- @economic_policy_spd
