@@ -12,7 +12,7 @@ card-image: img/portraits/LeberJulius.jpg
 The Navy is a deeply <span style="color: #808080;">reactionary</span> institution that has been generally hostile to any notion of <span style="color: #c00000;">socialism</span> or democracy. However, we now control the military as part of the government. What should we do to reform it?
 
 - @build_ship: Build ships for the Navy to purchase its loyalty.
-- @destroy_ship: Decomission ships, to save money on repairs and jobs
+- @decrease_funding: Decomission ships and downsize the Navy, to save money on repairs and jobs
 - @reform: Conduct a thorough reform of the ranks, reducing the influence of <span style="color: #808080;">reactionaries</span> and making it more hospitable to us.
 - @blockade: Blockade a nearby country
 - @root: No change to military policy.
@@ -37,51 +37,47 @@ The Navy and the center-right parties are pleasantly surprised that we would inc
 
 @build_panzerkreuzer_b
 subtitle: What? -2 Budget.
-
-Social Fascism is real!!!!
+choose-if: budget >= 2
+view-if: panzerkreuzer_funded and not panzerkreuzer_b_funded
+unavailable-subtitle: We do not have the budget
+on-arrival: budget -= 2; panzerkreuzer_b_funded = 1; left_dissent += 12; labor_dissent += 7; center_dissent += 6; neorevisionist_dissent += 5; kpd_coalition_dissent += 1; coalition_dissent -= 1; kpd_relation -= 10; kpo_relation -= 7; sapd_relation -= 5; workers_spd -= 4; pacifism -= 1; dvp_left += 3; ddp_left += 2 if ddp_right > ddp_left; ddp_cohesion -= 2; lvp_left += 2; hindenburg_angry -= 7; z_relation += 5; lvp_relation += 7; dvp_relation += 7; wp_relation += 3; csvd_relation += 3; wp_left += 1; csvd += 1; others_left += 1; panzerkeuzers += 1;
+  
+We have funded a second Panzerkreuzer. Why would we even do this?
 
 @build_panzerkreuzer_c
 subtitle: Huh? -2 Budget.
+choose-if: budget >= 2
+view-if: panzerkreuzer_funded and panzerkreuzer_b_funded and not panzerkreuzer_c_funded
+unavailable-subtitle: We do not have the budget
+on-arrival: budget -= 2; panzerkreuzer_c_funded = 1; left_dissent += 17; labor_dissent += 14; center_dissent += 11; neorevisionist_dissent += 7; reformist_dissent += 9; kpd_coalition_dissnet += 2; coalition_dissnet -= 2; kpd_relation -= 20; kpo_relation -= 17; sapd_relation -= 15; srp_relation -= 13; adgb_relation -= 11; slp_relation -= 9; nsbp_relation -= 7; msp_relation -= 5; sz_relation -= 3; nspd_relation -= 7; workers_spd -= 6; new_middle_spd += 1; old_middle_spd += 2; unemployed_spd -= 3; rural_spd -= 2; catholics_spd -= 2; dvp_left += 4; ddp_left + 1; ddp_cohesion -= 2; pacifism -= 1; hidneburg_angry -= 15; lvp_left += 3; ddp_relation += 2; z_relation += 5; lvp_relation += 10; dvp_relation += 10; wp_relation += 5; csvd_relation += 5; others_left += 2; cnblp_left += 2; dbp_left += 2; wp_left += 3; csvd_left += 3; panzerkreuzer += 1
 
-...
+...We've funded a third Panzerkeuzer.
 
 @build_destroyer
 subtitle: -1 Budget
+choose-if: budget >= 1
+unavailable-subtitle: We do not have the budget
+on-arrival: budget -= 1;  left_dissent += 5; center_dissent += 5; kpd_relation -= 5; kpo_relation -= 3; sapd_relation -= 1; z_relation += 2; dvp_relation += 4; lvp_relation += 3; wp_left += 0.5; wp_relation += 1; csvd_left += 0.5; csvd_relation += 1; lvp_left += 1; dvp_left += 1; destroyers += 1; navy_strength += 1; navy_loyalty += 0.05;
 
 We provide funding to the navy to build a new destroyer
 
 @build_submarine
 subtitle: -1 budget
+choose-if: budget >= 1
+unavailable-subtitle: We do not have the budget
+on-arrival: budget -= 1;  left_dissent += 5; center_dissent += 5; kpd_relation -= 5; kpo_relation -= 3; sapd_relation -= 1; z_relation += 2; dvp_relation += 4; lvp_relation += 3; wp_left += 0.5; wp_relation += 1; csvd_left += 0.5; csvd_relation += 1; lvp_left += 1; dvp_left += 1; submarines += 1; navy_strength += 1; navy_loyalty += 0.05;
 
 We provide funding to the navy to build two new submarines
-
-@destroy_ship
-
-- @decrease_funding
-- @decomission
 
 @decrease_funding
 subtitle: +1 budget
 unavailable-subtitle: There is nothing left to cut.
-choose-if: reichswehr_strength > 0
-on-arrival: budget += 1; coalition_dissent += 1 if in_grand_coalition == 1; coalition_dissent += 1 if (in_weimar_coalition and lvp_formed); dvp_relation -= 8; ddp_relation -= 4; lvp_relation -= 6; z_relation -= 4; reichswehr_militancy -= 1; reichswehr_strength -= 20; sh_strength += 15; sa_strength += 5; sh_militancy += 0.05; reichswehr_loyalty -= 0.05 if reichswehr_loyalty > 0; coup_progress += 1; coup_progress += 1 if reichswehr_loyalty < 0.2; coup_progress += 1 if reichswehr_loyalty < 0.1; coup_progress += 1 if reichswehr_loyalty <= 0; reichswehr_goal_completed = 1; dvp_right += 3; ddp_right += 1; ddp_cohesion -= 1; lvp_right += 2; reichswehr_goal_spd += 1; hindenburg_angry += 10; economic_growth -= 0.1
+choose-if: navy_strength > 0
+on-arrival: budget += 1; coalition_dissent += 1 if in_grand_coalition == 1; coalition_dissent += 1 if (in_weimar_coalition and lvp_formed); dvp_relation -= 8; ddp_relation -= 4; lvp_relation -= 6; z_relation -= 4; navy_militancy -= 1; navy_strength -= 20; sh_strength += 15; sa_strength += 5; sh_militancy += 0.05; navy_loyalty -= 0.05 if reichswehr_loyalty > 0; coup_progress += 1; coup_progress += 1 if navy_loyalty < 0.2; coup_progress += 1 if navy_loyalty < 0.1; coup_progress += 1 if navy_loyalty <= 0; reichswehr_goal_completed = 1; dvp_right += 3; ddp_right += 1; ddp_cohesion -= 1; lvp_right += 2; reichswehr_goal_spd += 1; hindenburg_angry += 10; economic_growth -= 0.1
 
 The military has fewer guns and fewer soldiers. There is no hint of a coup yet, but we do not know where the line will be drawn. The center-right parties are committed to the military and deeply opposed to our budget cuts.
 
 Many demobilized soldiers have joined the right-wing paramilitaries such as the <span style="color: #3E88B3;">**Stahlhelm**</span> and <span style="color: #7A3C00;">**SA**</span>, and weapons are missing from our stockpiles.
-
-@decomission
-
-- @decomission_any
-- @decomission_old
-
-@decomission_any
-
-Navy annoyed because we destroying their ships
-
-@decomission_old
-
-Navy less annoyed because we destroying old ships. Compensation options
 
 @reform
 subtitle: -1 budget
@@ -93,4 +89,7 @@ Our efforts are at least somewhat successful; we have changed the recruiting and
 
 The center-right parties are committed to the military and deeply suspicious of our efforts to reform it.
 
-##Build or decomission ships of various sizes, reform the ranks, and blockade nearby countries
+@blockade:
+view-if: blockade_finished = 1
+
+If you find this in game, contact the creater TN296modding on Github
