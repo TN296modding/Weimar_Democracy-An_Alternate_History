@@ -89,7 +89,7 @@ Our efforts are at least somewhat successful; we have changed the recruiting and
 
 The center-right parties are committed to the military and deeply suspicious of our efforts to reform it.
 
-@blockade:
+@blockade
 view-if: blockade_finished = 1
 
 If you find this in game, contact the creater TN296modding on Github
