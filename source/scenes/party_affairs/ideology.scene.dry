@@ -23,7 +23,7 @@ The <span style="color: #c00000;">**SPD**</span> is torn between many different 
 - @wip2: Left-communist wip
 - @wip3: Right-communist wip
 - @wip4: neorevisionist wip
-- @wip5: rural wip
+- @agsoc: A programme focusing not only on the Industrial proletariat but also the Rural proletariat is the best way to expand the party's electorate while staying true to Marxism
 - @wip6: liberal wip
 - @wip7: business wip
 - @wip8: left christian
@@ -114,9 +114,17 @@ unavailable-subtitle: Coming Soon
 
 wip
 
-@wip5
-choose-if: wip = 1
-unavailable-subtitle: Coming Soon
+@agsoc
+view-f: rural_j_spd
+on-arrival: {!
+if (Q.ideology && Q.ideology != "Agrarian-Socialist") {
+    Q.changed = 1;
+}
+!}
+go-to: changed if changed = 1
+on-departure: ideology = "Agrarian-Socialist"; rural_strength += 8; dbp_left += 1; cnblp_left += 1; rural_dissent -= 5; left_dissent += 5; cnblp_relation += 5; dbp_relation += 5; z_relation += 5; kpd_relation -= 8; agsoc_plan_support += 1;
+
+The Agrarian-Socialist wing of the party seeks to expand socialism to the Rural proletariat and promote cooperation between the Rural and Industrial working classes.
 
 wip
 
