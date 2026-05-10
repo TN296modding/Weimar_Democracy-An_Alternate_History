@@ -36,6 +36,7 @@ go-to: sandbox_menu
 - @editironfront: Edit Iron Front
 - @editparamilitary: Edit Paramilitary Groups
 - @editreichswehr: Edit Reichswehr and Police
+- @agsocbutton: Agsoc button
 - @root: Return to main
 
 @disable_end
@@ -3173,3 +3174,6 @@ Q.catholics_other -= 20;
 !}
 
 Lowered Catholics support for Other.
+
+@agsocbutton
+on-arrival: agsoc_plan_adopted = 1

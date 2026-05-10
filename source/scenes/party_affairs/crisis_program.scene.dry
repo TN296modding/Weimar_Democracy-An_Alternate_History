@@ -113,6 +113,7 @@ on-arrival: rural_strength += 10; rural_dissent -= 10; labor_dissent += 8; cente
 With our hard work, we have convinced the majority of the party to adopt the Agrarian-Socialist works program. This has also pushed the Agrarian-Conservative parties left.
 
 @support_agsoc_progress
+on-arrival: agsoc_plan_support += 1
 
 We attempt to convince the party to support an Agrarian-Socialist program of revitalising rural regions, while providing the urban unemployed with jobs and skills. Advocates of the Agrarian-Socialist plan argue that this plan is most likely to receive support from the rural-conservative parties, and most practical in the long term, for its long-lasting infastrucutre and public service improvements. Opponents in the center and labor factions criticize the plan for being inadequate in helping the industrial working class, our biggest support base.
 
