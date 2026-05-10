@@ -325,6 +325,7 @@ Text
 title: Continue the implementation of the Agrarian-Socialist plan
 choose-if: unemployed >= 7
 unavailable-subtitle: Unemployment is to low for this to have any significant effect
-view-if: agsoc_plan_cont >= 3 unemployed -= 4; inflation += 1; land_reform += 1; workers_spd += 1; unemployed_spd += 2; rural_spd += 3; new_middle_spd += 2; old_middle_spd += 2; dvp_left += 0.25; lvp_left += 0.5; ddp_left += 1; ddp_cohesion += 0.5; cnblp_left += 2; dbp_left += 2; cnblp_relation += 5; dbp_relation += 7;
+view-if: agsoc_plan_cont >= 3;
+on-arrival: unemployed -= 4; inflation += 1; land_reform += 1; workers_spd += 1; unemployed_spd += 2; rural_spd += 3; new_middle_spd += 2; old_middle_spd += 2; dvp_left += 0.25; lvp_left += 0.5; ddp_left += 1; ddp_cohesion += 0.5; cnblp_left += 2; dbp_left += 2; cnblp_relation += 5; dbp_relation += 7;
 
 text
