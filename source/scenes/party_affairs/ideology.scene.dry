@@ -115,7 +115,7 @@ unavailable-subtitle: Coming Soon
 wip
 
 @agsoc
-view-f: rural_j_spd
+view-if: rural_j_spd = 1
 on-arrival: {!
 if (Q.ideology && Q.ideology != "Agrarian-Socialist") {
     Q.changed = 1;

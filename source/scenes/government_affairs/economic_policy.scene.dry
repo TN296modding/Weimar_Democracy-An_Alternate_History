@@ -307,7 +307,7 @@ view-if: agsoc_plan_adopted = 1
 on-arrival: budget -= 1; works_program += 0.33; agsoc_plan_cont += 1; unemployed -= 2; inflation += 1; rails += 1; rural_debt_moratorium = 1; local_indus_democracy = 1; state_buyer = 1; land_reform += 1; workers_spd += 0.5; unemployed_spd += 2; rural_spd += 6; dvp_left += 0.25; lvp_left += 0.5; ddp_left += 1; ddp_cohesion += 0.5; cnblp_left += 2; dbp_left += 2; cnblp_relation += 10; dbp_relation += 15;
 
 - @mines_demo: Democratise local mines
-- @mines_national Nationalise local mines
+- @mines_national: Nationalise local mines
 
 @mines_demo
 on-arrival: mines_demo = 1
