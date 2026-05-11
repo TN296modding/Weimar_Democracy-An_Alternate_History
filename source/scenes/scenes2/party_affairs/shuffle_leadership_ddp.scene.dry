@@ -193,7 +193,7 @@ view-if: n_advisors < 3
 @add_wip
 title: wip_advisor
 subtitle: wip
-tags: leftcom_advisor, rightcom_advisor, aspd_advisor, rural_advisor, lib_advisor, business_advisor, chris_advisor
+tags: leftcom_advisor_ddp, rightcom_advisor_ddp, aspd_advisor_ddp, rural_advisor_ddp, lib_advisor_ddp, business_advisor_ddp, chris_advisor_ddp
 
 @add_ddpc
 title: add DDP c
