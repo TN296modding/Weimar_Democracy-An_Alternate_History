@@ -134,8 +134,10 @@ Q.nsdap_relation = 0;
 Q.lvp_relation = 0;
 // Other parties
 Q.cnblp_relation = 20;
+Q.dbp_relation = 50;
 Q.wp_relation = 10;
-Q.rural_others = 25;
+Q.rural_others_relation = 25;
+Q.vnr_relation = 25;
 
 Q.kpd_leader = "Thälmann";
 Q.z_leader = "Marx";
@@ -459,8 +461,12 @@ Q.cnblp_left = 0;
 Q.cnblp_right = 7;
 Q.wp_left = 0;
 Q.wp_right = 8;
-Q.rural_others_left = 0;
-Q.rural_others_right = 6;
+Q.others_left = 0;
+Q.others_right = 6;
+Q.dbp_right = 3;
+Q.dbp_left = 0;
+Q.dhp_right = 2;
+Q.dhp_left = 0;
 
 Q.adjustmentFactors_spd = 1.0;
 Q.adjustmentFactors_sapd = 1.0;

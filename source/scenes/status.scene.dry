@@ -155,7 +155,7 @@ Q.chrun_tot_perc_dis = (Q.chrun_tot_perc * 100).toFixed(3);
 
 [? if rural_relations_unlocked: <span style="color: #7FCEB1;">**CNBLP**</span>: [+ cnblp_relation : relationships +] ?]
 
-[? if rural_relations_unlocked: <span style="color: #e9ebf0;">**DBP**</span>: [+ dbp_relation : relationships +] ?]
+[? if rural_relations_unlocked: <span style="color: #097100;">**DBP**</span>: [+ dbp_relation : relationships +] ?]
 
 [? if rural_relations_unlocked: <span style="color: #808080;">**Independents**</span>: [+ others_relations : relationships +] ?]
 

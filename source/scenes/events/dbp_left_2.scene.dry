@@ -1,5 +1,5 @@
-title: The DBP Party Congress
-subtitle: The DBP decides its political direction
+title: The <span style="color: #097100;">**DBP**</span> Party Congress
+subtitle: The <span style="color: #097100;">**DBP**</span> decides its political direction
 view-if: dbp_congress_timer = 0 and dbp_left_seen and not dbp_congress_seen
 on-arrival: dbp_congress_seen = 1
 tags: event
