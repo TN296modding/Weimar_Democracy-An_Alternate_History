@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs_spd, cabinet
 on-arrival: economic_policy_timer += 8; month_actions += 1; nationalize_budget = 4; nationalize_budget -= 1 if works_councils >= 2; nationalize_budget -= 1 if works_councils >= 3; nationalize_budget -= 1 if socializations + nationalization_progress >= 2; wtb_budget = 4; wtb_budget -= 1 if works_councils >= 2 or socializations >= 1 or pro_labor >= 2
-view-if: spd_in_government = 1 and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and economic_policy_timer <= 0 and economic_plan > 0 and unemployment > 5
+view-if: spd_in_government = 1 and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and economic_policy_timer <= 0 and economic_plan > 0 and unemployed > 5
 card-image: img/portraits/SchmidtRobert.jpg
 go-to: economic_plan_menu if not lautenbach_adopted; economic_plan_dilemma if lautenbach_adopted
 #subtitle: Policies to address the economic crisis.
@@ -287,7 +287,7 @@ title: Implement the General part of the Agrarian-Socialist plan
 subtitle: -1 budget.
 choose-if: budget >= 1
 unavailable-subtitle: Not enough budget
-view-if: agsoc_plan_adopted = 1
+view-if: agsoc_plan_adopted == 1
 on-arrival: budget -= 1; works_program += 0.34; agsoc_plan_cont += 1; unemployed -= 3; unemployed -= 1 if unemployed >= 12; rural_electrification += 1; flood_control += 1; radio_infra += 1; postal_infra += 1; inflation += 1; inflation += 0.5 if unemployed >= 12; workers_spd += 0.5; unemployed_spd += 3; new_middle_spd += 0.5; rural_spd += 3; dvp_left += 0.25; lvp_left += 0.5; ddp_left += 1; ddp_cohesion += 0.5; cnblp_left += 1; dbp_left += 1;
 
 @agsoc_plan_urb
@@ -295,7 +295,7 @@ title: Implement the Urban part of the Agrarian-Socialist plan
 subtitle: -1 budget.
 choose-if: budget >= 1
 unavailable-subtitle: Not enough budget
-view-if: agsoc_plan_adopted = 1
+view-if: agsoc_plan_adopted == 1
 on-arrival: budget -= 1; works_program += 0.33; agsoc_plan_cont += 1; unemployed -= 4; inflation += 2; nat_labor_corps = 1; workers_spd += 4; unemployed_spd += 2; new_middle_spd += 1; rural_spd += 1; rural += 1; workers -= 1; dvp_left += 0.25; lvp_left += 0.5; ddp_left += 1; ddp_cohesion += 0.5;
 
 @agsoc_plan_rur
@@ -303,7 +303,7 @@ title: Implement the rural part of the Agrarian-Socialist plan
 subtitle: -1 budget.
 choose-if: budget >= 1
 unavailable-subtitle: Not enough budget
-view-if: agsoc_plan_adopted = 1
+view-if: agsoc_plan_adopted == 1
 on-arrival: budget -= 1; works_program += 0.33; agsoc_plan_cont += 1; unemployed -= 2; inflation += 1; rails += 1; rural_debt_moratorium = 1; local_indus_democracy = 1; state_buyer = 1; land_reform += 1; workers_spd += 0.5; unemployed_spd += 2; rural_spd += 6; dvp_left += 0.25; lvp_left += 0.5; ddp_left += 1; ddp_cohesion += 0.5; cnblp_left += 2; dbp_left += 2; cnblp_relation += 10; dbp_relation += 15;
 
 - @mines_demo: Democratise local mines
