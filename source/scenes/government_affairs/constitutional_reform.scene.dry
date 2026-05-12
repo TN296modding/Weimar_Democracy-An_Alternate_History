@@ -27,7 +27,7 @@ A constitutional reform requires either a two-thirds supermajority in the Reichs
 - @vote_threshold: Change the vote threshold.
 - @constructive_vonc: Ban non-constructive votes of no confidence.
 - @presidential_powers: Reduce presidential powers.
-# - @landtag_reform Split Prussia into landtags, and re-allocate old noble holdings.
+# - @landtag_reform Split Prussia into more landtags, based on the Wahlkreise
 - @as_is: Do not pursue constitutional reform.
 - @easy_discard
 - @cancel_advisor_action
@@ -141,7 +141,7 @@ We have successfully passed a constitutional amendment to limit presidential pow
 achievement: bundesrepublik
 
 @landtag_reform
-subtitle: The rest of the "Weimar Coalition" won't support this
+subtitle: The rest of the "Weimar Coalition" won't support this, as Prussia is considered the "Democratic Bulwark". [? if dnf_formed = 0 : The DNVP also won't support this, as they are too supportive of Prussian militarism and Prussia's legacy ?][? if dnf_formed = 1 : The DNF won't support this, as they are too supportive of Prussian Millitarism and Prussa's legacy?] 
 on-arrival: {!
 Q.reform_support = Q.spd_normalized;
 if ((Q.ddp_relation > 70) && (Q.ddp_left > Q.ddp_right + 5)) {
@@ -149,15 +149,14 @@ if ((Q.ddp_relation > 70) && (Q.ddp_left > Q.ddp_right + 5)) {
 }
 Q.reform_support += Q.kpd_normalized;
 Q.reform_support += Q.nsdap_normalized;
-Q.reform_support += Q.dnvp_normalized;
+if (Q.dnf_formed) { Q.reform_support += Q.dnvp_normalized; }
 Q.reform_support += Q.dvp_normalized;
 Q.reform_support += Q.others_normalized;
 Q.reform_support += Q.kvp_normalized;
-Q.reform_support += Q.dnf_normalized;
 !}
 view-if: landtag_reform = 0
 
-The other Weimar coaltion parties will oppose this reform, as they wish to keep the "Prussian Stronghold" in place. [? if ddp_relation > 70 and ddp_left > (ddp_right + 3) : Surprisingly, [+ ddp_name +] supports this reform, it seems the DDP's progressiveness is not fully gone ?] Unsurprisingly, the <span style="color: #700000;">**KPD**</span>, DVP, DNVP, and NSDAP supports this reform, as they have rarely (or never) been in a Prussian Coalition.
+The other Weimar coaltion parties will oppose this reform, as they wish to keep the "Prussian Bulwark" in place. [? if ddp_relation > 70 and ddp_left > (ddp_right + 3) : Surprisingly, [+ ddp_name +] supports this reform, it seems the DDP's progressiveness is not fully gone ?] Unsurprisingly, the <span style="color: #700000;">**KPD**</span>, DVP, [? if dnf_formed : DNVP, ?] and NSDAP supports this reform, as they have rarely (or never) been in a Prussian Coalition.
 
 - @landtag_2: Call a constitutional referendum to pass the reform!
 - @reforms_menu: See other reform options.
@@ -174,19 +173,9 @@ We have successfully passed a constitutional amendment to break up Prussia! Hope
 
 @let_see
 title: What will the states be?
-on-arrival: silesia_landtag = 1; pomerania_landtag = 1; new_prussia_landtag = 1; schleswig_landtag = 1; holstein_landtag = 1; hannover_landtag = 1; upper_rhine_landtag = 1; lower_rhine_landtag = 1; brandenburg_landtag = 1; berlin_landtag = 1; hesse_landtag = 1;
+on-arrival: silesia_landtag = 1; east_prussia_landtag = 1; mecklenburg_pomerania_landtag = 1; berlin_landtag = 1; magdeburg_potsdam_landtag = 1; thuringia_new_landtag = 1; saxony_new_landtag = 1; bavaria_new_landtag = 1; baden_wurttemburg_new_landtag = 1; lower_rhine_landtag = 1; saar_lower_rhine = 1 if saar_to_germany; upper_rhine_landtag = 1; hannover_landtag = 1; hamburg_landtag = 1; schleswig_landtag = 1; hesse_landtag = 1
 
-# - @silesia: Silesia becomes a state
-# - @pomerania: Pomerania becomes state
-# - @new_prussia: New Prussia becomes a state
-# - @schleswig: Schleswig becomes a state
-# - @holstein: Holstein bcomes a state
-# - @hannover: Hannover becomes a state
-# - @upper_rhine: Ruhr-Westphalia becomes a state
-# - @lower_rhine: Rhhineland becomes a state
-# - @brandenburg: Brandenburg becomes a state
-# - @berlin: Berlin becomes a state
-# - @hesse: Hesse becomes a state
+From the Wahlkreise of Liegnitz, Oppeln, and Breslau, the state of <span style="color: #ffffff;">Sil</span><span style="color: #ffce08;">esia</span> has been formed. From the Wahlkreise of Frankfurt and East Prussia, the state of <span style="color: #000000;">East</span> <span style="color: #ffffff;">Prussia</span> has been formed. From the Wahlkreise of Mecklenburg and Pomerania, the state of <span style="color: #004A99;">Meck</span><span style="color: #FCC300;">len</span><span style="color #E2001A;">burg</span>-<span style="color: #FED517;">Pomer</span><span style=" color: #EE531F;">ania</span> has been formed. From the Wahlkreise of Berlin, the state of <span style="color: #E2382A;">Be</span><span style="color: #ffffff;">rl</span><span style="color #000000;">in</span> has been formed. From the Wahlkreise of Potsdam I, Potsdam II, and Magdeburg, the state of Magdeburg-Potsdam has been formed. From the Wahlkreise of Thuringia and Merseburg, the state of Thuringia has been formed. From the Wahlkreise of Leipzig, Chemnitz-Zwickau, and Dresden-Bautzen, the state of Saxony has been formed. From the Wahlkreise of Franconia, Lower Bavaria, and Upper Bavaria-Swabia, the state of Bavaria has been formed. From the Wahlkreise of Baden and Wurttemberg, the state of Baden-Wurttemberg has been formed. From the Wahlkreise of Hesse-Darmstadt and Hesse-Nassau, the state of Hesse has been formed. From the Wahlkreise of Palatinate and Koblenz Trier (And evenetually, the Saarland), the state of Lower Rhineland has been formed. From the Wahlkreise of West Dusseldorf, East Dusseldorf, and Cologne-Aachen, the state of Upper Rhineland has been formed. From the Wahlkreise of South Westphalia, and North Westphalia, the state of Westphalia has been formed. From the Wahlkreise of East Hannover, Weser Ems, and South-Hannover-Brunswick, the state of Hannover has been formed. From the Wahlkreise of Hamburg, the state of Hamburg has been formed. From the Wahlkreise of Schleswig-Holstein, the state of Schleswig-Holstein. 
 
 @constitutional_bans
 
