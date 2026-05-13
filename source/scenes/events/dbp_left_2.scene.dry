@@ -1,6 +1,6 @@
 title: The [+ year +] <span style="color: #097100;">**DBP**</span> Party Congress
 subtitle: The <span style="color: #097100;">**DBP**</span> decides its political direction
-view-if: dbp_congress_timer = 0 and dbp_left_seen and not dbp_congress_seen
+view-if: (dbp_congress_timer = 0 and dbp_left_seen and not dbp_congress_seen) or debug_mode
 on-arrival: dbp_congress_seen = 1
 tags: event
 
@@ -15,7 +15,7 @@ The <span style="color: #097100;">**DBP**</span> is technically an electoral lis
 subtitle: Nothing ever happens
 unavailable-subtitle: The party doesn't wish to elect Kling
 choose-if: (dbp_left <= 6) or (dbp_left <= 8 and dstp_formed) 
-on-arrival: dbp_leader = "Kling"; dbp_ideology = "Centre-Right Agrarianism". dbp_relation -= 10
+on-arrival: dbp_leader = "Kling"; dbp_ideology = "Centre-Right Agrarianism"; dbp_relation -= 10
 
 Fritz Kling is elected leader of the <span style="color: #097100;">**DBP**</span>. Nothing ever happens.
 
