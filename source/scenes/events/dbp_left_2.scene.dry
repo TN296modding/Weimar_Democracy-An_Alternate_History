@@ -1,7 +1,43 @@
-title: The <span style="color: #097100;">**DBP**</span> Party Congress
+title: The [+ year +] <span style="color: #097100;">**DBP**</span> Party Congress
 subtitle: The <span style="color: #097100;">**DBP**</span> decides its political direction
 view-if: dbp_congress_timer = 0 and dbp_left_seen and not dbp_congress_seen
 on-arrival: dbp_congress_seen = 1
 tags: event
 
-Options for the DBP to stay centre-right (DBP left under 6 somehow, or if dbp_left under 8 and DStP Formed), to merge with the DDP (Not DStP) as their right-most wing, with the DBP holding a slightly more progressive stance than the Z (Requires dbp left <= 9), an option for the DBP to become centre-left without joining the DDP (Agrarian Progressivism), and stealing votes from the DNVP (DBP left 10-12 or if dbp_left 8-9 and DStP formed), or finally for the DBP to join the SPD if the Agrarian Socialists hold significant power and the DBP left is over 12
+The <span style="color: #097100;">**DBP**</span> is technically an electoral list of the Bayern Bauernbund (BB), and the Schlesische Bauernbund (SB). Our actions in helping the rural class, [? if agr_awakened : And especially awakening the Rural class consciousness, ?] has pushed the party to the left. It is now time to elect the <span style="color: #097100;">**DBP's**</span> leader. On the centre-right (And the least likely to be elected), Fritz Kling, the leader of the <span style="color: #097100;">**DBP's**</span> parliamentary delegation. On the Centre-Left, and the most likely to be elected, is Anton Fehr, former Agriculture Minister. [? if dstp_formed = 0 : Fehr has expressed wishes to merge with the DDP, to strengthen progressivism, and to push liberalism closer to agrarianism. ?][? if dstp_formed = 1 : Fehr has expressed wishes to push the peasants towards the centre, especially focusing on weakening the DNVP. ?]Finally, on the left, the candidate is Karl Gandorfer, an Agrarian-Socialist that used to belong to the USPD. He is a vocally anti-Nazi, has has expressed his willingness to work closely with the SPD
+
+- @centre_right: Surprisingly, Fritz Kling is elected
+- @centre_left_ddp: As expected, Anton Fehr is elected
+- @centre_left_dstp: As expected, Anton Fehr is elected
+- @left: Surprisingly, Karl Gandorfer is elected
+
+@centre_right
+subtitle: Nothing ever happens
+unavailable-subtitle: The party doesn't wish to elect Kling
+choose-if: (dbp_left <= 6) or (dbp_left <= 8 and dstp_formed) 
+on-arrival: dbp_leader = "Kling"; dbp_ideology = "Centre-Right Agrarianism". dbp_relation -= 10
+
+Fritz Kling is elected leader of the <span style="color: #097100;">**DBP**</span>. Nothing ever happens.
+
+@centre_left_ddp
+unavailable-subtitle: The party doesn't wish to elect Fehr
+choose-if: dbp_left > 7 and dbp_left <= 11
+view-if: dstp_formed = 0
+on-arrival: dbp_leader = "Fehr"; dbp_ideology = "Agrarian Progressivism"; dbp_ddp_timer = 6; dbp_ddp_timer -= 2 if agr_awakened; rural_dnvp -= 2; rural_others += 1; rural_ddp += 1; dbp_relation += 5
+
+Anton Fehr has been elected as the leader of the <span style="color: #097100;">**DBP**</span>. He is already working with elements of the DDP towards a merger, but only timer will tell if he shall bee sucessful.
+
+@centre_left_dstp
+unavailable-subtitle: The party doesn't wish to elect Fehr
+choose-if: dbp_left <= 9 and dbp_left <= 11
+view-if: dstp_formed = 1
+on-arrival: dbp_leader = "Fehr"; dbp_ideology = "Agrarian Progressivism"; rural_dnvp -= 3; rural_others += 3; dbp_others_percent_wip += 1; dbp_others_percent_wip += 0.5 if agr_awakened; dbp_relation += 10
+
+Anton Fehr has been elected as the leader of the <span style="color: #097100;">**DBP**</span>, and is working mainly to expand the influence of the DBP and other small rural parties, while reducing the influence of the DNVP.
+
+@left
+unavailable-subtitle: The party doesn't wish to elect Gandorfer
+choose-if: dbp_left > 11
+on-arrival: dbp_leader = "Gandorfer"; dbp_ideology = "Agrarian Leftism"; dbp_spd_timer = 9 if agr_awakened; dbp_spd_timer -= 3 if agr_awakened and rural_j_spd; dbp_relation += 15
+
+Karl Gandorfer has been elected as the leader of the <span style="color: #097100;">**DBP**</span>. Already, we see an improvement in relations with the <span style="color: #097100;">**DBP**</span> [? if agr_awakened :, and proponents in our party are advocating for a merger ?].
