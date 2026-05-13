@@ -31,7 +31,7 @@ Anton Fehr has been elected as the leader of the <span style="color: #097100;">*
 unavailable-subtitle: The party doesn't wish to elect Fehr
 choose-if: dbp_left <= 9 and dbp_left <= 11
 view-if: dstp_formed = 1
-on-arrival: dbp_leader = "Fehr"; dbp_ideology = "Agrarian Progressivism"; rural_dnvp -= 3; rural_others += 3; dbp_others_percent_wip += 1; dbp_others_percent_wip += 0.5 if agr_awakened; dbp_relation += 10
+on-arrival: dbp_leader = "Fehr"; dbp_ideology = "Agrarian Progressivism"; rural_dnvp -= 3; rural_others += 3; dbp_others_percent += 1; dbp_others_percent += 0.5 if agr_awakened; dbp_relation += 10
 
 Anton Fehr has been elected as the leader of the <span style="color: #097100;">**DBP**</span>, and is working mainly to expand the influence of the DBP and other small rural parties, while reducing the influence of the DNVP.
 
