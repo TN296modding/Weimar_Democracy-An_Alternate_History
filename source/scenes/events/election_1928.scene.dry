@@ -725,6 +725,18 @@ if (Q.kpd_relation >= 30 && Q.sapd_formed == 1) {
     Q.weimar_coalition += Q.sapd_r;
 }
 
+if (Q.dbp_left >= 10 && Q.dbp_ideology != "Centre-Right Agrarianism") {
+    Q.agsoc_coalition += Q.dbp_r;
+}
+
+if (Q.cnblp_left >= 10) {
+    Q.agsoc_coalition += Q.cnblp_r;
+}
+
+if (Q.others_left >= 10) {
+    Q.agsoc_coalition += Q.others_r;
+}
+
 Q.leverage = Q.spd_r;
 if (Q.right_coalition >= 50 && (Q.dnvp_ideology == "Moderate" || Q.dnvp_westarp) || Q.center_right_coalition >= 50 && Q.dnvp_ideology == "Moderate") { Q.leverage -= 5; }
 if ((Q.left_front >= 50 && Q.kpd_relation >= 65) || (Q.kpd_leader == "Conciliators")) { Q.leverage += 5 }
@@ -1042,6 +1054,15 @@ if (Q.other_r) {
     });
 }
 
+if (Q.dbp_r) {
+    data.push({
+        "id": "dbp",
+        "legend": "DBP",
+        "name": "DBP",
+        "seats": Math.round(Q.dbp_r * Q.reichstag_size),
+    });
+}
+
 if (Q.true_aspd_r && (Q.aspd_other || Q.aspd_kvp)) {
     data.push({
         "id": "aspd",
@@ -1216,6 +1237,8 @@ go-to: achievement_check_e
 [? if not lvp_formed and dvp_exist and not dvp_dnef: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_votes +]% {!</td><td>!} [+ str_votes_change_dvp +] {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!} ?]
  
 [? if not other_dnef: {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} DBP: {! </td><td>!} [+ dbp_votes +]% {!</td><td>!} [+ str_votes_change_dbp +] {!</td><td>!} [+ dbp_r +]% {!</td><td>!} [+ str_change_other +] {1</td></tr>!}
 
 [? if aspd_other: {!<tr><td><div class="box2" style='background-color:#fe9e00'> </div> !} ASPD: {!</td><td>!} [+ aspd_votes +]% {!</td><td>!} [+ str_votes_change_aspd +] {!</td><td>!} [+ aspd_r +]% {!</td><td>!} [+ str_change_aspd +] {!</td></tr>!} ?]
 
@@ -1476,6 +1499,46 @@ go-to: coalition_menu
 - @right_coalition
 - @center_right_coalition
 - @bourgeois_coalition
+- @agsoc_coalition_full
+- @agsoc_coalition_dbp
+- @agsoc_coalition_cnblp
+- @agsoc_coalition_others
+- @agsoc_coalition_cnblp_others
+- @agosc_Coalition_cnblp_dbp
+- @agsoc_coalition_cnblp_dbp
+
+@agsoc_coalition_full
+title: An "Agrarian-Socialist" coalition, consisting of the SPD, [? if spd_splits = 1 : SPD Splinters, ?] and friendly Agrarian parties
+subtitle: SPD [? if spd_splits = 1 : + SPD Splinters ?][? if cnblp_relation >= 60 and cnblp_left >= 10 : + CNBLP ?][? if dbp_relation >= 50 and dbp_left >= 9 and dbp_ideology != "Centre-Right Agrarianism" : + DBP ?][? if others_left >= 10 : + Indpendents ?]
+choose-if: agsoc_coalition > 50 and cnblp_relation >= 60 and cnblp_left >= 10 and dbp_relation >= 50 and dbp_left >= 9 and dbp_ideology != "Centre-Right Agrarianism" and others_left >= 10
+unavailable_subtitle: [? if cnblp_relation < 60 : We need better relations with the CNBLP ?] [? if cnblp_left < 10 : The CNBLP is too conservative to consider this ?] [? if dbp_relation < 50 : our relations with the DBP are not good enough ?] [? if dbp_left < 10 : The DBP membership is too conservative to consider this ?] [? if dbp_ideology == "Centre-Right Agrarianism" : the DBP leadership is too conservative to consider this ?] [? if others left < 10 : the Independents are too conservative to cosnider this ?]
+view-if: agsoc_coalition > 50
+
+Text
+
+@agsoc_coalition_dbp
+
+Text
+
+@agsoc_coalition_cnblp
+
+Text
+
+@agsoc_coalition_others
+
+Text
+
+@agsoc_coalition_dbp_cnblp
+
+Text
+
+@agsoc_coalition_dbp_others
+
+Text
+
+@agsoc_coalition_cnblp_others
+
+Text
 
 @popular_front_coalition
 title: A new "Popular Front" coalition?
