@@ -868,6 +868,10 @@ th {
   fill:olivedrab
 }
 
+.seat.dbp {
+    fill: #097100
+}
+
 .tooltip-text {
   text-decoration: underline;
   text-decoration-style: dotted;
