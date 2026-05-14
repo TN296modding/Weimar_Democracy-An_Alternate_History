@@ -1,6 +1,6 @@
 title: The [+ year +] <span style="color: #097100;">**DBP**</span> Party Congress
 subtitle: The <span style="color: #097100;">**DBP**</span> decides its political direction
-view-if: (dbp_congress_timer = 0 and dbp_left_seen and not dbp_congress_seen) or debug_mode
+view-if: (dbp_congress_timer = 0 and dbp_left_seen and not dbp_congress_seen) or debug_mode and not dbp_congress_seen
 on-arrival: dbp_congress_seen = 1
 tags: event
 
@@ -14,30 +14,30 @@ The <span style="color: #097100;">**DBP**</span> is technically an electoral lis
 @centre_right
 subtitle: Nothing ever happens
 unavailable-subtitle: The party doesn't wish to elect Kling
-choose-if: (dbp_left <= 6) or (dbp_left <= 8 and dstp_formed) 
+choose-if: (dbp_left <= 6) or (dbp_left <= 8 and dstp_formed) or debug_mode
 on-arrival: dbp_leader = "Kling"; dbp_ideology = "Centre-Right Agrarianism"; dbp_relation -= 10
 
 Fritz Kling is elected leader of the <span style="color: #097100;">**DBP**</span>. Nothing ever happens.
 
 @centre_left_ddp
 unavailable-subtitle: The party doesn't wish to elect Fehr
-choose-if: dbp_left > 7 and dbp_left <= 11
-view-if: dstp_formed = 0
+choose-if: (dbp_left > 7 and dbp_left <= 11) or debug_mode
+view-if: dstp_formed = 0 or debug_mode
 on-arrival: dbp_leader = "Fehr"; dbp_ideology = "Agrarian Progressivism"; dbp_ddp_timer = 6; dbp_ddp_timer -= 2 if agr_awakened; rural_dnvp -= 2; rural_others += 1; rural_ddp += 1; dbp_relation += 5
 
 Anton Fehr has been elected as the leader of the <span style="color: #097100;">**DBP**</span>. He is already working with elements of the DDP towards a merger, but only timer will tell if he shall bee sucessful.
 
 @centre_left_dstp
 unavailable-subtitle: The party doesn't wish to elect Fehr
-choose-if: dbp_left <= 9 and dbp_left <= 11
-view-if: dstp_formed = 1
+choose-if: (dbp_left <= 9 and dbp_left <= 11) or debug_mode
+view-if: dstp_formed = 1 or debug_mode
 on-arrival: dbp_leader = "Fehr"; dbp_ideology = "Agrarian Progressivism"; rural_dnvp -= 3; rural_others += 3; dbp_others_percent += 1; dbp_others_percent += 0.5 if agr_awakened; dbp_relation += 10
 
 Anton Fehr has been elected as the leader of the <span style="color: #097100;">**DBP**</span>, and is working mainly to expand the influence of the DBP and other small rural parties, while reducing the influence of the DNVP.
 
 @left
 unavailable-subtitle: The party doesn't wish to elect Gandorfer
-choose-if: dbp_left > 11
+choose-if: dbp_left > 11 or debug_mode
 on-arrival: dbp_leader = "Gandorfer"; dbp_ideology = "Agrarian Leftism"; dbp_spd_timer = 9 if agr_awakened; dbp_spd_timer -= 3 if agr_awakened and rural_j_spd; dbp_relation += 15
 
 Karl Gandorfer has been elected as the leader of the <span style="color: #097100;">**DBP**</span>. Already, we see an improvement in relations with the <span style="color: #097100;">**DBP**</span> [? if agr_awakened :, and proponents in our party are advocating for a merger ?].
