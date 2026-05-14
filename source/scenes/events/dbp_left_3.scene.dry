@@ -1,0 +1,53 @@
+title: The DBP negotiates with the DDP
+subtitle: Can the DBP revitalise the DDP?
+view-if: dbp_congress_seen and dbp_ddp_timer = 0 and dbp_leader == "Fehr" and not dbp_ddp_merger_seen
+on-arrival: dbp_ddp_merger_seen = 1
+tags: event
+
+= DBP Negotiations
+
+- @merger_succeed
+- @merger_fail_ddp_right
+- @merger_decision_dnvp
+- @merger_fail_dbp_right
+- @merger_fail_dstp_maintained
+- @merger_decision_dstp_failed
+- @merger_decision_dstp_decision
+- @merger_decision_right_president
+- @merger_fail_lvp
+
+@merger_succeed
+
+DDP & DBP left, no DStP, no gov. with dnvp, no right-wing president, or second-election Hindy
+
+@merger_fail_ddp_right
+
+Fails because the ddp is too right-wing
+
+@merger_decision_dnvp
+
+Decision between merging with the DBP and the DNVP bringing down the coalition, or no mergber and keep the coalition
+
+@merger_fail_dbp_right
+
+Fails becayse the dbp too right wing
+
+@merger_fail_dstp_maintained
+
+Fails becuase the DStP has been maintained
+
+@merger_decision_dstp_failed
+
+If the DStP is too far right, it wont merge, and the left needs to be significanty stronger than if the DStP hadn't been formed.
+
+@merger_decision_dstp_decision
+
+If the DStP has neither failed nor been maintained, the. DDP can abandon the VNR in faction of the DBP
+
+@merger_decision_right_president
+
+If a right-wing president, or second-term hindenburg is in control, presidential powers are not limited, and the DDP is in government, the DDP can either merge and be kicked out of government, or not merge and stay in goverment.
+
+@merger_fail_lvp
+
+If the LVP is formed, the DBP decides not to even start negotiations.
