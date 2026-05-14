@@ -1542,7 +1542,7 @@ view-if: (spd_r + sapd_r + others_r) > 50
 
 Text
 
-@agsoc_coalition_dbp_cnblp
+@agsoc_coalition_cnblp_dbp
 title: An "Agrarian-Socialist" coalition, consisting of the SPD, [? if spd_splits = 1 : SPD Splinters, ?] and friendly Agrarian parties
 subtitle: SPD [? if spd_splits = 1 : + SPD Splinters ?] + CNBLP + DBP
 choose-if: cnblp_relation >= 60 and cnblp_left >= 10 and dbp_relation >= 50 and dbp_left >= 9 and dbp_ideology != "Centre-Right Agrarianism" 
