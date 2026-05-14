@@ -1238,7 +1238,7 @@ go-to: achievement_check_e
  
 [? if not other_dnef: {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} DBP: {! </td><td>!} [+ dbp_votes +]% {!</td><td>!} [+ str_votes_change_dbp +] {!</td><td>!} [+ dbp_r +]% {!</td><td>!} [+ str_change_other +] {1</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} DBP: {! </td><td>!} [+ dbp_votes +]% {!</td><td>!} [+ str_votes_change_dbp +] {!</td><td>!} [+ dbp_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
 
 [? if aspd_other: {!<tr><td><div class="box2" style='background-color:#fe9e00'> </div> !} ASPD: {!</td><td>!} [+ aspd_votes +]% {!</td><td>!} [+ str_votes_change_aspd +] {!</td><td>!} [+ aspd_r +]% {!</td><td>!} [+ str_change_aspd +] {!</td></tr>!} ?]
 
@@ -1509,34 +1509,64 @@ go-to: coalition_menu
 
 @agsoc_coalition_full
 title: An "Agrarian-Socialist" coalition, consisting of the SPD, [? if spd_splits = 1 : SPD Splinters, ?] and friendly Agrarian parties
-subtitle: SPD [? if spd_splits = 1 : + SPD Splinters ?][? if cnblp_relation >= 60 and cnblp_left >= 10 : + CNBLP ?][? if dbp_relation >= 50 and dbp_left >= 9 and dbp_ideology != "Centre-Right Agrarianism" : + DBP ?][? if others_left >= 10 : + Indpendents ?]
+subtitle: SPD [? if spd_splits = 1 : + SPD Splinters ?] + CNBLP  + DBP + Indpendents 
 choose-if: agsoc_coalition > 50 and cnblp_relation >= 60 and cnblp_left >= 10 and dbp_relation >= 50 and dbp_left >= 9 and dbp_ideology != "Centre-Right Agrarianism" and others_left >= 10
 unavailable_subtitle: [? if cnblp_relation < 60 : We need better relations with the CNBLP ?] [? if cnblp_left < 10 : The CNBLP is too conservative to consider this ?] [? if dbp_relation < 50 : our relations with the DBP are not good enough ?] [? if dbp_left < 10 : The DBP membership is too conservative to consider this ?] [? if dbp_ideology == "Centre-Right Agrarianism" : the DBP leadership is too conservative to consider this ?] [? if others left < 10 : the Independents are too conservative to cosnider this ?]
-view-if: agsoc_coalition > 50
+view-if: (spd_r + sapd_r + dbp_r + cnblp_r + others_r) > 50
 
 Text
 
 @agsoc_coalition_dbp
+title: An "Agrarian-Socialist" coalition, consisting of the SPD, [? if spd_splits = 1 : SPD Splinters, ?] and friendly Agrarian parties
+subtitle: SPD [? if spd_splits = 1 : + SPD Splinters ?] + DBP 
+choose-if: dbp_relation >= 50 and dbp_left >= 9 and dbp_ideology != "Centre-Right Agrarianism" 
+unavailable_subtitle: [? if dbp_relation < 50 : our relations with the DBP are not good enough ?] [? if dbp_left < 10 : The DBP membership is too conservative to consider this ?] [? if dbp_ideology == "Centre-Right Agrarianism" : the DBP leadership is too conservative to consider this ?] 
+view-if: (spd_r + sapd_r + dbp_r) > 50
 
 Text
 
 @agsoc_coalition_cnblp
+title: An "Agrarian-Socialist" coalition, consisting of the SPD, [? if spd_splits = 1 : SPD Splinters, ?] and friendly Agrarian parties
+subtitle: SPD [? if spd_splits = 1 : + SPD Splinters ?] + CNBLP 
+choose-if: cnblp_relation >= 60 and cnblp_left >= 10 
+unavailable_subtitle: [? if cnblp_relation < 60 : We need better relations with the CNBLP ?] [? if cnblp_left < 10 : The CNBLP is too conservative to consider this ?] 
+view-if: (spd_r + sapd_r + cnblp_r) > 50
 
 Text
 
 @agsoc_coalition_others
+title: An "Agrarian-Socialist" coalition, consisting of the SPD, [? if spd_splits = 1 : SPD Splinters, ?] and friendly Agrarian parties
+subtitle: SPD [? if spd_splits = 1 : + SPD Splinters ?] + Indpendents
+choose-if: others_left >= 10
+unavailable_subtitle: [? if others left < 10 : the Independents are too conservative to cosnider this ?]
+view-if: (spd_r + sapd_r + others_r) > 50
 
 Text
 
 @agsoc_coalition_dbp_cnblp
+title: An "Agrarian-Socialist" coalition, consisting of the SPD, [? if spd_splits = 1 : SPD Splinters, ?] and friendly Agrarian parties
+subtitle: SPD [? if spd_splits = 1 : + SPD Splinters ?] + CNBLP + DBP
+choose-if: cnblp_relation >= 60 and cnblp_left >= 10 and dbp_relation >= 50 and dbp_left >= 9 and dbp_ideology != "Centre-Right Agrarianism" 
+unavailable_subtitle: [? if cnblp_relation < 60 : We need better relations with the CNBLP ?] [? if cnblp_left < 10 : The CNBLP is too conservative to consider this ?] [? if dbp_relation < 50 : our relations with the DBP are not good enough ?] [? if dbp_left < 10 : The DBP membership is too conservative to consider this ?] [? if dbp_ideology == "Centre-Right Agrarianism" : the DBP leadership is too conservative to consider this ?] 
+view-if: (spd_r + dbp_r + cnblp_r) > 50
 
 Text
 
 @agsoc_coalition_dbp_others
+title: An "Agrarian-Socialist" coalition, consisting of the SPD, [? if spd_splits = 1 : SPD Splinters, ?] and friendly Agrarian parties
+subtitle: SPD [? if spd_splits = 1 : + SPD Splinters ?] + DBP + Indpendents 
+choose-if: dbp_relation >= 50 and dbp_left >= 9 and dbp_ideology != "Centre-Right Agrarianism" and others_left >= 10
+unavailable_subtitle: [? if dbp_relation < 50 : our relations with the DBP are not good enough ?] [? if dbp_left < 10 : The DBP membership is too conservative to consider this ?] [? if dbp_ideology == "Centre-Right Agrarianism" : the DBP leadership is too conservative to consider this ?] [? if others left < 10 : the Independents are too conservative to cosnider this ?]
+view-if: (spd_r + dbp_r + others_r) > 50
 
 Text
 
 @agsoc_coalition_cnblp_others
+title: An "Agrarian-Socialist" coalition, consisting of the SPD, [? if spd_splits = 1 : SPD Splinters, ?] and friendly Agrarian parties
+subtitle: SPD [? if spd_splits = 1 : + SPD Splinters ?] + CNBLP + Indpendents 
+choose-if: cnblp_relation >= 60 and cnblp_left >= 10 and others_left >= 10
+unavailable_subtitle: [? if cnblp_relation < 60 : We need better relations with the CNBLP ?] [? if cnblp_left < 10 : The CNBLP is too conservative to consider this ?] [? if others left < 10 : the Independents are too conservative to cosnider this ?]
+view-if: (spd_r + cnblp_r + others_r) > 50
 
 Text
 
