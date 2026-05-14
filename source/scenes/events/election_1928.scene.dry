@@ -1511,7 +1511,7 @@ go-to: coalition_menu
 title: An "Agrarian-Socialist" coalition, consisting of the SPD, [? if spd_splits = 1 : SPD Splinters, ?] and friendly Agrarian parties
 subtitle: SPD [? if spd_splits = 1 : + SPD Splinters ?] + CNBLP  + DBP + Indpendents 
 choose-if: agsoc_coalition > 50 and cnblp_relation >= 60 and cnblp_left >= 10 and dbp_relation >= 50 and dbp_left >= 9 and dbp_ideology != "Centre-Right Agrarianism" and others_left >= 10
-unavailable_subtitle: [? if cnblp_relation < 60 : We need better relations with the CNBLP ?] [? if cnblp_left < 10 : The CNBLP is too conservative to consider this ?] [? if dbp_relation < 50 : our relations with the DBP are not good enough ?] [? if dbp_left < 10 : The DBP membership is too conservative to consider this ?] [? if dbp_ideology == "Centre-Right Agrarianism" : the DBP leadership is too conservative to consider this ?] [? if others left < 10 : the Independents are too conservative to cosnider this ?]
+unavailable_subtitle: [? if cnblp_relation < 60 : We need better relations with the CNBLP ?] [? if cnblp_left < 10 : The CNBLP is too conservative to consider this ?] [? if dbp_relation < 50 : our relations with the DBP are not good enough ?] [? if dbp_left < 10 : The DBP membership is too conservative to consider this ?] [? if dbp_ideology == "Centre-Right Agrarianism" : the DBP leadership is too conservative to consider this ?] [? if others_left < 10 : the Independents are too conservative to cosnider this ?]
 view-if: (spd_r + sapd_r + dbp_r + cnblp_r + others_r) > 50
 
 Text
@@ -1538,7 +1538,7 @@ Text
 title: An "Agrarian-Socialist" coalition, consisting of the SPD, [? if spd_splits = 1 : SPD Splinters, ?] and friendly Agrarian parties
 subtitle: SPD [? if spd_splits = 1 : + SPD Splinters ?] + Indpendents
 choose-if: others_left >= 10
-unavailable_subtitle: [? if others left < 10 : the Independents are too conservative to cosnider this ?]
+unavailable_subtitle: [? if others_left < 10 : the Independents are too conservative to cosnider this ?]
 view-if: (spd_r + sapd_r + others_r) > 50
 
 Text
@@ -1556,7 +1556,7 @@ Text
 title: An "Agrarian-Socialist" coalition, consisting of the SPD, [? if spd_splits = 1 : SPD Splinters, ?] and friendly Agrarian parties
 subtitle: SPD [? if spd_splits = 1 : + SPD Splinters ?] + DBP + Indpendents 
 choose-if: dbp_relation >= 50 and dbp_left >= 9 and dbp_ideology != "Centre-Right Agrarianism" and others_left >= 10
-unavailable_subtitle: [? if dbp_relation < 50 : our relations with the DBP are not good enough ?] [? if dbp_left < 10 : The DBP membership is too conservative to consider this ?] [? if dbp_ideology == "Centre-Right Agrarianism" : the DBP leadership is too conservative to consider this ?] [? if others left < 10 : the Independents are too conservative to cosnider this ?]
+unavailable_subtitle: [? if dbp_relation < 50 : our relations with the DBP are not good enough ?] [? if dbp_left < 10 : The DBP membership is too conservative to consider this ?] [? if dbp_ideology == "Centre-Right Agrarianism" : the DBP leadership is too conservative to consider this ?] [? if others_left < 10 : the Independents are too conservative to cosnider this ?]
 view-if: (spd_r + dbp_r + others_r) > 50
 
 Text
@@ -1565,7 +1565,7 @@ Text
 title: An "Agrarian-Socialist" coalition, consisting of the SPD, [? if spd_splits = 1 : SPD Splinters, ?] and friendly Agrarian parties
 subtitle: SPD [? if spd_splits = 1 : + SPD Splinters ?] + CNBLP + Indpendents 
 choose-if: cnblp_relation >= 60 and cnblp_left >= 10 and others_left >= 10
-unavailable_subtitle: [? if cnblp_relation < 60 : We need better relations with the CNBLP ?] [? if cnblp_left < 10 : The CNBLP is too conservative to consider this ?] [? if others left < 10 : the Independents are too conservative to cosnider this ?]
+unavailable_subtitle: [? if cnblp_relation < 60 : We need better relations with the CNBLP ?] [? if cnblp_left < 10 : The CNBLP is too conservative to consider this ?] [? if others_left < 10 : the Independents are too conservative to cosnider this ?]
 view-if: (spd_r + cnblp_r + others_r) > 50
 
 Text
