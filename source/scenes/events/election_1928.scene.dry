@@ -1505,7 +1505,6 @@ go-to: coalition_menu
 - @agsoc_coalition_others
 - @agsoc_coalition_cnblp_others
 - @agsoc_coalition_cnblp_dbp
-- @agsoc_coalition_cnblp_dbp
 
 @agsoc_coalition_full
 title: An "Agrarian-Socialist" coalition, consisting of the SPD, [? if spd_splits = 1 : SPD Splinters, ?] and friendly Agrarian parties
