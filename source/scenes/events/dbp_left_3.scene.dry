@@ -1,53 +1,122 @@
-title: The DBP negotiates with the DDP
-subtitle: Can the DBP revitalise the DDP?
+title: The DBP negotiates with the [? if not lvp_formed : DDP ?][? if lvp_formed : LVP ?]
+subtitle: [? if not lvp formed : Can the DBP revitalise the DDP? ?]
 view-if: dbp_congress_seen and dbp_ddp_timer = 0 and dbp_leader == "Fehr" and not dbp_ddp_merger_seen
 on-arrival: dbp_ddp_merger_seen = 1
 tags: event
 
 = DBP Negotiations
 
-- @merger_succeed
-- @merger_fail_ddp_right
-- @merger_decision_dnvp
-- @merger_fail_dbp_right
-- @merger_fail_dstp_maintained
-- @merger_decision_dstp_failed
-- @merger_decision_dstp_decision
-- @merger_decision_right_president
-- @merger_fail_lvp
+- @merger_succeed: The merger succeeds!
+- @merger_fail_ddp_right: The merger fails... 
+- @merger_decision_dnvp: A crossroad emerges...
+- @merger_fail_dbp_right: The merger fails...
+- @merger_fail_dstp_maintained: The merger fails...
+- @merger_succeed_dstp_failed: The merger succeeds!
+- @merger_fail_dstp_failed: The merger fails...
+- @merger_decision_dstp_decision: A crossroad emerges...
+- @merger_decision_right_president: A crossroad emerges...
+- @merger_fail_lvp: The merger fails...
 
 @merger_succeed
+view-if: dbp_left >= 10 and ddp_left >= (ddp_right + 3) and not dstp_formed and not lvp_formed and not (ddp_in_government and dnvp_in_government) and not ((president == "Hindenburg" or "Jarres" or "Lettow-Vorbeck" or "Westarp" ) and ddp_in_government and year >= 1932)
+go-to: merger_succeeds_actions
 
-DDP & DBP left, no DStP, no gov. with dnvp, no right-wing president, or second-election Hindy
+text
 
 @merger_fail_ddp_right
+view-if: (ddp_right + 3) >= ddp_left and not dstp_formed and not lvp_formed
+go-to: merger_fails_actions
 
-Fails because the ddp is too right-wing
+Text
 
 @merger_decision_dnvp
+view-if: never
 
 Decision between merging with the DBP and the DNVP bringing down the coalition, or no mergber and keep the coalition
 
+- @mdd_idc
+- @mdd_no
+
+@mdd_idc
+go-to: merger_succeeds_actions
+
+Text
+
+@mdd_no
+go-to: merger_fails_actions
+
+Text
+
 @merger_fail_dbp_right
+view-if: never
+go-to: merger_fails_actions
 
 Fails becayse the dbp too right wing
 
 @merger_fail_dstp_maintained
+view-if: never
+go-to: merger_fails_actions
 
 Fails becuase the DStP has been maintained
 
-@merger_decision_dstp_failed
+@merger_fail_dstp_failed
+view-if: never
+go-to: merger_fails_actions
 
 If the DStP is too far right, it wont merge, and the left needs to be significanty stronger than if the DStP hadn't been formed.
 
+@merger_succeed_dstp_failed
+view-if: never
+go-to: merger_succeeds_actions
+
+text
+
 @merger_decision_dstp_decision
+view-if: never
 
 If the DStP has neither failed nor been maintained, the. DDP can abandon the VNR in faction of the DBP
 
+- @mddd_ab
+- @mddd_st
+
+@mddd_ab
+go-to: merger_succeeds_actions
+
+Text
+
+@mddd_st
+go-to: merger_fails_actions
+
+Text
+
 @merger_decision_right_president
+view-if: never
 
 If a right-wing president, or second-term hindenburg is in control, presidential powers are not limited, and the DDP is in government, the DDP can either merge and be kicked out of government, or not merge and stay in goverment.
 
-@merger_fail_lvp
+- @mdrp_y
+- @mdrp_n
 
-If the LVP is formed, the DBP decides not to even start negotiations.
+@mdrp_y
+go-to: merger_succeed_actions
+
+@mdrp_n
+go-to: merger_succeed_actions
+
+@merger_fail_lvp
+view-if: lvp_formed
+go-to: merger_succeeds_actions
+
+The DBP quickly discovers that the interests of a party catering towards the Rural populace, and one catering purely towards Middle-Class interest are incompatible, and the negotiations have been scrapped
+
+### Add options for changing DBP ideology towards AgSoc, the DBP staying the same, and the DBP merging with the SPD anyway
+
+@merger_succeeds_actions
+on-arrival {!
+Q.wip_var += 1
+!}
+
+@merger_fails_actions
+on-arrival: {! 
+Q.wip_var += 1
+!}
